@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+
+<title>Starter Kit Bindings</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-08-03 12:14:34 MDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Starter Kit Bindings</h1>
+
+<p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
+</p>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Starter Kit Bindings </h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+Key Bindings.
+</p>
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1">You know, like Readline. </h3>
+<div class="outline-text-3" id="text-1.1">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-M-h"</span><span style="color: #8c8c8c;">)</span> 'backward-kill-word<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.2" class="outline-3">
+<h3 id="sec-1.2">Align your code in a pretty way. </h3>
+<div class="outline-text-3" id="text-1.2">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x \\"</span><span style="color: #8c8c8c;">)</span> 'align-regexp<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.3" class="outline-3">
+<h3 id="sec-1.3">Completion that uses many different methods to find options. </h3>
+<div class="outline-text-3" id="text-1.3">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"M-/"</span><span style="color: #8c8c8c;">)</span> 'hippie-expand<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.4" class="outline-3">
+<h3 id="sec-1.4">Perform general cleanup. </h3>
+<div class="outline-text-3" id="text-1.4">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c n"</span><span style="color: #8c8c8c;">)</span> 'cleanup-buffer<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.5" class="outline-3">
+<h3 id="sec-1.5">Turn on the menu bar for exploring new modes </h3>
+<div class="outline-text-3" id="text-1.5">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key [f1] 'menu-bar-mode<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.6" class="outline-3">
+<h3 id="sec-1.6">Font size </h3>
+<div class="outline-text-3" id="text-1.6">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>define-key global-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-+"</span><span style="color: #8c8c8c;">)</span> 'text-scale-increase<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>define-key global-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C--"</span><span style="color: #8c8c8c;">)</span> 'text-scale-decrease<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.7" class="outline-3">
+<h3 id="sec-1.7">Use regex searches by default. </h3>
+<div class="outline-text-3" id="text-1.7">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-s"</span><span style="color: #8c8c8c;">)</span> 'isearch-forward-regexp<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"\C-r"</span><span style="color: #8c8c8c;">)</span> 'isearch-backward-regexp<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-M-s"</span><span style="color: #8c8c8c;">)</span> 'isearch-forward<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-M-r"</span><span style="color: #8c8c8c;">)</span> 'isearch-backward<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.8" class="outline-3">
+<h3 id="sec-1.8">Jump to a definition in the current file. (This is awesome.) </h3>
+<div class="outline-text-3" id="text-1.8">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x C-i"</span><span style="color: #8c8c8c;">)</span> 'ido-imenu<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.9" class="outline-3">
+<h3 id="sec-1.9">File finding </h3>
+<div class="outline-text-3" id="text-1.9">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x M-f"</span><span style="color: #8c8c8c;">)</span> 'ido-find-file-other-window<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x C-M-f"</span><span style="color: #8c8c8c;">)</span> 'find-file-in-project<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x f"</span><span style="color: #8c8c8c;">)</span> 'recentf-ido-find-file<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x C-p"</span><span style="color: #8c8c8c;">)</span> 'find-file-at-point<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c y"</span><span style="color: #8c8c8c;">)</span> 'bury-buffer<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c r"</span><span style="color: #8c8c8c;">)</span> 'revert-buffer<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"M-`"</span><span style="color: #8c8c8c;">)</span> 'file-cache-minibuffer-complete<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x C-b"</span><span style="color: #8c8c8c;">)</span> 'ibuffer<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.10" class="outline-3">
+<h3 id="sec-1.10">Window switching. (C-x o goes to the next window) </h3>
+<div class="outline-text-3" id="text-1.10">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>windmove-default-keybindings<span style="color: #8c8c8c;">)</span> <span style="color: #b22222;">;; </span><span style="color: #b22222;">Shift+direction
+</span><span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x O"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>other-window -1<span style="color: #8c8c8c;">)))</span> <span style="color: #b22222;">;; </span><span style="color: #b22222;">back one
+</span><span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x C-o"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>other-window 2<span style="color: #8c8c8c;">)))</span> <span style="color: #b22222;">;; </span><span style="color: #b22222;">forward two
+</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.11" class="outline-3">
+<h3 id="sec-1.11">Indentation help </h3>
+<div class="outline-text-3" id="text-1.11">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x ^"</span><span style="color: #8c8c8c;">)</span> 'join-line<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.12" class="outline-3">
+<h3 id="sec-1.12">Start eshell or switch to it if it's active. </h3>
+<div class="outline-text-3" id="text-1.12">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x m"</span><span style="color: #8c8c8c;">)</span> 'eshell<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.13" class="outline-3">
+<h3 id="sec-1.13">Start a new eshell even if one is active. </h3>
+<div class="outline-text-3" id="text-1.13">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x M"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>eshell t<span style="color: #8c8c8c;">)))</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.14" class="outline-3">
+<h3 id="sec-1.14">Start a regular shell if you prefer that. </h3>
+<div class="outline-text-3" id="text-1.14">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x M-m"</span><span style="color: #8c8c8c;">)</span> 'shell<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.15" class="outline-3">
+<h3 id="sec-1.15">If you want to be able to M-x without meta </h3>
+<div class="outline-text-3" id="text-1.15">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x C-m"</span><span style="color: #8c8c8c;">)</span> 'execute-extended-command<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.16" class="outline-3">
+<h3 id="sec-1.16">Fetch the contents at a URL, display it raw. </h3>
+<div class="outline-text-3" id="text-1.16">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x h"</span><span style="color: #8c8c8c;">)</span> 'view-url<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.17" class="outline-3">
+<h3 id="sec-1.17">Help should search more than just commands </h3>
+<div class="outline-text-3" id="text-1.17">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-h a"</span><span style="color: #8c8c8c;">)</span> 'apropos<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.18" class="outline-3">
+<h3 id="sec-1.18">Should be able to eval-and-replace anywhere. </h3>
+<div class="outline-text-3" id="text-1.18">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c e"</span><span style="color: #8c8c8c;">)</span> 'eval-and-replace<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.19" class="outline-3">
+<h3 id="sec-1.19">Applications </h3>
+<div class="outline-text-3" id="text-1.19">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c j"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>switch-or-start 'jabber-connect <span style="color: #bc8f8f;">"*-jabber-*"</span><span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c g"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>switch-or-start 'gnus <span style="color: #bc8f8f;">"*Group*"</span><span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c i"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>switch-or-start <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #8c8c8c;">(</span>rcirc-connect <span style="color: #bc8f8f;">"irc.freenode.net"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #bc8f8f;">"*irc.freenode.net*"</span><span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c J"</span><span style="color: #8c8c8c;">)</span> 'jabber-send-presence<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c M-j"</span><span style="color: #8c8c8c;">)</span> 'jabber-disconnect<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-x g"</span><span style="color: #8c8c8c;">)</span> 'magit-status<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.20" class="outline-3">
+<h3 id="sec-1.20">This is a little hacky since VC doesn't support git add internally </h3>
+<div class="outline-text-3" id="text-1.20">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'vc
+<span style="color: #8c8c8c;">(</span>define-key vc-prefix-map <span style="color: #bc8f8f;">"i"</span> '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>not <span style="color: #8c8c8c;">(</span>eq 'Git <span style="color: #8c8c8c;">(</span>vc-backend buffer-file-name<span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span>vc-register<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>shell-command <span style="color: #8c8c8c;">(</span>format <span style="color: #bc8f8f;">"git add %s"</span> buffer-file-name<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>message <span style="color: #bc8f8f;">"Staged changes."</span><span style="color: #8c8c8c;">)))))</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.21" class="outline-3">
+<h3 id="sec-1.21">Activate occur easily inside isearch </h3>
+<div class="outline-text-3" id="text-1.21">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>define-key isearch-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-o"</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>case-fold-search isearch-case-fold-search<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>occur <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> isearch-regexp isearch-string <span style="color: #8c8c8c;">(</span>regexp-quote isearch-string<span style="color: #8c8c8c;">))))))</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.22" class="outline-3">
+<h3 id="sec-1.22">Closing </h3>
+<div class="outline-text-3" id="text-1.22">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">provide</span> '<span style="color: #5f9ea0;">starter-kit-bindings</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">starter-kit-bindings.el ends here
+</span>
+</pre>
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

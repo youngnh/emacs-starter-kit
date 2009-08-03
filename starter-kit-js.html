@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+
+<title>Starter Kit JS</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-08-03 12:14:13 MDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Starter Kit JS</h1>
+
+<p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
+</p>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Starter Kit JS </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Java-script Helpers
+</p>
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>font-lock-add-keywords
+'espresso-mode `<span style="color: #8c8c8c;">((</span><span style="color: #bc8f8f;">"</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">function *</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">("</span>
+<span style="color: #8c8c8c;">(</span>0 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span> <span style="color: #8c8c8c;">(</span>compose-region <span style="color: #8c8c8c;">(</span>match-beginning 1<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>match-end 1<span style="color: #8c8c8c;">)</span>
+<span style="color: #bc8f8f;">"&#402;"</span><span style="color: #8c8c8c;">)</span>
+nil<span style="color: #8c8c8c;">)))))</span>
+
+</pre>
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>font-lock-add-keywords 'espresso-mode
+'<span style="color: #8c8c8c;">((</span><span style="color: #bc8f8f;">"\\&lt;</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">FIX</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">TODO</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">FIXME</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">HACK</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">REFACTOR</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">:"</span>
+1 font-lock-warning-face t<span style="color: #8c8c8c;">)))</span>
+
+</pre>
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>autoload 'espresso-mode <span style="color: #bc8f8f;">"espresso"</span> <span style="color: #bc8f8f;">"Start espresso-mode"</span> t<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.js$"</span> . espresso-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.json$"</span> . espresso-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-hook 'espresso-mode-hook 'moz-minor-mode<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-hook 'espresso-mode-hook 'turn-on-paredit<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-hook 'espresso-mode-hook 'run-coding-hook<span style="color: #8c8c8c;">)</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">(add-hook 'espresso-mode-hook 'idle-highlight)
+</span><span style="color: #8c8c8c;">(</span>setq espresso-indent-level 2<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">esk-pp-json</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #bc8f8f;">"Pretty-print the json object following point."</span>
+<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">json</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>json-object <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">save-excursion</span> <span style="color: #8c8c8c;">(</span>json-read<span style="color: #8c8c8c;">))))</span>
+<span style="color: #8c8c8c;">(</span>switch-to-buffer <span style="color: #bc8f8f;">"*json*"</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>delete-region <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>point-max<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>insert <span style="color: #8c8c8c;">(</span>pp json-object<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>goto-char <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">))))</span>
+
+</pre>
+
+
+
+</div>
+</div>
+
+</div>
+</body>
+</html>

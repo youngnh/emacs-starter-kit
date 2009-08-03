@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+
+<title>Starter Kit Ruby</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-08-03 12:13:59 MDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Starter Kit Ruby</h1>
+
+<p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
+</p>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Starter Kit Ruby </h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-source programming language.
+</p>
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'ruby-mode
+'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">work around possible elpa bug
+</span><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">ignore-errors</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">ruby-compilation</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>setq ruby-use-encoding-map nil<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-hook 'ruby-mode-hook 'inf-ruby-keys<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>define-key ruby-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"RET"</span><span style="color: #8c8c8c;">)</span> 'reindent-then-newline-and-indent<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>define-key ruby-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-M-h"</span><span style="color: #8c8c8c;">)</span> 'backward-kill-word<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>define-key ruby-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c l"</span><span style="color: #8c8c8c;">)</span> <span style="color: #bc8f8f;">"lambda"</span><span style="color: #8c8c8c;">)))</span>
+
+</pre>
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-h r"</span><span style="color: #8c8c8c;">)</span> 'ri<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1">Rake files are ruby, too, as are gemspecs. </h3>
+<div class="outline-text-3" id="text-1.1">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.rake$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"Rakefile$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.gemspec$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.2" class="outline-3">
+<h3 id="sec-1.2">We never want to edit Rubinius bytecode </h3>
+<div class="outline-text-3" id="text-1.2">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>add-to-list 'completion-ignored-extensions <span style="color: #bc8f8f;">".rbc"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.3" class="outline-3">
+<h3 id="sec-1.3">Rake </h3>
+<div class="outline-text-3" id="text-1.3">
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pcomplete/rake</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #bc8f8f;">"Completion rules for the `</span><span style="color: #5f9ea0;">ssh</span><span style="color: #bc8f8f;">' command."</span>
+<span style="color: #8c8c8c;">(</span>pcomplete-here <span style="color: #8c8c8c;">(</span>pcmpl-rake-tasks<span style="color: #8c8c8c;">)))</span>
+
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pcmpl-rake-tasks</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #bc8f8f;">"Return a list of all the rake tasks defined in the current
+projects.  I know this is a hack to put all the logic in the
+exec-to-string command, but it works and seems fast"</span>
+<span style="color: #8c8c8c;">(</span>delq nil <span style="color: #8c8c8c;">(</span>mapcar '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span><span style="color: #8c8c8c;">(</span>line<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>string-match <span style="color: #bc8f8f;">"rake </span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">[</span><span style="color: #bc8f8f;">^</span><span style="color: #bc8f8f;"> ]+</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">"</span> line<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>match-string 1 line<span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span>split-string <span style="color: #8c8c8c;">(</span>shell-command-to-string <span style="color: #bc8f8f;">"rake -T"</span><span style="color: #8c8c8c;">)</span> <span style="color: #bc8f8f;">"[\n]"</span><span style="color: #8c8c8c;">))))</span>
+
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">rake</span> <span style="color: #8c8c8c;">(</span>task<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>interactive <span style="color: #8c8c8c;">(</span>list <span style="color: #8c8c8c;">(</span>completing-read <span style="color: #bc8f8f;">"Rake (default: default): "</span>
+<span style="color: #8c8c8c;">(</span>pcmpl-rake-tasks<span style="color: #8c8c8c;">))))</span>
+<span style="color: #8c8c8c;">(</span>shell-command-to-string <span style="color: #8c8c8c;">(</span>concat <span style="color: #bc8f8f;">"rake "</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>= 0 <span style="color: #8c8c8c;">(</span>length task<span style="color: #8c8c8c;">))</span> <span style="color: #bc8f8f;">"default"</span> task<span style="color: #8c8c8c;">))))</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.4" class="outline-3">
+<h3 id="sec-1.4">Compilation </h3>
+<div class="outline-text-3" id="text-1.4">
+
+<p>Clear the compilation buffer between test runs.
+</p>
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'ruby-compilation
+'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defadvice</span> <span style="color: #0000ff;">ruby-do-run-w/compilation</span> <span style="color: #8c8c8c;">(</span>before kill-buffer <span style="color: #8c8c8c;">(</span>name cmdlist<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>comp-buffer-name <span style="color: #8c8c8c;">(</span>format <span style="color: #bc8f8f;">"*%s*"</span> name<span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>get-buffer comp-buffer-name<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">with-current-buffer</span> comp-buffer-name
+<span style="color: #8c8c8c;">(</span>delete-region <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>point-max<span style="color: #8c8c8c;">))))))</span>
+<span style="color: #8c8c8c;">(</span>ad-activate 'ruby-do-run-w/compilation<span style="color: #8c8c8c;">)))</span>
+
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.5" class="outline-3">
+<h3 id="sec-1.5">Hooks </h3>
+<div class="outline-text-3" id="text-1.5">
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>add-hook 'ruby-mode-hook 'run-coding-hook<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+<p>
+;; (add-hook 'ruby-mode-hook 'idle-highlight)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.6" class="outline-3">
+<h3 id="sec-1.6">Flymake </h3>
+<div class="outline-text-3" id="text-1.6">
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'ruby-mode
+'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">flymake</span><span style="color: #8c8c8c;">)</span>
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Invoke ruby with '-c' to get syntax checking
+</span><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">flymake-ruby-init</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>temp-file <span style="color: #8c8c8c;">(</span>flymake-init-create-temp-buffer-copy
+'flymake-create-temp-inplace<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>local-file <span style="color: #8c8c8c;">(</span>file-relative-name
+temp-file
+<span style="color: #8c8c8c;">(</span>file-name-directory buffer-file-name<span style="color: #8c8c8c;">))))</span>
+<span style="color: #8c8c8c;">(</span>list <span style="color: #bc8f8f;">"ruby"</span> <span style="color: #8c8c8c;">(</span>list <span style="color: #bc8f8f;">"-c"</span> local-file<span style="color: #8c8c8c;">))))</span>
+
+<span style="color: #8c8c8c;">(</span>push '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">".+\\.rb$"</span> flymake-ruby-init<span style="color: #8c8c8c;">)</span> flymake-allowed-file-name-masks<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>push '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"Rakefile$"</span> flymake-ruby-init<span style="color: #8c8c8c;">)</span> flymake-allowed-file-name-masks<span style="color: #8c8c8c;">)</span>
+
+<span style="color: #8c8c8c;">(</span>push '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"^</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">.*</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">:</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">[0-9]+</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">: </span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">.*</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">$"</span> 1 2 nil 3<span style="color: #8c8c8c;">)</span>
+flymake-err-line-patterns<span style="color: #8c8c8c;">)</span>
+
+<span style="color: #8c8c8c;">(</span>add-hook 'ruby-mode-hook
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>and buffer-file-name
+<span style="color: #8c8c8c;">(</span>file-writable-p
+<span style="color: #8c8c8c;">(</span>file-name-directory buffer-file-name<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>file-writable-p buffer-file-name<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-c d"</span><span style="color: #8c8c8c;">)</span>
+'flymake-display-err-menu-for-current-line<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>flymake-mode t<span style="color: #8c8c8c;">))))))</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.7" class="outline-3">
+<h3 id="sec-1.7">Rinari (Minor Mode for Ruby On Rails) </h3>
+<div class="outline-text-3" id="text-1.7">
+
+<p>See <a href="http://rinari.rubyforge.org/">rinari.rubyforge</a> for more information on rinari.
+</p>
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>setq rinari-major-modes
+<span style="color: #8c8c8c;">(</span>list 'mumamo-after-change-major-mode-hook 'dired-mode-hook 'ruby-mode-hook
+'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook<span style="color: #8c8c8c;">))</span>
+
+</pre>
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

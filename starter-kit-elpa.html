@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+
+<title>starter-kit-elpa</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-08-03 12:14:16 MDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">starter-kit-elpa</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Starter Kit ELPA </a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Starter Kit ELPA </h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+The following packages should all ways be installed
+</p>
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defvar</span> <span style="color: #b8860b;">starter-kit-packages</span> <span style="color: #8c8c8c;">(</span>list 'idle-highlight
+'ruby-mode
+'inf-ruby
+'js2-mode
+'css-mode
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">'nxml
+</span>'gist
+'paredit<span style="color: #8c8c8c;">)</span>
+<span style="color: #bc8f8f;">"Libraries that should be installed by default."</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">starter-kit-elpa-install</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #bc8f8f;">"Install all starter-kit packages that aren't installed."</span>
+<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">dolist</span> <span style="color: #8c8c8c;">(</span>package starter-kit-packages<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> <span style="color: #8c8c8c;">(</span>or <span style="color: #8c8c8c;">(</span>member package package-activated-list<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>functionp package<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>message <span style="color: #bc8f8f;">"Installing %s"</span> <span style="color: #8c8c8c;">(</span>symbol-name package<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>package-install package<span style="color: #8c8c8c;">))))</span>
+
+</pre>
+
+
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">esk-online?</span> <span style="color: #8c8c8c;">()</span>
+<span style="color: #bc8f8f;">"See if we're online.
+
+Windows does not have the network-interface-list function, so we
+just have to assume it's online."</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO how could this work on Windows?
+</span><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>and <span style="color: #8c8c8c;">(</span>functionp 'network-interface-list<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>network-interface-list<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>some <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>iface<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> <span style="color: #8c8c8c;">(</span>equal <span style="color: #bc8f8f;">"lo"</span> <span style="color: #8c8c8c;">(</span>car iface<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>member 'up <span style="color: #8c8c8c;">(</span>first <span style="color: #8c8c8c;">(</span>last <span style="color: #8c8c8c;">(</span>network-interface-info
+<span style="color: #8c8c8c;">(</span>car iface<span style="color: #8c8c8c;">)))))))</span>
+<span style="color: #8c8c8c;">(</span>network-interface-list<span style="color: #8c8c8c;">))</span>
+t<span style="color: #8c8c8c;">))</span>
+</pre>
+
+
+
+
+<p>
+On your first run, this should pull in all the base packages.
+</p>
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>esk-online?<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> package-archive-contents <span style="color: #8c8c8c;">(</span>package-refresh-contents<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>starter-kit-elpa-install<span style="color: #8c8c8c;">))</span>
+
+</pre>
+
+
+
+
+<p>
+Workaround for an ELPA bug that people are reporting but I've been
+unable to reproduce:
+</p>
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>autoload 'paredit-mode <span style="color: #bc8f8f;">"paredit"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+</div>
+</div>
+
+</div>
+</body>
+</html>

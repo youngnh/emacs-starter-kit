@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+
+<title>Starter Kit Eshell</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-08-03 12:14:14 MDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Starter Kit Eshell</h1>
+
+<p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
+</p>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Starter Kit Eshell </h2>
+<div class="outline-text-2" id="text-1">
+
+<p><a href="http://www.emacswiki.org/emacs/CategoryEshell">Eshell</a> is a great shell.
+</p>
+
+
+
+<pre class="src src-emacs-lisp">
+<span style="color: #8c8c8c;">(</span>setq eshell-cmpl-cycle-completions nil
+eshell-save-history-on-exit t
+eshell-cmpl-dir-ignore <span style="color: #bc8f8f;">"\\`</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">\\.\\.?</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">CVS</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">\\.svn</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">\\.git</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">/\\'"</span><span style="color: #8c8c8c;">)</span>
+
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'esh-opt
+'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">em-prompt</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">em-term</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">em-cmpl</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO: for some reason requiring this here breaks it, but
+</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">requiring it after an eshell session is started works fine.
+</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">(require 'eshell-vc)
+</span><span style="color: #8c8c8c;">(</span>setenv <span style="color: #bc8f8f;">"PAGER"</span> <span style="color: #bc8f8f;">"cat"</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>set-face-attribute 'eshell-prompt nil <span style="color: #da70d6;">:foreground</span> <span style="color: #bc8f8f;">"turquoise1"</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-hook 'eshell-mode-hook <span style="color: #b22222;">;; </span><span style="color: #b22222;">for some reason this needs to be a hook
+</span>'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>define-key eshell-mode-map <span style="color: #bc8f8f;">"\C-a"</span> 'eshell-bol<span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'eshell-visual-commands <span style="color: #bc8f8f;">"ssh"</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'eshell-visual-commands <span style="color: #bc8f8f;">"tail"</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'eshell-command-completions-alist
+'<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"gunzip"</span> <span style="color: #bc8f8f;">"gz\\'"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'eshell-command-completions-alist
+'<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"tar"</span> <span style="color: #bc8f8f;">"</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">\\.tar|\\.tgz</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">|</span><span style="color: #bc8f8f;">\\.tar\\.gz</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">\\'"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color<span style="color: #8c8c8c;">)))</span>
+</pre>
+
+
+
+</div>
+</div>
+
+</div>
+</body>
+</html>
