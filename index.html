@@ -1,1 +1,830 @@
-./starter-kit.html
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+
+<title>Emacs Starter Kit</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-09-02 14:32:42 MDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Emacs Starter Kit</h1>
+
+<blockquote>
+
+<p>Emacs outshines all other editing software in approximately the same
+way that the noonday sun does the stars. It is not just bigger and
+brighter; it simply makes everything else vanish.
+</p>
+<p>
+-Neal Stephenson, "In the Beginning was the Command Line"
+</p>
+</blockquote>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Introduction </a>
+<ul>
+<li><a href="#sec-1.1">Learning </a></li>
+<li><a href="#sec-1.2">Installation </a></li>
+<li><a href="#sec-1.3">Structure </a></li>
+<li><a href="#sec-1.4">Emacs Lisp Package Archive </a></li>
+<li><a href="#sec-1.5">Contributing </a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Implementation </a>
+<ul>
+<li><a href="#sec-2.1">Starter kit basics </a></li>
+<li><a href="#sec-2.2">Load the rest of the starter kit core </a></li>
+<li><a href="#sec-2.3">Language/Mode Specific Files </a></li>
+<li><a href="#sec-2.4">Load User/System Specific Files </a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Development </a>
+<ul>
+<li><a href="#sec-3.1">Tasks [1/10] </a></li>
+<li><a href="#sec-3.2">Bugs [0/1] </a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Introduction </h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+This should provide a saner set of defaults than you get normally with
+Emacs. It's intended for beginners, but provides a good elisp
+initialization structure for all levels of users.
+</p>
+<p>
+The main advantage of this Emacs Starter Kit are
+</p><ul>
+<li>
+better default settings
+</li>
+<li>
+inclusion of many useful libraries
+</li>
+<li>
+"literate" customization embedded in Org-mode files
+</li>
+<li>
+an organizational directory structure
+</li>
+<li>
+git provides for version control, backup, and sharing
+
+</li>
+</ul>
+
+<p>The latest version is at <a href="http://github.com/eschulte/emacs-starter-kit/">http://github.com/eschulte/emacs-starter-kit/</a>
+</p>
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1">Learning </h3>
+<div class="outline-text-3" id="text-1.1">
+
+
+<p>
+This won't teach you Emacs, but it'll make it easier to get
+comfortable. To access the tutorial, press control-h followed by t.
+</p>
+<p>
+The <a href="http://emacswiki.org">Emacs Wiki</a> is also very handy.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.2" class="outline-3">
+<h3 id="sec-1.2">Installation </h3>
+<div class="outline-text-3" id="text-1.2">
+
+
+<ol>
+<li>
+Install Emacs (at least version 22) Use your package manager if you
+have one.  Otherwise, Mac users should get it <a href="http://www.apple.com/downloads/macosx/unix_open_source/carbonemacspackage.html">from Apple</a>, or
+install it directly from <a href="http://savannah.gnu.org/projects/emacs/">from source</a> following the instructions in
+<code>nextstep/INSTALL</code>.  Windows users can get it <a href="http://ftp.gnu.org/gnu/emacs/windows/emacs-22.3-bin-i386.zip">from GNU</a>.
+</li>
+<li>
+Move the directory containing this file to <code>~/.emacs.d</code> <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
+</li>
+<li>
+Install the Org-mode and Org-babel <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules">submodules</a> with the following
+
+
+
+<pre class="src src-sh">git submodule init
+git submodule update
+
+</pre>
+
+
+
+</li>
+<li>
+build Org-mode
+
+
+
+<pre class="src src-sh"><span style="color: #7a378b;">cd</span> src/org/
+make
+
+</pre>
+
+
+
+</li>
+<li>
+Launch Emacs!
+
+</li>
+</ol>
+
+<p>If you are missing some autoloads after an update (should manifest
+itself as "void function: foobar" errors) try M-x regen-autoloads.
+</p>
+<p>
+If you want to keep your regular ~/.emacs.d in place and just launch a
+single instance using the starter kit, try the following invocation:
+</p>
+
+
+
+<pre class="src src-sh">emacs -q -l ~/src/emacs-starter-kit/init.el
+
+</pre>
+
+
+
+
+<p>
+Note that having a ~/.emacs file might override the starter kit
+loading, so if you've having trouble loading it, make sure that file
+is not present.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.3" class="outline-3">
+<h3 id="sec-1.3">Structure </h3>
+<div class="outline-text-3" id="text-1.3">
+
+
+<p>
+The init.el file is where everything begins. It's the first file to
+get loaded. Additional customization embedded in this file provides
+what I consider to be better defaults, both for different programming
+languages and for built-in Emacs features like bindings or registers.
+</p>
+<p>
+Files that are pending submission to <a href="#sec-1.4">ELPA</a> are bundled with the starter
+kit under the directory <a href="elpa-to-submit/">elpa-to-submit/</a>. The understanding is that
+these are bundled just because nobody's gotten around to turning them
+into packages, and the bundling of them is temporary. For these
+libraries, autoloads will be generated and kept in the <a href="loaddefs.el">loaddefs.el</a>
+file. This allows them to be loaded on demand rather than at startup.
+Additionally any emacs-lisp packages located under the <a href="src/">src/</a> directory
+will be added to the load-path.
+</p>
+<p>
+There are also a few files that are meant for code that doesn't belong
+in the Starter Kit. First, the user-specific-config file is the file
+named after your user with the extensions <code>.el</code> or <code>.org</code> <sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>. In
+addition, if a directory named after your user exists, it will be
+added to the load-path, and any elisp or org-mode w/embedded elisp
+files in it will be loaded. Finally, the Starter Kit will look for a
+file named after the current hostname ending in <code>.el</code> or <code>.org</code> which
+will allow host-specific configuration. This is where you should put
+code that you don't think would be useful to everyone. That will allow
+you to merge with newer versions of the starter-kit without conflicts.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.4" class="outline-3">
+<h3 id="sec-1.4">Emacs Lisp Package Archive </h3>
+<div class="outline-text-3" id="text-1.4">
+
+
+<p>
+Libraries from <a href="http://tromey.com/elpa">ELPA</a> are preferred when available since dependencies
+are handled automatically, and the burden to update them is removed
+from the user. In the long term, ideally everything would be installed
+via ELPA, and only <a href="package.el">package.el</a> would need to be distributed with the
+starter kit. (Or better yet, <a href="package.el">package.el</a> would come with Emacs&hellip;) See
+<a href="#sec-3.1.3">Starter Kit ELPA</a> for a list of libraries that are pending submission
+to ELPA. Packages get installed in the <a href="elpa/">elpa/</a> directory.
+</p>
+<p>
+There's no vendor/ directory in the starter kit because if an external
+library is useful enough to be bundled with the starter kit, it should
+be useful enough to submit to ELPA so that everyone can use it, not
+just users of the starter kit.  However any packages included in the
+<a href="src">src/</a> directory will be added to the load-path, for tracking bleeding
+edge packages.
+</p>
+<p>
+Sometimes packages are removed from the Starter Kit as they get added
+to ELPA itself. This has occasionally caused problems with certain
+packages. If you run into problems with such a package, try removing
+everything from inside the elpa/ directory and invoking M-x
+starter-kit-elpa-install in a fresh instance.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.5" class="outline-3">
+<h3 id="sec-1.5">Contributing </h3>
+<div class="outline-text-3" id="text-1.5">
+
+
+<p>
+If you know your way around Emacs, please try out the starter kit as a
+replacement for your regular dotfiles for a while. If there's anything
+you just can't live without, add it or let me know so I can add
+it. Take a look at what happens in <a href="init.el">init.el</a> to get started.
+</p>
+<p>
+Also: see the <a href="#sec-3.1">Tasks section</a> in this document. Helping submit new
+libraries to ELPA is the easiest way to help out. There are two ways
+you can do this: either take new libraries and make them ready for
+ELPA, dropping them in the elpa-to-submit directory or take files that
+are already in elpa-to-submit, ensuring all their dependencies are
+correctly loaded into ELPA, and sending them to the ELPA
+maintainer. There are details at <a href="http://tromey.com/elpa/upload.html">http://tromey.com/elpa/upload.html</a>
+for how ELPA submission works. Grep the project for TODO for other
+things.
+</p>
+<p>
+Files are licensed under the same license as Emacs unless otherwise
+specified. See the file COPYING for details.
+</p>
+<p>
+The latest version is at <a href="http://github.com/technomancy/emacs-starter-kit/">http://github.com/technomancy/emacs-starter-kit/</a>
+</p>
+<p>
+On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Settings/%your user name%/Application Data</code>
+</p>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Implementation </h2>
+<div class="outline-text-2" id="text-2">
+
+<p>This section contains all code implementing the Emacs Starter Kit.
+</p>
+
+</div>
+
+<div id="outline-container-2.1" class="outline-3">
+<h3 id="sec-2.1">Starter kit basics </h3>
+<div class="outline-text-3" id="text-2.1">
+
+
+<ul>
+<li id="sec-2.1.1">Load path etc. <br/>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq dotfiles-dir <span style="color: #8c8c8c;">(</span>file-name-directory
+                    <span style="color: #8c8c8c;">(</span>or <span style="color: #8c8c8c;">(</span>buffer-file-name<span style="color: #8c8c8c;">)</span> load-file-name<span style="color: #8c8c8c;">)))</span>
+
+<span style="color: #8c8c8c;">(</span>add-to-list 'load-path dotfiles-dir<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'load-path <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"/elpa-to-submit"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'load-path <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"/elpa-to-submit/jabber"</span><span style="color: #8c8c8c;">))</span>
+
+<span style="color: #8c8c8c;">(</span>setq autoload-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"loaddefs.el"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>setq package-user-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"elpa"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>setq custom-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"custom.el"</span><span style="color: #8c8c8c;">))</span>
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.1.2">Ubiquitous Packages <br/>
+
+<p>
+These should be loaded on startup rather than autoloaded on demand
+since they are likely to be used in every session
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">cl</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">saveplace</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">ffap</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">uniquify</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">ansi-color</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">recentf</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.1.3">Emacs 22 Backport <br/>
+
+<p>
+backport some functionality to Emacs 22 if needed
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">dominating-file</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+<p>
+this must be loaded before ELPA since it bundles its own
+out-of-date js stuff. TODO: fix it to use ELPA dependencies
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>load <span style="color: #8b2252;">"elpa-to-submit/nxhtml/autostart"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.1.4">Function for loading starter-kit-* <br/>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">starter-kit-load</span> <span style="color: #8c8c8c;">(</span>file<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8b2252;">"This function is to be used to load starter-kit-*.org files."</span>
+  <span style="color: #8c8c8c;">(</span>org-babel-load-file <span style="color: #8c8c8c;">(</span>expand-file-name file
+                                         dotfiles-dir<span style="color: #8c8c8c;">)))</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.1.5">ELPA (Emacs Lisp Package Manager) <br/>
+
+<p>
+Load up <a href="http://tromey.com/elpa/">ELPA</a>, the Emacs Lisp package manager
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">package</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>package-initialize<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-elpa.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.1.6">Starter Kit Customizations <br/>
+
+<p>
+Load up starter kit customizations
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>load custom-file 'noerror<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.1.7">Work around OS X bug <br/>
+
+<p>
+Work around a bug on OS X where system-name is FQDN
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>eq system-type 'darwin<span style="color: #8c8c8c;">)</span>
+    <span style="color: #8c8c8c;">(</span>setq system-name <span style="color: #8c8c8c;">(</span>car <span style="color: #8c8c8c;">(</span>split-string system-name <span style="color: #8b2252;">"\\."</span><span style="color: #8c8c8c;">))))</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.1.8">System/User specific customizations <br/>
+
+<p>
+You can keep system- or user-specific customizations here in either
+raw emacs-lisp files or as embedded elisp in org-mode files (as done
+in this document).
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq system-specific-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir system-name <span style="color: #8b2252;">".el"</span><span style="color: #8c8c8c;">)</span>
+      system-specific-literate-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir system-name <span style="color: #8b2252;">".org"</span><span style="color: #8c8c8c;">)</span>
+      user-specific-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir user-login-name <span style="color: #8b2252;">".el"</span><span style="color: #8c8c8c;">)</span>
+      user-specific-literate-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir user-login-name <span style="color: #8b2252;">".org"</span><span style="color: #8c8c8c;">)</span>
+      user-specific-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir user-login-name<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'load-path user-specific-dir<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+<p>
+You can keep elisp source in the <code>src</code> directory.  Packages loaded
+from here will override those installed by ELPA.  This is useful if
+you want to track the development versions of a project, or if a
+project is not in elpa.
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq elisp-source-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"src"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'load-path elisp-source-dir<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2.2" class="outline-3">
+<h3 id="sec-2.2">Load the rest of the starter kit core </h3>
+<div class="outline-text-3" id="text-2.2">
+
+<p>The following files contain the remainder of the core of the Emacs
+Starter Kit.  All of the code in this section should be loaded by
+everyone using the starter kit.
+</p>
+<ul>
+<li id="sec-2.2.1">Starter kit defuns <br/>
+Starter kit function definitions in <a href="starter-kit-defuns.html">starter-kit-defuns</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-defuns.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.2.2">Starter kit bindings <br/>
+Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-bindings.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.2.3">Starter kit misc <br/>
+Miscellaneous settings in <a href="starter-kit-misc.html">starter-kit-misc</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-misc.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.2.4">Starter kit registers <br/>
+Registers for jumping to commonly used files in <a href="starter-kit-registers.html">starter-kit-registers</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-registers.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2.3" class="outline-3">
+<h3 id="sec-2.3">Language/Mode Specific Files </h3>
+<div class="outline-text-3" id="text-2.3">
+
+<p>These sections pertain to specific languages or modes.  Feel free to
+turn off these sections if you don't plan on using the related mode or
+language.
+</p>
+<ul>
+<li id="sec-2.3.1">Starter kit Org-mode <br/>
+Located in <a href="starter-kit-org.html">starter-kit-org</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-org.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.3.2">Starter kit eshell <br/>
+Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-eshell.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.3.3">Starter kit lisp <br/>
+Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-lisp.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.3.4">Starter kit ruby <br/>
+Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-ruby.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.3.5">Starter kit JS <br/>
+Located in <a href="starter-kit-js.html">starter-kit-js</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-js.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.3.6">Starter Kit Perl <br/>
+Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-perl.org"</span><span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2.4" class="outline-3">
+<h3 id="sec-2.4">Load User/System Specific Files </h3>
+<div class="outline-text-3" id="text-2.4">
+
+
+<p>
+After we've loaded all the Starter Kit defaults, lets load the User's stuff.
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p elisp-source-dir<span style="color: #8c8c8c;">)</span>
+    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>default-directory elisp-source-dir<span style="color: #8c8c8c;">))</span>
+      <span style="color: #8c8c8c;">(</span>normal-top-level-add-subdirs-to-load-path<span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p system-specific-config<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>load system-specific-config<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p system-specific-literate-config<span style="color: #8c8c8c;">)</span>
+    <span style="color: #8c8c8c;">(</span>org-babel-load system-specific-literate-config<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-config<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>load user-specific-config<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-literate-config<span style="color: #8c8c8c;">)</span>
+    <span style="color: #8c8c8c;">(</span>org-babel-load user-specific-literate-config<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-dir<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>mapc #'load <span style="color: #8c8c8c;">(</span>directory-files user-specific-dir nil <span style="color: #8b2252;">".*el$"</span><span style="color: #8c8c8c;">))</span>
+  <span style="color: #8c8c8c;">(</span>mapc #'org-babel-load <span style="color: #8c8c8c;">(</span>directory-files user-specific-dir nil <span style="color: #8b2252;">".*org$"</span><span style="color: #8c8c8c;">)))</span>
+
+</pre>
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Development </h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+</div>
+
+<div id="outline-container-3.1" class="outline-3">
+<h3 id="sec-3.1">Tasks [1/10] </h3>
+<div class="outline-text-3" id="text-3.1">
+
+
+<ul>
+<li id="sec-3.1.1"><span class="todo TODO"> TODO</span> setup electric for ruby <br/>
+</li>
+<li id="sec-3.1.2"><span class="todo TODO"> TODO</span> set up ri for ruby <br/>
+</li>
+<li id="sec-3.1.3"><span class="todo TODO"> TODO</span> Submit the packages in starter-kit-elpa.el to ELPA. <br/>
+
+</li>
+<li id="sec-3.1.4"><span class="todo STARTED"> STARTED</span> Greg Newman is working on Python helpers. <br/>
+
+</li>
+<li id="sec-3.1.5"><span class="todo STARTED"> STARTED</span> submit ruby fixes to flymake <br/>
+
+</li>
+<li id="sec-3.1.6"><span class="todo PROPOSED"> PROPOSED</span> which-func-mode in ruby? <br/>
+</li>
+<li id="sec-3.1.7"><span class="todo TODO"> TODO</span> all bindings to kbd invocations <br/>
+
+</li>
+<li id="sec-3.1.8"><span class="done DEFERRED"> DEFERRED</span> should yasnippet be included in rinari? <br/>
+No, rinari has no dependency on yasnippet, and yasnippet has many
+applications outside of rinari.
+
+</li>
+<li id="sec-3.1.9"><span class="todo TODO"> TODO</span> flymake for perl <br/>
+</li>
+<li id="sec-3.1.10"><span class="todo TODO"> TODO</span> electric bugaloo for perl <br/>
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3.2" class="outline-3">
+<h3 id="sec-3.2">Bugs [0/1] </h3>
+<div class="outline-text-3" id="text-3.2">
+
+<ul>
+<li id="sec-3.2.1"><span class="todo TODO"> TODO</span> get jabber.el to automatically disconnect when suspending/hibernating (via dbus) <br/>
+
+
+
+
+
+
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> If you already have a directory at ~/.emacs.d move it out of
+the way and put this there instead.
+</p>
+<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> The emacs starter kit uses <a href="http://github.com/eschulte/org-babel/tree/master">org-babel</a> to load embedded elisp code
+directly from <a href="http://orgmode.org/">Org Mode</a> documents.
+</p>
+</div>
+</div>
+
+</div>
+</body>
+</html>
