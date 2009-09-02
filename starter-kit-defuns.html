@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Defuns</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-08-03 12:14:25 MDT"/>
+<meta name="generated" content="2009-09-02 13:55:22 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -84,9 +84,8 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">thingatpt</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">imenu</span><span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">thingatpt</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">imenu</span><span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -104,17 +103,16 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">view-url</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Open a new buffer containing the contents of URL."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>default <span style="color: #8c8c8c;">(</span>thing-at-point-url-at-point<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>url <span style="color: #8c8c8c;">(</span>read-from-minibuffer <span style="color: #bc8f8f;">"URL: "</span> default<span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span>switch-to-buffer <span style="color: #8c8c8c;">(</span>url-retrieve-synchronously url<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>rename-buffer url t<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO: switch to nxml/nxhtml mode
-</span><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">cond</span> <span style="color: #8c8c8c;">((</span>search-forward <span style="color: #bc8f8f;">"&lt;?xml"</span> nil t<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>xml-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">((</span>search-forward <span style="color: #bc8f8f;">"&lt;html"</span> nil t<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>html-mode<span style="color: #8c8c8c;">)))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">view-url</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Open a new buffer containing the contents of URL."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>default <span style="color: #8c8c8c;">(</span>thing-at-point-url-at-point<span style="color: #8c8c8c;">))</span>
+         <span style="color: #8c8c8c;">(</span>url <span style="color: #8c8c8c;">(</span>read-from-minibuffer <span style="color: #8b2252;">"URL: "</span> default<span style="color: #8c8c8c;">)))</span>
+    <span style="color: #8c8c8c;">(</span>switch-to-buffer <span style="color: #8c8c8c;">(</span>url-retrieve-synchronously url<span style="color: #8c8c8c;">))</span>
+    <span style="color: #8c8c8c;">(</span>rename-buffer url t<span style="color: #8c8c8c;">)</span>
+    <span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO: switch to nxml/nxhtml mode
+</span>    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">cond</span> <span style="color: #8c8c8c;">((</span>search-forward <span style="color: #8b2252;">"&lt;?xml"</span> nil t<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>xml-mode<span style="color: #8c8c8c;">))</span>
+          <span style="color: #8c8c8c;">((</span>search-forward <span style="color: #8b2252;">"&lt;html"</span> nil t<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>html-mode<span style="color: #8c8c8c;">)))))</span>
 
 </pre>
 
@@ -133,48 +131,47 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">ido-imenu</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Update the imenu index and then use ido to select a symbol to navigate to.
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">ido-imenu</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Update the imenu index and then use ido to select a symbol to navigate to.
 Symbols matching the text at point are put first in the completion list."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>imenu--make-index-alist<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>name-and-pos '<span style="color: #8c8c8c;">())</span>
-<span style="color: #8c8c8c;">(</span>symbol-names '<span style="color: #8c8c8c;">()))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">flet</span> <span style="color: #8c8c8c;">((</span>addsymbols <span style="color: #8c8c8c;">(</span>symbol-list<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>listp symbol-list<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">dolist</span> <span style="color: #8c8c8c;">(</span>symbol symbol-list<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>name nil<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>position nil<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">cond</span>
-<span style="color: #8c8c8c;">((</span>and <span style="color: #8c8c8c;">(</span>listp symbol<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>imenu--subalist-p symbol<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>addsymbols symbol<span style="color: #8c8c8c;">))</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>imenu--make-index-alist<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>name-and-pos '<span style="color: #8c8c8c;">())</span>
+        <span style="color: #8c8c8c;">(</span>symbol-names '<span style="color: #8c8c8c;">()))</span>
+    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">flet</span> <span style="color: #8c8c8c;">((</span>addsymbols <span style="color: #8c8c8c;">(</span>symbol-list<span style="color: #8c8c8c;">)</span>
+                       <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>listp symbol-list<span style="color: #8c8c8c;">)</span>
+                         <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">dolist</span> <span style="color: #8c8c8c;">(</span>symbol symbol-list<span style="color: #8c8c8c;">)</span>
+                           <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>name nil<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>position nil<span style="color: #8c8c8c;">))</span>
+                             <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">cond</span>
+                              <span style="color: #8c8c8c;">((</span>and <span style="color: #8c8c8c;">(</span>listp symbol<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>imenu--subalist-p symbol<span style="color: #8c8c8c;">))</span>
+                               <span style="color: #8c8c8c;">(</span>addsymbols symbol<span style="color: #8c8c8c;">))</span>
 
-<span style="color: #8c8c8c;">((</span>listp symbol<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>setq name <span style="color: #8c8c8c;">(</span>car symbol<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>setq position <span style="color: #8c8c8c;">(</span>cdr symbol<span style="color: #8c8c8c;">)))</span>
+                              <span style="color: #8c8c8c;">((</span>listp symbol<span style="color: #8c8c8c;">)</span>
+                               <span style="color: #8c8c8c;">(</span>setq name <span style="color: #8c8c8c;">(</span>car symbol<span style="color: #8c8c8c;">))</span>
+                               <span style="color: #8c8c8c;">(</span>setq position <span style="color: #8c8c8c;">(</span>cdr symbol<span style="color: #8c8c8c;">)))</span>
 
-<span style="color: #8c8c8c;">((</span>stringp symbol<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>setq name symbol<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>setq position <span style="color: #8c8c8c;">(</span>get-text-property 1 'org-imenu-marker symbol<span style="color: #8c8c8c;">))))</span>
+                              <span style="color: #8c8c8c;">((</span>stringp symbol<span style="color: #8c8c8c;">)</span>
+                               <span style="color: #8c8c8c;">(</span>setq name symbol<span style="color: #8c8c8c;">)</span>
+                               <span style="color: #8c8c8c;">(</span>setq position <span style="color: #8c8c8c;">(</span>get-text-property 1 'org-imenu-marker symbol<span style="color: #8c8c8c;">))))</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> <span style="color: #8c8c8c;">(</span>or <span style="color: #8c8c8c;">(</span>null position<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>null name<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'symbol-names name<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'name-and-pos <span style="color: #8c8c8c;">(</span>cons name position<span style="color: #8c8c8c;">))))))))</span>
-<span style="color: #8c8c8c;">(</span>addsymbols imenu--index-alist<span style="color: #8c8c8c;">))</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">If there are matching symbols at point, put them at the beginning of `</span><span style="color: #5f9ea0;">symbol-names</span><span style="color: #b22222;">'.
-</span><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>symbol-at-point <span style="color: #8c8c8c;">(</span>thing-at-point 'symbol<span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> symbol-at-point
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>regexp <span style="color: #8c8c8c;">(</span>concat <span style="color: #8c8c8c;">(</span>regexp-quote symbol-at-point<span style="color: #8c8c8c;">)</span> <span style="color: #bc8f8f;">"$"</span><span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>matching-symbols <span style="color: #8c8c8c;">(</span>delq nil <span style="color: #8c8c8c;">(</span>mapcar <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>symbol<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>string-match regexp symbol<span style="color: #8c8c8c;">)</span> symbol<span style="color: #8c8c8c;">))</span>
-symbol-names<span style="color: #8c8c8c;">))))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> matching-symbols
-<span style="color: #8c8c8c;">(</span>sort matching-symbols <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>a b<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>&gt; <span style="color: #8c8c8c;">(</span>length a<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>length b<span style="color: #8c8c8c;">))))</span>
-<span style="color: #8c8c8c;">(</span>mapc <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>symbol<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>setq symbol-names <span style="color: #8c8c8c;">(</span>cons symbol <span style="color: #8c8c8c;">(</span>delete symbol symbol-names<span style="color: #8c8c8c;">))))</span>
-matching-symbols<span style="color: #8c8c8c;">)))))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>selected-symbol <span style="color: #8c8c8c;">(</span>ido-completing-read <span style="color: #bc8f8f;">"Symbol? "</span> symbol-names<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>position <span style="color: #8c8c8c;">(</span>cdr <span style="color: #8c8c8c;">(</span>assoc selected-symbol name-and-pos<span style="color: #8c8c8c;">))))</span>
-<span style="color: #8c8c8c;">(</span>goto-char position<span style="color: #8c8c8c;">))))</span>
+                             <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> <span style="color: #8c8c8c;">(</span>or <span style="color: #8c8c8c;">(</span>null position<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>null name<span style="color: #8c8c8c;">))</span>
+                               <span style="color: #8c8c8c;">(</span>add-to-list 'symbol-names name<span style="color: #8c8c8c;">)</span>
+                               <span style="color: #8c8c8c;">(</span>add-to-list 'name-and-pos <span style="color: #8c8c8c;">(</span>cons name position<span style="color: #8c8c8c;">))))))))</span>
+      <span style="color: #8c8c8c;">(</span>addsymbols imenu--index-alist<span style="color: #8c8c8c;">))</span>
+    <span style="color: #b22222;">;; </span><span style="color: #b22222;">If there are matching symbols at point, put them at the beginning of `</span><span style="color: #008b8b;">symbol-names</span><span style="color: #b22222;">'.
+</span>    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>symbol-at-point <span style="color: #8c8c8c;">(</span>thing-at-point 'symbol<span style="color: #8c8c8c;">)))</span>
+      <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> symbol-at-point
+        <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>regexp <span style="color: #8c8c8c;">(</span>concat <span style="color: #8c8c8c;">(</span>regexp-quote symbol-at-point<span style="color: #8c8c8c;">)</span> <span style="color: #8b2252;">"$"</span><span style="color: #8c8c8c;">))</span>
+               <span style="color: #8c8c8c;">(</span>matching-symbols <span style="color: #8c8c8c;">(</span>delq nil <span style="color: #8c8c8c;">(</span>mapcar <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>symbol<span style="color: #8c8c8c;">)</span>
+                                                     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>string-match regexp symbol<span style="color: #8c8c8c;">)</span> symbol<span style="color: #8c8c8c;">))</span>
+                                                   symbol-names<span style="color: #8c8c8c;">))))</span>
+          <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> matching-symbols
+            <span style="color: #8c8c8c;">(</span>sort matching-symbols <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>a b<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>&gt; <span style="color: #8c8c8c;">(</span>length a<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>length b<span style="color: #8c8c8c;">))))</span>
+            <span style="color: #8c8c8c;">(</span>mapc <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>symbol<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>setq symbol-names <span style="color: #8c8c8c;">(</span>cons symbol <span style="color: #8c8c8c;">(</span>delete symbol symbol-names<span style="color: #8c8c8c;">))))</span>
+                  matching-symbols<span style="color: #8c8c8c;">)))))</span>
+    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>selected-symbol <span style="color: #8c8c8c;">(</span>ido-completing-read <span style="color: #8b2252;">"Symbol? "</span> symbol-names<span style="color: #8c8c8c;">))</span>
+           <span style="color: #8c8c8c;">(</span>position <span style="color: #8c8c8c;">(</span>cdr <span style="color: #8c8c8c;">(</span>assoc selected-symbol name-and-pos<span style="color: #8c8c8c;">))))</span>
+      <span style="color: #8c8c8c;">(</span>goto-char position<span style="color: #8c8c8c;">))))</span>
 
 </pre>
 
@@ -199,40 +196,29 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">local-column-number-mode</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>make-local-variable 'column-number-mode<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>column-number-mode t<span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">local-column-number-mode</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8c8c8c;">(</span>make-local-variable 'column-number-mode<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>column-number-mode t<span style="color: #8c8c8c;">))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">local-comment-auto-fill</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>set <span style="color: #8c8c8c;">(</span>make-local-variable 'comment-auto-fill-only-comments<span style="color: #8c8c8c;">)</span> t<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>auto-fill-mode t<span style="color: #8c8c8c;">))</span>
+  <span style="color: #8c8c8c;">(</span>set <span style="color: #8c8c8c;">(</span>make-local-variable 'comment-auto-fill-only-comments<span style="color: #8c8c8c;">)</span> t<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>auto-fill-mode t<span style="color: #8c8c8c;">))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">turn-on-hl-line-mode</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> window-system <span style="color: #8c8c8c;">(</span>hl-line-mode t<span style="color: #8c8c8c;">)))</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> window-system <span style="color: #8c8c8c;">(</span>hl-line-mode t<span style="color: #8c8c8c;">)))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">turn-on-save-place-mode</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>setq save-place t<span style="color: #8c8c8c;">))</span>
+  <span style="color: #8c8c8c;">(</span>setq save-place t<span style="color: #8c8c8c;">))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">turn-on-whitespace</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>whitespace-mode t<span style="color: #8c8c8c;">))</span>
+  <span style="color: #8c8c8c;">(</span>whitespace-mode t<span style="color: #8c8c8c;">))</span>
 </pre>
 
 
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'local-column-number-mode<span style="color: #8c8c8c;">)</span>
-
-</pre>
-
-
-
-
-
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'local-comment-auto-fill<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'local-column-number-mode<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -240,8 +226,7 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'turn-on-hl-line-mode<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'local-comment-auto-fill<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -249,8 +234,15 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'pretty-lambdas<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'turn-on-hl-line-mode<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'coding-hook 'pretty-lambdas<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -260,10 +252,9 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">run-coding-hook</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Enable things that are convenient across all coding buffers."</span>
-<span style="color: #8c8c8c;">(</span>run-hooks 'coding-hook<span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">run-coding-hook</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Enable things that are convenient across all coding buffers."</span>
+  <span style="color: #8c8c8c;">(</span>run-hooks 'coding-hook<span style="color: #8c8c8c;">))</span>
 
 </pre>
 
@@ -271,10 +262,9 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">untabify-buffer</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>untabify <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>point-max<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">untabify-buffer</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>untabify <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>point-max<span style="color: #8c8c8c;">)))</span>
 
 </pre>
 
@@ -282,10 +272,9 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">indent-buffer</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>indent-region <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>point-max<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">indent-buffer</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>indent-region <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>point-max<span style="color: #8c8c8c;">)))</span>
 
 </pre>
 
@@ -293,13 +282,12 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">cleanup-buffer</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Perform a bunch of operations on the whitespace content of a buffer."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>indent-buffer<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>untabify-buffer<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>delete-trailing-whitespace<span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">cleanup-buffer</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Perform a bunch of operations on the whitespace content of a buffer."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>indent-buffer<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>untabify-buffer<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>delete-trailing-whitespace<span style="color: #8c8c8c;">))</span>
 
 </pre>
 
@@ -307,13 +295,12 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">recentf-ido-find-file</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Find a recent file using ido."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>file <span style="color: #8c8c8c;">(</span>ido-completing-read <span style="color: #bc8f8f;">"Choose recent file: "</span> recentf-list nil t<span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> file
-<span style="color: #8c8c8c;">(</span>find-file file<span style="color: #8c8c8c;">))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">recentf-ido-find-file</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Find a recent file using ido."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>file <span style="color: #8c8c8c;">(</span>ido-completing-read <span style="color: #8b2252;">"Choose recent file: "</span> recentf-list nil t<span style="color: #8c8c8c;">)))</span>
+    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> file
+      <span style="color: #8c8c8c;">(</span>find-file file<span style="color: #8c8c8c;">))))</span>
 
 </pre>
 
@@ -332,13 +319,12 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pretty-lambdas</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>font-lock-add-keywords
-nil `<span style="color: #8c8c8c;">((</span><span style="color: #bc8f8f;">"(?</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">lambda\\&gt;</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">"</span>
-<span style="color: #8c8c8c;">(</span>0 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span> <span style="color: #8c8c8c;">(</span>compose-region <span style="color: #8c8c8c;">(</span>match-beginning 1<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>match-end 1<span style="color: #8c8c8c;">)</span>
-,<span style="color: #8c8c8c;">(</span>make-char 'greek-iso8859-7 107<span style="color: #8c8c8c;">))</span>
-nil<span style="color: #8c8c8c;">))))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pretty-lambdas</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8c8c8c;">(</span>font-lock-add-keywords
+   nil `<span style="color: #8c8c8c;">((</span><span style="color: #8b2252;">"(?</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">lambda\\&gt;</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">"</span>
+          <span style="color: #8c8c8c;">(</span>0 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span> <span style="color: #8c8c8c;">(</span>compose-region <span style="color: #8c8c8c;">(</span>match-beginning 1<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>match-end 1<span style="color: #8c8c8c;">)</span>
+                                    ,<span style="color: #8c8c8c;">(</span>make-char 'greek-iso8859-7 107<span style="color: #8c8c8c;">))</span>
+                    nil<span style="color: #8c8c8c;">))))))</span>
 
 </pre>
 
@@ -357,37 +343,36 @@ nil<span style="color: #8c8c8c;">))))))</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">eval-and-replace</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Replace the preceding sexp with its value."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>backward-kill-sexp<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">condition-case</span> nil
-<span style="color: #8c8c8c;">(</span>prin1 <span style="color: #8c8c8c;">(</span>eval <span style="color: #8c8c8c;">(</span>read <span style="color: #8c8c8c;">(</span>current-kill 0<span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span>current-buffer<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #ff0000; font-weight: bold;">error</span> <span style="color: #8c8c8c;">(</span>message <span style="color: #bc8f8f;">"Invalid expression"</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>insert <span style="color: #8c8c8c;">(</span>current-kill 0<span style="color: #8c8c8c;">)))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">eval-and-replace</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Replace the preceding sexp with its value."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>backward-kill-sexp<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">condition-case</span> nil
+      <span style="color: #8c8c8c;">(</span>prin1 <span style="color: #8c8c8c;">(</span>eval <span style="color: #8c8c8c;">(</span>read <span style="color: #8c8c8c;">(</span>current-kill 0<span style="color: #8c8c8c;">)))</span>
+             <span style="color: #8c8c8c;">(</span>current-buffer<span style="color: #8c8c8c;">))</span>
+    <span style="color: #8c8c8c;">(</span><span style="color: #ff0000; font-weight: bold;">error</span> <span style="color: #8c8c8c;">(</span>message <span style="color: #8b2252;">"Invalid expression"</span><span style="color: #8c8c8c;">)</span>
+           <span style="color: #8c8c8c;">(</span>insert <span style="color: #8c8c8c;">(</span>current-kill 0<span style="color: #8c8c8c;">)))))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">recompile-init</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Byte-compile all your dotfiles again."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>byte-recompile-directory dotfiles-dir 0<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO: remove elpa-to-submit once everything's submitted.
-</span><span style="color: #8c8c8c;">(</span>byte-recompile-directory <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #bc8f8f;">"elpa-to-submit/"</span> 0<span style="color: #8c8c8c;">)))</span>
+  <span style="color: #8b2252;">"Byte-compile all your dotfiles again."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>byte-recompile-directory dotfiles-dir 0<span style="color: #8c8c8c;">)</span>
+  <span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO: remove elpa-to-submit once everything's submitted.
+</span>  <span style="color: #8c8c8c;">(</span>byte-recompile-directory <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"elpa-to-submit/"</span> 0<span style="color: #8c8c8c;">)))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">regen-autoloads</span> <span style="color: #8c8c8c;">(</span><span style="color: #228b22;">&amp;optional</span> force-regen<span style="color: #8c8c8c;">)</span>
-<span style="color: #bc8f8f;">"Regenerate the autoload definitions file if necessary and load it."</span>
-<span style="color: #8c8c8c;">(</span>interactive <span style="color: #bc8f8f;">"P"</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>autoload-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #bc8f8f;">"/elpa-to-submit"</span><span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>generated-autoload-file autoload-file<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>or force-regen
-<span style="color: #8c8c8c;">(</span>not <span style="color: #8c8c8c;">(</span>file-exists-p autoload-file<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>some <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>f<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>file-newer-than-file-p f autoload-file<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>directory-files autoload-dir t <span style="color: #bc8f8f;">"\\.el$"</span><span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span>message <span style="color: #bc8f8f;">"Updating autoloads..."</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">(</span>emacs-lisp-mode-hook<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>update-directory-autoloads autoload-dir<span style="color: #8c8c8c;">))))</span>
-<span style="color: #8c8c8c;">(</span>load autoload-file<span style="color: #8c8c8c;">))</span>
+  <span style="color: #8b2252;">"Regenerate the autoload definitions file if necessary and load it."</span>
+  <span style="color: #8c8c8c;">(</span>interactive <span style="color: #8b2252;">"P"</span><span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>autoload-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"/elpa-to-submit"</span><span style="color: #8c8c8c;">))</span>
+        <span style="color: #8c8c8c;">(</span>generated-autoload-file autoload-file<span style="color: #8c8c8c;">))</span>
+    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>or force-regen
+              <span style="color: #8c8c8c;">(</span>not <span style="color: #8c8c8c;">(</span>file-exists-p autoload-file<span style="color: #8c8c8c;">))</span>
+              <span style="color: #8c8c8c;">(</span>some <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>f<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>file-newer-than-file-p f autoload-file<span style="color: #8c8c8c;">))</span>
+                    <span style="color: #8c8c8c;">(</span>directory-files autoload-dir t <span style="color: #8b2252;">"\\.el$"</span><span style="color: #8c8c8c;">)))</span>
+      <span style="color: #8c8c8c;">(</span>message <span style="color: #8b2252;">"Updating autoloads..."</span><span style="color: #8c8c8c;">)</span>
+      <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">(</span>emacs-lisp-mode-hook<span style="color: #8c8c8c;">)</span>
+        <span style="color: #8c8c8c;">(</span>update-directory-autoloads autoload-dir<span style="color: #8c8c8c;">))))</span>
+  <span style="color: #8c8c8c;">(</span>load autoload-file<span style="color: #8c8c8c;">))</span>
 </pre>
 
 
@@ -398,12 +383,11 @@ TODO: fix this
 </p>
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">sudo-edit</span> <span style="color: #8c8c8c;">(</span><span style="color: #228b22;">&amp;optional</span> arg<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>interactive <span style="color: #bc8f8f;">"p"</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> arg
-<span style="color: #8c8c8c;">(</span>find-file <span style="color: #8c8c8c;">(</span>concat <span style="color: #bc8f8f;">"/sudo:root@localhost:"</span> <span style="color: #8c8c8c;">(</span>ido-read-file-name <span style="color: #bc8f8f;">"File: "</span><span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span>find-alternate-file <span style="color: #8c8c8c;">(</span>concat <span style="color: #bc8f8f;">"/sudo:root@localhost:"</span> buffer-file-name<span style="color: #8c8c8c;">))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">sudo-edit</span> <span style="color: #8c8c8c;">(</span><span style="color: #228b22;">&amp;optional</span> arg<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>interactive <span style="color: #8b2252;">"p"</span><span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> arg
+      <span style="color: #8c8c8c;">(</span>find-file <span style="color: #8c8c8c;">(</span>concat <span style="color: #8b2252;">"/sudo:root@localhost:"</span> <span style="color: #8c8c8c;">(</span>ido-read-file-name <span style="color: #8b2252;">"File: "</span><span style="color: #8c8c8c;">)))</span>
+    <span style="color: #8c8c8c;">(</span>find-alternate-file <span style="color: #8c8c8c;">(</span>concat <span style="color: #8b2252;">"/sudo:root@localhost:"</span> buffer-file-name<span style="color: #8c8c8c;">))))</span>
 
 </pre>
 
@@ -415,17 +399,16 @@ Useful when a large block of text is required (e.g. for testing)
 </p>
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">lorem</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Insert a lorem ipsum."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>insert <span style="color: #bc8f8f;">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "</span>
-<span style="color: #bc8f8f;">"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"</span>
-<span style="color: #bc8f8f;">"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "</span>
-<span style="color: #bc8f8f;">"aliquip ex ea commodo consequat. Duis aute irure dolor in "</span>
-<span style="color: #bc8f8f;">"reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "</span>
-<span style="color: #bc8f8f;">"pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "</span>
-<span style="color: #bc8f8f;">"culpa qui officia deserunt mollit anim id est laborum."</span><span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">lorem</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Insert a lorem ipsum."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>insert <span style="color: #8b2252;">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "</span>
+          <span style="color: #8b2252;">"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"</span>
+          <span style="color: #8b2252;">"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "</span>
+          <span style="color: #8b2252;">"aliquip ex ea commodo consequat. Duis aute irure dolor in "</span>
+          <span style="color: #8b2252;">"reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "</span>
+          <span style="color: #8b2252;">"pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "</span>
+          <span style="color: #8b2252;">"culpa qui officia deserunt mollit anim id est laborum."</span><span style="color: #8c8c8c;">))</span>
 
 </pre>
 
@@ -433,14 +416,13 @@ Useful when a large block of text is required (e.g. for testing)
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">switch-or-start</span> <span style="color: #8c8c8c;">(</span>function buffer<span style="color: #8c8c8c;">)</span>
-<span style="color: #bc8f8f;">"If the buffer is current, bury it, otherwise invoke the function."</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>equal <span style="color: #8c8c8c;">(</span>buffer-name <span style="color: #8c8c8c;">(</span>current-buffer<span style="color: #8c8c8c;">))</span> buffer<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>bury-buffer<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>get-buffer buffer<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>switch-to-buffer buffer<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>funcall function<span style="color: #8c8c8c;">))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">switch-or-start</span> <span style="color: #8c8c8c;">(</span>function buffer<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8b2252;">"If the buffer is current, bury it, otherwise invoke the function."</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>equal <span style="color: #8c8c8c;">(</span>buffer-name <span style="color: #8c8c8c;">(</span>current-buffer<span style="color: #8c8c8c;">))</span> buffer<span style="color: #8c8c8c;">)</span>
+      <span style="color: #8c8c8c;">(</span>bury-buffer<span style="color: #8c8c8c;">)</span>
+    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>get-buffer buffer<span style="color: #8c8c8c;">)</span>
+        <span style="color: #8c8c8c;">(</span>switch-to-buffer buffer<span style="color: #8c8c8c;">)</span>
+      <span style="color: #8c8c8c;">(</span>funcall function<span style="color: #8c8c8c;">))))</span>
 
 </pre>
 
@@ -448,11 +430,10 @@ Useful when a large block of text is required (e.g. for testing)
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">insert-date</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"Insert a time-stamp according to locale's date and time format."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>insert <span style="color: #8c8c8c;">(</span>format-time-string <span style="color: #bc8f8f;">"%c"</span> <span style="color: #8c8c8c;">(</span>current-time<span style="color: #8c8c8c;">))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">insert-date</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"Insert a time-stamp according to locale's date and time format."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>insert <span style="color: #8c8c8c;">(</span>format-time-string <span style="color: #8b2252;">"%c"</span> <span style="color: #8c8c8c;">(</span>current-time<span style="color: #8c8c8c;">))))</span>
 
 </pre>
 
@@ -460,11 +441,10 @@ Useful when a large block of text is required (e.g. for testing)
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pairing-bot</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #bc8f8f;">"If you can't pair program with a human, use this instead."</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>message <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>y-or-n-p <span style="color: #bc8f8f;">"Do you have a test for that? "</span><span style="color: #8c8c8c;">)</span> <span style="color: #bc8f8f;">"Good."</span> <span style="color: #bc8f8f;">"Bad!"</span><span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pairing-bot</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8b2252;">"If you can't pair program with a human, use this instead."</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>message <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>y-or-n-p <span style="color: #8b2252;">"Do you have a test for that? "</span><span style="color: #8c8c8c;">)</span> <span style="color: #8b2252;">"Good."</span> <span style="color: #8b2252;">"Bad!"</span><span style="color: #8c8c8c;">)))</span>
 
 </pre>
 
@@ -477,10 +457,9 @@ A monkeypatch to cause annotate to ignore whitespace
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">vc-git-annotate-command</span> <span style="color: #8c8c8c;">(</span>file buf <span style="color: #228b22;">&amp;optional</span> rev<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>name <span style="color: #8c8c8c;">(</span>file-relative-name file<span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span>vc-git-command buf 0 name <span style="color: #bc8f8f;">"blame"</span> <span style="color: #bc8f8f;">"-w"</span> rev<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">vc-git-annotate-command</span> <span style="color: #8c8c8c;">(</span>file buf <span style="color: #228b22;">&amp;optional</span> rev<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>name <span style="color: #8c8c8c;">(</span>file-relative-name file<span style="color: #8c8c8c;">)))</span>
+    <span style="color: #8c8c8c;">(</span>vc-git-command buf 0 name <span style="color: #8b2252;">"blame"</span> <span style="color: #8b2252;">"-w"</span> rev<span style="color: #8c8c8c;">)))</span>
 
 </pre>
 

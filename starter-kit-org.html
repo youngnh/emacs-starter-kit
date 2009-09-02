@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Org</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-08-03 12:29:07 MDT"/>
+<meta name="generated" content="2009-09-02 13:54:57 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -101,9 +101,8 @@ which is also <b>implemented using</b> Org-mode and <a href="http://git-scm.com/
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">org-install</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">org-mouse</span><span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">org-install</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">org-mouse</span><span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -121,24 +120,23 @@ which is also <b>implemented using</b> Org-mode and <a href="http://git-scm.com/
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>add-hook 'org-mode-hook
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #bc8f8f;">"\M-\C-n"</span> 'outline-next-visible-heading<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #bc8f8f;">"\M-\C-p"</span> 'outline-previous-visible-heading<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #bc8f8f;">"\M-\C-u"</span> 'outline-up-heading<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">table
-</span><span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #bc8f8f;">"\M-\C-w"</span> 'org-table-copy-region<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #bc8f8f;">"\M-\C-y"</span> 'org-table-paste-rectangle<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #bc8f8f;">"\M-\C-l"</span> 'org-table-sort-lines<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">display images
-</span><span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #bc8f8f;">"\M-I"</span> 'org-toggle-iimage-in-org<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">;; Uncomment this section if you use yasnippet
-</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">;; yasnippet (using the new org-cycle hooks)
-</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">(make-variable-buffer-local 'yas/trigger-key)
-</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">(setq yas/trigger-key [tab])
-</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">(define-key yas/keymap [tab] 'yas/next-field-group)
-</span><span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'org-mode-hook
+          <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span>
+            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-\C-n"</span> 'outline-next-visible-heading<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-\C-p"</span> 'outline-previous-visible-heading<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-\C-u"</span> 'outline-up-heading<span style="color: #8c8c8c;">)</span>
+            <span style="color: #b22222;">;; </span><span style="color: #b22222;">table
+</span>            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-\C-w"</span> 'org-table-copy-region<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-\C-y"</span> 'org-table-paste-rectangle<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-\C-l"</span> 'org-table-sort-lines<span style="color: #8c8c8c;">)</span>
+            <span style="color: #b22222;">;; </span><span style="color: #b22222;">display images
+</span>            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-I"</span> 'org-toggle-iimage-in-org<span style="color: #8c8c8c;">)</span>
+            <span style="color: #b22222;">;; </span><span style="color: #b22222;">;; Uncomment this section if you use yasnippet
+</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">;; yasnippet (using the new org-cycle hooks)
+</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">(make-variable-buffer-local 'yas/trigger-key)
+</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">(setq yas/trigger-key [tab])
+</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">(define-key yas/keymap [tab] 'yas/next-field-group)
+</span>            <span style="color: #8c8c8c;">))</span>
 
 </pre>
 
@@ -158,19 +156,18 @@ which is also <b>implemented using</b> Org-mode and <a href="http://git-scm.com/
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #5f9ea0;">iimage</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>setq iimage-mode-image-search-path <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #bc8f8f;">"~/"</span><span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">iimage</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>setq iimage-mode-image-search-path <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"~/"</span><span style="color: #8c8c8c;">))</span>
 <span style="color: #b22222;">;;</span><span style="color: #b22222;">Match org file: links
 </span><span style="color: #8c8c8c;">(</span>add-to-list 'iimage-mode-image-regex-alist
-<span style="color: #8c8c8c;">(</span>cons <span style="color: #8c8c8c;">(</span>concat <span style="color: #bc8f8f;">"\\[\\[file:</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">~?"</span> iimage-mode-image-filename-regex
-<span style="color: #bc8f8f;">"</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">\\]"</span><span style="color: #8c8c8c;">)</span>  1<span style="color: #8c8c8c;">))</span>
+             <span style="color: #8c8c8c;">(</span>cons <span style="color: #8c8c8c;">(</span>concat <span style="color: #8b2252;">"\\[\\[file:</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">~?"</span> iimage-mode-image-filename-regex
+                           <span style="color: #8b2252;">"</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">\\]"</span><span style="color: #8c8c8c;">)</span>  1<span style="color: #8c8c8c;">))</span>
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">org-toggle-iimage-in-org</span> <span style="color: #8c8c8c;">()</span>
-<span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>face-underline-p 'org-link<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>set-face-underline-p 'org-link nil<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>set-face-underline-p 'org-link t<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>iimage-mode<span style="color: #8c8c8c;">))</span>
+  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>face-underline-p 'org-link<span style="color: #8c8c8c;">)</span>
+      <span style="color: #8c8c8c;">(</span>set-face-underline-p 'org-link nil<span style="color: #8c8c8c;">)</span>
+      <span style="color: #8c8c8c;">(</span>set-face-underline-p 'org-link t<span style="color: #8c8c8c;">))</span>
+  <span style="color: #8c8c8c;">(</span>iimage-mode<span style="color: #8c8c8c;">))</span>
 
 </pre>
 
@@ -191,14 +188,16 @@ the documentation for the Starter Kit to html.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>setq org-publish-project-alist
-`<span style="color: #8c8c8c;">((</span><span style="color: #bc8f8f;">"starter-kit-documentation"</span>
-<span style="color: #da70d6;">:base-directory</span> ,dotfiles-dir
-<span style="color: #da70d6;">:base-extension</span> <span style="color: #bc8f8f;">"org"</span>
-<span style="color: #da70d6;">:publishing-directory</span> ,<span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #bc8f8f;">"doc"</span> dotfiles-dir<span style="color: #8c8c8c;">)</span>
-<span style="color: #da70d6;">:index-filename</span> <span style="color: #bc8f8f;">"starter-kit.org"</span>
-<span style="color: #da70d6;">:auto-postamble</span> nil<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> <span style="color: #8c8c8c;">(</span>boundp 'org-publish-project-alist<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>setq org-publish-project-alist nil<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>this-dir <span style="color: #8c8c8c;">(</span>file-name-directory <span style="color: #8c8c8c;">(</span>or load-file-name buffer-file-name<span style="color: #8c8c8c;">))))</span>
+  <span style="color: #8c8c8c;">(</span>add-to-list 'org-publish-project-alist
+               `<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"starter-kit-documentation"</span>
+                 <span style="color: #7a378b;">:base-directory</span> ,this-dir
+                 <span style="color: #7a378b;">:base-extension</span> <span style="color: #8b2252;">"org"</span>
+                 <span style="color: #7a378b;">:publishing-directory</span> ,<span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"doc"</span> this-dir<span style="color: #8c8c8c;">)</span>
+                 <span style="color: #7a378b;">:index-filename</span> <span style="color: #8b2252;">"starter-kit.org"</span>
+                 <span style="color: #7a378b;">:auto-postamble</span> nil<span style="color: #8c8c8c;">)))</span>
 
 </pre>
 

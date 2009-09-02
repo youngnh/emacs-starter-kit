@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Registers</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-08-03 12:14:00 MDT"/>
+<meta name="generated" content="2009-09-02 13:54:54 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -89,10 +89,9 @@ You should add registers here for the files you edit most often.
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">dolist</span> <span style="color: #8c8c8c;">(</span>r `<span style="color: #8c8c8c;">((</span>?i <span style="color: #8c8c8c;">(</span>file . ,<span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #bc8f8f;">"init.el"</span><span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span>?s <span style="color: #8c8c8c;">(</span>file . ,<span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #bc8f8f;">"starter-kit.org"</span><span style="color: #8c8c8c;">)))))</span>
-<span style="color: #8c8c8c;">(</span>set-register <span style="color: #8c8c8c;">(</span>car r<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>cadr r<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">dolist</span> <span style="color: #8c8c8c;">(</span>r `<span style="color: #8c8c8c;">((</span>?i <span style="color: #8c8c8c;">(</span>file . ,<span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"init.el"</span><span style="color: #8c8c8c;">)))</span>
+             <span style="color: #8c8c8c;">(</span>?s <span style="color: #8c8c8c;">(</span>file . ,<span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"starter-kit.org"</span><span style="color: #8c8c8c;">)))))</span>
+  <span style="color: #8c8c8c;">(</span>set-register <span style="color: #8c8c8c;">(</span>car r<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>cadr r<span style="color: #8c8c8c;">)))</span>
 
 </pre>
 

@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Misc</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-08-03 12:14:07 MDT"/>
+<meta name="generated" content="2009-09-02 13:55:03 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -92,12 +92,11 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> window-system
-<span style="color: #8c8c8c;">(</span>setq frame-title-format '<span style="color: #8c8c8c;">(</span>buffer-file-name <span style="color: #bc8f8f;">"%f"</span> <span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"%b"</span><span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span>tooltip-mode -1<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>tool-bar-mode -1<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>blink-cursor-mode -1<span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> window-system
+  <span style="color: #8c8c8c;">(</span>setq frame-title-format '<span style="color: #8c8c8c;">(</span>buffer-file-name <span style="color: #8b2252;">"%f"</span> <span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"%b"</span><span style="color: #8c8c8c;">)))</span>
+  <span style="color: #8c8c8c;">(</span>tooltip-mode -1<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>tool-bar-mode -1<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>blink-cursor-mode -1<span style="color: #8c8c8c;">))</span>
 
 <span style="color: #8c8c8c;">(</span>mouse-wheel-mode t<span style="color: #8c8c8c;">)</span>
 <span style="color: #8c8c8c;">(</span>set-terminal-coding-system 'utf-8<span style="color: #8c8c8c;">)</span>
@@ -105,22 +104,22 @@ lang="en" xml:lang="en">
 <span style="color: #8c8c8c;">(</span>prefer-coding-system 'utf-8<span style="color: #8c8c8c;">)</span>
 
 <span style="color: #8c8c8c;">(</span>setq visible-bell t
-echo-keystrokes 0.1
-font-lock-maximum-decoration t
-inhibit-startup-message t
-transient-mark-mode t
-color-theme-is-global t
-delete-by-moving-to-trash t
-shift-select-mode nil
-truncate-partial-width-windows nil
-uniquify-buffer-name-style 'forward
-whitespace-style '<span style="color: #8c8c8c;">(</span>trailing lines space-before-tab
-indentation space-after-tab<span style="color: #8c8c8c;">)</span>
-whitespace-line-column 100
-ediff-window-setup-function 'ediff-setup-windows-plain
-oddmuse-directory <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #bc8f8f;">"oddmuse"</span><span style="color: #8c8c8c;">)</span>
-xterm-mouse-mode t
-save-place-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #bc8f8f;">"places"</span><span style="color: #8c8c8c;">))</span>
+      echo-keystrokes 0.1
+      font-lock-maximum-decoration t
+      inhibit-startup-message t
+      transient-mark-mode t
+      color-theme-is-global t
+      delete-by-moving-to-trash t
+      shift-select-mode nil
+      truncate-partial-width-windows nil
+      uniquify-buffer-name-style 'forward
+      whitespace-style '<span style="color: #8c8c8c;">(</span>trailing lines space-before-tab
+                                  indentation space-after-tab<span style="color: #8c8c8c;">)</span>
+      whitespace-line-column 100
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      oddmuse-directory <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"oddmuse"</span><span style="color: #8c8c8c;">)</span>
+      xterm-mouse-mode t
+      save-place-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"places"</span><span style="color: #8c8c8c;">))</span>
 </pre>
 
 
@@ -158,8 +157,7 @@ save-place-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span 
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>auto-compression-mode t<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>auto-compression-mode t<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -177,8 +175,7 @@ save-place-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span 
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>global-font-lock-mode t<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>global-font-lock-mode t<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -197,8 +194,7 @@ save-place-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span 
 </p>
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>menu-bar-mode -1<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>menu-bar-mode -1<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -226,8 +222,7 @@ save-place-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span 
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>show-paren-mode 1<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>show-paren-mode 1<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -246,14 +241,13 @@ save-place-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span 
 </p>
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>&gt; emacs-major-version 21<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>ido-mode t<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>setq ido-enable-prefix nil
-ido-enable-flex-matching t
-ido-create-new-buffer 'always
-ido-use-filename-at-point t
-ido-max-prospects 10<span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>&gt; emacs-major-version 21<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>ido-mode t<span style="color: #8c8c8c;">)</span>
+  <span style="color: #8c8c8c;">(</span>setq ido-enable-prefix nil
+        ido-enable-flex-matching t
+        ido-create-new-buffer 'always
+        ido-use-filename-at-point t
+        ido-max-prospects 10<span style="color: #8c8c8c;">))</span>
 
 </pre>
 
@@ -271,16 +265,15 @@ ido-max-prospects 10<span style="color: #8c8c8c;">))</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>set-default 'indent-tabs-mode nil<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>set-default 'indent-tabs-mode nil<span style="color: #8c8c8c;">)</span>
 <span style="color: #8c8c8c;">(</span>set-default 'indicate-empty-lines t<span style="color: #8c8c8c;">)</span>
 <span style="color: #8c8c8c;">(</span>set-default 'imenu-auto-rescan t<span style="color: #8c8c8c;">)</span>
 
 <span style="color: #8c8c8c;">(</span>add-hook 'text-mode-hook 'turn-on-auto-fill<span style="color: #8c8c8c;">)</span>
 <span style="color: #8c8c8c;">(</span>add-hook 'text-mode-hook 'turn-on-flyspell<span style="color: #8c8c8c;">)</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defvar</span> <span style="color: #b8860b;">coding-hook</span> nil
-<span style="color: #bc8f8f;">"Hook that gets run on activation of any programming mode."</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defvar</span> <span style="color: #a0522d;">coding-hook</span> nil
+  <span style="color: #8b2252;">"Hook that gets run on activation of any programming mode."</span><span style="color: #8c8c8c;">)</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defalias</span> '<span style="color: #0000ff;">yes-or-no-p</span> 'y-or-n-p<span style="color: #8c8c8c;">)</span>
 <span style="color: #8c8c8c;">(</span>random t<span style="color: #8c8c8c;">)</span> <span style="color: #b22222;">;; </span><span style="color: #b22222;">Seed the random-number generator
@@ -300,8 +293,7 @@ ido-max-prospects 10<span style="color: #8c8c8c;">))</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>delete 'try-expand-line hippie-expand-try-functions-list<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>delete 'try-expand-line hippie-expand-try-functions-list<span style="color: #8c8c8c;">)</span>
 <span style="color: #8c8c8c;">(</span>delete 'try-expand-list hippie-expand-try-functions-list<span style="color: #8c8c8c;">)</span>
 
 </pre>
@@ -320,9 +312,8 @@ ido-max-prospects 10<span style="color: #8c8c8c;">))</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>setq backup-directory-alist `<span style="color: #8c8c8c;">((</span><span style="color: #bc8f8f;">"."</span> . ,<span style="color: #8c8c8c;">(</span>expand-file-name
-<span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #bc8f8f;">"backups"</span><span style="color: #8c8c8c;">)))))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq backup-directory-alist `<span style="color: #8c8c8c;">((</span><span style="color: #8b2252;">"."</span> . ,<span style="color: #8c8c8c;">(</span>expand-file-name
+                                        <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"backups"</span><span style="color: #8c8c8c;">)))))</span>
 
 </pre>
 
@@ -340,11 +331,10 @@ ido-max-prospects 10<span style="color: #8c8c8c;">))</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>setq mumamo-chunk-coloring 'submode-colored
-nxhtml-skip-welcome t
-indent-region-mode t
-rng-nxml-auto-validate-flag nil<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq mumamo-chunk-coloring 'submode-colored
+      nxhtml-skip-welcome t
+      indent-region-mode t
+      rng-nxml-auto-validate-flag nil<span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -362,14 +352,13 @@ rng-nxml-auto-validate-flag nil<span style="color: #8c8c8c;">)</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"COMMIT_EDITMSG$"</span> . diff-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.css$"</span> . css-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.ya?ml$"</span> . yaml-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.rb$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"Rakefile$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.js</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">(</span><span style="color: #bc8f8f;">on</span><span style="color: #bc8f8f; font-weight: bold;">\\</span><span style="color: #bc8f8f; font-weight: bold;">)</span><span style="color: #bc8f8f;">?$"</span> . js2-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.xml$"</span> . nxml-mode<span style="color: #8c8c8c;">))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"COMMIT_EDITMSG$"</span> . diff-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.css$"</span> . css-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.ya?ml$"</span> . yaml-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.rb$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"Rakefile$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.js</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">on</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">?$"</span> . js2-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.xml$"</span> . nxml-mode<span style="color: #8c8c8c;">))</span>
 
 </pre>
 
@@ -387,8 +376,7 @@ rng-nxml-auto-validate-flag nil<span style="color: #8c8c8c;">)</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span>setq diff-switches <span style="color: #bc8f8f;">"-u"</span><span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq diff-switches <span style="color: #8b2252;">"-u"</span><span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -407,20 +395,19 @@ rng-nxml-auto-validate-flag nil<span style="color: #8c8c8c;">)</span>
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'diff-mode
-'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-<span style="color: #8c8c8c;">(</span>set-face-foreground 'diff-added <span style="color: #bc8f8f;">"green4"</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>set-face-foreground 'diff-removed <span style="color: #bc8f8f;">"red3"</span><span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'diff-mode
+  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
+     <span style="color: #8c8c8c;">(</span>set-face-foreground 'diff-added <span style="color: #8b2252;">"green4"</span><span style="color: #8c8c8c;">)</span>
+     <span style="color: #8c8c8c;">(</span>set-face-foreground 'diff-removed <span style="color: #8b2252;">"red3"</span><span style="color: #8c8c8c;">)))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'magit
-'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-<span style="color: #8c8c8c;">(</span>set-face-foreground 'magit-diff-add <span style="color: #bc8f8f;">"green3"</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>set-face-foreground 'magit-diff-del <span style="color: #bc8f8f;">"red3"</span><span style="color: #8c8c8c;">)))</span>
+  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
+     <span style="color: #8c8c8c;">(</span>set-face-foreground 'magit-diff-add <span style="color: #8b2252;">"green3"</span><span style="color: #8c8c8c;">)</span>
+     <span style="color: #8c8c8c;">(</span>set-face-foreground 'magit-diff-del <span style="color: #8b2252;">"red3"</span><span style="color: #8c8c8c;">)))</span>
 
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'nxhtml
-'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'zenburn
-'<span style="color: #8c8c8c;">(</span>set-face-background 'mumamo-background-chunk-submode <span style="color: #bc8f8f;">"gray22"</span><span style="color: #8c8c8c;">)))</span>
+  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'zenburn
+     '<span style="color: #8c8c8c;">(</span>set-face-background 'mumamo-background-chunk-submode <span style="color: #8b2252;">"gray22"</span><span style="color: #8c8c8c;">)))</span>
 </pre>
 
 

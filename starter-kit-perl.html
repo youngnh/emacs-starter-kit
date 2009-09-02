@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Perl</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-08-03 12:14:01 MDT"/>
+<meta name="generated" content="2009-09-02 13:54:55 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -84,17 +84,16 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp">
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'cperl-mode
-'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-<span style="color: #8c8c8c;">(</span>define-key cperl-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"RET"</span><span style="color: #8c8c8c;">)</span> 'reindent-then-newline-and-indent<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>define-key cperl-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-M-h"</span><span style="color: #8c8c8c;">)</span> 'backward-kill-word<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'cperl-mode
+  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
+     <span style="color: #8c8c8c;">(</span>define-key cperl-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"RET"</span><span style="color: #8c8c8c;">)</span> 'reindent-then-newline-and-indent<span style="color: #8c8c8c;">)</span>
+     <span style="color: #8c8c8c;">(</span>define-key cperl-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-M-h"</span><span style="color: #8c8c8c;">)</span> 'backward-kill-word<span style="color: #8c8c8c;">)))</span>
 
-<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #bc8f8f;">"C-h P"</span><span style="color: #8c8c8c;">)</span> 'perldoc<span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-h P"</span><span style="color: #8c8c8c;">)</span> 'perldoc<span style="color: #8c8c8c;">)</span>
 
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.p[lm]$"</span> . cperl-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.pod$"</span> . pod-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #bc8f8f;">"\\.tt$"</span> . tt-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.p[lm]$"</span> . cperl-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.pod$"</span> . pod-mode<span style="color: #8c8c8c;">))</span>
+<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.tt$"</span> . tt-mode<span style="color: #8c8c8c;">))</span>
 </pre>
 
 
