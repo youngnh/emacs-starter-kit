@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Bindings</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-02 14:33:39 MDT"/>
+<meta name="generated" content="2009-09-06 16:09:13 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -502,6 +502,41 @@ Key Bindings.
 <pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">provide</span> '<span style="color: #008b8b;">starter-kit-bindings</span><span style="color: #8c8c8c;">)</span>
 <span style="color: #b22222;">;;; </span><span style="color: #b22222;">starter-kit-bindings.el ends here
 </span>
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.23" class="outline-3">
+<h3 id="sec-1.23">Org-mode </h3>
+<div class="outline-text-3" id="text-1.23">
+
+<p>Two global binding for Org-mode (see <a href="starter-kit-org.html">starter-kit-org</a>)
+</p>
+<p>
+The <a href="http://orgmode.org/manual/Agenda-Views.html#Agenda-Views">Org-mode agenda</a> is good to have close at hand
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>define-key global-map <span style="color: #8b2252;">"\C-ca"</span> 'org-agenda<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+<p>
+Org-mode supports <a href="http://orgmode.org/manual/Hyperlinks.html#Hyperlinks">links</a>, this command allows you to store links
+globally for later insertion into an Org-mode buffer.  See
+<a href="http://orgmode.org/manual/Handling-links.html#Handling-links">Handling-links</a> in the Org-mode manual.
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>define-key global-map <span style="color: #8b2252;">"\C-cl"</span> 'org-store-link<span style="color: #8c8c8c;">)</span>
+
 </pre>
 
 

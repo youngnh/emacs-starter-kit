@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Misc</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-02 14:33:00 MDT"/>
+<meta name="generated" content="2009-09-06 16:08:46 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -325,29 +325,8 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1.12" class="outline-3">
-<h3 id="sec-1.12">nxhtml stuff </h3>
+<h3 id="sec-1.12">Associate modes with file extensions </h3>
 <div class="outline-text-3" id="text-1.12">
-
-
-
-
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq mumamo-chunk-coloring 'submode-colored
-      nxhtml-skip-welcome t
-      indent-region-mode t
-      rng-nxml-auto-validate-flag nil<span style="color: #8c8c8c;">)</span>
-
-</pre>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1.13" class="outline-3">
-<h3 id="sec-1.13">Associate modes with file extensions </h3>
-<div class="outline-text-3" id="text-1.13">
 
 
 
@@ -369,9 +348,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-1.14" class="outline-3">
-<h3 id="sec-1.14">Default to unified diffs </h3>
-<div class="outline-text-3" id="text-1.14">
+<div id="outline-container-1.13" class="outline-3">
+<h3 id="sec-1.13">Default to unified diffs </h3>
+<div class="outline-text-3" id="text-1.13">
 
 
 
@@ -387,9 +366,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-1.15" class="outline-3">
-<h3 id="sec-1.15">Cosmetics </h3>
-<div class="outline-text-3" id="text-1.15">
+<div id="outline-container-1.14" class="outline-3">
+<h3 id="sec-1.14">Cosmetics </h3>
+<div class="outline-text-3" id="text-1.14">
 
 
 
@@ -404,10 +383,6 @@ lang="en" xml:lang="en">
   '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
      <span style="color: #8c8c8c;">(</span>set-face-foreground 'magit-diff-add <span style="color: #8b2252;">"green3"</span><span style="color: #8c8c8c;">)</span>
      <span style="color: #8c8c8c;">(</span>set-face-foreground 'magit-diff-del <span style="color: #8b2252;">"red3"</span><span style="color: #8c8c8c;">)))</span>
-
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'nxhtml
-  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'zenburn
-     '<span style="color: #8c8c8c;">(</span>set-face-background 'mumamo-background-chunk-submode <span style="color: #8b2252;">"gray22"</span><span style="color: #8c8c8c;">)))</span>
 </pre>
 
 

@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Eshell</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-02 14:33:11 MDT"/>
+<meta name="generated" content="2009-09-06 16:08:53 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -107,6 +107,23 @@ lang="en" xml:lang="en">
      <span style="color: #8c8c8c;">(</span>add-to-list 'eshell-command-completions-alist
                   '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"tar"</span> <span style="color: #8b2252;">"</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">\\.tar|\\.tgz</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">\\.tar\\.gz</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">\\'"</span><span style="color: #8c8c8c;">))</span>
      <span style="color: #8c8c8c;">(</span>add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color<span style="color: #8c8c8c;">)))</span>
+</pre>
+
+
+
+
+<p>
+The <code>eshell</code> directory holds alias definitions and history
+information.  It is much like a <code>.bashrc</code> file for those who are
+familiar with bash.  This set the value of <code>eshell-directory-name</code> to
+point to the <code>eshell</code> directory in this directory.  The <code>alias</code> file
+is pre-populated with some generally applicable aliases.
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq eshell-directory-name <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"eshell"</span> dotfiles-dir<span style="color: #8c8c8c;">))</span>
+
 </pre>
 
 
