@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Bindings</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-06 16:09:13 MDT"/>
+<meta name="generated" content="2009-09-20 08:54:35 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -536,6 +536,64 @@ globally for later insertion into an Org-mode buffer.  See
 
 
 <pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>define-key global-map <span style="color: #8b2252;">"\C-cl"</span> 'org-store-link<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.24" class="outline-3">
+<h3 id="sec-1.24">Magit </h3>
+<div class="outline-text-3" id="text-1.24">
+
+<p>It's to the point now where I almost can't use git without magit.
+</p><ul>
+<li>
+<a href="http://zagadka.vm.bytemark.co.uk/magit/">Homepage</a>
+</li>
+<li>
+<a href="http://zagadka.vm.bytemark.co.uk/magit/magit.html">Manual</a>
+</li>
+<li>
+<a href="http://groups.google.com/group/magit/">Mailing list</a>
+
+</li>
+</ul>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">magit</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>define-key global-map <span style="color: #8b2252;">"\M-\C-g"</span> 'magit-status<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+<pre class="example">
+magit-status
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.25" class="outline-3">
+<h3 id="sec-1.25">Rgrep </h3>
+<div class="outline-text-3" id="text-1.25">
+
+<p>Rgrep is infinitely useful in multi-file projects.
+</p>
+<p>
+(see <i>&lt;elisp:(describe-function 'rgrep)&gt;</i>)
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>define-key global-map <span style="color: #8b2252;">"\C-x\C-r"</span> 'rgrep<span style="color: #8c8c8c;">)</span>
 
 </pre>
 

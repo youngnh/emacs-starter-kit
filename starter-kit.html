@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-06 16:08:34 MDT"/>
+<meta name="generated" content="2009-09-20 08:53:54 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -611,7 +611,49 @@ turn off these sections if you don't plan on using the related mode or
 language.
 </p>
 <ul>
-<li id="sec-2.3.1">Starter kit Org-mode <br/>
+<li id="sec-2.3.1">Starter kit yasnippet <br/>
+<a href="http://code.google.com/p/yasnippet/">yasnippet</a> is yet another snippet expansion system for Emacs.  It is
+inspired by TextMate's templating syntax.
+<ul>
+<li>
+watch the <a href="http://www.youtube.com/watch?v=vOj7btx3ATg">video on YouTube</a>
+</li>
+<li>
+see the <a href="http://yasnippet.googlecode.com/svn/trunk/doc/index.html">intro and tutorial</a>
+
+</li>
+</ul>
+
+<p>load the yasnippet bundle
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-to-list 'load-path
+             <span style="color: #8c8c8c;">(</span>expand-file-name  <span style="color: #8b2252;">"yasnippet"</span>
+                                <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"src"</span>
+                                                  dotfiles-dir<span style="color: #8c8c8c;">)))</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">yasnippet</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span>yas/initialize<span style="color: #8c8c8c;">)</span>
+
+</pre>
+
+
+
+
+<p>
+load the snippets defined in the <code>./snippets/</code> directory
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>yas/load-directory <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"snippets"</span> dotfiles-dir<span style="color: #8c8c8c;">))</span>
+
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.3.2">Starter kit Org-mode <br/>
 Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
 
@@ -625,7 +667,7 @@ Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
 
 </li>
-<li id="sec-2.3.2">Starter kit eshell <br/>
+<li id="sec-2.3.3">Starter kit eshell <br/>
 Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
 
@@ -639,7 +681,7 @@ Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
 
 </li>
-<li id="sec-2.3.3">Starter kit lisp <br/>
+<li id="sec-2.3.4">Starter kit lisp <br/>
 Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
 
@@ -653,7 +695,7 @@ Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
 
 </li>
-<li id="sec-2.3.4">Starter kit ruby <br/>
+<li id="sec-2.3.5">Starter kit ruby <br/>
 Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
 
@@ -667,7 +709,7 @@ Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
 
 </li>
-<li id="sec-2.3.5">Starter kit JS <br/>
+<li id="sec-2.3.6">Starter kit JS <br/>
 Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
 
@@ -681,7 +723,7 @@ Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
 
 </li>
-<li id="sec-2.3.6">Starter Kit Perl <br/>
+<li id="sec-2.3.7">Starter Kit Perl <br/>
 Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
 
 
@@ -715,13 +757,13 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
       <span style="color: #8c8c8c;">(</span>normal-top-level-add-subdirs-to-load-path<span style="color: #8c8c8c;">)))</span>
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p system-specific-config<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>load system-specific-config<span style="color: #8c8c8c;">))</span>
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p system-specific-literate-config<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span>org-babel-load system-specific-literate-config<span style="color: #8c8c8c;">))</span>
+    <span style="color: #8c8c8c;">(</span>org-babel-load-file system-specific-literate-config<span style="color: #8c8c8c;">))</span>
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-config<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>load user-specific-config<span style="color: #8c8c8c;">))</span>
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-literate-config<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span>org-babel-load user-specific-literate-config<span style="color: #8c8c8c;">))</span>
+    <span style="color: #8c8c8c;">(</span>org-babel-load-file user-specific-literate-config<span style="color: #8c8c8c;">))</span>
 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-dir<span style="color: #8c8c8c;">)</span>
   <span style="color: #8c8c8c;">(</span>mapc #'load <span style="color: #8c8c8c;">(</span>directory-files user-specific-dir nil <span style="color: #8b2252;">".*el$"</span><span style="color: #8c8c8c;">))</span>
-  <span style="color: #8c8c8c;">(</span>mapc #'org-babel-load <span style="color: #8c8c8c;">(</span>directory-files user-specific-dir nil <span style="color: #8b2252;">".*org$"</span><span style="color: #8c8c8c;">)))</span>
+  <span style="color: #8c8c8c;">(</span>mapc #'org-babel-load-file <span style="color: #8c8c8c;">(</span>directory-files user-specific-dir nil <span style="color: #8b2252;">".*org$"</span><span style="color: #8c8c8c;">)))</span>
 
 </pre>
 

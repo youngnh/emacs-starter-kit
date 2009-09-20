@@ -8,7 +8,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Org</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-06 16:08:42 MDT"/>
+<meta name="generated" content="2009-09-20 08:54:03 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -102,7 +102,19 @@ which is also <b>implemented using</b> Org-mode and <a href="http://git-scm.com/
 
 
 <pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">org-install</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">org-mouse</span><span style="color: #8c8c8c;">)</span>
+<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> window-system <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">org-mouse</span><span style="color: #8c8c8c;">))</span>
+
+</pre>
+
+
+
+
+<p>
+Lets see how we like org-indent
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">org-indent</span><span style="color: #8c8c8c;">)</span>
 
 </pre>
 
@@ -116,6 +128,17 @@ which is also <b>implemented using</b> Org-mode and <a href="http://git-scm.com/
 <div id="outline-container-1.2" class="outline-3">
 <h3 id="sec-1.2">Org-Mode Hook </h3>
 <div class="outline-text-3" id="text-1.2">
+
+<p>The latest version of yasnippets doesn't play well with Org-mode, the
+following function allows these two to play nicely together
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">yas/org-very-safe-expand</span> <span style="color: #8c8c8c;">()</span>
+  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>yas/fallback-behavior 'return-nil<span style="color: #8c8c8c;">))</span> <span style="color: #8c8c8c;">(</span>yas/expand<span style="color: #8c8c8c;">)))</span>
+
+</pre>
+
 
 
 
@@ -131,12 +154,12 @@ which is also <b>implemented using</b> Org-mode and <a href="http://git-scm.com/
             <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-\C-l"</span> 'org-table-sort-lines<span style="color: #8c8c8c;">)</span>
             <span style="color: #b22222;">;; </span><span style="color: #b22222;">display images
 </span>            <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8b2252;">"\M-I"</span> 'org-toggle-iimage-in-org<span style="color: #8c8c8c;">)</span>
-            <span style="color: #b22222;">;; </span><span style="color: #b22222;">;; Uncomment this section if you use yasnippet
-</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">;; yasnippet (using the new org-cycle hooks)
-</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">(make-variable-buffer-local 'yas/trigger-key)
-</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">(setq yas/trigger-key [tab])
-</span>            <span style="color: #b22222;">;; </span><span style="color: #b22222;">(define-key yas/keymap [tab] 'yas/next-field-group)
-</span>            <span style="color: #8c8c8c;">))</span>
+            <span style="color: #b22222;">;; </span><span style="color: #b22222;">yasnippet (using the new org-cycle hooks)
+</span>            <span style="color: #8c8c8c;">(</span>make-variable-buffer-local 'yas/trigger-key<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">(</span>setq yas/trigger-key [tab]<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">(</span>add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">(</span>define-key yas/keymap [tab] 'yas/next-field<span style="color: #8c8c8c;">)</span>
+            <span style="color: #8c8c8c;">))</span>
 
 </pre>
 
