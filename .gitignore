@@ -1,0 +1,6 @@
+# gh-pages should ignore alot
+backup
+src
+doc
+*.el
+*.org
