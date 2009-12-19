@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Starter Kit LaTeX</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-12-18 18:28:14 MST"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #232323;
+	color: #E6E1DC;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">Starter Kit LaTeX</h1>
+
+<p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
+</p>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Starter Kit LaTeX </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Support for editing LaTeX.
+</p>
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1">Load Packages </h3>
+<div class="outline-text-3" id="text-1.1">
+
+
+</div>
+
+<div id="outline-container-1.1.1" class="outline-4">
+<h4 id="sec-1.1.1">Load AucTeX </h4>
+<div class="outline-text-4" id="text-1.1.1">
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>load <span style="color: #A5C261;">"auctex.el"</span> nil t t<span style="color: #7f7f7f;">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.1.2" class="outline-4">
+<h4 id="sec-1.1.2">Load Preview LaTeX </h4>
+<div class="outline-text-4" id="text-1.1.2">
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(load "preview-latex.el" nil t t)
+</span></pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.1.3" class="outline-4">
+<h4 id="sec-1.1.3">Load RefTeX </h4>
+<div class="outline-text-4" id="text-1.1.3">
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'LaTeX-mode-hook 'turn-on-reftex<span style="color: #7f7f7f;">)</span>   <span style="color: #BC9458; font-style: italic;">; </span><span style="color: #BC9458; font-style: italic;">with AUCTeX LaTeX mode
+</span></pre>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1.2" class="outline-3">
+<h3 id="sec-1.2">Configure AucTeX </h3>
+<div class="outline-text-3" id="text-1.2">
+
+
+</div>
+
+<div id="outline-container-1.2.1" class="outline-4">
+<h4 id="sec-1.2.1">Use pdfLaTeX </h4>
+<div class="outline-text-4" id="text-1.2.1">
+
+<ul>
+<li>
+Take this out to compile to DVI, instead.
+
+</li>
+</ul>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'LaTeX-mode-hook 'TeX-PDF-mode<span style="color: #7f7f7f;">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1.2.2" class="outline-4">
+<h4 id="sec-1.2.2">Set a Path to Executables (optional) </h4>
+<div class="outline-text-4" id="text-1.2.2">
+
+<ul>
+<li>
+The location of the LaTeX excecutables is system
+dependent. AUCTeX calls everything through a shell, so you may
+or may not need this.  This source-code block is turned off by
+default as it should be added to the user's personal
+configuration as needed.
+
+</li>
+</ul>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setenv <span style="color: #A5C261;">"PATH"</span> <span style="color: #7f7f7f;">(</span>concat <span style="color: #A5C261;">"/usr/texbin:"</span> <span style="color: #7f7f7f;">(</span>getenv <span style="color: #A5C261;">"PATH"</span><span style="color: #7f7f7f;">)))</span>
+</pre>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1.3" class="outline-3">
+<h3 id="sec-1.3">Configure RefTeX </h3>
+<div class="outline-text-3" id="text-1.3">
+
+
+</div>
+
+<div id="outline-container-1.3.1" class="outline-4">
+<h4 id="sec-1.3.1">Default Bibliography </h4>
+<div class="outline-text-4" id="text-1.3.1">
+
+<ul>
+<li>
+This is important when editing source code in Org-babel, since
+the LaTeX source code block being edited probably doesn't
+include the \bibliography{} command that RefTeX uses to find
+bibliographic database(s).  Make certain also that RefTeX has a
+path to the bibliographic databases.  This source-code block is
+turned off be default as it should be configured by the user in
+a personal file/directory.
+
+</li>
+</ul>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq reftex-default-bibliography
+      <span style="color: #7f7f7f;">(</span>quote
+       <span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"user.bib"</span> <span style="color: #A5C261;">"local.bib"</span><span style="color: #7f7f7f;">)))</span>
+</pre>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1.4" class="outline-3">
+<h3 id="sec-1.4">Configure Org-babel </h3>
+<div class="outline-text-3" id="text-1.4">
+
+<ul>
+<li>
+Add LaTeX to the list of languages Org-babel will recognize.
+
+</li>
+</ul>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>org-babel-add-interpreter <span style="color: #A5C261;">"latex"</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'org-babel-tangle-langs '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"latex"</span> <span style="color: #A5C261;">"tex"</span><span style="color: #7f7f7f;">))</span>
+<span style="color: #BC9458; font-style: italic;">; </span><span style="color: #BC9458; font-style: italic;">(require 'org-babel-latex)
+</span></pre>
+
+
+
+<ul>
+<li>
+Add LaTeX to a list of languages that raise noweb-type errors.
+
+</li>
+</ul>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'org-babel-noweb-error-langs <span style="color: #A5C261;">"latex"</span><span style="color: #7f7f7f;">)</span>
+</pre>
+
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

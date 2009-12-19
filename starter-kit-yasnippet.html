@@ -4,10 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 lang="en" xml:lang="en">
 <head>
-<title>Starter Kit Perl</title>
+<title>starter-kit-yasnippet</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-12-18 18:28:10 MST"/>
+<meta name="generated" content="2009-12-18 18:28:06 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -71,30 +71,53 @@ lang="en" xml:lang="en">
 <body>
 <div id="content">
 
-<h1 class="title">Starter Kit Perl</h1>
+<h1 class="title">starter-kit-yasnippet</h1>
 
-<p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
-</p>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Starter kit yasnippet </a></li>
+</ul>
+</div>
+</div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Starter Kit Perl </h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Starter kit yasnippet </h2>
 <div class="outline-text-2" id="text-1">
 
-<p>Helpers for the <a href="http://www.perl.org/">Perl</a> programming language.
+<p><a href="http://code.google.com/p/yasnippet/">yasnippet</a> is yet another snippet expansion system for Emacs.  It is
+inspired by TextMate's templating syntax.
+</p><ul>
+<li>
+watch the <a href="http://www.youtube.com/watch?v=vOj7btx3ATg">video on YouTube</a>
+</li>
+<li>
+see the <a href="http://yasnippet.googlecode.com/svn/trunk/doc/index.html">intro and tutorial</a>
+
+</li>
+</ul>
+
+<p>load the yasnippet bundle
 </p>
 
 
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'load-path <span style="color: #7f7f7f;">(</span>expand-file-name elisp-source-dir <span style="color: #A5C261;">"yasnippet"</span><span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">yasnippet</span><span style="color: #7f7f7f;">)</span>
+</pre>
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'cperl-mode
-  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
-     <span style="color: #7f7f7f;">(</span>define-key cperl-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"RET"</span><span style="color: #7f7f7f;">)</span> 'reindent-then-newline-and-indent<span style="color: #7f7f7f;">)</span>
-     <span style="color: #7f7f7f;">(</span>define-key cperl-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-M-h"</span><span style="color: #7f7f7f;">)</span> 'backward-kill-word<span style="color: #7f7f7f;">)))</span>
 
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-h P"</span><span style="color: #7f7f7f;">)</span> 'perldoc<span style="color: #7f7f7f;">)</span>
 
-<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.p[lm]$"</span> . cperl-mode<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.pod$"</span> . pod-mode<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.tt$"</span> . tt-mode<span style="color: #7f7f7f;">))</span>
+
+<p>
+load the snippets defined in the <code>./snippets/</code> directory
+</p>
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>yas/load-directory <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"snippets"</span> dotfiles-dir<span style="color: #7f7f7f;">))</span>
 </pre>
 
 

@@ -4,11 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 lang="en" xml:lang="en">
 <head>
-
 <title>Starter Kit Eshell</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-20 08:54:15 MDT"/>
+<meta name="generated" content="2009-12-18 18:28:18 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -25,7 +24,8 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
+	background-color: #232323;
+	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -70,6 +70,7 @@ lang="en" xml:lang="en">
 </head>
 <body>
 <div id="content">
+
 <h1 class="title">Starter Kit Eshell</h1>
 
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
@@ -84,29 +85,29 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq eshell-cmpl-cycle-completions nil
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq eshell-cmpl-cycle-completions nil
       eshell-save-history-on-exit t
-      eshell-cmpl-dir-ignore <span style="color: #8b2252;">"\\`</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">\\.\\.?</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">CVS</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">\\.svn</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">\\.git</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">/\\'"</span><span style="color: #8c8c8c;">)</span>
+      eshell-cmpl-dir-ignore <span style="color: #A5C261;">"\\`</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">\\.\\.?</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">CVS</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">\\.svn</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">\\.git</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">/\\'"</span><span style="color: #7f7f7f;">)</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'esh-opt
-  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">em-prompt</span><span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">em-term</span><span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">em-cmpl</span><span style="color: #8c8c8c;">)</span>
-     <span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO: for some reason requiring this here breaks it, but
-</span>     <span style="color: #b22222;">;; </span><span style="color: #b22222;">requiring it after an eshell session is started works fine.
-</span>     <span style="color: #b22222;">;; </span><span style="color: #b22222;">(require 'eshell-vc)
-</span>     <span style="color: #8c8c8c;">(</span>setenv <span style="color: #8b2252;">"PAGER"</span> <span style="color: #8b2252;">"cat"</span><span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>set-face-attribute 'eshell-prompt nil <span style="color: #7a378b;">:foreground</span> <span style="color: #8b2252;">"turquoise1"</span><span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>add-hook 'eshell-mode-hook <span style="color: #b22222;">;; </span><span style="color: #b22222;">for some reason this needs to be a hook
-</span>               '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">(</span>define-key eshell-mode-map <span style="color: #8b2252;">"\C-a"</span> 'eshell-bol<span style="color: #8c8c8c;">)))</span>
-     <span style="color: #8c8c8c;">(</span>add-to-list 'eshell-visual-commands <span style="color: #8b2252;">"ssh"</span><span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>add-to-list 'eshell-visual-commands <span style="color: #8b2252;">"tail"</span><span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>add-to-list 'eshell-command-completions-alist
-                  '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"gunzip"</span> <span style="color: #8b2252;">"gz\\'"</span><span style="color: #8c8c8c;">))</span>
-     <span style="color: #8c8c8c;">(</span>add-to-list 'eshell-command-completions-alist
-                  '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"tar"</span> <span style="color: #8b2252;">"</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">\\.tar|\\.tgz</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">\\.tar\\.gz</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">\\'"</span><span style="color: #8c8c8c;">))</span>
-     <span style="color: #8c8c8c;">(</span>add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color<span style="color: #8c8c8c;">)))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'esh-opt
+  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
+     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">em-prompt</span><span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">em-term</span><span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">em-cmpl</span><span style="color: #7f7f7f;">)</span>
+     <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">TODO: for some reason requiring this here breaks it, but
+</span>     <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">requiring it after an eshell session is started works fine.
+</span>     <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(require 'eshell-vc)
+</span>     <span style="color: #7f7f7f;">(</span>setenv <span style="color: #A5C261;">"PAGER"</span> <span style="color: #A5C261;">"cat"</span><span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>set-face-attribute 'eshell-prompt nil <span style="color: #D0D0FF;">:foreground</span> <span style="color: #A5C261;">"turquoise1"</span><span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>add-hook 'eshell-mode-hook <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">for some reason this needs to be a hook
+</span>               '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>define-key eshell-mode-map <span style="color: #A5C261;">"\C-a"</span> 'eshell-bol<span style="color: #7f7f7f;">)))</span>
+     <span style="color: #7f7f7f;">(</span>add-to-list 'eshell-visual-commands <span style="color: #A5C261;">"ssh"</span><span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>add-to-list 'eshell-visual-commands <span style="color: #A5C261;">"tail"</span><span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>add-to-list 'eshell-command-completions-alist
+                  '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"gunzip"</span> <span style="color: #A5C261;">"gz\\'"</span><span style="color: #7f7f7f;">))</span>
+     <span style="color: #7f7f7f;">(</span>add-to-list 'eshell-command-completions-alist
+                  '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"tar"</span> <span style="color: #A5C261;">"</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">\\.tar|\\.tgz</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">\\.tar\\.gz</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">\\'"</span><span style="color: #7f7f7f;">))</span>
+     <span style="color: #7f7f7f;">(</span>add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 
@@ -122,8 +123,7 @@ is pre-populated with some generally applicable aliases.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq eshell-directory-name <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"./"</span> <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"eshell"</span> dotfiles-dir<span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq eshell-directory-name <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"./"</span> <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"eshell"</span> dotfiles-dir<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 

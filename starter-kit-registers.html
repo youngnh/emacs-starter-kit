@@ -4,11 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 lang="en" xml:lang="en">
 <head>
-
 <title>Starter Kit Registers</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-20 08:54:00 MDT"/>
+<meta name="generated" content="2009-12-18 18:28:09 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -25,7 +24,8 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
+	background-color: #232323;
+	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -70,6 +70,7 @@ lang="en" xml:lang="en">
 </head>
 <body>
 <div id="content">
+
 <h1 class="title">Starter Kit Registers</h1>
 
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
@@ -89,28 +90,24 @@ You should add registers here for the files you edit most often.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">dolist</span> <span style="color: #8c8c8c;">(</span>r `<span style="color: #8c8c8c;">((</span>?i <span style="color: #8c8c8c;">(</span>file . ,<span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"init.el"</span><span style="color: #8c8c8c;">)))</span>
-             <span style="color: #8c8c8c;">(</span>?r <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/src/emacs-starter-kit/starter-kit-registers.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?s <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/Documents/school/school.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?e <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/Documents/eric/eric.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?g <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/src/genprog/genprog.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?h <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/Documents/eric/homepage/eric-schulte.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?t <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/src/genprog/lp-genprog/quad/test.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?l <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/src/genprog/lp-genprog/modify.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?b <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/src/org-babel/org-babel.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #b22222;">;; </span><span style="color: #b22222;">classes
-</span>             <span style="color: #8c8c8c;">(</span>?A <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/Documents/school/classes/cs691/cs691.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?O <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/Documents/school/classes/cs587/cs587.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?R <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/Documents/school/classes/cs591-robust-physical-comp/cs591-robust-physical-comp.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">(</span>?S <span style="color: #8c8c8c;">(</span>file . <span style="color: #8b2252;">"~/Documents/school/classes/cs558/cs558.org"</span><span style="color: #8c8c8c;">))</span>
-             <span style="color: #8c8c8c;">))</span>
-  <span style="color: #8c8c8c;">(</span>set-register <span style="color: #8c8c8c;">(</span>car r<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>cadr r<span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">dolist</span> <span style="color: #7f7f7f;">(</span>r `<span style="color: #7f7f7f;">((</span>?i <span style="color: #7f7f7f;">(</span>file . ,<span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"init.el"</span><span style="color: #7f7f7f;">)))</span>
+             <span style="color: #7f7f7f;">(</span>?r <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/src/emacs-starter-kit/starter-kit-registers.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?s <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/Documents/school/school.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?e <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/Documents/eric/eric.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?g <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/src/genprog/genprog.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?h <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/Documents/eric/homepage/eric-schulte.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?t <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/src/genprog/lp-genprog/quad/test.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?l <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/src/genprog/lp-genprog/modify.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?b <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/src/org-babel/org-babel.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?z <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/src/genprog/experiments/zitsers.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">classes
+</span>             <span style="color: #7f7f7f;">(</span>?A <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/Documents/school/classes/cs691/cs691.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?O <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/Documents/school/classes/cs587/cs587.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?R <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/Documents/school/classes/cs591-rpc/cs591-rpc.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">(</span>?S <span style="color: #7f7f7f;">(</span>file . <span style="color: #A5C261;">"~/Documents/school/classes/cs558/cs558.org"</span><span style="color: #7f7f7f;">))</span>
+             <span style="color: #7f7f7f;">))</span>
+  <span style="color: #7f7f7f;">(</span>set-register <span style="color: #7f7f7f;">(</span>car r<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>cadr r<span style="color: #7f7f7f;">)))</span>
 </pre>
-
-
-
-
 
 
 

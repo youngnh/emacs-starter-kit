@@ -4,11 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 lang="en" xml:lang="en">
 <head>
-
 <title>Starter Kit Lisp</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-20 08:54:12 MDT"/>
+<meta name="generated" content="2009-12-18 18:28:14 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -25,7 +24,8 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
+	background-color: #232323;
+	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -70,6 +70,7 @@ lang="en" xml:lang="en">
 </head>
 <body>
 <div id="content">
+
 <h1 class="title">Starter Kit Lisp</h1>
 
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
@@ -92,12 +93,11 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>define-key read-expression-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"TAB"</span><span style="color: #8c8c8c;">)</span> 'lisp-complete-symbol<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>define-key lisp-mode-shared-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-c l"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8b2252;">"lambda"</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>define-key lisp-mode-shared-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"RET"</span><span style="color: #8c8c8c;">)</span> 'reindent-then-newline-and-indent<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>define-key lisp-mode-shared-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-\\"</span><span style="color: #8c8c8c;">)</span> 'lisp-complete-symbol<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>define-key lisp-mode-shared-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-c v"</span><span style="color: #8c8c8c;">)</span> 'eval-buffer<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>define-key read-expression-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"TAB"</span><span style="color: #7f7f7f;">)</span> 'lisp-complete-symbol<span style="color: #7f7f7f;">)</span>
+<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(define-key lisp-mode-shared-map (kbd "C-c l") "lambda")
+</span><span style="color: #7f7f7f;">(</span>define-key lisp-mode-shared-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"RET"</span><span style="color: #7f7f7f;">)</span> 'reindent-then-newline-and-indent<span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>define-key lisp-mode-shared-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-\\"</span><span style="color: #7f7f7f;">)</span> 'lisp-complete-symbol<span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>define-key lisp-mode-shared-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c v"</span><span style="color: #7f7f7f;">)</span> 'eval-buffer<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -119,9 +119,8 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">turn-on-paredit</span> <span style="color: #8c8c8c;">()</span>
-  <span style="color: #8c8c8c;">(</span>paredit-mode +1<span style="color: #8c8c8c;">))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">turn-on-paredit</span> <span style="color: #7f7f7f;">()</span>
+  <span style="color: #7f7f7f;">(</span>paredit-mode +1<span style="color: #7f7f7f;">))</span>
 </pre>
 
 
@@ -145,14 +144,13 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defface</span> <span style="color: #a0522d;">esk-paren-face</span>
-   '<span style="color: #8c8c8c;">((((</span>class color<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>background dark<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span><span style="color: #7a378b;">:foreground</span> <span style="color: #8b2252;">"grey50"</span><span style="color: #8c8c8c;">))</span>
-     <span style="color: #8c8c8c;">(((</span>class color<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>background light<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span><span style="color: #7a378b;">:foreground</span> <span style="color: #8b2252;">"grey55"</span><span style="color: #8c8c8c;">)))</span>
-   <span style="color: #8b2252;">"Face used to dim parentheses."</span>
-   <span style="color: #7a378b;">:group</span> 'starter-kit-faces<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defface</span> <span style="color: #b0c4de;">esk-paren-face</span>
+   '<span style="color: #7f7f7f;">((((</span>class color<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>background dark<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span><span style="color: #D0D0FF;">:foreground</span> <span style="color: #A5C261;">"grey50"</span><span style="color: #7f7f7f;">))</span>
+     <span style="color: #7f7f7f;">(((</span>class color<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>background light<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span><span style="color: #D0D0FF;">:foreground</span> <span style="color: #A5C261;">"grey55"</span><span style="color: #7f7f7f;">)))</span>
+   <span style="color: #A5C261;">"Face used to dim parentheses."</span>
+   <span style="color: #D0D0FF;">:group</span> 'starter-kit-faces<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -170,22 +168,22 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>add-hook 'emacs-lisp-mode-hook 'run-coding-hook<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">(add-hook 'emacs-lisp-mode-hook 'idle-highlight)
-</span><span style="color: #8c8c8c;">(</span>add-hook 'emacs-lisp-mode-hook 'turn-on-paredit<span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode<span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>add-hook 'emacs-lisp-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save<span style="color: #7f7f7f;">)</span>
+<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(add-hook 'emacs-lisp-mode-hook 'idle-highlight)
+</span><span style="color: #7f7f7f;">(</span>add-hook 'emacs-lisp-mode-hook 'turn-on-paredit<span style="color: #7f7f7f;">)</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">esk-remove-elc-on-save</span> <span style="color: #8c8c8c;">()</span>
-  <span style="color: #8b2252;">"If you're saving an elisp file, likely the .elc is no longer valid."</span>
-  <span style="color: #8c8c8c;">(</span>make-local-variable 'after-save-hook<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8c8c8c;">(</span>add-hook 'after-save-hook
-            <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span>
-              <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p <span style="color: #8c8c8c;">(</span>concat buffer-file-name <span style="color: #8b2252;">"c"</span><span style="color: #8c8c8c;">))</span>
-                  <span style="color: #8c8c8c;">(</span>delete-file <span style="color: #8c8c8c;">(</span>concat buffer-file-name <span style="color: #8b2252;">"c"</span><span style="color: #8c8c8c;">))))))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">esk-remove-elc-on-save</span> <span style="color: #7f7f7f;">()</span>
+  <span style="color: #A5C261;">"If you're saving an elisp file, likely the .elc is no longer valid."</span>
+  <span style="color: #7f7f7f;">(</span>make-local-variable 'after-save-hook<span style="color: #7f7f7f;">)</span>
+  <span style="color: #7f7f7f;">(</span>add-hook 'after-save-hook
+            <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span>
+              <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p <span style="color: #7f7f7f;">(</span>concat buffer-file-name <span style="color: #A5C261;">"c"</span><span style="color: #7f7f7f;">))</span>
+                  <span style="color: #7f7f7f;">(</span>delete-file <span style="color: #7f7f7f;">(</span>concat buffer-file-name <span style="color: #A5C261;">"c"</span><span style="color: #7f7f7f;">))))))</span>
 
-<span style="color: #8c8c8c;">(</span>font-lock-add-keywords 'emacs-lisp-mode
-                        '<span style="color: #8c8c8c;">((</span><span style="color: #8b2252;">"(</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">)"</span> . 'esk-paren-face<span style="color: #8c8c8c;">)))</span>
+<span style="color: #7f7f7f;">(</span>font-lock-add-keywords 'emacs-lisp-mode
+                        '<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"(</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">)"</span> . 'esk-paren-face<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 
@@ -203,90 +201,90 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'clojure-mode-hook 'run-coding-hook<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">(add-hook 'clojure-mode-hook 'idle-highlight)
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'clojure-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
+<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(add-hook 'clojure-mode-hook 'idle-highlight)
 </span>
-<span style="color: #8c8c8c;">(</span>font-lock-add-keywords 'clojure-mode
-                        '<span style="color: #8c8c8c;">((</span><span style="color: #8b2252;">"(</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">)"</span> . 'esk-paren-face<span style="color: #8c8c8c;">)))</span>
+<span style="color: #7f7f7f;">(</span>font-lock-add-keywords 'clojure-mode
+                        '<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"(</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">)"</span> . 'esk-paren-face<span style="color: #7f7f7f;">)))</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defface</span> <span style="color: #a0522d;">esk-clojure-trace-face</span>
-   '<span style="color: #8c8c8c;">((((</span>class color<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>background dark<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span><span style="color: #7a378b;">:foreground</span> <span style="color: #8b2252;">"grey50"</span><span style="color: #8c8c8c;">))</span>
-     <span style="color: #8c8c8c;">(((</span>class color<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>background light<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span><span style="color: #7a378b;">:foreground</span> <span style="color: #8b2252;">"grey55"</span><span style="color: #8c8c8c;">)))</span>
-   <span style="color: #8b2252;">"Face used to dim parentheses."</span>
-   <span style="color: #7a378b;">:group</span> 'starter-kit-faces<span style="color: #8c8c8c;">)</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defface</span> <span style="color: #b0c4de;">esk-clojure-trace-face</span>
+   '<span style="color: #7f7f7f;">((((</span>class color<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>background dark<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span><span style="color: #D0D0FF;">:foreground</span> <span style="color: #A5C261;">"grey50"</span><span style="color: #7f7f7f;">))</span>
+     <span style="color: #7f7f7f;">(((</span>class color<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>background light<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span><span style="color: #D0D0FF;">:foreground</span> <span style="color: #A5C261;">"grey55"</span><span style="color: #7f7f7f;">)))</span>
+   <span style="color: #A5C261;">"Face used to dim parentheses."</span>
+   <span style="color: #D0D0FF;">:group</span> 'starter-kit-faces<span style="color: #7f7f7f;">)</span>
 
-<span style="color: #8c8c8c;">(</span>setq esk-clojure-trace-face 'esk-clojure-trace-face<span style="color: #8c8c8c;">)</span>
+<span style="color: #7f7f7f;">(</span>setq esk-clojure-trace-face 'esk-clojure-trace-face<span style="color: #7f7f7f;">)</span>
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">This will make relevant lines stand out more in stack traces
-</span><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">sldb-font-lock</span> <span style="color: #8c8c8c;">()</span>
-  <span style="color: #8c8c8c;">(</span>font-lock-add-keywords nil
-                          '<span style="color: #8c8c8c;">((</span><span style="color: #8b2252;">"[0-9]+: </span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">clojure\.</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">core</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">lang</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">.*</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">"</span>
-                             1 esk-clojure-trace-face<span style="color: #8c8c8c;">)</span>
-                            <span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"[0-9]+: </span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">java.*</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">"</span>
-                             1 esk-clojure-trace-face<span style="color: #8c8c8c;">)</span>
-                            <span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"[0-9]+: </span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">swank.*</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">"</span>
-                             1 esk-clojure-trace-face<span style="color: #8c8c8c;">)</span>
-                            <span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\[</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">[A-Z]+</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">\\]"</span>
-                             1 font-lock-function-name-face<span style="color: #8c8c8c;">))))</span>
+<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">This will make relevant lines stand out more in stack traces
+</span><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">sldb-font-lock</span> <span style="color: #7f7f7f;">()</span>
+  <span style="color: #7f7f7f;">(</span>font-lock-add-keywords nil
+                          '<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"[0-9]+: </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">clojure\.</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">core</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">lang</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">.*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">"</span>
+                             1 esk-clojure-trace-face<span style="color: #7f7f7f;">)</span>
+                            <span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"[0-9]+: </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">java.*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">"</span>
+                             1 esk-clojure-trace-face<span style="color: #7f7f7f;">)</span>
+                            <span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"[0-9]+: </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">swank.*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">"</span>
+                             1 esk-clojure-trace-face<span style="color: #7f7f7f;">)</span>
+                            <span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\[</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">[A-Z]+</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">\\]"</span>
+                             1 font-lock-function-name-face<span style="color: #7f7f7f;">))))</span>
 
-<span style="color: #8c8c8c;">(</span>add-hook 'sldb-mode-hook 'sldb-font-lock<span style="color: #8c8c8c;">)</span>
+<span style="color: #7f7f7f;">(</span>add-hook 'sldb-mode-hook 'sldb-font-lock<span style="color: #7f7f7f;">)</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">slime-jump-to-trace</span> <span style="color: #8c8c8c;">(</span><span style="color: #228b22;">&amp;optional</span> on<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8b2252;">"Jump to the file/line that the current stack trace line references.
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">slime-jump-to-trace</span> <span style="color: #7f7f7f;">(</span><span style="color: #ffffff;">&amp;optional</span> on<span style="color: #7f7f7f;">)</span>
+  <span style="color: #A5C261;">"Jump to the file/line that the current stack trace line references.
 Only works with files in your project root's src/, not in dependencies."</span>
-  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">save-excursion</span>
-    <span style="color: #8c8c8c;">(</span>beginning-of-line<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span>search-forward-regexp <span style="color: #8b2252;">"[0-9]: </span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">[</span><span style="color: #8b2252;">^</span><span style="color: #8b2252;">$(]+</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">.*?</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">[0-9]*</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">)"</span><span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>line <span style="color: #8c8c8c;">(</span>string-to-number <span style="color: #8c8c8c;">(</span>match-string 2<span style="color: #8c8c8c;">)))</span>
-          <span style="color: #8c8c8c;">(</span>ns-path <span style="color: #8c8c8c;">(</span>split-string <span style="color: #8c8c8c;">(</span>match-string 1<span style="color: #8c8c8c;">)</span> <span style="color: #8b2252;">"\\."</span><span style="color: #8c8c8c;">))</span>
-          <span style="color: #8c8c8c;">(</span>project-root <span style="color: #8c8c8c;">(</span>locate-dominating-file default-directory <span style="color: #8b2252;">"src/"</span><span style="color: #8c8c8c;">)))</span>
-      <span style="color: #8c8c8c;">(</span>find-file <span style="color: #8c8c8c;">(</span>format <span style="color: #8b2252;">"%s/src/%s.clj"</span> project-root
-                         <span style="color: #8c8c8c;">(</span>mapconcat 'identity ns-path <span style="color: #8b2252;">"/"</span><span style="color: #8c8c8c;">)))</span>
-      <span style="color: #8c8c8c;">(</span>goto-line line<span style="color: #8c8c8c;">))))</span>
+  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
+  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">save-excursion</span>
+    <span style="color: #7f7f7f;">(</span>beginning-of-line<span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span>search-forward-regexp <span style="color: #A5C261;">"[0-9]: </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">[</span><span style="color: #A5C261;">^</span><span style="color: #A5C261;">$(]+</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">.*?</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">[0-9]*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">)"</span><span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>line <span style="color: #7f7f7f;">(</span>string-to-number <span style="color: #7f7f7f;">(</span>match-string 2<span style="color: #7f7f7f;">)))</span>
+          <span style="color: #7f7f7f;">(</span>ns-path <span style="color: #7f7f7f;">(</span>split-string <span style="color: #7f7f7f;">(</span>match-string 1<span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"\\."</span><span style="color: #7f7f7f;">))</span>
+          <span style="color: #7f7f7f;">(</span>project-root <span style="color: #7f7f7f;">(</span>locate-dominating-file default-directory <span style="color: #A5C261;">"src/"</span><span style="color: #7f7f7f;">)))</span>
+      <span style="color: #7f7f7f;">(</span>find-file <span style="color: #7f7f7f;">(</span>format <span style="color: #A5C261;">"%s/src/%s.clj"</span> project-root
+                         <span style="color: #7f7f7f;">(</span>mapconcat 'identity ns-path <span style="color: #A5C261;">"/"</span><span style="color: #7f7f7f;">)))</span>
+      <span style="color: #7f7f7f;">(</span>goto-line line<span style="color: #7f7f7f;">))))</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'slime
-  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defalias</span> '<span style="color: #0000ff;">sldb-toggle-details</span> 'slime-jump-to-trace<span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">sldb-prune-initial-frames</span> <span style="color: #8c8c8c;">(</span>frames<span style="color: #8c8c8c;">)</span>
-       <span style="color: #8b2252;">"Show all stack trace lines by default."</span>
-       frames<span style="color: #8c8c8c;">)))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'slime
+  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
+     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defalias</span> '<span style="color: #FFC66D;">sldb-toggle-details</span> 'slime-jump-to-trace<span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">sldb-prune-initial-frames</span> <span style="color: #7f7f7f;">(</span>frames<span style="color: #7f7f7f;">)</span>
+       <span style="color: #A5C261;">"Show all stack trace lines by default."</span>
+       frames<span style="color: #7f7f7f;">)))</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'find-file-in-project
-  '<span style="color: #8c8c8c;">(</span>add-to-list 'ffip-patterns <span style="color: #8b2252;">"*.clj"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'find-file-in-project
+  '<span style="color: #7f7f7f;">(</span>add-to-list 'ffip-patterns <span style="color: #A5C261;">"*.clj"</span><span style="color: #7f7f7f;">))</span>
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">You might like this, but it's a bit disorienting at first:
-</span><span style="color: #8c8c8c;">(</span>add-hook 'clojure-mode-hook 'turn-on-paredit<span style="color: #8c8c8c;">)</span>
+<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">You might like this, but it's a bit disorienting at first:
+</span><span style="color: #7f7f7f;">(</span>add-hook 'clojure-mode-hook 'turn-on-paredit<span style="color: #7f7f7f;">)</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">clojure-project</span> <span style="color: #8c8c8c;">(</span>path<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8b2252;">"Setup classpaths for a clojure project and starts a new SLIME session.
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">clojure-project</span> <span style="color: #7f7f7f;">(</span>path<span style="color: #7f7f7f;">)</span>
+  <span style="color: #A5C261;">"Setup classpaths for a clojure project and starts a new SLIME session.
 
 Kills existing SLIME session, if any."</span>
-  <span style="color: #8c8c8c;">(</span>interactive <span style="color: #8c8c8c;">(</span>list
-                <span style="color: #8c8c8c;">(</span>ido-read-directory-name
-                 <span style="color: #8b2252;">"Project root: "</span>
-                 <span style="color: #8c8c8c;">(</span>locate-dominating-file default-directory <span style="color: #8b2252;">"pom.xml"</span><span style="color: #8c8c8c;">))))</span>
-  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>get-buffer <span style="color: #8b2252;">"*inferior-lisp*"</span><span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span>kill-buffer <span style="color: #8b2252;">"*inferior-lisp*"</span><span style="color: #8c8c8c;">))</span>
-  <span style="color: #8c8c8c;">(</span>add-to-list 'swank-clojure-extra-vm-args
-               <span style="color: #8c8c8c;">(</span>format <span style="color: #8b2252;">"-Dclojure.compile.path=%s"</span>
-                       <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"target/classes/"</span> path<span style="color: #8c8c8c;">)))</span>
-  <span style="color: #8c8c8c;">(</span>setq swank-clojure-binary nil
-        swank-clojure-jar-path <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"target/dependency/"</span> path<span style="color: #8c8c8c;">)</span>
+  <span style="color: #7f7f7f;">(</span>interactive <span style="color: #7f7f7f;">(</span>list
+                <span style="color: #7f7f7f;">(</span>ido-read-directory-name
+                 <span style="color: #A5C261;">"Project root: "</span>
+                 <span style="color: #7f7f7f;">(</span>locate-dominating-file default-directory <span style="color: #A5C261;">"pom.xml"</span><span style="color: #7f7f7f;">))))</span>
+  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>get-buffer <span style="color: #A5C261;">"*inferior-lisp*"</span><span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span>kill-buffer <span style="color: #A5C261;">"*inferior-lisp*"</span><span style="color: #7f7f7f;">))</span>
+  <span style="color: #7f7f7f;">(</span>add-to-list 'swank-clojure-extra-vm-args
+               <span style="color: #7f7f7f;">(</span>format <span style="color: #A5C261;">"-Dclojure.compile.path=%s"</span>
+                       <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"target/classes/"</span> path<span style="color: #7f7f7f;">)))</span>
+  <span style="color: #7f7f7f;">(</span>setq swank-clojure-binary nil
+        swank-clojure-jar-path <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"target/dependency/"</span> path<span style="color: #7f7f7f;">)</span>
         swank-clojure-extra-classpaths
-        <span style="color: #8c8c8c;">(</span>append <span style="color: #8c8c8c;">(</span>mapcar <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>d<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>expand-file-name d path<span style="color: #8c8c8c;">))</span>
-                        '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"src/"</span> <span style="color: #8b2252;">"target/classes/"</span> <span style="color: #8b2252;">"test/"</span><span style="color: #8c8c8c;">))</span>
-                <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>lib <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"lib"</span> path<span style="color: #8c8c8c;">)))</span>
-                  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p lib<span style="color: #8c8c8c;">)</span>
-                      <span style="color: #8c8c8c;">(</span>directory-files lib t <span style="color: #8b2252;">".jar$"</span><span style="color: #8c8c8c;">))))</span>
+        <span style="color: #7f7f7f;">(</span>append <span style="color: #7f7f7f;">(</span>mapcar <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>d<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>expand-file-name d path<span style="color: #7f7f7f;">))</span>
+                        '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"src/"</span> <span style="color: #A5C261;">"target/classes/"</span> <span style="color: #A5C261;">"test/"</span><span style="color: #7f7f7f;">))</span>
+                <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>lib <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"lib"</span> path<span style="color: #7f7f7f;">)))</span>
+                  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p lib<span style="color: #7f7f7f;">)</span>
+                      <span style="color: #7f7f7f;">(</span>directory-files lib t <span style="color: #A5C261;">".jar$"</span><span style="color: #7f7f7f;">))))</span>
         slime-lisp-implementations
-        <span style="color: #8c8c8c;">(</span>cons `<span style="color: #8c8c8c;">(</span>clojure ,<span style="color: #8c8c8c;">(</span>swank-clojure-cmd<span style="color: #8c8c8c;">)</span> <span style="color: #7a378b;">:init</span> swank-clojure-init<span style="color: #8c8c8c;">)</span>
-              <span style="color: #8c8c8c;">(</span>remove-if #'<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>x<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>eq <span style="color: #8c8c8c;">(</span>car x<span style="color: #8c8c8c;">)</span> 'clojure<span style="color: #8c8c8c;">))</span>
-                         slime-lisp-implementations<span style="color: #8c8c8c;">)))</span>
-  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">save-window-excursion</span>
-    <span style="color: #8c8c8c;">(</span>slime<span style="color: #8c8c8c;">)))</span>
+        <span style="color: #7f7f7f;">(</span>cons `<span style="color: #7f7f7f;">(</span>clojure ,<span style="color: #7f7f7f;">(</span>swank-clojure-cmd<span style="color: #7f7f7f;">)</span> <span style="color: #D0D0FF;">:init</span> swank-clojure-init<span style="color: #7f7f7f;">)</span>
+              <span style="color: #7f7f7f;">(</span>remove-if #'<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>x<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>eq <span style="color: #7f7f7f;">(</span>car x<span style="color: #7f7f7f;">)</span> 'clojure<span style="color: #7f7f7f;">))</span>
+                         slime-lisp-implementations<span style="color: #7f7f7f;">)))</span>
+  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">save-window-excursion</span>
+    <span style="color: #7f7f7f;">(</span>slime<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 
@@ -304,11 +302,10 @@ Kills existing SLIME session, if any."</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'scheme-mode-hook 'run-coding-hook<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">(add-hook 'scheme-mode-hook 'idle-highlight)
-</span><span style="color: #8c8c8c;">(</span>font-lock-add-keywords 'scheme-mode
-                        '<span style="color: #8c8c8c;">((</span><span style="color: #8b2252;">"(</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">)"</span> . 'esk-paren-face<span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'scheme-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
+<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(add-hook 'scheme-mode-hook 'idle-highlight)
+</span><span style="color: #7f7f7f;">(</span>font-lock-add-keywords 'scheme-mode
+                        '<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"(</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">)"</span> . 'esk-paren-face<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 
@@ -326,12 +323,11 @@ Kills existing SLIME session, if any."</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'lisp-mode-hook 'run-coding-hook<span style="color: #8c8c8c;">)</span>
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">(add-hook 'lisp-mode-hook 'idle-highlight)
-</span><span style="color: #8c8c8c;">(</span>add-hook 'lisp-mode-hook 'turn-on-paredit<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>font-lock-add-keywords 'lisp-mode
-                        '<span style="color: #8c8c8c;">((</span><span style="color: #8b2252;">"(</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">|</span><span style="color: #8b2252;">)"</span> . 'esk-paren-face<span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'lisp-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
+<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(add-hook 'lisp-mode-hook 'idle-highlight)
+</span><span style="color: #7f7f7f;">(</span>add-hook 'lisp-mode-hook 'turn-on-paredit<span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>font-lock-add-keywords 'lisp-mode
+                        '<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"(</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">)"</span> . 'esk-paren-face<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 

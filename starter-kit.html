@@ -4,11 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 lang="en" xml:lang="en">
 <head>
-
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-20 08:53:54 MDT"/>
+<meta name="generated" content="2009-12-18 18:36:09 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -25,7 +24,8 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
+	background-color: #232323;
+	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -70,6 +70,7 @@ lang="en" xml:lang="en">
 </head>
 <body>
 <div id="content">
+
 <h1 class="title">Emacs Starter Kit</h1>
 
 <blockquote>
@@ -79,7 +80,7 @@ way that the noonday sun does the stars. It is not just bigger and
 brighter; it simply makes everything else vanish.
 </p>
 <p>
--Neal Stephenson, "In the Beginning was the Command Line"
+&ndash; Neal Stephenson, "In the Beginning was the Command Line"
 </p>
 </blockquote>
 
@@ -89,16 +90,16 @@ brighter; it simply makes everything else vanish.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Introduction </a>
+<li><a href="#introduction">Introduction </a>
 <ul>
-<li><a href="#sec-1.1">Learning </a></li>
-<li><a href="#sec-1.2">Installation </a></li>
-<li><a href="#sec-1.3">Structure </a></li>
-<li><a href="#sec-1.4">Emacs Lisp Package Archive </a></li>
-<li><a href="#sec-1.5">Contributing </a></li>
+<li><a href="#learning">Learning </a></li>
+<li><a href="#installation">Installation </a></li>
+<li><a href="#structure">Structure </a></li>
+<li><a href="#elpa">Emacs Lisp Package Archive </a></li>
+<li><a href="#contributing">Contributing </a></li>
 </ul>
 </li>
-<li><a href="#sec-2">Implementation </a>
+<li><a href="#implementation">Implementation </a>
 <ul>
 <li><a href="#sec-2.1">Starter kit basics </a></li>
 <li><a href="#sec-2.2">Load the rest of the starter kit core </a></li>
@@ -106,7 +107,7 @@ brighter; it simply makes everything else vanish.
 <li><a href="#sec-2.4">Load User/System Specific Files </a></li>
 </ul>
 </li>
-<li><a href="#sec-3">Development </a>
+<li><a href="#development">Development </a>
 <ul>
 <li><a href="#sec-3.1">Tasks [1/10] </a></li>
 <li><a href="#sec-3.2">Bugs [0/1] </a></li>
@@ -116,9 +117,9 @@ brighter; it simply makes everything else vanish.
 </div>
 </div>
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Introduction </h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-introduction" class="outline-2">
+<h2 id="introduction"><a name="sec-1" id="sec-1"></a>Introduction </h2>
+<div class="outline-text-2" id="text-introduction">
 
 
 <p>
@@ -152,9 +153,9 @@ git provides for version control, backup, and sharing
 
 </div>
 
-<div id="outline-container-1.1" class="outline-3">
-<h3 id="sec-1.1">Learning </h3>
-<div class="outline-text-3" id="text-1.1">
+<div id="outline-container-learning" class="outline-3">
+<h3 id="learning"><a name="sec-1.1" id="sec-1.1"></a>Learning </h3>
+<div class="outline-text-3" id="text-learning">
 
 
 <p>
@@ -168,9 +169,9 @@ The <a href="http://emacswiki.org">Emacs Wiki</a> is also very handy.
 
 </div>
 
-<div id="outline-container-1.2" class="outline-3">
-<h3 id="sec-1.2">Installation </h3>
-<div class="outline-text-3" id="text-1.2">
+<div id="outline-container-installation" class="outline-3">
+<h3 id="installation"><a name="sec-1.2" id="sec-1.2"></a>Installation </h3>
+<div class="outline-text-3" id="text-installation">
 
 
 <ol>
@@ -184,13 +185,15 @@ install it directly from <a href="http://savannah.gnu.org/projects/emacs/">from 
 Move the directory containing this file to <code>~/.emacs.d</code> <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
 </li>
 <li>
-Install the Org-mode and Org-babel <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules">submodules</a> with the following
+Install the Org-mode <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules">submodules</a> with the following &ndash; if you're new
+to git checkout this <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">git-tutorial</a>, also we'd highly recommend that
+you try out <a href="http://zagadka.vm.bytemark.co.uk/magit/magit.html">magit</a> the Emacs mode for git interaction which comes
+bundled in the starter kit.
 
 
 
 <pre class="src src-sh">git submodule init
 git submodule update
-
 </pre>
 
 
@@ -201,9 +204,8 @@ build Org-mode
 
 
 
-<pre class="src src-sh"><span style="color: #7a378b;">cd</span> src/org/
+<pre class="src src-sh"><span style="color: #D0D0FF;">cd</span> src/org/
 make
-
 </pre>
 
 
@@ -226,7 +228,6 @@ single instance using the starter kit, try the following invocation:
 
 
 <pre class="src src-sh">emacs -q -l ~/src/emacs-starter-kit/init.el
-
 </pre>
 
 
@@ -241,9 +242,9 @@ is not present.
 
 </div>
 
-<div id="outline-container-1.3" class="outline-3">
-<h3 id="sec-1.3">Structure </h3>
-<div class="outline-text-3" id="text-1.3">
+<div id="outline-container-structure" class="outline-3">
+<h3 id="structure"><a name="sec-1.3" id="sec-1.3"></a>Structure </h3>
+<div class="outline-text-3" id="text-structure">
 
 
 <p>
@@ -278,9 +279,9 @@ you to merge with newer versions of the starter-kit without conflicts.
 
 </div>
 
-<div id="outline-container-1.4" class="outline-3">
-<h3 id="sec-1.4">Emacs Lisp Package Archive </h3>
-<div class="outline-text-3" id="text-1.4">
+<div id="outline-container-elpa" class="outline-3">
+<h3 id="elpa"><a name="sec-1.4" id="sec-1.4"></a>Emacs Lisp Package Archive </h3>
+<div class="outline-text-3" id="text-elpa">
 
 
 <p>
@@ -311,9 +312,9 @@ starter-kit-elpa-install in a fresh instance.
 
 </div>
 
-<div id="outline-container-1.5" class="outline-3">
-<h3 id="sec-1.5">Contributing </h3>
-<div class="outline-text-3" id="text-1.5">
+<div id="outline-container-contributing" class="outline-3">
+<h3 id="contributing"><a name="sec-1.5" id="sec-1.5"></a>Contributing </h3>
+<div class="outline-text-3" id="text-contributing">
 
 
 <p>
@@ -349,9 +350,9 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Implementation </h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-implementation" class="outline-2">
+<h2 id="implementation"><a name="sec-2" id="sec-2"></a>Implementation </h2>
+<div class="outline-text-2" id="text-implementation">
 
 <p>This section contains all code implementing the Emacs Starter Kit.
 </p>
@@ -369,16 +370,16 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq dotfiles-dir <span style="color: #8c8c8c;">(</span>file-name-directory
-                    <span style="color: #8c8c8c;">(</span>or <span style="color: #8c8c8c;">(</span>buffer-file-name<span style="color: #8c8c8c;">)</span> load-file-name<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq dotfiles-dir <span style="color: #7f7f7f;">(</span>file-name-directory
+                    <span style="color: #7f7f7f;">(</span>or <span style="color: #7f7f7f;">(</span>buffer-file-name<span style="color: #7f7f7f;">)</span> load-file-name<span style="color: #7f7f7f;">)))</span>
 
-<span style="color: #8c8c8c;">(</span>add-to-list 'load-path dotfiles-dir<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'load-path <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"/elpa-to-submit"</span><span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'load-path <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"/elpa-to-submit/jabber"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'load-path dotfiles-dir<span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'load-path <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"/elpa-to-submit"</span><span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'load-path <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"/elpa-to-submit/jabber"</span><span style="color: #7f7f7f;">))</span>
 
-<span style="color: #8c8c8c;">(</span>setq autoload-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"loaddefs.el"</span><span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>setq package-user-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"elpa"</span><span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>setq custom-file <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"custom.el"</span><span style="color: #8c8c8c;">))</span>
+<span style="color: #7f7f7f;">(</span>setq autoload-file <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"loaddefs.el"</span><span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span>setq package-user-dir <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"elpa"</span><span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span>setq custom-file <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"custom.el"</span><span style="color: #7f7f7f;">))</span>
 </pre>
 
 
@@ -394,13 +395,12 @@ since they are likely to be used in every session
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">cl</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">saveplace</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">ffap</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">uniquify</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">ansi-color</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">recentf</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">cl</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">saveplace</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">ffap</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">uniquify</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">ansi-color</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">recentf</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -414,8 +414,7 @@ backport some functionality to Emacs 22 if needed
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">dominating-file</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">dominating-file</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -426,11 +425,10 @@ backport some functionality to Emacs 22 if needed
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">starter-kit-load</span> <span style="color: #8c8c8c;">(</span>file<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8b2252;">"This function is to be used to load starter-kit-*.org files."</span>
-  <span style="color: #8c8c8c;">(</span>org-babel-load-file <span style="color: #8c8c8c;">(</span>expand-file-name file
-                                         dotfiles-dir<span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">starter-kit-load</span> <span style="color: #7f7f7f;">(</span>file<span style="color: #7f7f7f;">)</span>
+  <span style="color: #A5C261;">"This function is to be used to load starter-kit-*.org files."</span>
+  <span style="color: #7f7f7f;">(</span>org-babel-load-file <span style="color: #7f7f7f;">(</span>expand-file-name file
+                                         dotfiles-dir<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 
@@ -445,10 +443,9 @@ Load up <a href="http://tromey.com/elpa/">ELPA</a>, the Emacs Lisp package manag
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">package</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>package-initialize<span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-elpa.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">package</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>package-initialize<span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-elpa.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -463,8 +460,7 @@ Load up starter kit customizations
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>load custom-file 'noerror<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>load custom-file 'noerror<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -478,9 +474,8 @@ Work around a bug on OS X where system-name is FQDN
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>eq system-type 'darwin<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span>setq system-name <span style="color: #8c8c8c;">(</span>car <span style="color: #8c8c8c;">(</span>split-string system-name <span style="color: #8b2252;">"\\."</span><span style="color: #8c8c8c;">))))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>eq system-type 'darwin<span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span>setq system-name <span style="color: #7f7f7f;">(</span>car <span style="color: #7f7f7f;">(</span>split-string system-name <span style="color: #A5C261;">"\\."</span><span style="color: #7f7f7f;">))))</span>
 </pre>
 
 
@@ -497,13 +492,12 @@ in this document).
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq system-specific-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir system-name <span style="color: #8b2252;">".el"</span><span style="color: #8c8c8c;">)</span>
-      system-specific-literate-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir system-name <span style="color: #8b2252;">".org"</span><span style="color: #8c8c8c;">)</span>
-      user-specific-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir user-login-name <span style="color: #8b2252;">".el"</span><span style="color: #8c8c8c;">)</span>
-      user-specific-literate-config <span style="color: #8c8c8c;">(</span>concat dotfiles-dir user-login-name <span style="color: #8b2252;">".org"</span><span style="color: #8c8c8c;">)</span>
-      user-specific-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir user-login-name<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'load-path user-specific-dir<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq system-specific-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir system-name <span style="color: #A5C261;">".el"</span><span style="color: #7f7f7f;">)</span>
+      system-specific-literate-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir system-name <span style="color: #A5C261;">".org"</span><span style="color: #7f7f7f;">)</span>
+      user-specific-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir user-login-name <span style="color: #A5C261;">".el"</span><span style="color: #7f7f7f;">)</span>
+      user-specific-literate-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir user-login-name <span style="color: #A5C261;">".org"</span><span style="color: #7f7f7f;">)</span>
+      user-specific-dir <span style="color: #7f7f7f;">(</span>concat dotfiles-dir user-login-name<span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'load-path user-specific-dir<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -518,9 +512,8 @@ project is not in elpa.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq elisp-source-dir <span style="color: #8c8c8c;">(</span>concat dotfiles-dir <span style="color: #8b2252;">"src"</span><span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'load-path elisp-source-dir<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq elisp-source-dir <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"src"</span><span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'load-path elisp-source-dir<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -547,8 +540,7 @@ Starter kit function definitions in <a href="starter-kit-defuns.html">starter-ki
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-defuns.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-defuns.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -561,8 +553,7 @@ Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-bindings.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-bindings.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -575,8 +566,7 @@ Miscellaneous settings in <a href="starter-kit-misc.html">starter-kit-misc</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-misc.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-misc.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -589,8 +579,7 @@ Registers for jumping to commonly used files in <a href="starter-kit-registers.h
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-registers.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-registers.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -628,13 +617,12 @@ see the <a href="http://yasnippet.googlecode.com/svn/trunk/doc/index.html">intro
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-to-list 'load-path
-             <span style="color: #8c8c8c;">(</span>expand-file-name  <span style="color: #8b2252;">"yasnippet"</span>
-                                <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"src"</span>
-                                                  dotfiles-dir<span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">yasnippet</span><span style="color: #8c8c8c;">)</span>
-<span style="color: #8c8c8c;">(</span>yas/initialize<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'load-path
+             <span style="color: #7f7f7f;">(</span>expand-file-name  <span style="color: #A5C261;">"yasnippet"</span>
+                                <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"src"</span>
+                                                  dotfiles-dir<span style="color: #7f7f7f;">)))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">yasnippet</span><span style="color: #7f7f7f;">)</span>
+<span style="color: #7f7f7f;">(</span>yas/initialize<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -645,8 +633,7 @@ load the snippets defined in the <code>./snippets/</code> directory
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>yas/load-directory <span style="color: #8c8c8c;">(</span>expand-file-name <span style="color: #8b2252;">"snippets"</span> dotfiles-dir<span style="color: #8c8c8c;">))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>yas/load-directory <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"snippets"</span> dotfiles-dir<span style="color: #7f7f7f;">))</span>
 </pre>
 
 
@@ -659,8 +646,7 @@ Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-org.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-org.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -673,8 +659,7 @@ Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-eshell.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-eshell.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -687,50 +672,72 @@ Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-lisp.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-lisp.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
 
 
 </li>
-<li id="sec-2.3.5">Starter kit ruby <br/>
+<li id="sec-2.3.5">Starter kit Haskell <br/>
+Located in <a href="starter-kit-haskell.html">starter-kit-haskell</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-haskell.org"</span><span style="color: #7f7f7f;">)</span>
+</pre>
+
+
+
+
+</li>
+<li id="sec-2.3.6">Starter kit ruby <br/>
 Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-ruby.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-ruby.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
 
 
 </li>
-<li id="sec-2.3.6">Starter kit JS <br/>
+<li id="sec-2.3.7">Starter kit JS <br/>
 Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-js.org"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-js.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
 
 
 </li>
-<li id="sec-2.3.7">Starter Kit Perl <br/>
+<li id="sec-2.3.8">Starter Kit Perl <br/>
 Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>starter-kit-load <span style="color: #8b2252;">"starter-kit-perl.org"</span><span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-perl.org"</span><span style="color: #7f7f7f;">)</span>
+</pre>
 
+
+
+
+</li>
+<li id="sec-2.3.9">Starter Kit Latex <br/>
+Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-latex.org"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -752,19 +759,19 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p elisp-source-dir<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>default-directory elisp-source-dir<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span>normal-top-level-add-subdirs-to-load-path<span style="color: #8c8c8c;">)))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p system-specific-config<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>load system-specific-config<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p system-specific-literate-config<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span>org-babel-load-file system-specific-literate-config<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-config<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>load user-specific-config<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-literate-config<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span>org-babel-load-file user-specific-literate-config<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>file-exists-p user-specific-dir<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8c8c8c;">(</span>mapc #'load <span style="color: #8c8c8c;">(</span>directory-files user-specific-dir nil <span style="color: #8b2252;">".*el$"</span><span style="color: #8c8c8c;">))</span>
-  <span style="color: #8c8c8c;">(</span>mapc #'org-babel-load-file <span style="color: #8c8c8c;">(</span>directory-files user-specific-dir nil <span style="color: #8b2252;">".*org$"</span><span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p elisp-source-dir<span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>default-directory elisp-source-dir<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span>normal-top-level-add-subdirs-to-load-path<span style="color: #7f7f7f;">)))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p system-specific-config<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>load system-specific-config<span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p system-specific-literate-config<span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span>org-babel-load-file system-specific-literate-config<span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p user-specific-config<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>load user-specific-config<span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p user-specific-literate-config<span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span>org-babel-load-file user-specific-literate-config<span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>file-exists-p user-specific-dir<span style="color: #7f7f7f;">)</span>
+  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>default-directory user-specific-dir<span style="color: #7f7f7f;">))</span>
+    <span style="color: #7f7f7f;">(</span>mapc #'load <span style="color: #7f7f7f;">(</span>directory-files user-specific-dir nil <span style="color: #A5C261;">".*el$"</span><span style="color: #7f7f7f;">))</span>
+    <span style="color: #7f7f7f;">(</span>mapc #'org-babel-load-file <span style="color: #7f7f7f;">(</span>directory-files user-specific-dir nil <span style="color: #A5C261;">".*org$"</span><span style="color: #7f7f7f;">))))</span>
 </pre>
 
 
@@ -776,9 +783,9 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Development </h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-development" class="outline-2">
+<h2 id="development"><a name="sec-3" id="sec-3"></a>Development </h2>
+<div class="outline-text-2" id="text-development">
 
 
 
@@ -795,18 +802,14 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 <li id="sec-3.1.2"><span class="todo TODO"> TODO</span> set up ri for ruby <br/>
 </li>
 <li id="sec-3.1.3"><span class="todo TODO"> TODO</span> Submit the packages in starter-kit-elpa.el to ELPA. <br/>
-
 </li>
 <li id="sec-3.1.4"><span class="todo STARTED"> STARTED</span> Greg Newman is working on Python helpers. <br/>
-
 </li>
 <li id="sec-3.1.5"><span class="todo STARTED"> STARTED</span> submit ruby fixes to flymake <br/>
-
 </li>
 <li id="sec-3.1.6"><span class="todo PROPOSED"> PROPOSED</span> which-func-mode in ruby? <br/>
 </li>
 <li id="sec-3.1.7"><span class="todo TODO"> TODO</span> all bindings to kbd invocations <br/>
-
 </li>
 <li id="sec-3.1.8"><span class="done DEFERRED"> DEFERRED</span> should yasnippet be included in rinari? <br/>
 No, rinari has no dependency on yasnippet, and yasnippet has many
@@ -816,7 +819,6 @@ applications outside of rinari.
 <li id="sec-3.1.9"><span class="todo TODO"> TODO</span> flymake for perl <br/>
 </li>
 <li id="sec-3.1.10"><span class="todo TODO"> TODO</span> electric bugaloo for perl <br/>
-
 
 </li>
 </ul>

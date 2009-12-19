@@ -4,11 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 lang="en" xml:lang="en">
 <head>
-
 <title>Starter Kit ELPA</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-20 08:54:17 MDT"/>
+<meta name="generated" content="2009-12-18 18:28:19 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -25,7 +24,8 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
+	background-color: #232323;
+	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -70,6 +70,7 @@ lang="en" xml:lang="en">
 </head>
 <body>
 <div id="content">
+
 <h1 class="title">Starter Kit ELPA</h1>
 
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
@@ -87,50 +88,48 @@ The following packages should all ways be installed
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defvar</span> <span style="color: #a0522d;">starter-kit-packages</span> <span style="color: #8c8c8c;">(</span>list 'idle-highlight
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defvar</span> <span style="color: #b0c4de;">starter-kit-packages</span> <span style="color: #7f7f7f;">(</span>list 'idle-highlight
                                    'ruby-mode
                                    'inf-ruby
                                    'js2-mode
                                    'css-mode
-                                   <span style="color: #b22222;">;; </span><span style="color: #b22222;">'nxml
+                                   <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">'nxml
 </span>                                   'gist
-                                   'paredit<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8b2252;">"Libraries that should be installed by default."</span><span style="color: #8c8c8c;">)</span>
-
+                                   'paredit<span style="color: #7f7f7f;">)</span>
+  <span style="color: #A5C261;">"Libraries that should be installed by default."</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">starter-kit-elpa-install</span> <span style="color: #8c8c8c;">()</span>
-  <span style="color: #8b2252;">"Install all starter-kit packages that aren't installed."</span>
-  <span style="color: #8c8c8c;">(</span>interactive<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">dolist</span> <span style="color: #8c8c8c;">(</span>package starter-kit-packages<span style="color: #8c8c8c;">)</span>
-    <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> <span style="color: #8c8c8c;">(</span>or <span style="color: #8c8c8c;">(</span>member package package-activated-list<span style="color: #8c8c8c;">)</span>
-                <span style="color: #8c8c8c;">(</span>functionp package<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span>message <span style="color: #8b2252;">"Installing %s"</span> <span style="color: #8c8c8c;">(</span>symbol-name package<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span>package-install package<span style="color: #8c8c8c;">))))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">starter-kit-elpa-install</span> <span style="color: #7f7f7f;">()</span>
+  <span style="color: #A5C261;">"Install all starter-kit packages that aren't installed."</span>
+  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
+  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">dolist</span> <span style="color: #7f7f7f;">(</span>package starter-kit-packages<span style="color: #7f7f7f;">)</span>
+    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">unless</span> <span style="color: #7f7f7f;">(</span>or <span style="color: #7f7f7f;">(</span>member package package-activated-list<span style="color: #7f7f7f;">)</span>
+                <span style="color: #7f7f7f;">(</span>functionp package<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span>message <span style="color: #A5C261;">"Installing %s"</span> <span style="color: #7f7f7f;">(</span>symbol-name package<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span>package-install package<span style="color: #7f7f7f;">))))</span>
 </pre>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">esk-online?</span> <span style="color: #8c8c8c;">()</span>
-  <span style="color: #8b2252;">"See if we're online.
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">esk-online?</span> <span style="color: #7f7f7f;">()</span>
+  <span style="color: #A5C261;">"See if we're online.
 
 Windows does not have the network-interface-list function, so we
 just have to assume it's online."</span>
-  <span style="color: #b22222;">;; </span><span style="color: #b22222;">TODO how could this work on Windows?
-</span>  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>and <span style="color: #8c8c8c;">(</span>functionp 'network-interface-list<span style="color: #8c8c8c;">)</span>
-           <span style="color: #8c8c8c;">(</span>network-interface-list<span style="color: #8c8c8c;">))</span>
-      <span style="color: #8c8c8c;">(</span>some <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">(</span>iface<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> <span style="color: #8c8c8c;">(</span>equal <span style="color: #8b2252;">"lo"</span> <span style="color: #8c8c8c;">(</span>car iface<span style="color: #8c8c8c;">))</span>
-                         <span style="color: #8c8c8c;">(</span>member 'up <span style="color: #8c8c8c;">(</span>first <span style="color: #8c8c8c;">(</span>last <span style="color: #8c8c8c;">(</span>network-interface-info
-                                                   <span style="color: #8c8c8c;">(</span>car iface<span style="color: #8c8c8c;">)))))))</span>
-            <span style="color: #8c8c8c;">(</span>network-interface-list<span style="color: #8c8c8c;">))</span>
-    t<span style="color: #8c8c8c;">))</span>
+  <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">TODO how could this work on Windows?
+</span>  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>and <span style="color: #7f7f7f;">(</span>functionp 'network-interface-list<span style="color: #7f7f7f;">)</span>
+           <span style="color: #7f7f7f;">(</span>network-interface-list<span style="color: #7f7f7f;">))</span>
+      <span style="color: #7f7f7f;">(</span>some <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>iface<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">unless</span> <span style="color: #7f7f7f;">(</span>equal <span style="color: #A5C261;">"lo"</span> <span style="color: #7f7f7f;">(</span>car iface<span style="color: #7f7f7f;">))</span>
+                         <span style="color: #7f7f7f;">(</span>member 'up <span style="color: #7f7f7f;">(</span>first <span style="color: #7f7f7f;">(</span>last <span style="color: #7f7f7f;">(</span>network-interface-info
+                                                   <span style="color: #7f7f7f;">(</span>car iface<span style="color: #7f7f7f;">)))))))</span>
+            <span style="color: #7f7f7f;">(</span>network-interface-list<span style="color: #7f7f7f;">))</span>
+    t<span style="color: #7f7f7f;">))</span>
 </pre>
 
 
@@ -141,10 +140,9 @@ On your first run, this should pull in all the base packages.
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>esk-online?<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">unless</span> package-archive-contents <span style="color: #8c8c8c;">(</span>package-refresh-contents<span style="color: #8c8c8c;">))</span>
-  <span style="color: #8c8c8c;">(</span>starter-kit-elpa-install<span style="color: #8c8c8c;">))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>esk-online?<span style="color: #7f7f7f;">)</span>
+  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">unless</span> package-archive-contents <span style="color: #7f7f7f;">(</span>package-refresh-contents<span style="color: #7f7f7f;">))</span>
+  <span style="color: #7f7f7f;">(</span>starter-kit-elpa-install<span style="color: #7f7f7f;">))</span>
 </pre>
 
 
@@ -156,8 +154,7 @@ unable to reproduce:
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>autoload 'paredit-mode <span style="color: #8b2252;">"paredit"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>autoload 'paredit-mode <span style="color: #A5C261;">"paredit"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 

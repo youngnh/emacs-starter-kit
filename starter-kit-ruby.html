@@ -4,11 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 lang="en" xml:lang="en">
 <head>
-
 <title>Starter Kit Ruby</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-09-20 08:53:59 MDT"/>
+<meta name="generated" content="2009-12-18 18:28:08 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -25,7 +24,8 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
+	background-color: #232323;
+	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -70,6 +70,7 @@ lang="en" xml:lang="en">
 </head>
 <body>
 <div id="content">
+
 <h1 class="title">Starter Kit Ruby</h1>
 
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
@@ -86,24 +87,22 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'ruby-mode
-  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-     <span style="color: #b22222;">;; </span><span style="color: #b22222;">work around possible elpa bug
-</span>     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">ignore-errors</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">ruby-compilation</span><span style="color: #8c8c8c;">))</span>
-     <span style="color: #8c8c8c;">(</span>setq ruby-use-encoding-map nil<span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>add-hook 'ruby-mode-hook 'inf-ruby-keys<span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>define-key ruby-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"RET"</span><span style="color: #8c8c8c;">)</span> 'reindent-then-newline-and-indent<span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>define-key ruby-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-M-h"</span><span style="color: #8c8c8c;">)</span> 'backward-kill-word<span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>define-key ruby-mode-map <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-c l"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8b2252;">"lambda"</span><span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'ruby-mode
+  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
+     <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">work around possible elpa bug
+</span>     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">ignore-errors</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">ruby-compilation</span><span style="color: #7f7f7f;">))</span>
+     <span style="color: #7f7f7f;">(</span>setq ruby-use-encoding-map nil<span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>add-hook 'ruby-mode-hook 'inf-ruby-keys<span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>define-key ruby-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"RET"</span><span style="color: #7f7f7f;">)</span> 'reindent-then-newline-and-indent<span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>define-key ruby-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-M-h"</span><span style="color: #7f7f7f;">)</span> 'backward-kill-word<span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>define-key ruby-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c l"</span><span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"lambda"</span><span style="color: #7f7f7f;">)))</span>
 </pre>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>global-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-h r"</span><span style="color: #8c8c8c;">)</span> 'ri<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-h r"</span><span style="color: #7f7f7f;">)</span> 'ri<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -119,10 +118,9 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.rake$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"Rakefile$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
-<span style="color: #8c8c8c;">(</span>add-to-list 'auto-mode-alist '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"\\.gemspec$"</span> . ruby-mode<span style="color: #8c8c8c;">))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.rake$"</span> . ruby-mode<span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"Rakefile$"</span> . ruby-mode<span style="color: #7f7f7f;">))</span>
+<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.gemspec$"</span> . ruby-mode<span style="color: #7f7f7f;">))</span>
 </pre>
 
 
@@ -139,8 +137,7 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-to-list 'completion-ignored-extensions <span style="color: #8b2252;">".rbc"</span><span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'completion-ignored-extensions <span style="color: #A5C261;">".rbc"</span><span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -158,22 +155,22 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pcomplete/rake</span> <span style="color: #8c8c8c;">()</span>
-  <span style="color: #8b2252;">"Completion rules for the `</span><span style="color: #008b8b;">ssh</span><span style="color: #8b2252;">' command."</span>
-  <span style="color: #8c8c8c;">(</span>pcomplete-here <span style="color: #8c8c8c;">(</span>pcmpl-rake-tasks<span style="color: #8c8c8c;">)))</span>
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">pcomplete/rake</span> <span style="color: #7f7f7f;">()</span>
+  <span style="color: #A5C261;">"Completion rules for the `</span><span style="color: #6D9CBE;">ssh</span><span style="color: #A5C261;">' command."</span>
+  <span style="color: #7f7f7f;">(</span>pcomplete-here <span style="color: #7f7f7f;">(</span>pcmpl-rake-tasks<span style="color: #7f7f7f;">)))</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">pcmpl-rake-tasks</span> <span style="color: #8c8c8c;">()</span>
-   <span style="color: #8b2252;">"Return a list of all the rake tasks defined in the current
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">pcmpl-rake-tasks</span> <span style="color: #7f7f7f;">()</span>
+   <span style="color: #A5C261;">"Return a list of all the rake tasks defined in the current
 projects.  I know this is a hack to put all the logic in the
 exec-to-string command, but it works and seems fast"</span>
-   <span style="color: #8c8c8c;">(</span>delq nil <span style="color: #8c8c8c;">(</span>mapcar '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span><span style="color: #8c8c8c;">(</span>line<span style="color: #8c8c8c;">)</span>
-                        <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>string-match <span style="color: #8b2252;">"rake </span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">[</span><span style="color: #8b2252;">^</span><span style="color: #8b2252;"> ]+</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">"</span> line<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>match-string 1 line<span style="color: #8c8c8c;">)))</span>
-                     <span style="color: #8c8c8c;">(</span>split-string <span style="color: #8c8c8c;">(</span>shell-command-to-string <span style="color: #8b2252;">"rake -T"</span><span style="color: #8c8c8c;">)</span> <span style="color: #8b2252;">"[\n]"</span><span style="color: #8c8c8c;">))))</span>
+   <span style="color: #7f7f7f;">(</span>delq nil <span style="color: #7f7f7f;">(</span>mapcar '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span><span style="color: #7f7f7f;">(</span>line<span style="color: #7f7f7f;">)</span>
+                        <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>string-match <span style="color: #A5C261;">"rake </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">[</span><span style="color: #A5C261;">^</span><span style="color: #A5C261;"> ]+</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">"</span> line<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>match-string 1 line<span style="color: #7f7f7f;">)))</span>
+                     <span style="color: #7f7f7f;">(</span>split-string <span style="color: #7f7f7f;">(</span>shell-command-to-string <span style="color: #A5C261;">"rake -T"</span><span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"[\n]"</span><span style="color: #7f7f7f;">))))</span>
 
-<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">rake</span> <span style="color: #8c8c8c;">(</span>task<span style="color: #8c8c8c;">)</span>
-  <span style="color: #8c8c8c;">(</span>interactive <span style="color: #8c8c8c;">(</span>list <span style="color: #8c8c8c;">(</span>completing-read <span style="color: #8b2252;">"Rake (default: default): "</span>
-                                      <span style="color: #8c8c8c;">(</span>pcmpl-rake-tasks<span style="color: #8c8c8c;">))))</span>
-  <span style="color: #8c8c8c;">(</span>shell-command-to-string <span style="color: #8c8c8c;">(</span>concat <span style="color: #8b2252;">"rake "</span> <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">if</span> <span style="color: #8c8c8c;">(</span>= 0 <span style="color: #8c8c8c;">(</span>length task<span style="color: #8c8c8c;">))</span> <span style="color: #8b2252;">"default"</span> task<span style="color: #8c8c8c;">))))</span>
+<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">rake</span> <span style="color: #7f7f7f;">(</span>task<span style="color: #7f7f7f;">)</span>
+  <span style="color: #7f7f7f;">(</span>interactive <span style="color: #7f7f7f;">(</span>list <span style="color: #7f7f7f;">(</span>completing-read <span style="color: #A5C261;">"Rake (default: default): "</span>
+                                      <span style="color: #7f7f7f;">(</span>pcmpl-rake-tasks<span style="color: #7f7f7f;">))))</span>
+  <span style="color: #7f7f7f;">(</span>shell-command-to-string <span style="color: #7f7f7f;">(</span>concat <span style="color: #A5C261;">"rake "</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>= 0 <span style="color: #7f7f7f;">(</span>length task<span style="color: #7f7f7f;">))</span> <span style="color: #A5C261;">"default"</span> task<span style="color: #7f7f7f;">))))</span>
 </pre>
 
 
@@ -192,15 +189,14 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'ruby-compilation
-  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defadvice</span> <span style="color: #0000ff;">ruby-do-run-w/compilation</span> <span style="color: #8c8c8c;">(</span>before kill-buffer <span style="color: #8c8c8c;">(</span>name cmdlist<span style="color: #8c8c8c;">))</span>
-       <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let</span> <span style="color: #8c8c8c;">((</span>comp-buffer-name <span style="color: #8c8c8c;">(</span>format <span style="color: #8b2252;">"*%s*"</span> name<span style="color: #8c8c8c;">)))</span>
-         <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>get-buffer comp-buffer-name<span style="color: #8c8c8c;">)</span>
-           <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">with-current-buffer</span> comp-buffer-name
-             <span style="color: #8c8c8c;">(</span>delete-region <span style="color: #8c8c8c;">(</span>point-min<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">(</span>point-max<span style="color: #8c8c8c;">))))))</span>
-     <span style="color: #8c8c8c;">(</span>ad-activate 'ruby-do-run-w/compilation<span style="color: #8c8c8c;">)))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'ruby-compilation
+  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
+     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defadvice</span> <span style="color: #FFC66D;">ruby-do-run-w/compilation</span> <span style="color: #7f7f7f;">(</span>before kill-buffer <span style="color: #7f7f7f;">(</span>name cmdlist<span style="color: #7f7f7f;">))</span>
+       <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>comp-buffer-name <span style="color: #7f7f7f;">(</span>format <span style="color: #A5C261;">"*%s*"</span> name<span style="color: #7f7f7f;">)))</span>
+         <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>get-buffer comp-buffer-name<span style="color: #7f7f7f;">)</span>
+           <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">with-current-buffer</span> comp-buffer-name
+             <span style="color: #7f7f7f;">(</span>delete-region <span style="color: #7f7f7f;">(</span>point-min<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>point-max<span style="color: #7f7f7f;">))))))</span>
+     <span style="color: #7f7f7f;">(</span>ad-activate 'ruby-do-run-w/compilation<span style="color: #7f7f7f;">)))</span>
 </pre>
 
 
@@ -217,8 +213,7 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>add-hook 'ruby-mode-hook 'run-coding-hook<span style="color: #8c8c8c;">)</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'ruby-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
 </pre>
 
 
@@ -239,34 +234,34 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">eval-after-load</span> 'ruby-mode
-  '<span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">progn</span>
-     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">require</span> '<span style="color: #008b8b;">flymake</span><span style="color: #8c8c8c;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'ruby-mode
+  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
+     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">flymake</span><span style="color: #7f7f7f;">)</span>
 
-     <span style="color: #b22222;">;; </span><span style="color: #b22222;">Invoke ruby with '-c' to get syntax checking
-</span>     <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">defun</span> <span style="color: #0000ff;">flymake-ruby-init</span> <span style="color: #8c8c8c;">()</span>
-       <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">let*</span> <span style="color: #8c8c8c;">((</span>temp-file <span style="color: #8c8c8c;">(</span>flymake-init-create-temp-buffer-copy
-                          'flymake-create-temp-inplace<span style="color: #8c8c8c;">))</span>
-              <span style="color: #8c8c8c;">(</span>local-file <span style="color: #8c8c8c;">(</span>file-relative-name
+     <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">Invoke ruby with '-c' to get syntax checking
+</span>     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">flymake-ruby-init</span> <span style="color: #7f7f7f;">()</span>
+       <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let*</span> <span style="color: #7f7f7f;">((</span>temp-file <span style="color: #7f7f7f;">(</span>flymake-init-create-temp-buffer-copy
+                          'flymake-create-temp-inplace<span style="color: #7f7f7f;">))</span>
+              <span style="color: #7f7f7f;">(</span>local-file <span style="color: #7f7f7f;">(</span>file-relative-name
                            temp-file
-                           <span style="color: #8c8c8c;">(</span>file-name-directory buffer-file-name<span style="color: #8c8c8c;">))))</span>
-         <span style="color: #8c8c8c;">(</span>list <span style="color: #8b2252;">"ruby"</span> <span style="color: #8c8c8c;">(</span>list <span style="color: #8b2252;">"-c"</span> local-file<span style="color: #8c8c8c;">))))</span>
+                           <span style="color: #7f7f7f;">(</span>file-name-directory buffer-file-name<span style="color: #7f7f7f;">))))</span>
+         <span style="color: #7f7f7f;">(</span>list <span style="color: #A5C261;">"ruby"</span> <span style="color: #7f7f7f;">(</span>list <span style="color: #A5C261;">"-c"</span> local-file<span style="color: #7f7f7f;">))))</span>
 
-     <span style="color: #8c8c8c;">(</span>push '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">".+\\.rb$"</span> flymake-ruby-init<span style="color: #8c8c8c;">)</span> flymake-allowed-file-name-masks<span style="color: #8c8c8c;">)</span>
-     <span style="color: #8c8c8c;">(</span>push '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"Rakefile$"</span> flymake-ruby-init<span style="color: #8c8c8c;">)</span> flymake-allowed-file-name-masks<span style="color: #8c8c8c;">)</span>
+     <span style="color: #7f7f7f;">(</span>push '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">".+\\.rb$"</span> flymake-ruby-init<span style="color: #7f7f7f;">)</span> flymake-allowed-file-name-masks<span style="color: #7f7f7f;">)</span>
+     <span style="color: #7f7f7f;">(</span>push '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"Rakefile$"</span> flymake-ruby-init<span style="color: #7f7f7f;">)</span> flymake-allowed-file-name-masks<span style="color: #7f7f7f;">)</span>
 
-     <span style="color: #8c8c8c;">(</span>push '<span style="color: #8c8c8c;">(</span><span style="color: #8b2252;">"^</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">.*</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">:</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">[0-9]+</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">: </span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">.*</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">$"</span> 1 2 nil 3<span style="color: #8c8c8c;">)</span>
-           flymake-err-line-patterns<span style="color: #8c8c8c;">)</span>
+     <span style="color: #7f7f7f;">(</span>push '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"^</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">.*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">:</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">[0-9]+</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">: </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">.*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">$"</span> 1 2 nil 3<span style="color: #7f7f7f;">)</span>
+           flymake-err-line-patterns<span style="color: #7f7f7f;">)</span>
 
-     <span style="color: #8c8c8c;">(</span>add-hook 'ruby-mode-hook
-               <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">lambda</span> <span style="color: #8c8c8c;">()</span>
-                 <span style="color: #8c8c8c;">(</span><span style="color: #7f007f;">when</span> <span style="color: #8c8c8c;">(</span>and buffer-file-name
-                            <span style="color: #8c8c8c;">(</span>file-writable-p
-                             <span style="color: #8c8c8c;">(</span>file-name-directory buffer-file-name<span style="color: #8c8c8c;">))</span>
-                            <span style="color: #8c8c8c;">(</span>file-writable-p buffer-file-name<span style="color: #8c8c8c;">))</span>
-                   <span style="color: #8c8c8c;">(</span>local-set-key <span style="color: #8c8c8c;">(</span>kbd <span style="color: #8b2252;">"C-c d"</span><span style="color: #8c8c8c;">)</span>
-                                  'flymake-display-err-menu-for-current-line<span style="color: #8c8c8c;">)</span>
-                   <span style="color: #8c8c8c;">(</span>flymake-mode t<span style="color: #8c8c8c;">))))))</span>
+     <span style="color: #7f7f7f;">(</span>add-hook 'ruby-mode-hook
+               <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span>
+                 <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>and buffer-file-name
+                            <span style="color: #7f7f7f;">(</span>file-writable-p
+                             <span style="color: #7f7f7f;">(</span>file-name-directory buffer-file-name<span style="color: #7f7f7f;">))</span>
+                            <span style="color: #7f7f7f;">(</span>file-writable-p buffer-file-name<span style="color: #7f7f7f;">))</span>
+                   <span style="color: #7f7f7f;">(</span>local-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c d"</span><span style="color: #7f7f7f;">)</span>
+                                  'flymake-display-err-menu-for-current-line<span style="color: #7f7f7f;">)</span>
+                   <span style="color: #7f7f7f;">(</span>flymake-mode t<span style="color: #7f7f7f;">))))))</span>
 </pre>
 
 
@@ -285,10 +280,9 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>setq rinari-major-modes
-      <span style="color: #8c8c8c;">(</span>list 'dired-mode-hook 'ruby-mode-hook
-            'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook<span style="color: #8c8c8c;">))</span>
-
+<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq rinari-major-modes
+      <span style="color: #7f7f7f;">(</span>list 'dired-mode-hook 'ruby-mode-hook
+            'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook<span style="color: #7f7f7f;">))</span>
 </pre>
 
 
