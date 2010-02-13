@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Defuns</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-12-18 18:28:21 MST"/>
+<meta name="generated" content="2010-02-13 15:38:28 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,8 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #232323;
-	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -85,9 +83,10 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">thingatpt</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">imenu</span><span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">thingatpt</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">imenu</span><span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -103,16 +102,17 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">view-url</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Open a new buffer containing the contents of URL."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let*</span> <span style="color: #7f7f7f;">((</span>default <span style="color: #7f7f7f;">(</span>thing-at-point-url-at-point<span style="color: #7f7f7f;">))</span>
-         <span style="color: #7f7f7f;">(</span>url <span style="color: #7f7f7f;">(</span>read-from-minibuffer <span style="color: #A5C261;">"URL: "</span> default<span style="color: #7f7f7f;">)))</span>
-    <span style="color: #7f7f7f;">(</span>switch-to-buffer <span style="color: #7f7f7f;">(</span>url-retrieve-synchronously url<span style="color: #7f7f7f;">))</span>
-    <span style="color: #7f7f7f;">(</span>rename-buffer url t<span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">cond</span> <span style="color: #7f7f7f;">((</span>search-forward <span style="color: #A5C261;">"&lt;?xml"</span> nil t<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>xml-mode<span style="color: #7f7f7f;">))</span>
-          <span style="color: #7f7f7f;">((</span>search-forward <span style="color: #A5C261;">"&lt;html"</span> nil t<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>html-mode<span style="color: #7f7f7f;">)))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">start-kit-view-url()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">view-url</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Open a new buffer containing the contents of URL."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">let*</span> <span class="org-esk-paren">((</span>default <span class="org-esk-paren">(</span>thing-at-point-url-at-point<span class="org-esk-paren">))</span>
+         <span class="org-esk-paren">(</span>url <span class="org-esk-paren">(</span>read-from-minibuffer <span class="org-string">"URL: "</span> default<span class="org-esk-paren">)))</span>
+    <span class="org-esk-paren">(</span>switch-to-buffer <span class="org-esk-paren">(</span>url-retrieve-synchronously url<span class="org-esk-paren">))</span>
+    <span class="org-esk-paren">(</span>rename-buffer url t<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">cond</span> <span class="org-esk-paren">((</span>search-forward <span class="org-string">"&lt;?xml"</span> nil t<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>xml-mode<span class="org-esk-paren">))</span>
+          <span class="org-esk-paren">((</span>search-forward <span class="org-string">"&lt;html"</span> nil t<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>html-mode<span class="org-esk-paren">)))))</span>
+</pre></div>
 
 
 
@@ -129,48 +129,49 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">ido-imenu</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Update the imenu index and then use ido to select a symbol to navigate to.
+<div class="org-src-container"><label class="org-src-name">starter-kit-ido-imenu()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">ido-imenu</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Update the imenu index and then use ido to select a symbol to navigate to.
 Symbols matching the text at point are put first in the completion list."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>imenu--make-index-alist<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>name-and-pos '<span style="color: #7f7f7f;">())</span>
-        <span style="color: #7f7f7f;">(</span>symbol-names '<span style="color: #7f7f7f;">()))</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">flet</span> <span style="color: #7f7f7f;">((</span>addsymbols <span style="color: #7f7f7f;">(</span>symbol-list<span style="color: #7f7f7f;">)</span>
-                       <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>listp symbol-list<span style="color: #7f7f7f;">)</span>
-                         <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">dolist</span> <span style="color: #7f7f7f;">(</span>symbol symbol-list<span style="color: #7f7f7f;">)</span>
-                           <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>name nil<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>position nil<span style="color: #7f7f7f;">))</span>
-                             <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">cond</span>
-                              <span style="color: #7f7f7f;">((</span>and <span style="color: #7f7f7f;">(</span>listp symbol<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>imenu--subalist-p symbol<span style="color: #7f7f7f;">))</span>
-                               <span style="color: #7f7f7f;">(</span>addsymbols symbol<span style="color: #7f7f7f;">))</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>imenu--make-index-alist<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>name-and-pos '<span class="org-esk-paren">())</span>
+        <span class="org-esk-paren">(</span>symbol-names '<span class="org-esk-paren">()))</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">flet</span> <span class="org-esk-paren">((</span>addsymbols <span class="org-esk-paren">(</span>symbol-list<span class="org-esk-paren">)</span>
+                       <span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>listp symbol-list<span class="org-esk-paren">)</span>
+                         <span class="org-esk-paren">(</span><span class="org-keyword">dolist</span> <span class="org-esk-paren">(</span>symbol symbol-list<span class="org-esk-paren">)</span>
+                           <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>name nil<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>position nil<span class="org-esk-paren">))</span>
+                             <span class="org-esk-paren">(</span><span class="org-keyword">cond</span>
+                              <span class="org-esk-paren">((</span>and <span class="org-esk-paren">(</span>listp symbol<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>imenu--subalist-p symbol<span class="org-esk-paren">))</span>
+                               <span class="org-esk-paren">(</span>addsymbols symbol<span class="org-esk-paren">))</span>
 
-                              <span style="color: #7f7f7f;">((</span>listp symbol<span style="color: #7f7f7f;">)</span>
-                               <span style="color: #7f7f7f;">(</span>setq name <span style="color: #7f7f7f;">(</span>car symbol<span style="color: #7f7f7f;">))</span>
-                               <span style="color: #7f7f7f;">(</span>setq position <span style="color: #7f7f7f;">(</span>cdr symbol<span style="color: #7f7f7f;">)))</span>
+                              <span class="org-esk-paren">((</span>listp symbol<span class="org-esk-paren">)</span>
+                               <span class="org-esk-paren">(</span>setq name <span class="org-esk-paren">(</span>car symbol<span class="org-esk-paren">))</span>
+                               <span class="org-esk-paren">(</span>setq position <span class="org-esk-paren">(</span>cdr symbol<span class="org-esk-paren">)))</span>
 
-                              <span style="color: #7f7f7f;">((</span>stringp symbol<span style="color: #7f7f7f;">)</span>
-                               <span style="color: #7f7f7f;">(</span>setq name symbol<span style="color: #7f7f7f;">)</span>
-                               <span style="color: #7f7f7f;">(</span>setq position <span style="color: #7f7f7f;">(</span>get-text-property 1 'org-imenu-marker symbol<span style="color: #7f7f7f;">))))</span>
+                              <span class="org-esk-paren">((</span>stringp symbol<span class="org-esk-paren">)</span>
+                               <span class="org-esk-paren">(</span>setq name symbol<span class="org-esk-paren">)</span>
+                               <span class="org-esk-paren">(</span>setq position <span class="org-esk-paren">(</span>get-text-property 1 'org-imenu-marker symbol<span class="org-esk-paren">))))</span>
 
-                             <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">unless</span> <span style="color: #7f7f7f;">(</span>or <span style="color: #7f7f7f;">(</span>null position<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>null name<span style="color: #7f7f7f;">))</span>
-                               <span style="color: #7f7f7f;">(</span>add-to-list 'symbol-names name<span style="color: #7f7f7f;">)</span>
-                               <span style="color: #7f7f7f;">(</span>add-to-list 'name-and-pos <span style="color: #7f7f7f;">(</span>cons name position<span style="color: #7f7f7f;">))))))))</span>
-      <span style="color: #7f7f7f;">(</span>addsymbols imenu--index-alist<span style="color: #7f7f7f;">))</span>
-    <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">If there are matching symbols at point, put them at the beginning of `</span><span style="color: #6D9CBE; font-style: italic;">symbol-names</span><span style="color: #BC9458; font-style: italic;">'.
-</span>    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>symbol-at-point <span style="color: #7f7f7f;">(</span>thing-at-point 'symbol<span style="color: #7f7f7f;">)))</span>
-      <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> symbol-at-point
-        <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let*</span> <span style="color: #7f7f7f;">((</span>regexp <span style="color: #7f7f7f;">(</span>concat <span style="color: #7f7f7f;">(</span>regexp-quote symbol-at-point<span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"$"</span><span style="color: #7f7f7f;">))</span>
-               <span style="color: #7f7f7f;">(</span>matching-symbols <span style="color: #7f7f7f;">(</span>delq nil <span style="color: #7f7f7f;">(</span>mapcar <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>symbol<span style="color: #7f7f7f;">)</span>
-                                                     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>string-match regexp symbol<span style="color: #7f7f7f;">)</span> symbol<span style="color: #7f7f7f;">))</span>
-                                                   symbol-names<span style="color: #7f7f7f;">))))</span>
-          <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> matching-symbols
-            <span style="color: #7f7f7f;">(</span>sort matching-symbols <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>a b<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>&gt; <span style="color: #7f7f7f;">(</span>length a<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>length b<span style="color: #7f7f7f;">))))</span>
-            <span style="color: #7f7f7f;">(</span>mapc <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>symbol<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>setq symbol-names <span style="color: #7f7f7f;">(</span>cons symbol <span style="color: #7f7f7f;">(</span>delete symbol symbol-names<span style="color: #7f7f7f;">))))</span>
-                  matching-symbols<span style="color: #7f7f7f;">)))))</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let*</span> <span style="color: #7f7f7f;">((</span>selected-symbol <span style="color: #7f7f7f;">(</span>ido-completing-read <span style="color: #A5C261;">"Symbol? "</span> symbol-names<span style="color: #7f7f7f;">))</span>
-           <span style="color: #7f7f7f;">(</span>position <span style="color: #7f7f7f;">(</span>cdr <span style="color: #7f7f7f;">(</span>assoc selected-symbol name-and-pos<span style="color: #7f7f7f;">))))</span>
-      <span style="color: #7f7f7f;">(</span>goto-char position<span style="color: #7f7f7f;">))))</span>
-</pre>
+                             <span class="org-esk-paren">(</span><span class="org-keyword">unless</span> <span class="org-esk-paren">(</span>or <span class="org-esk-paren">(</span>null position<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>null name<span class="org-esk-paren">))</span>
+                               <span class="org-esk-paren">(</span>add-to-list 'symbol-names name<span class="org-esk-paren">)</span>
+                               <span class="org-esk-paren">(</span>add-to-list 'name-and-pos <span class="org-esk-paren">(</span>cons name position<span class="org-esk-paren">))))))))</span>
+      <span class="org-esk-paren">(</span>addsymbols imenu--index-alist<span class="org-esk-paren">))</span>
+    <span class="org-comment-delimiter">;; </span><span class="org-comment">If there are matching symbols at point, put them at the beginning of `</span><span class="org-comment"><span class="org-constant">symbol-names</span></span><span class="org-comment">'.
+</span>    <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>symbol-at-point <span class="org-esk-paren">(</span>thing-at-point 'symbol<span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span><span class="org-keyword">when</span> symbol-at-point
+        <span class="org-esk-paren">(</span><span class="org-keyword">let*</span> <span class="org-esk-paren">((</span>regexp <span class="org-esk-paren">(</span>concat <span class="org-esk-paren">(</span>regexp-quote symbol-at-point<span class="org-esk-paren">)</span> <span class="org-string">"$"</span><span class="org-esk-paren">))</span>
+               <span class="org-esk-paren">(</span>matching-symbols <span class="org-esk-paren">(</span>delq nil <span class="org-esk-paren">(</span>mapcar <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>symbol<span class="org-esk-paren">)</span>
+                                                     <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>string-match regexp symbol<span class="org-esk-paren">)</span> symbol<span class="org-esk-paren">))</span>
+                                                   symbol-names<span class="org-esk-paren">))))</span>
+          <span class="org-esk-paren">(</span><span class="org-keyword">when</span> matching-symbols
+            <span class="org-esk-paren">(</span>sort matching-symbols <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>a b<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>&gt; <span class="org-esk-paren">(</span>length a<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>length b<span class="org-esk-paren">))))</span>
+            <span class="org-esk-paren">(</span>mapc <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>symbol<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>setq symbol-names <span class="org-esk-paren">(</span>cons symbol <span class="org-esk-paren">(</span>delete symbol symbol-names<span class="org-esk-paren">))))</span>
+                  matching-symbols<span class="org-esk-paren">)))))</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">let*</span> <span class="org-esk-paren">((</span>selected-symbol <span class="org-esk-paren">(</span>ido-completing-read <span class="org-string">"Symbol? "</span> symbol-names<span class="org-esk-paren">))</span>
+           <span class="org-esk-paren">(</span>position <span class="org-esk-paren">(</span>cdr <span class="org-esk-paren">(</span>assoc selected-symbol name-and-pos<span class="org-esk-paren">))))</span>
+      <span class="org-esk-paren">(</span>goto-char position<span class="org-esk-paren">))))</span>
+</pre></div>
 
 
 
@@ -193,51 +194,56 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">local-column-number-mode</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>make-local-variable 'column-number-mode<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>column-number-mode t<span style="color: #7f7f7f;">))</span>
+<div class="org-src-container"><label class="org-src-name">starter-kit-hook-functions()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">local-column-number-mode</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>make-local-variable 'column-number-mode<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>column-number-mode t<span class="org-esk-paren">))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">local-comment-auto-fill</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>set <span style="color: #7f7f7f;">(</span>make-local-variable 'comment-auto-fill-only-comments<span style="color: #7f7f7f;">)</span> t<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>auto-fill-mode t<span style="color: #7f7f7f;">))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">local-comment-auto-fill</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>set <span class="org-esk-paren">(</span>make-local-variable 'comment-auto-fill-only-comments<span class="org-esk-paren">)</span> t<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>auto-fill-mode t<span class="org-esk-paren">))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">turn-on-hl-line-mode</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> window-system <span style="color: #7f7f7f;">(</span>hl-line-mode t<span style="color: #7f7f7f;">)))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">turn-on-hl-line-mode</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">if</span> window-system <span class="org-esk-paren">(</span>hl-line-mode t<span class="org-esk-paren">)))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">turn-on-save-place-mode</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>setq save-place t<span style="color: #7f7f7f;">))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">turn-on-save-place-mode</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>setq save-place t<span class="org-esk-paren">))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">turn-on-whitespace</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>whitespace-mode t<span style="color: #7f7f7f;">))</span>
-</pre>
-
-
-
-
-
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'coding-hook 'local-column-number-mode<span style="color: #7f7f7f;">)</span>
-</pre>
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">turn-on-whitespace</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>whitespace-mode t<span class="org-esk-paren">))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'coding-hook 'local-comment-auto-fill<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-add-local-column-number-mode()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'coding-hook 'local-column-number-mode<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'coding-hook 'turn-on-hl-line-mode<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">start-kit-add-local-comment-auto-fill()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'coding-hook 'local-comment-auto-fill<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'coding-hook 'pretty-lambdas<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-add-hl-line-mode()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'coding-hook 'turn-on-hl-line-mode<span class="org-esk-paren">)</span>
+</pre></div>
+
+
+
+
+
+<div class="org-src-container"><label class="org-src-name">starter-kit-add-pretty-lambdas()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'coding-hook 'pretty-lambdas<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -245,52 +251,57 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">run-coding-hook</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Enable things that are convenient across all coding buffers."</span>
-  <span style="color: #7f7f7f;">(</span>run-hooks 'coding-hook<span style="color: #7f7f7f;">))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-run-coding-hook()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">run-coding-hook</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Enable things that are convenient across all coding buffers."</span>
+  <span class="org-esk-paren">(</span>run-hooks 'coding-hook<span class="org-esk-paren">))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">untabify-buffer</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>untabify <span style="color: #7f7f7f;">(</span>point-min<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>point-max<span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-untabify-buffer()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">untabify-buffer</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>untabify <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>point-max<span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">indent-buffer</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>indent-region <span style="color: #7f7f7f;">(</span>point-min<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>point-max<span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-indent-buffer()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">indent-buffer</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>indent-region <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>point-max<span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">cleanup-buffer</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Perform a bunch of operations on the whitespace content of a buffer."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>indent-buffer<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>untabify-buffer<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>delete-trailing-whitespace<span style="color: #7f7f7f;">))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-cleanup-buffer()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">cleanup-buffer</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Perform a bunch of operations on the whitespace content of a buffer."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>indent-buffer<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>untabify-buffer<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>delete-trailing-whitespace<span class="org-esk-paren">))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">recentf-ido-find-file</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Find a recent file using ido."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>file <span style="color: #7f7f7f;">(</span>ido-completing-read <span style="color: #A5C261;">"Choose recent file: "</span> recentf-list nil t<span style="color: #7f7f7f;">)))</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> file
-      <span style="color: #7f7f7f;">(</span>find-file file<span style="color: #7f7f7f;">))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-recentf-ido-find-file()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">recentf-ido-find-file</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Find a recent file using ido."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>file <span class="org-esk-paren">(</span>ido-completing-read <span class="org-string">"Choose recent file: "</span> recentf-list nil t<span class="org-esk-paren">)))</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">when</span> file
+      <span class="org-esk-paren">(</span>find-file file<span class="org-esk-paren">))))</span>
+</pre></div>
 
 
 
@@ -307,13 +318,14 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">pretty-lambdas</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>font-lock-add-keywords
-   nil `<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"(?</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">lambda\\&gt;</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">"</span>
-          <span style="color: #7f7f7f;">(</span>0 <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span> <span style="color: #7f7f7f;">(</span>compose-region <span style="color: #7f7f7f;">(</span>match-beginning 1<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>match-end 1<span style="color: #7f7f7f;">)</span>
-                                    ,<span style="color: #7f7f7f;">(</span>make-char 'greek-iso8859-7 107<span style="color: #7f7f7f;">))</span>
-                    nil<span style="color: #7f7f7f;">))))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-pretty-lambdas()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pretty-lambdas</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>font-lock-add-keywords
+   nil `<span class="org-esk-paren">((</span><span class="org-string">"(?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">lambda\\&gt;</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">"</span>
+          <span class="org-esk-paren">(</span>0 <span class="org-esk-paren">(</span><span class="org-keyword">progn</span> <span class="org-esk-paren">(</span>compose-region <span class="org-esk-paren">(</span>match-beginning 1<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>match-end 1<span class="org-esk-paren">)</span>
+                                    ,<span class="org-esk-paren">(</span>make-char 'greek-iso8859-7 107<span class="org-esk-paren">))</span>
+                    nil<span class="org-esk-paren">))))))</span>
+</pre></div>
 
 
 
@@ -330,37 +342,38 @@ a lambda doesn't already exist in the list.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">eval-and-replace</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Replace the preceding sexp with its value."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>backward-kill-sexp<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">condition-case</span> nil
-      <span style="color: #7f7f7f;">(</span>prin1 <span style="color: #7f7f7f;">(</span>eval <span style="color: #7f7f7f;">(</span>read <span style="color: #7f7f7f;">(</span>current-kill 0<span style="color: #7f7f7f;">)))</span>
-             <span style="color: #7f7f7f;">(</span>current-buffer<span style="color: #7f7f7f;">))</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #ffc0cb;">error</span> <span style="color: #7f7f7f;">(</span>message <span style="color: #A5C261;">"Invalid expression"</span><span style="color: #7f7f7f;">)</span>
-           <span style="color: #7f7f7f;">(</span>insert <span style="color: #7f7f7f;">(</span>current-kill 0<span style="color: #7f7f7f;">)))))</span>
+<div class="org-src-container"><label class="org-src-name">starter-kit-other-functions()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">eval-and-replace</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Replace the preceding sexp with its value."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>backward-kill-sexp<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">condition-case</span> nil
+      <span class="org-esk-paren">(</span>prin1 <span class="org-esk-paren">(</span>eval <span class="org-esk-paren">(</span>read <span class="org-esk-paren">(</span>current-kill 0<span class="org-esk-paren">)))</span>
+             <span class="org-esk-paren">(</span>current-buffer<span class="org-esk-paren">))</span>
+    <span class="org-esk-paren">(</span><span class="org-warning">error</span> <span class="org-esk-paren">(</span>message <span class="org-string">"Invalid expression"</span><span class="org-esk-paren">)</span>
+           <span class="org-esk-paren">(</span>insert <span class="org-esk-paren">(</span>current-kill 0<span class="org-esk-paren">)))))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">recompile-init</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Byte-compile all your dotfiles again."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>byte-recompile-directory dotfiles-dir 0<span style="color: #7f7f7f;">)</span>
-  <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">TODO: remove elpa-to-submit once everything's submitted.
-</span>  <span style="color: #7f7f7f;">(</span>byte-recompile-directory <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"elpa-to-submit/"</span> 0<span style="color: #7f7f7f;">)))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">recompile-init</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Byte-compile all your dotfiles again."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>byte-recompile-directory dotfiles-dir 0<span class="org-esk-paren">)</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">TODO: remove elpa-to-submit once everything's submitted.
+</span>  <span class="org-esk-paren">(</span>byte-recompile-directory <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"elpa-to-submit/"</span> 0<span class="org-esk-paren">)))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">regen-autoloads</span> <span style="color: #7f7f7f;">(</span><span style="color: #ffffff;">&amp;optional</span> force-regen<span style="color: #7f7f7f;">)</span>
-  <span style="color: #A5C261;">"Regenerate the autoload definitions file if necessary and load it."</span>
-  <span style="color: #7f7f7f;">(</span>interactive <span style="color: #A5C261;">"P"</span><span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>autoload-dir <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"/elpa-to-submit"</span><span style="color: #7f7f7f;">))</span>
-        <span style="color: #7f7f7f;">(</span>generated-autoload-file autoload-file<span style="color: #7f7f7f;">))</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>or force-regen
-              <span style="color: #7f7f7f;">(</span>not <span style="color: #7f7f7f;">(</span>file-exists-p autoload-file<span style="color: #7f7f7f;">))</span>
-              <span style="color: #7f7f7f;">(</span>some <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>f<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>file-newer-than-file-p f autoload-file<span style="color: #7f7f7f;">))</span>
-                    <span style="color: #7f7f7f;">(</span>directory-files autoload-dir t <span style="color: #A5C261;">"\\.el$"</span><span style="color: #7f7f7f;">)))</span>
-      <span style="color: #7f7f7f;">(</span>message <span style="color: #A5C261;">"Updating autoloads..."</span><span style="color: #7f7f7f;">)</span>
-      <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">(</span>emacs-lisp-mode-hook<span style="color: #7f7f7f;">)</span>
-        <span style="color: #7f7f7f;">(</span>update-directory-autoloads autoload-dir<span style="color: #7f7f7f;">))))</span>
-  <span style="color: #7f7f7f;">(</span>load autoload-file<span style="color: #7f7f7f;">))</span>
-</pre>
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">regen-autoloads</span> <span class="org-esk-paren">(</span><span class="org-type">&amp;optional</span> force-regen<span class="org-esk-paren">)</span>
+  <span class="org-doc">"Regenerate the autoload definitions file if necessary and load it."</span>
+  <span class="org-esk-paren">(</span>interactive <span class="org-string">"P"</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>autoload-dir <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"/elpa-to-submit"</span><span class="org-esk-paren">))</span>
+        <span class="org-esk-paren">(</span>generated-autoload-file autoload-file<span class="org-esk-paren">))</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>or force-regen
+              <span class="org-esk-paren">(</span>not <span class="org-esk-paren">(</span>file-exists-p autoload-file<span class="org-esk-paren">))</span>
+              <span class="org-esk-paren">(</span>some <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>f<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>file-newer-than-file-p f autoload-file<span class="org-esk-paren">))</span>
+                    <span class="org-esk-paren">(</span>directory-files autoload-dir t <span class="org-string">"\\.el$"</span><span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span>message <span class="org-string">"Updating autoloads..."</span><span class="org-esk-paren">)</span>
+      <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">(</span>emacs-lisp-mode-hook<span class="org-esk-paren">)</span>
+        <span class="org-esk-paren">(</span>update-directory-autoloads autoload-dir<span class="org-esk-paren">))))</span>
+  <span class="org-esk-paren">(</span>load autoload-file<span class="org-esk-paren">))</span>
+</pre></div>
 
 
 
@@ -370,12 +383,13 @@ TODO: fix this
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">sudo-edit</span> <span style="color: #7f7f7f;">(</span><span style="color: #ffffff;">&amp;optional</span> arg<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>interactive <span style="color: #A5C261;">"p"</span><span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> arg
-      <span style="color: #7f7f7f;">(</span>find-file <span style="color: #7f7f7f;">(</span>concat <span style="color: #A5C261;">"/sudo:root@localhost:"</span> <span style="color: #7f7f7f;">(</span>ido-read-file-name <span style="color: #A5C261;">"File: "</span><span style="color: #7f7f7f;">)))</span>
-    <span style="color: #7f7f7f;">(</span>find-alternate-file <span style="color: #7f7f7f;">(</span>concat <span style="color: #A5C261;">"/sudo:root@localhost:"</span> buffer-file-name<span style="color: #7f7f7f;">))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-sudo-edit()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">sudo-edit</span> <span class="org-esk-paren">(</span><span class="org-type">&amp;optional</span> arg<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>interactive <span class="org-string">"p"</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">if</span> arg
+      <span class="org-esk-paren">(</span>find-file <span class="org-esk-paren">(</span>concat <span class="org-string">"/sudo:root@localhost:"</span> <span class="org-esk-paren">(</span>ido-read-file-name <span class="org-string">"File: "</span><span class="org-esk-paren">)))</span>
+    <span class="org-esk-paren">(</span>find-alternate-file <span class="org-esk-paren">(</span>concat <span class="org-string">"/sudo:root@localhost:"</span> buffer-file-name<span class="org-esk-paren">))))</span>
+</pre></div>
 
 
 
@@ -385,50 +399,54 @@ Useful when a large block of text is required (e.g. for testing)
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">lorem</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Insert a lorem ipsum."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>insert <span style="color: #A5C261;">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "</span>
-          <span style="color: #A5C261;">"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"</span>
-          <span style="color: #A5C261;">"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "</span>
-          <span style="color: #A5C261;">"aliquip ex ea commodo consequat. Duis aute irure dolor in "</span>
-          <span style="color: #A5C261;">"reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "</span>
-          <span style="color: #A5C261;">"pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "</span>
-          <span style="color: #A5C261;">"culpa qui officia deserunt mollit anim id est laborum."</span><span style="color: #7f7f7f;">))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-lorem()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">lorem</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Insert a lorem ipsum."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>insert <span class="org-string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "</span>
+          <span class="org-string">"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"</span>
+          <span class="org-string">"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "</span>
+          <span class="org-string">"aliquip ex ea commodo consequat. Duis aute irure dolor in "</span>
+          <span class="org-string">"reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "</span>
+          <span class="org-string">"pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "</span>
+          <span class="org-string">"culpa qui officia deserunt mollit anim id est laborum."</span><span class="org-esk-paren">))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">switch-or-start</span> <span style="color: #7f7f7f;">(</span>function buffer<span style="color: #7f7f7f;">)</span>
-  <span style="color: #A5C261;">"If the buffer is current, bury it, otherwise invoke the function."</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>equal <span style="color: #7f7f7f;">(</span>buffer-name <span style="color: #7f7f7f;">(</span>current-buffer<span style="color: #7f7f7f;">))</span> buffer<span style="color: #7f7f7f;">)</span>
-      <span style="color: #7f7f7f;">(</span>bury-buffer<span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>get-buffer buffer<span style="color: #7f7f7f;">)</span>
-        <span style="color: #7f7f7f;">(</span>switch-to-buffer buffer<span style="color: #7f7f7f;">)</span>
-      <span style="color: #7f7f7f;">(</span>funcall function<span style="color: #7f7f7f;">))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-switch-or-start()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">switch-or-start</span> <span class="org-esk-paren">(</span>function buffer<span class="org-esk-paren">)</span>
+  <span class="org-doc">"If the buffer is current, bury it, otherwise invoke the function."</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>equal <span class="org-esk-paren">(</span>buffer-name <span class="org-esk-paren">(</span>current-buffer<span class="org-esk-paren">))</span> buffer<span class="org-esk-paren">)</span>
+      <span class="org-esk-paren">(</span>bury-buffer<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>get-buffer buffer<span class="org-esk-paren">)</span>
+        <span class="org-esk-paren">(</span>switch-to-buffer buffer<span class="org-esk-paren">)</span>
+      <span class="org-esk-paren">(</span>funcall function<span class="org-esk-paren">))))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">insert-date</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Insert a time-stamp according to locale's date and time format."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>insert <span style="color: #7f7f7f;">(</span>format-time-string <span style="color: #A5C261;">"%c"</span> <span style="color: #7f7f7f;">(</span>current-time<span style="color: #7f7f7f;">))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-insert-date()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">insert-date</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Insert a time-stamp according to locale's date and time format."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>insert <span class="org-esk-paren">(</span>format-time-string <span class="org-string">"%c"</span> <span class="org-esk-paren">(</span>current-time<span class="org-esk-paren">))))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">pairing-bot</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"If you can't pair program with a human, use this instead."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>message <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>y-or-n-p <span style="color: #A5C261;">"Do you have a test for that? "</span><span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"Good."</span> <span style="color: #A5C261;">"Bad!"</span><span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-pairing-bot()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pairing-bot</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"If you can't pair program with a human, use this instead."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>message <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>y-or-n-p <span class="org-string">"Do you have a test for that? "</span><span class="org-esk-paren">)</span> <span class="org-string">"Good."</span> <span class="org-string">"Bad!"</span><span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
@@ -439,10 +457,11 @@ A monkeypatch to cause annotate to ignore whitespace
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">vc-git-annotate-command</span> <span style="color: #7f7f7f;">(</span>file buf <span style="color: #ffffff;">&amp;optional</span> rev<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>name <span style="color: #7f7f7f;">(</span>file-relative-name file<span style="color: #7f7f7f;">)))</span>
-    <span style="color: #7f7f7f;">(</span>vc-git-command buf 0 name <span style="color: #A5C261;">"blame"</span> <span style="color: #A5C261;">"-w"</span> rev<span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">starter-kit-vc-git-annotate-command()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">vc-git-annotate-command</span> <span class="org-esk-paren">(</span>file buf <span class="org-type">&amp;optional</span> rev<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>name <span class="org-esk-paren">(</span>file-relative-name file<span class="org-esk-paren">)))</span>
+    <span class="org-esk-paren">(</span>vc-git-command buf 0 name <span class="org-string">"blame"</span> <span class="org-string">"-w"</span> rev<span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 

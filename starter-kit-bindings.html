@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Bindings</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-12-18 18:28:23 MST"/>
+<meta name="generated" content="2010-02-13 15:38:29 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,8 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #232323;
-	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -94,8 +92,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-M-h"</span><span style="color: #7f7f7f;">)</span> 'backward-kill-word<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-h"</span><span class="org-esk-paren">)</span> 'backward-kill-word<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -111,8 +110,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x \\"</span><span style="color: #7f7f7f;">)</span> 'align-regexp<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x \\"</span><span class="org-esk-paren">)</span> 'align-regexp<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -128,8 +128,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"M-/"</span><span style="color: #7f7f7f;">)</span> 'hippie-expand<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"M-/"</span><span class="org-esk-paren">)</span> 'hippie-expand<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -145,8 +146,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c n"</span><span style="color: #7f7f7f;">)</span> 'cleanup-buffer<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c n"</span><span class="org-esk-paren">)</span> 'cleanup-buffer<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -162,8 +164,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key [f1] 'menu-bar-mode<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key [f1] 'menu-bar-mode<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -179,9 +182,10 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>define-key global-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-+"</span><span style="color: #7f7f7f;">)</span> 'text-scale-increase<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>define-key global-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C--"</span><span style="color: #7f7f7f;">)</span> 'text-scale-decrease<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>define-key global-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-+"</span><span class="org-esk-paren">)</span> 'text-scale-increase<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>define-key global-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C--"</span><span class="org-esk-paren">)</span> 'text-scale-decrease<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -197,11 +201,12 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-s"</span><span style="color: #7f7f7f;">)</span> 'isearch-forward-regexp<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"\C-r"</span><span style="color: #7f7f7f;">)</span> 'isearch-backward-regexp<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-M-s"</span><span style="color: #7f7f7f;">)</span> 'isearch-forward<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-M-r"</span><span style="color: #7f7f7f;">)</span> 'isearch-backward<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-s"</span><span class="org-esk-paren">)</span> 'isearch-forward-regexp<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"\C-r"</span><span class="org-esk-paren">)</span> 'isearch-backward-regexp<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-s"</span><span class="org-esk-paren">)</span> 'isearch-forward<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-r"</span><span class="org-esk-paren">)</span> 'isearch-backward<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -217,8 +222,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x C-i"</span><span style="color: #7f7f7f;">)</span> 'ido-imenu<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-i"</span><span class="org-esk-paren">)</span> 'ido-imenu<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -234,15 +240,16 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x M-f"</span><span style="color: #7f7f7f;">)</span> 'ido-find-file-other-window<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x C-M-f"</span><span style="color: #7f7f7f;">)</span> 'find-file-in-project<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x f"</span><span style="color: #7f7f7f;">)</span> 'recentf-ido-find-file<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x C-p"</span><span style="color: #7f7f7f;">)</span> 'find-file-at-point<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c y"</span><span style="color: #7f7f7f;">)</span> 'bury-buffer<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c r"</span><span style="color: #7f7f7f;">)</span> 'revert-buffer<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"M-`"</span><span style="color: #7f7f7f;">)</span> 'file-cache-minibuffer-complete<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x C-b"</span><span style="color: #7f7f7f;">)</span> 'ibuffer<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M-f"</span><span class="org-esk-paren">)</span> 'ido-find-file-other-window<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-M-f"</span><span class="org-esk-paren">)</span> 'find-file-in-project<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x f"</span><span class="org-esk-paren">)</span> 'recentf-ido-find-file<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-p"</span><span class="org-esk-paren">)</span> 'find-file-at-point<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c y"</span><span class="org-esk-paren">)</span> 'bury-buffer<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c r"</span><span class="org-esk-paren">)</span> 'revert-buffer<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"M-`"</span><span class="org-esk-paren">)</span> 'file-cache-minibuffer-complete<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-b"</span><span class="org-esk-paren">)</span> 'ibuffer<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -258,10 +265,11 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>windmove-default-keybindings<span style="color: #7f7f7f;">)</span> <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">Shift+direction
-</span><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x O"</span><span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>other-window -1<span style="color: #7f7f7f;">)))</span> <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">back one
-</span><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x C-o"</span><span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>other-window 2<span style="color: #7f7f7f;">)))</span> <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">forward two
-</span></pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>windmove-default-keybindings<span class="org-esk-paren">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">Shift+direction
+</span><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x O"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>other-window -1<span class="org-esk-paren">)))</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">back one
+</span><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-o"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>other-window 2<span class="org-esk-paren">)))</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">forward two
+</span></pre></div>
 
 
 
@@ -277,8 +285,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x ^"</span><span style="color: #7f7f7f;">)</span> 'join-line<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x ^"</span><span class="org-esk-paren">)</span> 'join-line<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -294,8 +303,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x m"</span><span style="color: #7f7f7f;">)</span> 'eshell<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x m"</span><span class="org-esk-paren">)</span> 'eshell<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -311,8 +321,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x M"</span><span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>eshell t<span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>eshell t<span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
@@ -328,8 +339,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x M-m"</span><span style="color: #7f7f7f;">)</span> 'shell<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M-m"</span><span class="org-esk-paren">)</span> 'shell<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -345,8 +357,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x C-m"</span><span style="color: #7f7f7f;">)</span> 'execute-extended-command<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-m"</span><span class="org-esk-paren">)</span> 'execute-extended-command<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -362,8 +375,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x h"</span><span style="color: #7f7f7f;">)</span> 'view-url<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x h"</span><span class="org-esk-paren">)</span> 'view-url<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -379,8 +393,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-h a"</span><span style="color: #7f7f7f;">)</span> 'apropos<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-h a"</span><span class="org-esk-paren">)</span> 'apropos<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -396,8 +411,9 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c e"</span><span style="color: #7f7f7f;">)</span> 'eval-and-replace<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c e"</span><span class="org-esk-paren">)</span> 'eval-and-replace<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -413,15 +429,16 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c j"</span><span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>switch-or-start 'jabber-connect <span style="color: #A5C261;">"*-jabber-*"</span><span style="color: #7f7f7f;">)))</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c g"</span><span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>switch-or-start 'gnus <span style="color: #A5C261;">"*Group*"</span><span style="color: #7f7f7f;">)))</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c i"</span><span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>switch-or-start <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span>
-                                                                     <span style="color: #7f7f7f;">(</span>rcirc-connect <span style="color: #A5C261;">"irc.freenode.net"</span><span style="color: #7f7f7f;">))</span>
-                                                                   <span style="color: #A5C261;">"*irc.freenode.net*"</span><span style="color: #7f7f7f;">)))</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c J"</span><span style="color: #7f7f7f;">)</span> 'jabber-send-presence<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c M-j"</span><span style="color: #7f7f7f;">)</span> 'jabber-disconnect<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-x g"</span><span style="color: #7f7f7f;">)</span> 'magit-status<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c j"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>switch-or-start 'jabber-connect <span class="org-string">"*-jabber-*"</span><span class="org-esk-paren">)))</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c g"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>switch-or-start 'gnus <span class="org-string">"*Group*"</span><span class="org-esk-paren">)))</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c i"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>switch-or-start <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span>
+                                                                     <span class="org-esk-paren">(</span>rcirc-connect <span class="org-string">"irc.freenode.net"</span><span class="org-esk-paren">))</span>
+                                                                   <span class="org-string">"*irc.freenode.net*"</span><span class="org-esk-paren">)))</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c J"</span><span class="org-esk-paren">)</span> 'jabber-send-presence<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c M-j"</span><span class="org-esk-paren">)</span> 'jabber-disconnect<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x g"</span><span class="org-esk-paren">)</span> 'magit-status<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -437,13 +454,14 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'vc
-  <span style="color: #7f7f7f;">(</span>define-key vc-prefix-map <span style="color: #A5C261;">"i"</span> '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-                                   <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>not <span style="color: #7f7f7f;">(</span>eq 'Git <span style="color: #7f7f7f;">(</span>vc-backend buffer-file-name<span style="color: #7f7f7f;">)))</span>
-                                       <span style="color: #7f7f7f;">(</span>vc-register<span style="color: #7f7f7f;">)</span>
-                                     <span style="color: #7f7f7f;">(</span>shell-command <span style="color: #7f7f7f;">(</span>format <span style="color: #A5C261;">"git add %s"</span> buffer-file-name<span style="color: #7f7f7f;">))</span>
-                                     <span style="color: #7f7f7f;">(</span>message <span style="color: #A5C261;">"Staged changes."</span><span style="color: #7f7f7f;">)))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">eval-after-load</span> 'vc
+  <span class="org-esk-paren">(</span>define-key vc-prefix-map <span class="org-string">"i"</span> '<span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+                                   <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>not <span class="org-esk-paren">(</span>eq 'Git <span class="org-esk-paren">(</span>vc-backend buffer-file-name<span class="org-esk-paren">)))</span>
+                                       <span class="org-esk-paren">(</span>vc-register<span class="org-esk-paren">)</span>
+                                     <span class="org-esk-paren">(</span>shell-command <span class="org-esk-paren">(</span>format <span class="org-string">"git add %s"</span> buffer-file-name<span class="org-esk-paren">))</span>
+                                     <span class="org-esk-paren">(</span>message <span class="org-string">"Staged changes."</span><span class="org-esk-paren">)))))</span>
+</pre></div>
 
 
 
@@ -459,11 +477,12 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>define-key isearch-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-o"</span><span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span> <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>case-fold-search isearch-case-fold-search<span style="color: #7f7f7f;">))</span>
-      <span style="color: #7f7f7f;">(</span>occur <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> isearch-regexp isearch-string <span style="color: #7f7f7f;">(</span>regexp-quote isearch-string<span style="color: #7f7f7f;">))))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>define-key isearch-mode-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-o"</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>case-fold-search isearch-case-fold-search<span class="org-esk-paren">))</span>
+      <span class="org-esk-paren">(</span>occur <span class="org-esk-paren">(</span><span class="org-keyword">if</span> isearch-regexp isearch-string <span class="org-esk-paren">(</span>regexp-quote isearch-string<span class="org-esk-paren">))))))</span>
+</pre></div>
 
 
 
@@ -479,9 +498,10 @@ Key Bindings.
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">provide</span> '<span style="color: #6D9CBE;">starter-kit-bindings</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #BC9458; font-style: italic;">;;; </span><span style="color: #BC9458; font-style: italic;">starter-kit-bindings.el ends here
-</span></pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">provide</span> '<span class="org-constant">starter-kit-bindings</span><span class="org-esk-paren">)</span>
+<span class="org-comment-delimiter">;;; </span><span class="org-comment">starter-kit-bindings.el ends here
+</span></pre></div>
 
 
 
@@ -500,8 +520,9 @@ The <a href="http://orgmode.org/manual/Agenda-Views.html#Agenda-Views">Org-mode 
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>define-key global-map <span style="color: #A5C261;">"\C-ca"</span> 'org-agenda<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-ca"</span> 'org-agenda<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -513,8 +534,9 @@ globally for later insertion into an Org-mode buffer.  See
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>define-key global-map <span style="color: #A5C261;">"\C-cl"</span> 'org-store-link<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-cl"</span> 'org-store-link<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -541,9 +563,10 @@ globally for later insertion into an Org-mode buffer.  See
 </ul>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">magit</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>define-key global-map <span style="color: #A5C261;">"\M-\C-g"</span> 'magit-status<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">magit</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\M-\C-g"</span> 'magit-status<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -569,8 +592,9 @@ magit-status
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>define-key global-map <span style="color: #A5C261;">"\C-x\C-r"</span> 'rgrep<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-x\C-r"</span> 'rgrep<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 

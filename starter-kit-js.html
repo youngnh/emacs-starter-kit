@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit JS</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-12-18 18:28:16 MST"/>
+<meta name="generated" content="2010-02-13 15:38:25 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,8 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #232323;
-	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -85,50 +83,54 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>font-lock-add-keywords
- 'espresso-mode `<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">function *</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">("</span>
-                   <span style="color: #7f7f7f;">(</span>0 <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span> <span style="color: #7f7f7f;">(</span>compose-region <span style="color: #7f7f7f;">(</span>match-beginning 1<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>match-end 1<span style="color: #7f7f7f;">)</span>
-                                             <span style="color: #A5C261;">"&#402;"</span><span style="color: #7f7f7f;">)</span>
-                             nil<span style="color: #7f7f7f;">)))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>font-lock-add-keywords
+ 'espresso-mode `<span class="org-esk-paren">((</span><span class="org-string">"</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">function *</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">("</span>
+                   <span class="org-esk-paren">(</span>0 <span class="org-esk-paren">(</span><span class="org-keyword">progn</span> <span class="org-esk-paren">(</span>compose-region <span class="org-esk-paren">(</span>match-beginning 1<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>match-end 1<span class="org-esk-paren">)</span>
+                                             <span class="org-string">"&#402;"</span><span class="org-esk-paren">)</span>
+                             nil<span class="org-esk-paren">)))))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>font-lock-add-keywords 'espresso-mode
-                        '<span style="color: #7f7f7f;">((</span><span style="color: #A5C261;">"\\&lt;</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">FIX</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">TODO</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">FIXME</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">HACK</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">|</span><span style="color: #A5C261;">REFACTOR</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">:"</span>
-                           1 font-lock-warning-face t<span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>font-lock-add-keywords 'espresso-mode
+                        '<span class="org-esk-paren">((</span><span class="org-string">"\\&lt;</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">FIX</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">TODO</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">FIXME</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">HACK</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">REFACTOR</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">:"</span>
+                           1 font-lock-warning-face t<span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>autoload 'espresso-mode <span style="color: #A5C261;">"espresso"</span> <span style="color: #A5C261;">"Start espresso-mode"</span> t<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.js$"</span> . espresso-mode<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.json$"</span> . espresso-mode<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-hook 'espresso-mode-hook 'moz-minor-mode<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>add-hook 'espresso-mode-hook 'turn-on-paredit<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>add-hook 'espresso-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
-<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(add-hook 'espresso-mode-hook 'idle-highlight)
-</span><span style="color: #7f7f7f;">(</span>setq espresso-indent-level 2<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>autoload 'espresso-mode <span class="org-string">"espresso"</span> <span class="org-doc">"Start espresso-mode"</span> t<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>add-to-list 'auto-mode-alist '<span class="org-esk-paren">(</span><span class="org-string">"\\.js$"</span> . espresso-mode<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'auto-mode-alist '<span class="org-esk-paren">(</span><span class="org-string">"\\.json$"</span> . espresso-mode<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-hook 'espresso-mode-hook 'moz-minor-mode<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>add-hook 'espresso-mode-hook 'turn-on-paredit<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>add-hook 'espresso-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(add-hook 'espresso-mode-hook 'idle-highlight)
+</span><span class="org-esk-paren">(</span>setq espresso-indent-level 2<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">esk-pp-json</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Pretty-print the json object following point."</span>
-  <span style="color: #7f7f7f;">(</span>interactive<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">json</span><span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>json-object <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">save-excursion</span> <span style="color: #7f7f7f;">(</span>json-read<span style="color: #7f7f7f;">))))</span>
-    <span style="color: #7f7f7f;">(</span>switch-to-buffer <span style="color: #A5C261;">"*json*"</span><span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span>delete-region <span style="color: #7f7f7f;">(</span>point-min<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>point-max<span style="color: #7f7f7f;">))</span>
-    <span style="color: #7f7f7f;">(</span>insert <span style="color: #7f7f7f;">(</span>pp json-object<span style="color: #7f7f7f;">))</span>
-    <span style="color: #7f7f7f;">(</span>goto-char <span style="color: #7f7f7f;">(</span>point-min<span style="color: #7f7f7f;">))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">esk-pp-json</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Pretty-print the json object following point."</span>
+  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">json</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>json-object <span class="org-esk-paren">(</span><span class="org-keyword">save-excursion</span> <span class="org-esk-paren">(</span>json-read<span class="org-esk-paren">))))</span>
+    <span class="org-esk-paren">(</span>switch-to-buffer <span class="org-string">"*json*"</span><span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span>delete-region <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>point-max<span class="org-esk-paren">))</span>
+    <span class="org-esk-paren">(</span>insert <span class="org-esk-paren">(</span>pp json-object<span class="org-esk-paren">))</span>
+    <span class="org-esk-paren">(</span>goto-char <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">))))</span>
+</pre></div>
 
 
 

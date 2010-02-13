@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Ruby</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-12-18 18:28:08 MST"/>
+<meta name="generated" content="2010-02-13 15:38:21 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,8 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #232323;
-	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -87,23 +85,25 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'ruby-mode
-  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
-     <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">work around possible elpa bug
-</span>     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">ignore-errors</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">ruby-compilation</span><span style="color: #7f7f7f;">))</span>
-     <span style="color: #7f7f7f;">(</span>setq ruby-use-encoding-map nil<span style="color: #7f7f7f;">)</span>
-     <span style="color: #7f7f7f;">(</span>add-hook 'ruby-mode-hook 'inf-ruby-keys<span style="color: #7f7f7f;">)</span>
-     <span style="color: #7f7f7f;">(</span>define-key ruby-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"RET"</span><span style="color: #7f7f7f;">)</span> 'reindent-then-newline-and-indent<span style="color: #7f7f7f;">)</span>
-     <span style="color: #7f7f7f;">(</span>define-key ruby-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-M-h"</span><span style="color: #7f7f7f;">)</span> 'backward-kill-word<span style="color: #7f7f7f;">)</span>
-     <span style="color: #7f7f7f;">(</span>define-key ruby-mode-map <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c l"</span><span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"lambda"</span><span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">eval-after-load</span> 'ruby-mode
+  '<span class="org-esk-paren">(</span><span class="org-keyword">progn</span>
+     <span class="org-comment-delimiter">;; </span><span class="org-comment">work around possible elpa bug
+</span>     <span class="org-esk-paren">(</span><span class="org-keyword">ignore-errors</span> <span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">ruby-compilation</span><span class="org-esk-paren">))</span>
+     <span class="org-esk-paren">(</span>setq ruby-use-encoding-map nil<span class="org-esk-paren">)</span>
+     <span class="org-esk-paren">(</span>add-hook 'ruby-mode-hook 'inf-ruby-keys<span class="org-esk-paren">)</span>
+     <span class="org-esk-paren">(</span>define-key ruby-mode-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"RET"</span><span class="org-esk-paren">)</span> 'reindent-then-newline-and-indent<span class="org-esk-paren">)</span>
+     <span class="org-esk-paren">(</span>define-key ruby-mode-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-h"</span><span class="org-esk-paren">)</span> 'backward-kill-word<span class="org-esk-paren">)</span>
+     <span class="org-esk-paren">(</span>define-key ruby-mode-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c l"</span><span class="org-esk-paren">)</span> <span class="org-string">"lambda"</span><span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>global-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-h r"</span><span style="color: #7f7f7f;">)</span> 'ri<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-h r"</span><span class="org-esk-paren">)</span> 'ri<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -118,10 +118,11 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.rake$"</span> . ruby-mode<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"Rakefile$"</span> . ruby-mode<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'auto-mode-alist '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"\\.gemspec$"</span> . ruby-mode<span style="color: #7f7f7f;">))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-to-list 'auto-mode-alist '<span class="org-esk-paren">(</span><span class="org-string">"\\.rake$"</span> . ruby-mode<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'auto-mode-alist '<span class="org-esk-paren">(</span><span class="org-string">"Rakefile$"</span> . ruby-mode<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'auto-mode-alist '<span class="org-esk-paren">(</span><span class="org-string">"\\.gemspec$"</span> . ruby-mode<span class="org-esk-paren">))</span>
+</pre></div>
 
 
 
@@ -137,8 +138,9 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'completion-ignored-extensions <span style="color: #A5C261;">".rbc"</span><span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-to-list 'completion-ignored-extensions <span class="org-string">".rbc"</span><span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -155,23 +157,24 @@ Support for the <a href="http://www.ruby-lang.org/en/">Ruby</a> dynamic, open-so
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">pcomplete/rake</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #A5C261;">"Completion rules for the `</span><span style="color: #6D9CBE;">ssh</span><span style="color: #A5C261;">' command."</span>
-  <span style="color: #7f7f7f;">(</span>pcomplete-here <span style="color: #7f7f7f;">(</span>pcmpl-rake-tasks<span style="color: #7f7f7f;">)))</span>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pcomplete/rake</span> <span class="org-esk-paren">()</span>
+  <span class="org-doc">"Completion rules for the `</span><span class="org-doc"><span class="org-constant">ssh</span></span><span class="org-doc">' command."</span>
+  <span class="org-esk-paren">(</span>pcomplete-here <span class="org-esk-paren">(</span>pcmpl-rake-tasks<span class="org-esk-paren">)))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">pcmpl-rake-tasks</span> <span style="color: #7f7f7f;">()</span>
-   <span style="color: #A5C261;">"Return a list of all the rake tasks defined in the current
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pcmpl-rake-tasks</span> <span class="org-esk-paren">()</span>
+   <span class="org-doc">"Return a list of all the rake tasks defined in the current
 projects.  I know this is a hack to put all the logic in the
 exec-to-string command, but it works and seems fast"</span>
-   <span style="color: #7f7f7f;">(</span>delq nil <span style="color: #7f7f7f;">(</span>mapcar '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span><span style="color: #7f7f7f;">(</span>line<span style="color: #7f7f7f;">)</span>
-                        <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>string-match <span style="color: #A5C261;">"rake </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">[</span><span style="color: #A5C261;">^</span><span style="color: #A5C261;"> ]+</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">"</span> line<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>match-string 1 line<span style="color: #7f7f7f;">)))</span>
-                     <span style="color: #7f7f7f;">(</span>split-string <span style="color: #7f7f7f;">(</span>shell-command-to-string <span style="color: #A5C261;">"rake -T"</span><span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"[\n]"</span><span style="color: #7f7f7f;">))))</span>
+   <span class="org-esk-paren">(</span>delq nil <span class="org-esk-paren">(</span>mapcar '<span class="org-esk-paren">(</span><span class="org-keyword">lambda</span><span class="org-esk-paren">(</span>line<span class="org-esk-paren">)</span>
+                        <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>string-match <span class="org-string">"rake </span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">[</span><span class="org-string"><span class="org-negation-char">^</span></span><span class="org-string"> ]+</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">"</span> line<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>match-string 1 line<span class="org-esk-paren">)))</span>
+                     <span class="org-esk-paren">(</span>split-string <span class="org-esk-paren">(</span>shell-command-to-string <span class="org-string">"rake -T"</span><span class="org-esk-paren">)</span> <span class="org-string">"[\n]"</span><span class="org-esk-paren">))))</span>
 
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">rake</span> <span style="color: #7f7f7f;">(</span>task<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span>interactive <span style="color: #7f7f7f;">(</span>list <span style="color: #7f7f7f;">(</span>completing-read <span style="color: #A5C261;">"Rake (default: default): "</span>
-                                      <span style="color: #7f7f7f;">(</span>pcmpl-rake-tasks<span style="color: #7f7f7f;">))))</span>
-  <span style="color: #7f7f7f;">(</span>shell-command-to-string <span style="color: #7f7f7f;">(</span>concat <span style="color: #A5C261;">"rake "</span> <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>= 0 <span style="color: #7f7f7f;">(</span>length task<span style="color: #7f7f7f;">))</span> <span style="color: #A5C261;">"default"</span> task<span style="color: #7f7f7f;">))))</span>
-</pre>
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rake</span> <span class="org-esk-paren">(</span>task<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>interactive <span class="org-esk-paren">(</span>list <span class="org-esk-paren">(</span>completing-read <span class="org-string">"Rake (default: default): "</span>
+                                      <span class="org-esk-paren">(</span>pcmpl-rake-tasks<span class="org-esk-paren">))))</span>
+  <span class="org-esk-paren">(</span>shell-command-to-string <span class="org-esk-paren">(</span>concat <span class="org-string">"rake "</span> <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>= 0 <span class="org-esk-paren">(</span>length task<span class="org-esk-paren">))</span> <span class="org-string">"default"</span> task<span class="org-esk-paren">))))</span>
+</pre></div>
 
 
 
@@ -189,15 +192,16 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'ruby-compilation
-  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
-     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defadvice</span> <span style="color: #FFC66D;">ruby-do-run-w/compilation</span> <span style="color: #7f7f7f;">(</span>before kill-buffer <span style="color: #7f7f7f;">(</span>name cmdlist<span style="color: #7f7f7f;">))</span>
-       <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>comp-buffer-name <span style="color: #7f7f7f;">(</span>format <span style="color: #A5C261;">"*%s*"</span> name<span style="color: #7f7f7f;">)))</span>
-         <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>get-buffer comp-buffer-name<span style="color: #7f7f7f;">)</span>
-           <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">with-current-buffer</span> comp-buffer-name
-             <span style="color: #7f7f7f;">(</span>delete-region <span style="color: #7f7f7f;">(</span>point-min<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>point-max<span style="color: #7f7f7f;">))))))</span>
-     <span style="color: #7f7f7f;">(</span>ad-activate 'ruby-do-run-w/compilation<span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">eval-after-load</span> 'ruby-compilation
+  '<span class="org-esk-paren">(</span><span class="org-keyword">progn</span>
+     <span class="org-esk-paren">(</span><span class="org-keyword">defadvice</span> <span class="org-function-name">ruby-do-run-w/compilation</span> <span class="org-esk-paren">(</span>before kill-buffer <span class="org-esk-paren">(</span>name cmdlist<span class="org-esk-paren">))</span>
+       <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>comp-buffer-name <span class="org-esk-paren">(</span>format <span class="org-string">"*%s*"</span> name<span class="org-esk-paren">)))</span>
+         <span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>get-buffer comp-buffer-name<span class="org-esk-paren">)</span>
+           <span class="org-esk-paren">(</span><span class="org-keyword">with-current-buffer</span> comp-buffer-name
+             <span class="org-esk-paren">(</span>delete-region <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>point-max<span class="org-esk-paren">))))))</span>
+     <span class="org-esk-paren">(</span>ad-activate 'ruby-do-run-w/compilation<span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
@@ -213,8 +217,9 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'ruby-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'ruby-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -234,35 +239,36 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">eval-after-load</span> 'ruby-mode
-  '<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span>
-     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">flymake</span><span style="color: #7f7f7f;">)</span>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">eval-after-load</span> 'ruby-mode
+  '<span class="org-esk-paren">(</span><span class="org-keyword">progn</span>
+     <span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">flymake</span><span class="org-esk-paren">)</span>
 
-     <span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">Invoke ruby with '-c' to get syntax checking
-</span>     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">flymake-ruby-init</span> <span style="color: #7f7f7f;">()</span>
-       <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let*</span> <span style="color: #7f7f7f;">((</span>temp-file <span style="color: #7f7f7f;">(</span>flymake-init-create-temp-buffer-copy
-                          'flymake-create-temp-inplace<span style="color: #7f7f7f;">))</span>
-              <span style="color: #7f7f7f;">(</span>local-file <span style="color: #7f7f7f;">(</span>file-relative-name
+     <span class="org-comment-delimiter">;; </span><span class="org-comment">Invoke ruby with '-c' to get syntax checking
+</span>     <span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">flymake-ruby-init</span> <span class="org-esk-paren">()</span>
+       <span class="org-esk-paren">(</span><span class="org-keyword">let*</span> <span class="org-esk-paren">((</span>temp-file <span class="org-esk-paren">(</span>flymake-init-create-temp-buffer-copy
+                          'flymake-create-temp-inplace<span class="org-esk-paren">))</span>
+              <span class="org-esk-paren">(</span>local-file <span class="org-esk-paren">(</span>file-relative-name
                            temp-file
-                           <span style="color: #7f7f7f;">(</span>file-name-directory buffer-file-name<span style="color: #7f7f7f;">))))</span>
-         <span style="color: #7f7f7f;">(</span>list <span style="color: #A5C261;">"ruby"</span> <span style="color: #7f7f7f;">(</span>list <span style="color: #A5C261;">"-c"</span> local-file<span style="color: #7f7f7f;">))))</span>
+                           <span class="org-esk-paren">(</span>file-name-directory buffer-file-name<span class="org-esk-paren">))))</span>
+         <span class="org-esk-paren">(</span>list <span class="org-string">"ruby"</span> <span class="org-esk-paren">(</span>list <span class="org-string">"-c"</span> local-file<span class="org-esk-paren">))))</span>
 
-     <span style="color: #7f7f7f;">(</span>push '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">".+\\.rb$"</span> flymake-ruby-init<span style="color: #7f7f7f;">)</span> flymake-allowed-file-name-masks<span style="color: #7f7f7f;">)</span>
-     <span style="color: #7f7f7f;">(</span>push '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"Rakefile$"</span> flymake-ruby-init<span style="color: #7f7f7f;">)</span> flymake-allowed-file-name-masks<span style="color: #7f7f7f;">)</span>
+     <span class="org-esk-paren">(</span>push '<span class="org-esk-paren">(</span><span class="org-string">".+\\.rb$"</span> flymake-ruby-init<span class="org-esk-paren">)</span> flymake-allowed-file-name-masks<span class="org-esk-paren">)</span>
+     <span class="org-esk-paren">(</span>push '<span class="org-esk-paren">(</span><span class="org-string">"Rakefile$"</span> flymake-ruby-init<span class="org-esk-paren">)</span> flymake-allowed-file-name-masks<span class="org-esk-paren">)</span>
 
-     <span style="color: #7f7f7f;">(</span>push '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"^</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">.*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">:</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">[0-9]+</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">: </span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">.*</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">$"</span> 1 2 nil 3<span style="color: #7f7f7f;">)</span>
-           flymake-err-line-patterns<span style="color: #7f7f7f;">)</span>
+     <span class="org-esk-paren">(</span>push '<span class="org-esk-paren">(</span><span class="org-string">"^</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">.*</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">:</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">[0-9]+</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">: </span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">.*</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">$"</span> 1 2 nil 3<span class="org-esk-paren">)</span>
+           flymake-err-line-patterns<span class="org-esk-paren">)</span>
 
-     <span style="color: #7f7f7f;">(</span>add-hook 'ruby-mode-hook
-               <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">()</span>
-                 <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>and buffer-file-name
-                            <span style="color: #7f7f7f;">(</span>file-writable-p
-                             <span style="color: #7f7f7f;">(</span>file-name-directory buffer-file-name<span style="color: #7f7f7f;">))</span>
-                            <span style="color: #7f7f7f;">(</span>file-writable-p buffer-file-name<span style="color: #7f7f7f;">))</span>
-                   <span style="color: #7f7f7f;">(</span>local-set-key <span style="color: #7f7f7f;">(</span>kbd <span style="color: #A5C261;">"C-c d"</span><span style="color: #7f7f7f;">)</span>
-                                  'flymake-display-err-menu-for-current-line<span style="color: #7f7f7f;">)</span>
-                   <span style="color: #7f7f7f;">(</span>flymake-mode t<span style="color: #7f7f7f;">))))))</span>
-</pre>
+     <span class="org-esk-paren">(</span>add-hook 'ruby-mode-hook
+               <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span>
+                 <span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>and buffer-file-name
+                            <span class="org-esk-paren">(</span>file-writable-p
+                             <span class="org-esk-paren">(</span>file-name-directory buffer-file-name<span class="org-esk-paren">))</span>
+                            <span class="org-esk-paren">(</span>file-writable-p buffer-file-name<span class="org-esk-paren">))</span>
+                   <span class="org-esk-paren">(</span>local-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c d"</span><span class="org-esk-paren">)</span>
+                                  'flymake-display-err-menu-for-current-line<span class="org-esk-paren">)</span>
+                   <span class="org-esk-paren">(</span>flymake-mode t<span class="org-esk-paren">))))))</span>
+</pre></div>
 
 
 
@@ -280,10 +286,11 @@ exec-to-string command, but it works and seems fast"</span>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq rinari-major-modes
-      <span style="color: #7f7f7f;">(</span>list 'dired-mode-hook 'ruby-mode-hook
-            'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook<span style="color: #7f7f7f;">))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>setq rinari-major-modes
+      <span class="org-esk-paren">(</span>list 'mumamo-after-change-major-mode-hook 'dired-mode-hook 'ruby-mode-hook
+            'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook<span class="org-esk-paren">))</span>
+</pre></div>
 
 
 

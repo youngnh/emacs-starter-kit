@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit LaTeX</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-12-18 18:28:14 MST"/>
+<meta name="generated" content="2010-02-13 15:38:24 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,8 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #232323;
-	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -99,8 +97,9 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>load <span style="color: #A5C261;">"auctex.el"</span> nil t t<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>load <span class="org-string">"auctex.el"</span> nil t t<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -116,8 +115,9 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(load "preview-latex.el" nil t t)
-</span></pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>load <span class="org-string">"preview-latex.el"</span> nil t t<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -133,8 +133,9 @@ lang="en" xml:lang="en">
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'LaTeX-mode-hook 'turn-on-reftex<span style="color: #7f7f7f;">)</span>   <span style="color: #BC9458; font-style: italic;">; </span><span style="color: #BC9458; font-style: italic;">with AUCTeX LaTeX mode
-</span></pre>
+<div class="org-src-container"><label class="org-src-name">reftex-support()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'LaTeX-mode-hook 'turn-on-reftex<span class="org-esk-paren">)</span>   <span class="org-comment-delimiter">; </span><span class="org-comment">with AUCTeX LaTeX mode
+</span></pre></div>
 
 
 
@@ -163,8 +164,9 @@ Take this out to compile to DVI, instead.
 </ul>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'LaTeX-mode-hook 'TeX-PDF-mode<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">pdf-mode()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'LaTeX-mode-hook 'TeX-PDF-mode<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
@@ -189,8 +191,9 @@ configuration as needed.
 </ul>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setenv <span style="color: #A5C261;">"PATH"</span> <span style="color: #7f7f7f;">(</span>concat <span style="color: #A5C261;">"/usr/texbin:"</span> <span style="color: #7f7f7f;">(</span>getenv <span style="color: #A5C261;">"PATH"</span><span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">set-exec-path()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>setenv <span class="org-string">"PATH"</span> <span class="org-esk-paren">(</span>concat <span class="org-string">"/usr/texbin:"</span> <span class="org-esk-paren">(</span>getenv <span class="org-string">"PATH"</span><span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
@@ -225,10 +228,11 @@ a personal file/directory.
 </ul>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>setq reftex-default-bibliography
-      <span style="color: #7f7f7f;">(</span>quote
-       <span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"user.bib"</span> <span style="color: #A5C261;">"local.bib"</span><span style="color: #7f7f7f;">)))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">default-bibliography()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>setq reftex-default-bibliography
+      <span class="org-esk-paren">(</span>quote
+       <span class="org-esk-paren">(</span><span class="org-string">"user.bib"</span> <span class="org-string">"local.bib"</span><span class="org-esk-paren">)))</span>
+</pre></div>
 
 
 
@@ -250,10 +254,11 @@ Add LaTeX to the list of languages Org-babel will recognize.
 </ul>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>org-babel-add-interpreter <span style="color: #A5C261;">"latex"</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'org-babel-tangle-langs '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"latex"</span> <span style="color: #A5C261;">"tex"</span><span style="color: #7f7f7f;">))</span>
-<span style="color: #BC9458; font-style: italic;">; </span><span style="color: #BC9458; font-style: italic;">(require 'org-babel-latex)
-</span></pre>
+<div class="org-src-container"><label class="org-src-name">add-latex()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>org-babel-add-interpreter <span class="org-string">"latex"</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>add-to-list 'org-babel-tangle-langs '<span class="org-esk-paren">(</span><span class="org-string">"latex"</span> <span class="org-string">"tex"</span><span class="org-esk-paren">))</span>
+<span class="org-comment-delimiter">; </span><span class="org-comment">(require 'org-babel-latex)
+</span></pre></div>
 
 
 
@@ -265,8 +270,9 @@ Add LaTeX to a list of languages that raise noweb-type errors.
 </ul>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'org-babel-noweb-error-langs <span style="color: #A5C261;">"latex"</span><span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">noweb-error()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-to-list 'org-babel-noweb-error-langs <span class="org-string">"latex"</span><span class="org-esk-paren">)</span>
+</pre></div>
 
 
 

@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Haskell</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2009-12-18 18:28:17 MST"/>
+<meta name="generated" content="2010-02-13 15:38:25 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,8 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #232323;
-	color: #E6E1DC;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -87,13 +85,14 @@ pretty lambdas in Haskell code
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">pretty-lambdas-haskell</span> <span style="color: #7f7f7f;">()</span>
-  <span style="color: #7f7f7f;">(</span>font-lock-add-keywords
-   nil `<span style="color: #7f7f7f;">((</span>,<span style="color: #7f7f7f;">(</span>concat <span style="color: #A5C261;">"(?</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">(</span><span style="color: #A5C261;">"</span> <span style="color: #7f7f7f;">(</span>regexp-quote <span style="color: #A5C261;">"\\"</span><span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">"</span><span style="color: #A5C261; font-weight: bold;">\\</span><span style="color: #A5C261; font-weight: bold;">)</span><span style="color: #A5C261;">"</span><span style="color: #7f7f7f;">)</span>
-          <span style="color: #7f7f7f;">(</span>0 <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">progn</span> <span style="color: #7f7f7f;">(</span>compose-region <span style="color: #7f7f7f;">(</span>match-beginning 1<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>match-end 1<span style="color: #7f7f7f;">)</span>
-                                    ,<span style="color: #7f7f7f;">(</span>make-char 'greek-iso8859-7 107<span style="color: #7f7f7f;">))</span>
-                    nil<span style="color: #7f7f7f;">))))))</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pretty-lambdas-haskell</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>font-lock-add-keywords
+   nil `<span class="org-esk-paren">((</span>,<span class="org-esk-paren">(</span>concat <span class="org-string">"(?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">"</span> <span class="org-esk-paren">(</span>regexp-quote <span class="org-string">"\\"</span><span class="org-esk-paren">)</span> <span class="org-string">"</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">"</span><span class="org-esk-paren">)</span>
+          <span class="org-esk-paren">(</span>0 <span class="org-esk-paren">(</span><span class="org-keyword">progn</span> <span class="org-esk-paren">(</span>compose-region <span class="org-esk-paren">(</span>match-beginning 1<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>match-end 1<span class="org-esk-paren">)</span>
+                                    ,<span class="org-esk-paren">(</span>make-char 'greek-iso8859-7 107<span class="org-esk-paren">))</span>
+                    nil<span class="org-esk-paren">))))))</span>
+</pre></div>
 
 
 
@@ -103,9 +102,10 @@ Haskell mode hook
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-hook 'haskell-mode-hook 'run-coding-hook<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>add-hook 'haskell-mode-hook 'pretty-lambdas-haskell<span style="color: #7f7f7f;">)</span>
-</pre>
+<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>add-hook 'haskell-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>add-hook 'haskell-mode-hook 'pretty-lambdas-haskell<span class="org-esk-paren">)</span>
+</pre></div>
 
 
 
