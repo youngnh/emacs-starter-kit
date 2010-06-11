@@ -34,7 +34,9 @@ src
 .org-id-locations
 
 ## gh-pages specific ignores
+dominating-file.el
 elpa
+elpa-to-submit
 snippets
 color-themes
 eshell
