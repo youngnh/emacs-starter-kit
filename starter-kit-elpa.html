@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit ELPA</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-02-13 15:46:53 MST"/>
+<meta name="generated" content="2010-06-11 14:26:49 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -86,8 +86,7 @@ The following packages should all ways be installed
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">starter-kit-packages</span> <span class="org-esk-paren">(</span>list 'idle-highlight
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">starter-kit-packages</span> <span class="org-esk-paren">(</span>list 'idle-highlight
                                    'ruby-mode
                                    'inf-ruby
                                    'js2-mode
@@ -96,14 +95,13 @@ The following packages should all ways be installed
                                    'gist
                                    'paredit<span class="org-esk-paren">)</span>
   <span class="org-doc">"Libraries that should be installed by default."</span><span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">starter-kit-elpa-install</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">starter-kit-elpa-install</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Install all starter-kit packages that aren't installed."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">dolist</span> <span class="org-esk-paren">(</span>package starter-kit-packages<span class="org-esk-paren">)</span>
@@ -111,14 +109,13 @@ The following packages should all ways be installed
                 <span class="org-esk-paren">(</span>functionp package<span class="org-esk-paren">))</span>
       <span class="org-esk-paren">(</span>message <span class="org-string">"Installing %s"</span> <span class="org-esk-paren">(</span>symbol-name package<span class="org-esk-paren">))</span>
       <span class="org-esk-paren">(</span>package-install package<span class="org-esk-paren">))))</span>
-</pre></div>
+</pre>
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">esk-online?</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">esk-online?</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"See if we're online.
 
 Windows does not have the network-interface-list function, so we
@@ -131,7 +128,7 @@ just have to assume it's online."</span>
                                                    <span class="org-esk-paren">(</span>car iface<span class="org-esk-paren">)))))))</span>
             <span class="org-esk-paren">(</span>network-interface-list<span class="org-esk-paren">))</span>
     t<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
@@ -141,11 +138,10 @@ On your first run, this should pull in all the base packages.
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>esk-online?<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>esk-online?<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">unless</span> package-archive-contents <span class="org-esk-paren">(</span>package-refresh-contents<span class="org-esk-paren">))</span>
   <span class="org-esk-paren">(</span>starter-kit-elpa-install<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
@@ -156,9 +152,8 @@ unable to reproduce:
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>autoload 'paredit-mode <span class="org-string">"paredit"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>autoload 'paredit-mode <span class="org-string">"paredit"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 

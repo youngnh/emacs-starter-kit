@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit JS</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-02-13 15:46:52 MST"/>
+<meta name="generated" content="2010-06-11 14:26:46 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -83,30 +83,27 @@ lang="en" xml:lang="en">
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>font-lock-add-keywords
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>font-lock-add-keywords
  'espresso-mode `<span class="org-esk-paren">((</span><span class="org-string">"</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">function *</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">("</span>
                    <span class="org-esk-paren">(</span>0 <span class="org-esk-paren">(</span><span class="org-keyword">progn</span> <span class="org-esk-paren">(</span>compose-region <span class="org-esk-paren">(</span>match-beginning 1<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>match-end 1<span class="org-esk-paren">)</span>
                                              <span class="org-string">"&#402;"</span><span class="org-esk-paren">)</span>
                              nil<span class="org-esk-paren">)))))</span>
-</pre></div>
+</pre>
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>font-lock-add-keywords 'espresso-mode
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>font-lock-add-keywords 'espresso-mode
                         '<span class="org-esk-paren">((</span><span class="org-string">"\\&lt;</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">FIX</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">TODO</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">FIXME</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">HACK</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">REFACTOR</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">:"</span>
                            1 font-lock-warning-face t<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>autoload 'espresso-mode <span class="org-string">"espresso"</span> <span class="org-doc">"Start espresso-mode"</span> t<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>autoload 'espresso-mode <span class="org-string">"espresso"</span> <span class="org-doc">"Start espresso-mode"</span> t<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>add-to-list 'auto-mode-alist '<span class="org-esk-paren">(</span><span class="org-string">"\\.js$"</span> . espresso-mode<span class="org-esk-paren">))</span>
 <span class="org-esk-paren">(</span>add-to-list 'auto-mode-alist '<span class="org-esk-paren">(</span><span class="org-string">"\\.json$"</span> . espresso-mode<span class="org-esk-paren">))</span>
 <span class="org-esk-paren">(</span>add-hook 'espresso-mode-hook 'moz-minor-mode<span class="org-esk-paren">)</span>
@@ -114,14 +111,13 @@ lang="en" xml:lang="en">
 <span class="org-esk-paren">(</span>add-hook 'espresso-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;; </span><span class="org-comment">(add-hook 'espresso-mode-hook 'idle-highlight)
 </span><span class="org-esk-paren">(</span>setq espresso-indent-level 2<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">esk-pp-json</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">esk-pp-json</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Pretty-print the json object following point."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">json</span><span class="org-esk-paren">)</span>
@@ -130,7 +126,7 @@ lang="en" xml:lang="en">
     <span class="org-esk-paren">(</span>delete-region <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>point-max<span class="org-esk-paren">))</span>
     <span class="org-esk-paren">(</span>insert <span class="org-esk-paren">(</span>pp json-object<span class="org-esk-paren">))</span>
     <span class="org-esk-paren">(</span>goto-char <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">))))</span>
-</pre></div>
+</pre>
 
 
 

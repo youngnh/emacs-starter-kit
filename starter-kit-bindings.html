@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Bindings</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-02-13 15:46:56 MST"/>
+<meta name="generated" content="2010-06-11 14:26:52 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -85,34 +85,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.1" class="outline-3">
-<h3 id="sec-1.1">You know, like Readline. </h3>
-<div class="outline-text-3" id="text-1.1">
+<div id="outline-container-1_1" class="outline-3">
+<h3 id="sec-1_1">You know, like Readline. </h3>
+<div class="outline-text-3" id="text-1_1">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-h"</span><span class="org-esk-paren">)</span> 'backward-kill-word<span class="org-esk-paren">)</span>
-</pre></div>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1.2" class="outline-3">
-<h3 id="sec-1.2">Align your code in a pretty way. </h3>
-<div class="outline-text-3" id="text-1.2">
-
-
-
-
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x \\"</span><span class="org-esk-paren">)</span> 'align-regexp<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-h"</span><span class="org-esk-paren">)</span> 'backward-kill-word<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -121,34 +102,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.3" class="outline-3">
-<h3 id="sec-1.3">Completion that uses many different methods to find options. </h3>
-<div class="outline-text-3" id="text-1.3">
+<div id="outline-container-1_2" class="outline-3">
+<h3 id="sec-1_2">Align your code in a pretty way. </h3>
+<div class="outline-text-3" id="text-1_2">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"M-/"</span><span class="org-esk-paren">)</span> 'hippie-expand<span class="org-esk-paren">)</span>
-</pre></div>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1.4" class="outline-3">
-<h3 id="sec-1.4">Perform general cleanup. </h3>
-<div class="outline-text-3" id="text-1.4">
-
-
-
-
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c n"</span><span class="org-esk-paren">)</span> 'cleanup-buffer<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x \\"</span><span class="org-esk-paren">)</span> 'align-regexp<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -157,16 +119,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.5" class="outline-3">
-<h3 id="sec-1.5">Turn on the menu bar for exploring new modes </h3>
-<div class="outline-text-3" id="text-1.5">
+<div id="outline-container-1_3" class="outline-3">
+<h3 id="sec-1_3">Completion that uses many different methods to find options. </h3>
+<div class="outline-text-3" id="text-1_3">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key [f1] 'menu-bar-mode<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"M-/"</span><span class="org-esk-paren">)</span> 'hippie-expand<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -175,17 +136,50 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.6" class="outline-3">
-<h3 id="sec-1.6">Font size </h3>
-<div class="outline-text-3" id="text-1.6">
+<div id="outline-container-1_4" class="outline-3">
+<h3 id="sec-1_4">Perform general cleanup. </h3>
+<div class="outline-text-3" id="text-1_4">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>define-key global-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-+"</span><span class="org-esk-paren">)</span> 'text-scale-increase<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c n"</span><span class="org-esk-paren">)</span> 'cleanup-buffer<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_5" class="outline-3">
+<h3 id="sec-1_5">Turn on the menu bar for exploring new modes </h3>
+<div class="outline-text-3" id="text-1_5">
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key [f1] 'menu-bar-mode<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_6" class="outline-3">
+<h3 id="sec-1_6">Font size </h3>
+<div class="outline-text-3" id="text-1_6">
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key global-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-+"</span><span class="org-esk-paren">)</span> 'text-scale-increase<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>define-key global-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C--"</span><span class="org-esk-paren">)</span> 'text-scale-decrease<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
@@ -194,19 +188,18 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.7" class="outline-3">
-<h3 id="sec-1.7">Use regex searches by default. </h3>
-<div class="outline-text-3" id="text-1.7">
+<div id="outline-container-1_7" class="outline-3">
+<h3 id="sec-1_7">Use regex searches by default. </h3>
+<div class="outline-text-3" id="text-1_7">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-s"</span><span class="org-esk-paren">)</span> 'isearch-forward-regexp<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-s"</span><span class="org-esk-paren">)</span> 'isearch-forward-regexp<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"\C-r"</span><span class="org-esk-paren">)</span> 'isearch-backward-regexp<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-s"</span><span class="org-esk-paren">)</span> 'isearch-forward<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-M-r"</span><span class="org-esk-paren">)</span> 'isearch-backward<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
@@ -215,16 +208,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.8" class="outline-3">
-<h3 id="sec-1.8">Jump to a definition in the current file. (This is awesome.) </h3>
-<div class="outline-text-3" id="text-1.8">
+<div id="outline-container-1_8" class="outline-3">
+<h3 id="sec-1_8">Jump to a definition in the current file. (This is awesome.) </h3>
+<div class="outline-text-3" id="text-1_8">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-i"</span><span class="org-esk-paren">)</span> 'ido-imenu<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-i"</span><span class="org-esk-paren">)</span> 'ido-imenu<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -233,15 +225,14 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.9" class="outline-3">
-<h3 id="sec-1.9">File finding </h3>
-<div class="outline-text-3" id="text-1.9">
+<div id="outline-container-1_9" class="outline-3">
+<h3 id="sec-1_9">File finding </h3>
+<div class="outline-text-3" id="text-1_9">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M-f"</span><span class="org-esk-paren">)</span> 'ido-find-file-other-window<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M-f"</span><span class="org-esk-paren">)</span> 'ido-find-file-other-window<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-M-f"</span><span class="org-esk-paren">)</span> 'find-file-in-project<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x f"</span><span class="org-esk-paren">)</span> 'recentf-ido-find-file<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-p"</span><span class="org-esk-paren">)</span> 'find-file-at-point<span class="org-esk-paren">)</span>
@@ -249,7 +240,7 @@ Key Bindings.
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c r"</span><span class="org-esk-paren">)</span> 'revert-buffer<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"M-`"</span><span class="org-esk-paren">)</span> 'file-cache-minibuffer-complete<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-b"</span><span class="org-esk-paren">)</span> 'ibuffer<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
@@ -258,18 +249,17 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.10" class="outline-3">
-<h3 id="sec-1.10">Window switching. (C-x o goes to the next window) </h3>
-<div class="outline-text-3" id="text-1.10">
+<div id="outline-container-1_10" class="outline-3">
+<h3 id="sec-1_10">Window switching. (C-x o goes to the next window) </h3>
+<div class="outline-text-3" id="text-1_10">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>windmove-default-keybindings<span class="org-esk-paren">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">Shift+direction
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>windmove-default-keybindings<span class="org-esk-paren">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">Shift+direction
 </span><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x O"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>other-window -1<span class="org-esk-paren">)))</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">back one
 </span><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-o"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>other-window 2<span class="org-esk-paren">)))</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">forward two
-</span></pre></div>
+</span></pre>
 
 
 
@@ -278,34 +268,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.11" class="outline-3">
-<h3 id="sec-1.11">Indentation help </h3>
-<div class="outline-text-3" id="text-1.11">
+<div id="outline-container-1_11" class="outline-3">
+<h3 id="sec-1_11">Indentation help </h3>
+<div class="outline-text-3" id="text-1_11">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x ^"</span><span class="org-esk-paren">)</span> 'join-line<span class="org-esk-paren">)</span>
-</pre></div>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1.12" class="outline-3">
-<h3 id="sec-1.12">Start eshell or switch to it if it's active. </h3>
-<div class="outline-text-3" id="text-1.12">
-
-
-
-
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x m"</span><span class="org-esk-paren">)</span> 'eshell<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x ^"</span><span class="org-esk-paren">)</span> 'join-line<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -314,34 +285,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.13" class="outline-3">
-<h3 id="sec-1.13">Start a new eshell even if one is active. </h3>
-<div class="outline-text-3" id="text-1.13">
+<div id="outline-container-1_12" class="outline-3">
+<h3 id="sec-1_12">Start eshell or switch to it if it's active. </h3>
+<div class="outline-text-3" id="text-1_12">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>eshell t<span class="org-esk-paren">)))</span>
-</pre></div>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1.14" class="outline-3">
-<h3 id="sec-1.14">Start a regular shell if you prefer that. </h3>
-<div class="outline-text-3" id="text-1.14">
-
-
-
-
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M-m"</span><span class="org-esk-paren">)</span> 'shell<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x m"</span><span class="org-esk-paren">)</span> 'eshell<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -350,34 +302,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.15" class="outline-3">
-<h3 id="sec-1.15">If you want to be able to M-x without meta </h3>
-<div class="outline-text-3" id="text-1.15">
+<div id="outline-container-1_13" class="outline-3">
+<h3 id="sec-1_13">Start a new eshell even if one is active. </h3>
+<div class="outline-text-3" id="text-1_13">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-m"</span><span class="org-esk-paren">)</span> 'execute-extended-command<span class="org-esk-paren">)</span>
-</pre></div>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1.16" class="outline-3">
-<h3 id="sec-1.16">Fetch the contents at a URL, display it raw. </h3>
-<div class="outline-text-3" id="text-1.16">
-
-
-
-
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x h"</span><span class="org-esk-paren">)</span> 'view-url<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>eshell t<span class="org-esk-paren">)))</span>
+</pre>
 
 
 
@@ -386,34 +319,15 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.17" class="outline-3">
-<h3 id="sec-1.17">Help should search more than just commands </h3>
-<div class="outline-text-3" id="text-1.17">
+<div id="outline-container-1_14" class="outline-3">
+<h3 id="sec-1_14">Start a regular shell if you prefer that. </h3>
+<div class="outline-text-3" id="text-1_14">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-h a"</span><span class="org-esk-paren">)</span> 'apropos<span class="org-esk-paren">)</span>
-</pre></div>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1.18" class="outline-3">
-<h3 id="sec-1.18">Should be able to eval-and-replace anywhere. </h3>
-<div class="outline-text-3" id="text-1.18">
-
-
-
-
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c e"</span><span class="org-esk-paren">)</span> 'eval-and-replace<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M-m"</span><span class="org-esk-paren">)</span> 'shell<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -422,15 +336,82 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.19" class="outline-3">
-<h3 id="sec-1.19">Applications </h3>
-<div class="outline-text-3" id="text-1.19">
+<div id="outline-container-1_15" class="outline-3">
+<h3 id="sec-1_15">If you want to be able to M-x without meta </h3>
+<div class="outline-text-3" id="text-1_15">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c j"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>switch-or-start 'jabber-connect <span class="org-string">"*-jabber-*"</span><span class="org-esk-paren">)))</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-m"</span><span class="org-esk-paren">)</span> 'execute-extended-command<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_16" class="outline-3">
+<h3 id="sec-1_16">Fetch the contents at a URL, display it raw. </h3>
+<div class="outline-text-3" id="text-1_16">
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x h"</span><span class="org-esk-paren">)</span> 'view-url<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_17" class="outline-3">
+<h3 id="sec-1_17">Help should search more than just commands </h3>
+<div class="outline-text-3" id="text-1_17">
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-h a"</span><span class="org-esk-paren">)</span> 'apropos<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_18" class="outline-3">
+<h3 id="sec-1_18">Should be able to eval-and-replace anywhere. </h3>
+<div class="outline-text-3" id="text-1_18">
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c e"</span><span class="org-esk-paren">)</span> 'eval-and-replace<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_19" class="outline-3">
+<h3 id="sec-1_19">Applications </h3>
+<div class="outline-text-3" id="text-1_19">
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c j"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>switch-or-start 'jabber-connect <span class="org-string">"*-jabber-*"</span><span class="org-esk-paren">)))</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c g"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>switch-or-start 'gnus <span class="org-string">"*Group*"</span><span class="org-esk-paren">)))</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c i"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>switch-or-start <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span>
                                                                      <span class="org-esk-paren">(</span>rcirc-connect <span class="org-string">"irc.freenode.net"</span><span class="org-esk-paren">))</span>
@@ -438,7 +419,7 @@ Key Bindings.
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c J"</span><span class="org-esk-paren">)</span> 'jabber-send-presence<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c M-j"</span><span class="org-esk-paren">)</span> 'jabber-disconnect<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x g"</span><span class="org-esk-paren">)</span> 'magit-status<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
@@ -447,21 +428,20 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.20" class="outline-3">
-<h3 id="sec-1.20">This is a little hacky since VC doesn't support git add internally </h3>
-<div class="outline-text-3" id="text-1.20">
+<div id="outline-container-1_20" class="outline-3">
+<h3 id="sec-1_20">This is a little hacky since VC doesn't support git add internally </h3>
+<div class="outline-text-3" id="text-1_20">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">eval-after-load</span> 'vc
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">eval-after-load</span> 'vc
   <span class="org-esk-paren">(</span>define-key vc-prefix-map <span class="org-string">"i"</span> '<span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
                                    <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>not <span class="org-esk-paren">(</span>eq 'Git <span class="org-esk-paren">(</span>vc-backend buffer-file-name<span class="org-esk-paren">)))</span>
                                        <span class="org-esk-paren">(</span>vc-register<span class="org-esk-paren">)</span>
                                      <span class="org-esk-paren">(</span>shell-command <span class="org-esk-paren">(</span>format <span class="org-string">"git add %s"</span> buffer-file-name<span class="org-esk-paren">))</span>
                                      <span class="org-esk-paren">(</span>message <span class="org-string">"Staged changes."</span><span class="org-esk-paren">)))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -470,19 +450,18 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.21" class="outline-3">
-<h3 id="sec-1.21">Activate occur easily inside isearch </h3>
-<div class="outline-text-3" id="text-1.21">
+<div id="outline-container-1_21" class="outline-3">
+<h3 id="sec-1_21">Activate occur easily inside isearch </h3>
+<div class="outline-text-3" id="text-1_21">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>define-key isearch-mode-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-o"</span><span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key isearch-mode-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-o"</span><span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
     <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>case-fold-search isearch-case-fold-search<span class="org-esk-paren">))</span>
       <span class="org-esk-paren">(</span>occur <span class="org-esk-paren">(</span><span class="org-keyword">if</span> isearch-regexp isearch-string <span class="org-esk-paren">(</span>regexp-quote isearch-string<span class="org-esk-paren">))))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -491,17 +470,16 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.22" class="outline-3">
-<h3 id="sec-1.22">Closing </h3>
-<div class="outline-text-3" id="text-1.22">
+<div id="outline-container-1_22" class="outline-3">
+<h3 id="sec-1_22">Closing </h3>
+<div class="outline-text-3" id="text-1_22">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">provide</span> '<span class="org-constant">starter-kit-bindings</span><span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">provide</span> '<span class="org-constant">starter-kit-bindings</span><span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;;; </span><span class="org-comment">starter-kit-bindings.el ends here
-</span></pre></div>
+</span></pre>
 
 
 
@@ -509,9 +487,9 @@ Key Bindings.
 
 </div>
 
-<div id="outline-container-1.23" class="outline-3">
-<h3 id="sec-1.23">Org-mode </h3>
-<div class="outline-text-3" id="text-1.23">
+<div id="outline-container-1_23" class="outline-3">
+<h3 id="sec-1_23">Org-mode </h3>
+<div class="outline-text-3" id="text-1_23">
 
 <p>Two global binding for Org-mode (see <a href="starter-kit-org.html">starter-kit-org</a>)
 </p>
@@ -520,9 +498,8 @@ The <a href="http://orgmode.org/manual/Agenda-Views.html#Agenda-Views">Org-mode 
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-ca"</span> 'org-agenda<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-ca"</span> 'org-agenda<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -534,9 +511,8 @@ globally for later insertion into an Org-mode buffer.  See
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-cl"</span> 'org-store-link<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-cl"</span> 'org-store-link<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -544,9 +520,9 @@ globally for later insertion into an Org-mode buffer.  See
 
 </div>
 
-<div id="outline-container-1.24" class="outline-3">
-<h3 id="sec-1.24">Magit </h3>
-<div class="outline-text-3" id="text-1.24">
+<div id="outline-container-1_24" class="outline-3">
+<h3 id="sec-1_24">Magit </h3>
+<div class="outline-text-3" id="text-1_24">
 
 <p>It's to the point now where I almost can't use git without magit.
 </p><ul>
@@ -563,26 +539,21 @@ globally for later insertion into an Org-mode buffer.  See
 </ul>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">magit</span><span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">magit</span><span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\M-\C-g"</span> 'magit-status<span class="org-esk-paren">)</span>
-</pre></div>
-
-
-
-
-<pre class="example">
-magit-status
 </pre>
 
 
-</div>
+
+
 
 </div>
 
-<div id="outline-container-1.25" class="outline-3">
-<h3 id="sec-1.25">Rgrep </h3>
-<div class="outline-text-3" id="text-1.25">
+</div>
+
+<div id="outline-container-1_25" class="outline-3">
+<h3 id="sec-1_25">Rgrep </h3>
+<div class="outline-text-3" id="text-1_25">
 
 <p>Rgrep is infinitely useful in multi-file projects.
 </p>
@@ -592,9 +563,8 @@ magit-status
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-x\C-r"</span> 'rgrep<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-x\C-r"</span> 'rgrep<span class="org-esk-paren">)</span>
+</pre>
 
 
 

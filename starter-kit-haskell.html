@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Haskell</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-02-13 15:46:52 MST"/>
+<meta name="generated" content="2010-06-11 14:26:46 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -85,14 +85,13 @@ pretty lambdas in Haskell code
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pretty-lambdas-haskell</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pretty-lambdas-haskell</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span>font-lock-add-keywords
    nil `<span class="org-esk-paren">((</span>,<span class="org-esk-paren">(</span>concat <span class="org-string">"(?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">"</span> <span class="org-esk-paren">(</span>regexp-quote <span class="org-string">"\\"</span><span class="org-esk-paren">)</span> <span class="org-string">"</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">"</span><span class="org-esk-paren">)</span>
           <span class="org-esk-paren">(</span>0 <span class="org-esk-paren">(</span><span class="org-keyword">progn</span> <span class="org-esk-paren">(</span>compose-region <span class="org-esk-paren">(</span>match-beginning 1<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>match-end 1<span class="org-esk-paren">)</span>
                                     ,<span class="org-esk-paren">(</span>make-char 'greek-iso8859-7 107<span class="org-esk-paren">))</span>
                     nil<span class="org-esk-paren">))))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -102,10 +101,9 @@ Haskell mode hook
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'haskell-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'haskell-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>add-hook 'haskell-mode-hook 'pretty-lambdas-haskell<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 

@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Lisp</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-02-13 15:46:51 MST"/>
+<meta name="generated" content="2010-06-11 14:26:44 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -78,15 +78,15 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Starter Kit Lisp </h2>
 <div class="outline-text-2" id="text-1">
 
-<p>Support for editing list dialects including <a href="#sec-1.4">Emacs Lisp</a>, <a href="#sec-1.6">Scheme</a>,
-<a href="#sec-1.7">Common Lisp</a>, and <a href="#sec-1.5">Clojure</a>.
+<p>Support for editing list dialects including <a href="#sec-1_4">Emacs Lisp</a>, <a href="#sec-1_6">Scheme</a>,
+<a href="#sec-1_7">Common Lisp</a>, and <a href="#sec-1_5">Clojure</a>.
 </p>
 
 </div>
 
-<div id="outline-container-1.1" class="outline-3">
-<h3 id="sec-1.1">Define keys </h3>
-<div class="outline-text-3" id="text-1.1">
+<div id="outline-container-1_1" class="outline-3">
+<h3 id="sec-1_1">Define keys </h3>
+<div class="outline-text-3" id="text-1_1">
 
 
 
@@ -106,9 +106,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-1.2" class="outline-3">
-<h3 id="sec-1.2">Paredit </h3>
-<div class="outline-text-3" id="text-1.2">
+<div id="outline-container-1_2" class="outline-3">
+<h3 id="sec-1_2">Paredit </h3>
+<div class="outline-text-3" id="text-1_2">
 
 <p><a href="http://www.emacswiki.org/emacs/ParEdit">Paredit</a> might seem weird at first, but it really makes writing lisp a
 much more comfortable experience.  This is especially useful in
@@ -118,10 +118,9 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">turn-on-paredit</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">turn-on-paredit</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span>paredit-mode +1<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
@@ -137,22 +136,21 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 </div>
 
-<div id="outline-container-1.3" class="outline-3">
-<h3 id="sec-1.3">Non-obtrusive parenthesis faces </h3>
-<div class="outline-text-3" id="text-1.3">
+<div id="outline-container-1_3" class="outline-3">
+<h3 id="sec-1_3">Non-obtrusive parenthesis faces </h3>
+<div class="outline-text-3" id="text-1_3">
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defface</span> <span class="org-variable-name">esk-paren-face</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defface</span> <span class="org-variable-name">esk-paren-face</span>
    '<span class="org-esk-paren">((((</span>class color<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>background dark<span class="org-esk-paren">))</span>
       <span class="org-esk-paren">(</span><span class="org-builtin">:foreground</span> <span class="org-string">"grey50"</span><span class="org-esk-paren">))</span>
      <span class="org-esk-paren">(((</span>class color<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>background light<span class="org-esk-paren">))</span>
       <span class="org-esk-paren">(</span><span class="org-builtin">:foreground</span> <span class="org-string">"grey55"</span><span class="org-esk-paren">)))</span>
    <span class="org-doc">"Face used to dim parentheses."</span>
    <span class="org-builtin">:group</span> 'starter-kit-faces<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
@@ -161,16 +159,15 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 </div>
 
-<div id="outline-container-1.4" class="outline-3">
-<h3 id="sec-1.4">Emacs Lisp </h3>
-<div class="outline-text-3" id="text-1.4">
+<div id="outline-container-1_4" class="outline-3">
+<h3 id="sec-1_4">Emacs Lisp </h3>
+<div class="outline-text-3" id="text-1_4">
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>add-hook 'emacs-lisp-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save<span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;; </span><span class="org-comment">(add-hook 'emacs-lisp-mode-hook 'idle-highlight)
@@ -186,7 +183,7 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 <span class="org-esk-paren">(</span>font-lock-add-keywords 'emacs-lisp-mode
                         '<span class="org-esk-paren">((</span><span class="org-string">"(</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">)"</span> . 'esk-paren-face<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
@@ -195,16 +192,15 @@ back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 
 </div>
 
-<div id="outline-container-1.5" class="outline-3">
-<h3 id="sec-1.5">Clojure </h3>
-<div class="outline-text-3" id="text-1.5">
+<div id="outline-container-1_5" class="outline-3">
+<h3 id="sec-1_5">Clojure </h3>
+<div class="outline-text-3" id="text-1_5">
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'clojure-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'clojure-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;; </span><span class="org-comment">(add-hook 'clojure-mode-hook 'idle-highlight)
 </span>
 <span class="org-esk-paren">(</span>font-lock-add-keywords 'clojure-mode
@@ -288,7 +284,7 @@ Kills existing SLIME session, if any."</span>
                          slime-lisp-implementations<span class="org-esk-paren">)))</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">save-window-excursion</span>
     <span class="org-esk-paren">(</span>slime<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
@@ -297,20 +293,19 @@ Kills existing SLIME session, if any."</span>
 
 </div>
 
-<div id="outline-container-1.6" class="outline-3">
-<h3 id="sec-1.6">Scheme </h3>
-<div class="outline-text-3" id="text-1.6">
+<div id="outline-container-1_6" class="outline-3">
+<h3 id="sec-1_6">Scheme </h3>
+<div class="outline-text-3" id="text-1_6">
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'scheme-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'scheme-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;; </span><span class="org-comment">(add-hook 'scheme-mode-hook 'idle-highlight)
 </span><span class="org-esk-paren">(</span>font-lock-add-keywords 'scheme-mode
                         '<span class="org-esk-paren">((</span><span class="org-string">"(</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">)"</span> . 'esk-paren-face<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
@@ -319,21 +314,20 @@ Kills existing SLIME session, if any."</span>
 
 </div>
 
-<div id="outline-container-1.7" class="outline-3">
-<h3 id="sec-1.7">Common Lisp </h3>
-<div class="outline-text-3" id="text-1.7">
+<div id="outline-container-1_7" class="outline-3">
+<h3 id="sec-1_7">Common Lisp </h3>
+<div class="outline-text-3" id="text-1_7">
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'lisp-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'lisp-mode-hook 'run-coding-hook<span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;; </span><span class="org-comment">(add-hook 'lisp-mode-hook 'idle-highlight)
 </span><span class="org-esk-paren">(</span>add-hook 'lisp-mode-hook 'turn-on-paredit<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>font-lock-add-keywords 'lisp-mode
                         '<span class="org-esk-paren">((</span><span class="org-string">"(</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">)"</span> . 'esk-paren-face<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 

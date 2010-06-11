@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Eshell</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-02-13 15:46:53 MST"/>
+<meta name="generated" content="2010-06-11 14:26:48 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -83,8 +83,7 @@ lang="en" xml:lang="en">
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>setq eshell-cmpl-cycle-completions nil
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq eshell-cmpl-cycle-completions nil
       eshell-save-history-on-exit t
       eshell-cmpl-dir-ignore <span class="org-string">"\\`</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">\\.\\.?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">CVS</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">\\.svn</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">\\.git</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">/\\'"</span><span class="org-esk-paren">)</span>
 
@@ -107,7 +106,7 @@ lang="en" xml:lang="en">
      <span class="org-esk-paren">(</span>add-to-list 'eshell-command-completions-alist
                   '<span class="org-esk-paren">(</span><span class="org-string">"tar"</span> <span class="org-string">"</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">\\.tar|\\.tgz</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">\\.tar\\.gz</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">\\'"</span><span class="org-esk-paren">))</span>
      <span class="org-esk-paren">(</span>add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
@@ -122,9 +121,8 @@ is pre-populated with some generally applicable aliases.
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>setq eshell-directory-name <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"./"</span> <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"eshell"</span> dotfiles-dir<span class="org-esk-paren">)))</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq eshell-directory-name <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"./"</span> <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"eshell"</span> dotfiles-dir<span class="org-esk-paren">)))</span>
+</pre>
 
 
 

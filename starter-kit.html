@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-02-13 15:46:47 MST"/>
+<meta name="generated" content="2010-06-11 14:26:38 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -99,16 +99,16 @@ brighter; it simply makes everything else vanish.
 </li>
 <li><a href="#implementation">Implementation </a>
 <ul>
-<li><a href="#sec-2.1">Starter kit basics </a></li>
-<li><a href="#sec-2.2">Load the rest of the starter kit core </a></li>
-<li><a href="#sec-2.3">Language/Mode Specific Files </a></li>
-<li><a href="#sec-2.4">Load User/System Specific Files </a></li>
+<li><a href="#sec-2_1">Starter kit basics </a></li>
+<li><a href="#sec-2_2">Load the rest of the starter kit core </a></li>
+<li><a href="#sec-2_3">Language/Mode Specific Files </a></li>
+<li><a href="#sec-2_4">Load User/System Specific Files </a></li>
 </ul>
 </li>
 <li><a href="#development">Development </a>
 <ul>
-<li><a href="#sec-3.1">Tasks [1/10] </a></li>
-<li><a href="#sec-3.2">Bugs [0/1] </a></li>
+<li><a href="#sec-3_1">Tasks [1/10] </a></li>
+<li><a href="#sec-3_2">Bugs [0/1] </a></li>
 </ul>
 </li>
 </ul>
@@ -152,7 +152,7 @@ git provides for version control, backup, and sharing
 </div>
 
 <div id="outline-container-learning" class="outline-3">
-<h3 id="learning"><a name="sec-1.1" id="sec-1.1"></a>Learning </h3>
+<h3 id="learning"><a name="sec-1_1" id="sec-1_1"></a>Learning </h3>
 <div class="outline-text-3" id="text-learning">
 
 
@@ -168,7 +168,7 @@ The <a href="http://emacswiki.org">Emacs Wiki</a> is also very handy.
 </div>
 
 <div id="outline-container-installation" class="outline-3">
-<h3 id="installation"><a name="sec-1.2" id="sec-1.2"></a>Installation </h3>
+<h3 id="installation"><a name="sec-1_2" id="sec-1_2"></a>Installation </h3>
 <div class="outline-text-3" id="text-installation">
 
 
@@ -185,21 +185,24 @@ git checkout this <a href="http://www.kernel.org/pub/software/scm/git/docs/gittu
 try out <a href="http://zagadka.vm.bytemark.co.uk/magit/magit.html">magit</a> the Emacs mode for git interaction which comes
 bundled in the starter kit.
 
+</li>
+</ol>
 
 
 <pre class="src src-sh">git clone http://github.com/eschulte/emacs-starter-kit.git
-
 </pre>
 
 
 
-</li>
+<ol>
 <li>
 Move the resulting directory to <code>~/.emacs.d</code> <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
 </li>
 <li>
 Install the Org-mode <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules">submodules</a> with the following
 
+</li>
+</ol>
 
 
 <pre class="src src-sh"><span class="org-builtin">cd</span> ~/.emacs.d/
@@ -209,10 +212,12 @@ git submodule update
 
 
 
-</li>
+<ol>
 <li>
 build Org-mode
 
+</li>
+</ol>
 
 
 <pre class="src src-sh"><span class="org-builtin">cd</span> src/org/
@@ -221,10 +226,12 @@ make
 
 
 
-</li>
+<ol>
 <li>
 build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for instilllation help see the <a href="http://www.gnu.org/software/auctex/manual/auctex/Installation.html#Installation">auctex instillation instructions</a>, auctex requires a working TeX installation
 
+</li>
+</ol>
 
 
 <pre class="src src-sh"><span class="org-builtin">cd</span> src/auctex
@@ -233,7 +240,7 @@ build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for insti
 
 
 
-</li>
+<ol>
 <li>
 Launch Emacs!
 
@@ -241,7 +248,7 @@ Launch Emacs!
 </ol>
 
 <p>After setup you may need to restart Emacs a couple of times while it
-downloads packages from <a href="#sec-1.4">ELPA</a> &ndash; errors parsing html from
+downloads packages from <a href="#sec-1_4">ELPA</a> &ndash; errors parsing html from
 <code>*tromey.com:80*</code> can generally be safely ignored.
 </p>
 <p>
@@ -255,9 +262,8 @@ single instance using the starter kit, try the following invocation:
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-sh">
-emacs -q -l ~/src/emacs-starter-kit/init.el
-</pre></div>
+<pre class="src src-sh">emacs -q -l ~/src/emacs-starter-kit/init.el
+</pre>
 
 
 
@@ -272,7 +278,7 @@ is not present.
 </div>
 
 <div id="outline-container-structure" class="outline-3">
-<h3 id="structure"><a name="sec-1.3" id="sec-1.3"></a>Structure </h3>
+<h3 id="structure"><a name="sec-1_3" id="sec-1_3"></a>Structure </h3>
 <div class="outline-text-3" id="text-structure">
 
 
@@ -283,7 +289,7 @@ what I consider to be better defaults, both for different programming
 languages and for built-in Emacs features like bindings or registers.
 </p>
 <p>
-Files that are pending submission to <a href="#sec-1.4">ELPA</a> are bundled with the starter
+Files that are pending submission to <a href="#sec-1_4">ELPA</a> are bundled with the starter
 kit under the directory <a href="elpa-to-submit/">elpa-to-submit/</a>. The understanding is that
 these are bundled just because nobody's gotten around to turning them
 into packages, and the bundling of them is temporary. For these
@@ -309,7 +315,7 @@ you to merge with newer versions of the starter-kit without conflicts.
 </div>
 
 <div id="outline-container-elpa" class="outline-3">
-<h3 id="elpa"><a name="sec-1.4" id="sec-1.4"></a>Emacs Lisp Package Archive </h3>
+<h3 id="elpa"><a name="sec-1_4" id="sec-1_4"></a>Emacs Lisp Package Archive </h3>
 <div class="outline-text-3" id="text-elpa">
 
 
@@ -319,7 +325,7 @@ are handled automatically, and the burden to update them is removed
 from the user. In the long term, ideally everything would be installed
 via ELPA, and only <a href="package.el">package.el</a> would need to be distributed with the
 starter kit. (Or better yet, <a href="package.el">package.el</a> would come with Emacs&hellip;) See
-<a href="#sec-3.1.3">Starter Kit ELPA</a> for a list of libraries that are pending submission
+<a href="#sec-3_1_3">Starter Kit ELPA</a> for a list of libraries that are pending submission
 to ELPA. Packages get installed in the <a href="elpa/">elpa/</a> directory.
 </p>
 <p>
@@ -342,7 +348,7 @@ starter-kit-elpa-install in a fresh instance.
 </div>
 
 <div id="outline-container-contributing" class="outline-3">
-<h3 id="contributing"><a name="sec-1.5" id="sec-1.5"></a>Contributing </h3>
+<h3 id="contributing"><a name="sec-1_5" id="sec-1_5"></a>Contributing </h3>
 <div class="outline-text-3" id="text-contributing">
 
 
@@ -353,7 +359,7 @@ you just can't live without, add it or let me know so I can add
 it. Take a look at what happens in <a href="init.el">init.el</a> to get started.
 </p>
 <p>
-Also: see the <a href="#sec-3.1">Tasks section</a> in this document. Helping submit new
+Also: see the <a href="#sec-3_1">Tasks section</a> in this document. Helping submit new
 libraries to ELPA is the easiest way to help out. There are two ways
 you can do this: either take new libraries and make them ready for
 ELPA, dropping them in the elpa-to-submit directory or take files that
@@ -388,13 +394,13 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 </div>
 
-<div id="outline-container-2.1" class="outline-3">
-<h3 id="sec-2.1">Starter kit basics </h3>
-<div class="outline-text-3" id="text-2.1">
+<div id="outline-container-2_1" class="outline-3">
+<h3 id="sec-2_1">Starter kit basics </h3>
+<div class="outline-text-3" id="text-2_1">
 
 
 <ul>
-<li id="sec-2.1.1">Load path etc. <br/>
+<li id="sec-2_1_1">Load path etc. <br/>
 
 
 
@@ -416,7 +422,7 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 
 </li>
-<li id="sec-2.1.2">Ubiquitous Packages <br/>
+<li id="sec-2_1_2">Ubiquitous Packages <br/>
 
 <p>
 These should be loaded on startup rather than autoloaded on demand
@@ -438,7 +444,7 @@ since they are likely to be used in every session
 
 
 </li>
-<li id="sec-2.1.3">Emacs 22 Backport <br/>
+<li id="sec-2_1_3">Emacs 22 Backport <br/>
 
 <p>
 backport some functionality to Emacs 22 if needed
@@ -453,7 +459,7 @@ backport some functionality to Emacs 22 if needed
 
 
 </li>
-<li id="sec-2.1.4">Function for loading starter-kit-* <br/>
+<li id="sec-2_1_4">Function for loading starter-kit-* <br/>
 
 
 
@@ -468,7 +474,7 @@ backport some functionality to Emacs 22 if needed
 
 
 </li>
-<li id="sec-2.1.5">ELPA (Emacs Lisp Package Manager) <br/>
+<li id="sec-2_1_5">ELPA (Emacs Lisp Package Manager) <br/>
 
 <p>
 Load up <a href="http://tromey.com/elpa/">ELPA</a>, the Emacs Lisp package manager
@@ -486,7 +492,7 @@ Load up <a href="http://tromey.com/elpa/">ELPA</a>, the Emacs Lisp package manag
 
 
 </li>
-<li id="sec-2.1.6">Starter Kit Customizations <br/>
+<li id="sec-2_1_6">Starter Kit Customizations <br/>
 
 <p>
 Load up starter kit customizations
@@ -502,7 +508,7 @@ Load up starter kit customizations
 
 
 </li>
-<li id="sec-2.1.7">Work around OS X bug <br/>
+<li id="sec-2_1_7">Work around OS X bug <br/>
 
 <p>
 Work around a bug on OS X where system-name is FQDN
@@ -518,7 +524,7 @@ Work around a bug on OS X where system-name is FQDN
 
 
 </li>
-<li id="sec-2.1.8">System/User specific customizations <br/>
+<li id="sec-2_1_8">System/User specific customizations <br/>
 
 <p>
 You can keep system- or user-specific customizations here in either
@@ -558,71 +564,72 @@ project is not in elpa.
 
 
 </li>
+<li id="sec-2_1_9">Starter kit and Gnus <br/>
+If you would like help setting up the gnus email client, checkout
+<a href="starter-kit-gnus.html">Starter Kit Gnus</a>, a starter kit file that is not loaded by default.
+
+</li>
 </ul>
 </div>
 
 </div>
 
-<div id="outline-container-2.2" class="outline-3">
-<h3 id="sec-2.2">Load the rest of the starter kit core </h3>
-<div class="outline-text-3" id="text-2.2">
+<div id="outline-container-2_2" class="outline-3">
+<h3 id="sec-2_2">Load the rest of the starter kit core </h3>
+<div class="outline-text-3" id="text-2_2">
 
 <p>The following files contain the remainder of the core of the Emacs
 Starter Kit.  All of the code in this section should be loaded by
 everyone using the starter kit.
 </p>
 <ul>
-<li id="sec-2.2.1">Starter kit defuns <br/>
+<li id="sec-2_2_1">Starter kit defuns <br/>
 Starter kit function definitions in <a href="starter-kit-defuns.html">starter-kit-defuns</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-defuns.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-defuns.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.2.2">Starter kit bindings <br/>
+<li id="sec-2_2_2">Starter kit bindings <br/>
 Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-bindings.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-bindings.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.2.3">Starter kit misc <br/>
+<li id="sec-2_2_3">Starter kit misc <br/>
 Miscellaneous settings in <a href="starter-kit-misc.html">starter-kit-misc</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-misc.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-misc.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.2.4">Starter kit registers <br/>
+<li id="sec-2_2_4">Starter kit registers <br/>
 Registers for jumping to commonly used files in <a href="starter-kit-registers.html">starter-kit-registers</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-registers.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-registers.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -633,16 +640,16 @@ Registers for jumping to commonly used files in <a href="starter-kit-registers.h
 
 </div>
 
-<div id="outline-container-2.3" class="outline-3">
-<h3 id="sec-2.3">Language/Mode Specific Files </h3>
-<div class="outline-text-3" id="text-2.3">
+<div id="outline-container-2_3" class="outline-3">
+<h3 id="sec-2_3">Language/Mode Specific Files </h3>
+<div class="outline-text-3" id="text-2_3">
 
 <p>These sections pertain to specific languages or modes.  Feel free to
 turn off these sections if you don't plan on using the related mode or
 language.
 </p>
 <ul>
-<li id="sec-2.3.1">Starter kit yasnippet <br/>
+<li id="sec-2_3_1">Starter kit yasnippet <br/>
 <a href="http://code.google.com/p/yasnippet/">yasnippet</a> is yet another snippet expansion system for Emacs.  It is
 inspired by TextMate's templating syntax.
 <ul>
@@ -659,14 +666,13 @@ see the <a href="http://yasnippet.googlecode.com/svn/trunk/doc/index.html">intro
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-to-list 'load-path
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-to-list 'load-path
              <span class="org-esk-paren">(</span>expand-file-name  <span class="org-string">"yasnippet"</span>
                                 <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"src"</span>
                                                   dotfiles-dir<span class="org-esk-paren">)))</span>
 <span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">yasnippet</span><span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>yas/initialize<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
@@ -676,121 +682,112 @@ load the snippets defined in the <code>./snippets/</code> directory
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>yas/load-directory <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"snippets"</span> dotfiles-dir<span class="org-esk-paren">))</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>yas/load-directory <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"snippets"</span> dotfiles-dir<span class="org-esk-paren">))</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.2">Starter kit Org-mode <br/>
+<li id="sec-2_3_2">Starter kit Org-mode <br/>
 Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-org.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-org.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.3">Starter kit eshell <br/>
+<li id="sec-2_3_3">Starter kit eshell <br/>
 Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-eshell.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-eshell.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.4">Starter kit lisp <br/>
+<li id="sec-2_3_4">Starter kit lisp <br/>
 Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-lisp.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-lisp.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.5">Starter kit Haskell <br/>
+<li id="sec-2_3_5">Starter kit Haskell <br/>
 Located in <a href="starter-kit-haskell.html">starter-kit-haskell</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-haskell.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-haskell.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.6">Starter kit ruby <br/>
+<li id="sec-2_3_6">Starter kit ruby <br/>
 Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-ruby.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-ruby.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.7">Starter kit JS <br/>
+<li id="sec-2_3_7">Starter kit JS <br/>
 Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-js.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-js.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.8">Starter Kit Perl <br/>
+<li id="sec-2_3_8">Starter Kit Perl <br/>
 Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-perl.org"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-perl.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 </li>
-<li id="sec-2.3.9">Starter Kit Latex <br/>
+<li id="sec-2_3_9">Starter Kit Latex <br/>
 Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">nil()</label><pre class="src src-emacs-lisp">
-<span class="org-comment-delimiter">;; </span><span class="org-comment">(starter-kit-load "starter-kit-latex.org")
-</span></pre></div>
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">(starter-kit-load "starter-kit-latex.org")
+</span></pre>
 
 
 
@@ -801,9 +798,9 @@ Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
 
 </div>
 
-<div id="outline-container-2.4" class="outline-3">
-<h3 id="sec-2.4">Load User/System Specific Files </h3>
-<div class="outline-text-3" id="text-2.4">
+<div id="outline-container-2_4" class="outline-3">
+<h3 id="sec-2_4">Load User/System Specific Files </h3>
+<div class="outline-text-3" id="text-2_4">
 
 
 <p>
@@ -844,34 +841,34 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 
 </div>
 
-<div id="outline-container-3.1" class="outline-3">
-<h3 id="sec-3.1">Tasks [1/10] </h3>
-<div class="outline-text-3" id="text-3.1">
+<div id="outline-container-3_1" class="outline-3">
+<h3 id="sec-3_1">Tasks [1/10] </h3>
+<div class="outline-text-3" id="text-3_1">
 
 
 <ul>
-<li id="sec-3.1.1"><span class="todo TODO"> TODO</span> setup electric for ruby <br/>
+<li id="sec-3_1_1"><span class="todo TODO"> TODO</span> setup electric for ruby <br/>
 </li>
-<li id="sec-3.1.2"><span class="todo TODO"> TODO</span> set up ri for ruby <br/>
+<li id="sec-3_1_2"><span class="todo TODO"> TODO</span> set up ri for ruby <br/>
 </li>
-<li id="sec-3.1.3"><span class="todo TODO"> TODO</span> Submit the packages in starter-kit-elpa.el to ELPA. <br/>
+<li id="sec-3_1_3"><span class="todo TODO"> TODO</span> Submit the packages in starter-kit-elpa.el to ELPA. <br/>
 </li>
-<li id="sec-3.1.4"><span class="todo STARTED"> STARTED</span> Greg Newman is working on Python helpers. <br/>
+<li id="sec-3_1_4"><span class="todo STARTED"> STARTED</span> Greg Newman is working on Python helpers. <br/>
 </li>
-<li id="sec-3.1.5"><span class="todo STARTED"> STARTED</span> submit ruby fixes to flymake <br/>
+<li id="sec-3_1_5"><span class="todo STARTED"> STARTED</span> submit ruby fixes to flymake <br/>
 </li>
-<li id="sec-3.1.6"><span class="todo PROPOSED"> PROPOSED</span> which-func-mode in ruby? <br/>
+<li id="sec-3_1_6"><span class="todo PROPOSED"> PROPOSED</span> which-func-mode in ruby? <br/>
 </li>
-<li id="sec-3.1.7"><span class="todo TODO"> TODO</span> all bindings to kbd invocations <br/>
+<li id="sec-3_1_7"><span class="todo TODO"> TODO</span> all bindings to kbd invocations <br/>
 </li>
-<li id="sec-3.1.8"><span class="done DEFERRED"> DEFERRED</span> should yasnippet be included in rinari? <br/>
+<li id="sec-3_1_8"><span class="done DEFERRED"> DEFERRED</span> should yasnippet be included in rinari? <br/>
 No, rinari has no dependency on yasnippet, and yasnippet has many
 applications outside of rinari.
 
 </li>
-<li id="sec-3.1.9"><span class="todo TODO"> TODO</span> flymake for perl <br/>
+<li id="sec-3_1_9"><span class="todo TODO"> TODO</span> flymake for perl <br/>
 </li>
-<li id="sec-3.1.10"><span class="todo TODO"> TODO</span> electric bugaloo for perl <br/>
+<li id="sec-3_1_10"><span class="todo TODO"> TODO</span> electric bugaloo for perl <br/>
 
 </li>
 </ul>
@@ -879,12 +876,12 @@ applications outside of rinari.
 
 </div>
 
-<div id="outline-container-3.2" class="outline-3">
-<h3 id="sec-3.2">Bugs [0/1] </h3>
-<div class="outline-text-3" id="text-3.2">
+<div id="outline-container-3_2" class="outline-3">
+<h3 id="sec-3_2">Bugs [0/1] </h3>
+<div class="outline-text-3" id="text-3_2">
 
 <ul>
-<li id="sec-3.2.1"><span class="todo TODO"> TODO</span> get jabber.el to automatically disconnect when suspending/hibernating (via dbus) <br/>
+<li id="sec-3_2_1"><span class="todo TODO"> TODO</span> get jabber.el to automatically disconnect when suspending/hibernating (via dbus) <br/>
 
 
 
