@@ -19,8 +19,6 @@ image-dired/
 elim/
 elpa-to-submit/nxhtml/etc/schema/xhtml-loader.rnc~
 tramp
-elpa
-snippets
 
 ## exported files
 starter-kit*el
@@ -31,3 +29,12 @@ eshell/history
 
 ## ignore packages held in the src directory
 src
+
+## org stuff
+.org-id-locations
+
+## gh-pages specific ignores
+elpa
+snippets
+color-themes
+eshell
