@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Starter Kit Gnus</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2010-06-11 14:35:41 PDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">Starter Kit Gnus</h1>
+
+
+<div style="text-align: center">
+<p>This file is currently <b>experimental</b> in that it has not been tested.
+</p>
+<p>
+If you need to configure gnus as an email client, then please give
+this a spin and share your experiences.
+</p>
+</div>
+
+<p>
+This is part of the <a href="starter-kit.gnus">Emacs Starter Kit</a>.
+</p>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Starter Kit Gnus </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Unlike other <code>starter-kit-*.org</code> files, this file will never be loaded
+by default.  To activate it, please copy it into your user-specific
+directory, and then follow the instructions below.
+</p>
+<p>
+<code>Starter Kit Gnus</code> provides configuration for the notoriously
+difficult to set up <a href="http://www.gnus.org/">Gnus</a> email client
+</p>
+<p>
+This file can be used to jump start a working Gnus instillation.  The
+following steps will result in a working vanilla Gnus instillation
+against either a Gmail email account (through pop3) or an IMAP server.
+</p><ol>
+<li>
+install the <a href="#sec-1_2">required-packages</a>
+</li>
+<li>
+follow the <a href="#sec-1_3">gmail</a> specific instructions or the <a href="#sec-1_4">imap</a> specific
+instructions, or <a href="#sec-1">both</a> if you would like Gnus to collect email from
+multiple remote servers
+</li>
+<li>
+tangle this file with `org-babel-tangle' (with C-c M-b t) creating
+the <code>starter-kit-gnus.el</code> file which can be loaded by Emacs
+
+</li>
+</ol>
+
+<p>(if you run into any problems &ndash; the <a href="http://www.gnus.org/manual.html">gnus manual</a> is very thorough)
+</p>
+
+</div>
+
+<div id="outline-container-1_1" class="outline-3">
+<h3 id="sec-1_1">Basic configuration </h3>
+<div class="outline-text-3" id="text-1_1">
+
+<p>First off, load up <code>gnus</code>
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">gnus</span><span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+<p>
+Tell gnus that your mainly going to be using it for email not as a
+news reader &ndash; after all it's not longer the late 80s.
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq gnus-select-method '<span class="org-esk-paren">(</span>nnml <span class="org-string">""</span><span class="org-esk-paren">))</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-required-packages" class="outline-3">
+<h3 id="required-packages"><a name="sec-1_2" id="sec-1_2"></a>Required packages </h3>
+<div class="outline-text-3" id="text-required-packages">
+
+<p>A <a href="http://en.wikipedia.org/wiki/STARTTLS">starttls</a> client allows encrypted communication with remote pop3 and
+IMAP email clients.
+</p>
+<p>
+<a href="http://www.openssl.org/">openssl</a> implements the Secure Socket Layer (SSL) secure communication
+protocol.
+</p>
+<p>
+On Debian systems (including Ubuntu) instillation of <code>starttls</code> and
+<code>openssl</code> client is as simple as
+</p><pre class="example">
+sudo apt-get install starttls openssl
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-gmail" class="outline-3">
+<h3 id="gmail"><a name="sec-1_3" id="sec-1_3"></a>Gmail Setup </h3>
+<div class="outline-text-3" id="text-gmail">
+
+<p>For more information on configuring Gnus with Gmail see <a href="http://www.emacswiki.org/emacs/GnusGmail">GnusGmail</a> on
+the Emacs Wiki.
+</p>
+<p>
+For a simple pop3 setup, simply replace <code>your-gmail-email-address</code> and
+<code>your-gmail-password</code> with your gmail account information in the
+following tables.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col align="left" /><col align="left" />
+</colgroup>
+<tbody>
+<tr><td>email</td><td>your-gmail-email-address</td></tr>
+<tr><td>password</td><td>your-gmail-password</td></tr>
+</tbody>
+</table>
+
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>email <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>first config<span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span>passwd <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>second config<span class="org-esk-paren">))))</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">The following adds Gmail as a source of mail for Gnus
+</span>  <span class="org-esk-paren">(</span>add-to-list 'mail-sources
+               `<span class="org-esk-paren">(</span>pop <span class="org-builtin">:server</span> <span class="org-string">"pop.gmail.com"</span>
+                     <span class="org-builtin">:port</span> 995
+                     <span class="org-builtin">:user</span> ,email
+                     <span class="org-builtin">:password</span> ,passwd
+                     <span class="org-builtin">:stream</span> ssl<span class="org-esk-paren">))</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">The following is used for sending email through gmail using SMTP.
+</span>  <span class="org-esk-paren">(</span>setq message-send-mail-function 'smtpmail-send-it
+        smtpmail-starttls-credentials '<span class="org-esk-paren">((</span><span class="org-string">"smtp.gmail.com"</span> 25 nil nil<span class="org-esk-paren">))</span>
+        smtpmail-default-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-service 25
+        user-mail-address email
+        smtpmail-starttls-credentials '<span class="org-esk-paren">((</span><span class="org-string">"smtp.gmail.com"</span> 587 nil nil<span class="org-esk-paren">))</span>
+        smtpmail-auth-credentials `<span class="org-esk-paren">((</span><span class="org-string">"smtp.gmail.com"</span> 587 ,email ,passwd<span class="org-esk-paren">))</span>
+        smtpmail-default-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-service 587<span class="org-esk-paren">))</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-imap" class="outline-3">
+<h3 id="imap"><a name="sec-1_4" id="sec-1_4"></a>IMAP Setup </h3>
+<div class="outline-text-3" id="text-imap">
+
+<p>The following can be used to connect to a remote IMAP server.  Fill in
+the second column of the following table with the appropriate
+information, and it will be used to generate your Gnus configuration
+file.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col align="left" /><col align="left" />
+</colgroup>
+<tbody>
+<tr><td>server</td><td>your-imap-server-address</td></tr>
+<tr><td>username</td><td>your-imap-username</td></tr>
+<tr><td>email</td><td>your-imap-email-address</td></tr>
+<tr><td>password</td><td>your-imap-password</td></tr>
+<tr><td>mailbox</td><td>inbox</td></tr>
+</tbody>
+</table>
+
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>server <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>first config<span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span>user <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>second config<span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span>email <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>third config<span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span>passwd <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>fourth config<span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span>mailbox <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>fifth config<span class="org-esk-paren">))))</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">The following adds your IMAP server as a source of mail for Gnus
+</span>  <span class="org-esk-paren">(</span>add-to-list 'mail-sources
+               `<span class="org-esk-paren">(</span>imap <span class="org-builtin">:server</span> ,server
+                     <span class="org-builtin">:port</span> 993
+                     <span class="org-builtin">:user</span> ,user
+                     <span class="org-builtin">:password</span> ,passwd
+                     <span class="org-builtin">:stream</span> ssl
+                     <span class="org-builtin">:mailbox</span> ,mailbox<span class="org-esk-paren">))</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">The following is used for sending email using SMTP.
+</span>  <span class="org-esk-paren">(</span>setq 
+   user-mail-address email
+   smtpmail-starttls-credentials
+   `<span class="org-esk-paren">((</span>,server 25 nil nil<span class="org-esk-paren">))</span>
+   smtpmail-auth-credentials
+   `<span class="org-esk-paren">((</span>,server 25 ,user ,passwd<span class="org-esk-paren">))</span>
+   smtpmail-default-smtp-server server
+   smtpmail-smtp-server server
+   smtpmail-smtp-service 25
+   smtpmail-debug-info t<span class="org-esk-paren">))</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_5" class="outline-3">
+<h3 id="sec-1_5">BBDB </h3>
+<div class="outline-text-3" id="text-1_5">
+
+<p><a href="http://bbdb.sourceforge.net/">BBDB</a> &ndash; <span style="text-decoration:underline;">The Insidious Big Brother Database</span> is Emacs' contact manager
+which is very useful for keeping all of your contacts organized for
+use with gnus.
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;;; </span><span class="org-comment">bbdb
+</span><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">bbdb</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">bbdb-autoloads</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>setq
+ bbdb-file <span class="org-string">"~/.bbdb"</span>
+ bbdb-offer-save 'auto
+ bbdb-notice-auto-save-file t
+ bbdb-expand-mail-aliases t
+ bbdb-canonicalize-redundant-nets-p t
+ bbdb-always-add-addresses t
+ bbdb-complete-name-allow-cycling t
+ <span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_6" class="outline-3">
+<h3 id="sec-1_6">More attractive Summary View </h3>
+<div class="outline-text-3" id="text-1_6">
+
+<p>Thanks to Dan Davison.
+</p>
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">http://groups.google.com/group/gnu.emacs.gnus/browse_thread/thread/a673a74356e7141f
+</span><span class="org-esk-paren">(</span><span class="org-keyword">when</span> window-system
+  <span class="org-esk-paren">(</span>setq gnus-sum-thread-tree-indent <span class="org-string">"  "</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>setq gnus-sum-thread-tree-root <span class="org-string">""</span><span class="org-esk-paren">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"&#9679; ")
+</span>  <span class="org-esk-paren">(</span>setq gnus-sum-thread-tree-false-root <span class="org-string">""</span><span class="org-esk-paren">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"&#9711; ")
+</span>  <span class="org-esk-paren">(</span>setq gnus-sum-thread-tree-single-indent <span class="org-string">""</span><span class="org-esk-paren">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"&#9678; ")
+</span>  <span class="org-esk-paren">(</span>setq gnus-sum-thread-tree-vertical        <span class="org-string">"&#9474;"</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>setq gnus-sum-thread-tree-leaf-with-other <span class="org-string">"&#9500;&#9472;&#9658; "</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span>setq gnus-sum-thread-tree-single-leaf     <span class="org-string">"&#9584;&#9472;&#9658; "</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>setq gnus-summary-line-format
+      <span class="org-esk-paren">(</span>concat
+       <span class="org-string">"%0{%U%R%z%}"</span>
+       <span class="org-string">"%3{&#9474;%}"</span> <span class="org-string">"%1{%d%}"</span> <span class="org-string">"%3{&#9474;%}"</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">date
+</span>       <span class="org-string">"  "</span>
+       <span class="org-string">"%4{%-20,20f%}"</span>               <span class="org-comment-delimiter">;; </span><span class="org-comment">name
+</span>       <span class="org-string">"  "</span>
+       <span class="org-string">"%3{&#9474;%}"</span>
+       <span class="org-string">" "</span>
+       <span class="org-string">"%1{%B%}"</span>
+       <span class="org-string">"%s\n"</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>setq gnus-summary-display-arrow t<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+</div>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: Eric Schulte
+</p>
+<p class="date"> Date: 2010-06-11 14:35:41 PDT</p>
+<p class="creator">HTML generated by org-mode 6.36trans in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
