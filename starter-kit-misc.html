@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Misc</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-11 14:29:45 PDT"/>
+<meta name="generated" content="2010-06-15 11:31:53 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,6 +24,7 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -34,6 +35,7 @@ lang="en" xml:lang="en">
   dt { font-weight: bold; }
   div.figure { padding: 0.5em; }
   div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
   .linenr { font-size:smaller }
   .code-highlighted {background-color:#ffff00;}
   .org-info-js_info-navigation { border-style:none; }
@@ -42,7 +44,7 @@ lang="en" xml:lang="en">
   .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
                                  font-weight:bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" href="emacs.css" type="text/css"/>
+</style>
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
@@ -84,8 +86,60 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1_1" class="outline-3">
-<h3 id="sec-1_1">Window system stuff </h3>
+<h3 id="sec-1_1">Color Themes </h3>
 <div class="outline-text-3" id="text-1_1">
+
+<p>The <a href="http://www.nongnu.org/color-theme/">Color Themes</a> package provides support for changing, saving,
+sharing Emacs color themes.  To view and apply color themes available
+on your system run <code>M-x color-theme-select</code>.  See the color theme
+website and EmacsWiki pages for more information.
+</p><ul>
+<li>
+<a href="http://www.nongnu.org/color-theme/">http://www.nongnu.org/color-theme/</a>
+</li>
+<li>
+<a href="http://www.emacswiki.org/emacs/ColorTheme">http://www.emacswiki.org/emacs/ColorTheme</a>
+
+</li>
+</ul>
+
+<p>This following loads color-theme so that it is available by default.
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-to-list 'load-path
+             <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"color-theme"</span>
+                               <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"src"</span> dotfiles-dir<span class="org-esk-paren">)))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">color-theme</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">eval-after-load</span> <span class="org-string">"color-theme"</span>
+  '<span class="org-esk-paren">(</span><span class="org-keyword">progn</span>
+     <span class="org-esk-paren">(</span>color-theme-initialize<span class="org-esk-paren">)))</span>
+</pre>
+
+
+
+
+<p>
+Once you've selected a preferred color theme it can be installed by
+adding its function to your initialization.  For example
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>color-theme-railscasts<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+<p>
+will load the <code>railscasts</code> color theme when Emacs starts.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1_2" class="outline-3">
+<h3 id="sec-1_2">Window system stuff </h3>
+<div class="outline-text-3" id="text-1_2">
 
 
 
@@ -129,9 +183,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-1_2" class="outline-3">
-<h3 id="sec-1_2">Nxhtml &ndash; utilities for we development </h3>
-<div class="outline-text-3" id="text-1_2">
+<div id="outline-container-1_3" class="outline-3">
+<h3 id="sec-1_3">Nxhtml &ndash; utilities for we development </h3>
+<div class="outline-text-3" id="text-1_3">
 
 <p><a href="http://ourcomments.org/Emacs/nXhtml/doc/nxhtml.html">Nxhtml</a> is a large package of utilities for web development and for
 embedding multiple major modes in a single buffer.
@@ -144,9 +198,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_3" class="outline-3">
-<h3 id="sec-1_3">Set browser </h3>
-<div class="outline-text-3" id="text-1_3">
+<div id="outline-container-1_4" class="outline-3">
+<h3 id="sec-1_4">Set browser </h3>
+<div class="outline-text-3" id="text-1_4">
 
 <p>Set this to whatever browser you use e.g&hellip;
 </p><pre class="example">
@@ -165,9 +219,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_4" class="outline-3">
-<h3 id="sec-1_4">Transparently open compressed files </h3>
-<div class="outline-text-3" id="text-1_4">
+<div id="outline-container-1_5" class="outline-3">
+<h3 id="sec-1_5">Transparently open compressed files </h3>
+<div class="outline-text-3" id="text-1_5">
 
 
 
@@ -182,9 +236,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_5" class="outline-3">
-<h3 id="sec-1_5">Enable syntax highlighting for older Emacsen that have it off </h3>
-<div class="outline-text-3" id="text-1_5">
+<div id="outline-container-1_6" class="outline-3">
+<h3 id="sec-1_6">Enable syntax highlighting for older Emacsen that have it off </h3>
+<div class="outline-text-3" id="text-1_6">
 
 
 
@@ -199,9 +253,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_6" class="outline-3">
-<h3 id="sec-1_6">No Menu Bar </h3>
-<div class="outline-text-3" id="text-1_6">
+<div id="outline-container-1_7" class="outline-3">
+<h3 id="sec-1_7">No Menu Bar </h3>
+<div class="outline-text-3" id="text-1_7">
 
 <p>You really don't need this; trust me.
 </p>
@@ -218,9 +272,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_7" class="outline-3">
-<h3 id="sec-1_7">Save a list of recent files visited. </h3>
-<div class="outline-text-3" id="text-1_7">
+<div id="outline-container-1_8" class="outline-3">
+<h3 id="sec-1_8">Save a list of recent files visited. </h3>
+<div class="outline-text-3" id="text-1_8">
 
 <p>(recentf-mode 1)
 </p>
@@ -228,9 +282,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_8" class="outline-3">
-<h3 id="sec-1_8">Highlight matching parentheses when the point is on them. </h3>
-<div class="outline-text-3" id="text-1_8">
+<div id="outline-container-1_9" class="outline-3">
+<h3 id="sec-1_9">Highlight matching parentheses when the point is on them. </h3>
+<div class="outline-text-3" id="text-1_9">
 
 
 
@@ -246,9 +300,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_9" class="outline-3">
-<h3 id="sec-1_9">ido mode </h3>
-<div class="outline-text-3" id="text-1_9">
+<div id="outline-container-1_10" class="outline-3">
+<h3 id="sec-1_10">ido mode </h3>
+<div class="outline-text-3" id="text-1_10">
 
 <p>ido-mode is like magic pixie dust!
 </p>
@@ -271,9 +325,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_10" class="outline-3">
-<h3 id="sec-1_10">Other </h3>
-<div class="outline-text-3" id="text-1_10">
+<div id="outline-container-1_11" class="outline-3">
+<h3 id="sec-1_11">Other </h3>
+<div class="outline-text-3" id="text-1_11">
 
 
 
@@ -295,13 +349,63 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 
 
+
+</div>
+
+<div id="outline-container-1_11_1" class="outline-4">
+<h4 id="sec-1_11_1">possible issues/resolutions with flyspell </h4>
+<div class="outline-text-4" id="text-1_11_1">
+
+<p>Most of the solution came from <a href="http://www.emacswiki.org/emacs/FlySpell">EmacsWiki-FlySpell</a>.  Here is one
+possible fix.
+</p>
+<ul>
+<li id="sec-1_11_1_1">Emacs set path to aspell <br/>
+it's possible aspell isn't in your path
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq exec-path <span class="org-esk-paren">(</span>append exec-path '<span class="org-esk-paren">(</span><span class="org-string">"/opt/local/bin"</span><span class="org-esk-paren">)))</span>
+</pre>
+
+
+
+
+</li>
+<li id="sec-1_11_1_2">Emacs specify spelling program <br/>
+<ul>
+<li>
+This didn't work at first, possibly because cocoAspell was
+building its dictionary.  Now it seems to work fine.
+
+</li>
+</ul>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq ispell-program-name <span class="org-string">"aspell"</span>
+      ispell-dictionary <span class="org-string">"english"</span>
+      ispell-dictionary-alist
+      <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>default '<span class="org-esk-paren">(</span><span class="org-string">"[A-Za-z]"</span> <span class="org-string">"[</span><span class="org-string"><span class="org-negation-char">^</span></span><span class="org-string">A-Za-z]"</span> <span class="org-string">"[']"</span> nil
+                       <span class="org-esk-paren">(</span><span class="org-string">"-B"</span> <span class="org-string">"-d"</span> <span class="org-string">"english"</span> <span class="org-string">"--dict-dir"</span>
+                        <span class="org-string">"/Library/Application Support/cocoAspell/aspell6-en-6.0-0"</span><span class="org-esk-paren">)</span>
+                       nil iso-8859-1<span class="org-esk-paren">)))</span>
+        `<span class="org-esk-paren">((</span>nil ,@default<span class="org-esk-paren">)</span>
+          <span class="org-esk-paren">(</span><span class="org-string">"english"</span> ,@default<span class="org-esk-paren">))))</span>
+</pre>
+
+
+
+
+</li>
+</ul>
+</div>
 </div>
 
 </div>
 
-<div id="outline-container-1_11" class="outline-3">
-<h3 id="sec-1_11">Hippie expand: at times perhaps too hip </h3>
-<div class="outline-text-3" id="text-1_11">
+<div id="outline-container-1_12" class="outline-3">
+<h3 id="sec-1_12">Hippie expand: at times perhaps too hip </h3>
+<div class="outline-text-3" id="text-1_12">
 
 
 
@@ -317,9 +421,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_12" class="outline-3">
-<h3 id="sec-1_12">Don't clutter up directories with files~ </h3>
-<div class="outline-text-3" id="text-1_12">
+<div id="outline-container-1_13" class="outline-3">
+<h3 id="sec-1_13">Don't clutter up directories with files~ </h3>
+<div class="outline-text-3" id="text-1_13">
 
 
 
@@ -335,9 +439,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_13" class="outline-3">
-<h3 id="sec-1_13">Associate modes with file extensions </h3>
-<div class="outline-text-3" id="text-1_13">
+<div id="outline-container-1_14" class="outline-3">
+<h3 id="sec-1_14">Associate modes with file extensions </h3>
+<div class="outline-text-3" id="text-1_14">
 
 
 
@@ -358,9 +462,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_14" class="outline-3">
-<h3 id="sec-1_14">Default to unified diffs </h3>
-<div class="outline-text-3" id="text-1_14">
+<div id="outline-container-1_15" class="outline-3">
+<h3 id="sec-1_15">Default to unified diffs </h3>
+<div class="outline-text-3" id="text-1_15">
 
 
 
@@ -375,9 +479,9 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 </div>
 
-<div id="outline-container-1_15" class="outline-3">
-<h3 id="sec-1_15">Cosmetics </h3>
-<div class="outline-text-3" id="text-1_15">
+<div id="outline-container-1_16" class="outline-3">
+<h3 id="sec-1_16">Cosmetics </h3>
+<div class="outline-text-3" id="text-1_16">
 
 
 
@@ -399,7 +503,12 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 </div>
 </div>
 </div>
-
+<div id="postamble">
+<p class="author"> Author: Eric Schulte
+</p>
+<p class="date"> Date: 2010-06-15 11:31:53 PDT</p>
+<p class="creator">HTML generated by org-mode 6.36trans in emacs 23</p>
+</div>
 </div>
 </body>
 </html>
