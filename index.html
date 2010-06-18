@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-18 10:23:23 PDT"/>
+<meta name="generated" content="2010-06-18 10:39:31 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -355,10 +355,27 @@ find out.
 
 
 </dd>
+<dt>Installing more elisp libraries</dt><dd>
+While the starter kit include
+many useful Emacs lisp libraries, you are bound to find more that
+you will want to install.  The easiest way to install new
+libraries is through the Emacs Lisp Package Archive (see <a href="#sec-2_1_5">ELPA</a>).
+When a library is not available through ELPA you can grab it's
+source and place it directly in the <code>src</code> directory.  Any
+packages found there will automatically be added to your
+load-path when Emacs starts up, and are guaranteed not to
+conflict with future starter-kit updates.
+
+</dd>
 </dl>
 
-<p>Some additional miscellaneous configuration suggestions
+<p>Some additional miscellaneous configuration and getting started
+suggestions
 </p><ul>
+<li>
+First off see the <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Customization.html#Customization">Customization</a> node in the Emacs manual.  Available
+online or through the <code>info</code> command (run with <code>C-h i</code>).
+</li>
 <li>
 <code>grep</code>'ing through the <code>starter-kit-*</code> files in this directory can
 provide useful examples for how to do things like install major
@@ -369,7 +386,9 @@ read the following <a href="http://www.gnu.org/software/emacs/elisp/html_node/Ke
 personal key bindings
 </li>
 <li>
-more suggestions?
+The starter-kit comes pre-bundled with a variety of color themes.
+See <a href="starter-kit-misc.html">Color Themes</a> for instructions on how to change the colors used
+by Emacs.
 
 </li>
 </ul>
