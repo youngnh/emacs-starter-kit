@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit LaTeX</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-11 14:26:45 PDT"/>
+<meta name="generated" content="2010-06-18 10:09:13 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,6 +24,7 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -34,6 +35,7 @@ lang="en" xml:lang="en">
   dt { font-weight: bold; }
   div.figure { padding: 0.5em; }
   div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
   .linenr { font-size:smaller }
   .code-highlighted {background-color:#ffff00;}
   .org-info-js_info-navigation { border-style:none; }
@@ -87,13 +89,8 @@ lang="en" xml:lang="en">
 <h3 id="sec-1_1">Load Packages </h3>
 <div class="outline-text-3" id="text-1_1">
 
-
-</div>
-
-<div id="outline-container-1_1_1" class="outline-4">
-<h4 id="sec-1_1_1">Load AucTeX </h4>
-<div class="outline-text-4" id="text-1_1_1">
-
+<ul>
+<li id="sec-1_1_1">Load AucTeX <br/>
 
 
 
@@ -102,15 +99,8 @@ lang="en" xml:lang="en">
 
 
 
-
-</div>
-
-</div>
-
-<div id="outline-container-1_1_2" class="outline-4">
-<h4 id="sec-1_1_2">Load Preview LaTeX </h4>
-<div class="outline-text-4" id="text-1_1_2">
-
+</li>
+<li id="sec-1_1_2">Load Preview LaTeX <br/>
 
 
 
@@ -119,15 +109,8 @@ lang="en" xml:lang="en">
 
 
 
-
-</div>
-
-</div>
-
-<div id="outline-container-1_1_3" class="outline-4">
-<h4 id="sec-1_1_3">Load RefTeX </h4>
-<div class="outline-text-4" id="text-1_1_3">
-
+</li>
+<li id="sec-1_1_3">Load RefTeX <br/>
 
 
 
@@ -137,8 +120,8 @@ lang="en" xml:lang="en">
 
 
 
-
-</div>
+</li>
+</ul>
 </div>
 
 </div>
@@ -147,13 +130,8 @@ lang="en" xml:lang="en">
 <h3 id="sec-1_2">Configure AucTeX </h3>
 <div class="outline-text-3" id="text-1_2">
 
-
-</div>
-
-<div id="outline-container-1_2_1" class="outline-4">
-<h4 id="sec-1_2_1">Use pdfLaTeX </h4>
-<div class="outline-text-4" id="text-1_2_1">
-
+<ul>
+<li id="sec-1_2_1">Use pdfLaTeX <br/>
 <ul>
 <li>
 Take this out to compile to DVI, instead.
@@ -168,15 +146,8 @@ Take this out to compile to DVI, instead.
 
 
 
-
-</div>
-
-</div>
-
-<div id="outline-container-1_2_2" class="outline-4">
-<h4 id="sec-1_2_2">Set a Path to Executables (optional) </h4>
-<div class="outline-text-4" id="text-1_2_2">
-
+</li>
+<li id="sec-1_2_2">Set a Path to Executables (optional) <br/>
 <ul>
 <li>
 The location of the LaTeX excecutables is system
@@ -195,8 +166,8 @@ configuration as needed.
 
 
 
-
-</div>
+</li>
+</ul>
 </div>
 
 </div>
@@ -205,13 +176,8 @@ configuration as needed.
 <h3 id="sec-1_3">Configure RefTeX </h3>
 <div class="outline-text-3" id="text-1_3">
 
-
-</div>
-
-<div id="outline-container-1_3_1" class="outline-4">
-<h4 id="sec-1_3_1">Default Bibliography </h4>
-<div class="outline-text-4" id="text-1_3_1">
-
+<ul>
+<li id="sec-1_3_1">Default Bibliography <br/>
 <ul>
 <li>
 This is important when editing source code in Org-babel, since
@@ -234,8 +200,8 @@ a personal file/directory.
 
 
 
-
-</div>
+</li>
+</ul>
 </div>
 
 </div>
@@ -259,7 +225,6 @@ Add LaTeX to the list of languages Org-babel will recognize.
 </span></pre></div>
 
 
-
 <ul>
 <li>
 Add LaTeX to a list of languages that raise noweb-type errors.
@@ -271,7 +236,6 @@ Add LaTeX to a list of languages that raise noweb-type errors.
 <div class="org-src-container"><label class="org-src-name">noweb-error()</label><pre class="src src-emacs-lisp">
 <span class="org-esk-paren">(</span>add-to-list 'org-babel-noweb-error-langs <span class="org-string">"latex"</span><span class="org-esk-paren">)</span>
 </pre></div>
-
 
 
 

@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Misc</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-15 11:34:14 PDT"/>
+<meta name="generated" content="2010-06-18 10:09:12 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -118,7 +118,6 @@ website and EmacsWiki pages for more information.
 
 
 
-
 <p>
 Once you've selected a preferred color theme it can be installed by
 adding its function to your initialization.  For example
@@ -127,7 +126,6 @@ adding its function to your initialization.  For example
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>color-theme-railscasts<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 <p>
@@ -175,7 +173,6 @@ will load the <code>railscasts</code> color theme when Emacs starts.
       xterm-mouse-mode t
       save-place-file <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"places"</span><span class="org-esk-paren">))</span>
 </pre></div>
-
 
 
 
@@ -231,7 +228,6 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 
 
-
 </div>
 
 </div>
@@ -245,7 +241,6 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-font-lock-mode t<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -264,7 +259,6 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 <div class="org-src-container"><label class="org-src-name">starter-kit-no-menu()</label><pre class="src src-emacs-lisp">
 <span class="org-esk-paren">(</span>menu-bar-mode -1<span class="org-esk-paren">)</span>
 </pre></div>
-
 
 
 
@@ -295,7 +289,6 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 
 
-
 </div>
 
 </div>
@@ -317,7 +310,6 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
         ido-use-filename-at-point t
         ido-max-prospects 10<span class="org-esk-paren">))</span>
 </pre></div>
-
 
 
 
@@ -348,17 +340,11 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 
 
-
-
-</div>
-
-<div id="outline-container-1_11_1" class="outline-4">
-<h4 id="sec-1_11_1">possible issues/resolutions with flyspell </h4>
-<div class="outline-text-4" id="text-1_11_1">
-
-<p>Most of the solution came from <a href="http://www.emacswiki.org/emacs/FlySpell">EmacsWiki-FlySpell</a>.  Here is one
+<ul>
+<li id="sec-1_11_1">possible issues/resolutions with flyspell <br/>
+Most of the solution came from <a href="http://www.emacswiki.org/emacs/FlySpell">EmacsWiki-FlySpell</a>.  Here is one
 possible fix.
-</p>
+
 <ul>
 <li id="sec-1_11_1_1">Emacs set path to aspell <br/>
 it's possible aspell isn't in your path
@@ -367,7 +353,6 @@ it's possible aspell isn't in your path
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq exec-path <span class="org-esk-paren">(</span>append exec-path '<span class="org-esk-paren">(</span><span class="org-string">"/opt/local/bin"</span><span class="org-esk-paren">)))</span>
 </pre>
-
 
 
 
@@ -395,10 +380,10 @@ building its dictionary.  Now it seems to work fine.
 
 
 
-
 </li>
 </ul>
-</div>
+</li>
+</ul>
 </div>
 
 </div>
@@ -416,7 +401,6 @@ building its dictionary.  Now it seems to work fine.
 
 
 
-
 </div>
 
 </div>
@@ -431,7 +415,6 @@ building its dictionary.  Now it seems to work fine.
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq backup-directory-alist `<span class="org-esk-paren">((</span><span class="org-string">"."</span> . ,<span class="org-esk-paren">(</span>expand-file-name
                                         <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"backups"</span><span class="org-esk-paren">)))))</span>
 </pre>
-
 
 
 
@@ -457,7 +440,6 @@ building its dictionary.  Now it seems to work fine.
 
 
 
-
 </div>
 
 </div>
@@ -471,7 +453,6 @@ building its dictionary.  Now it seems to work fine.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq diff-switches <span class="org-string">"-u"</span><span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -497,7 +478,6 @@ building its dictionary.  Now it seems to work fine.
      <span class="org-esk-paren">(</span>set-face-foreground 'magit-diff-add <span class="org-string">"green3"</span><span class="org-esk-paren">)</span>
      <span class="org-esk-paren">(</span>set-face-foreground 'magit-diff-del <span class="org-string">"red3"</span><span class="org-esk-paren">)))</span>
 </pre>
-
 
 
 </div>
