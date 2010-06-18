@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-18 10:11:28 PDT"/>
+<meta name="generated" content="2010-06-18 10:23:23 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -182,23 +182,19 @@ git checkout this <a href="http://www.kernel.org/pub/software/scm/git/docs/gittu
 try out <a href="http://zagadka.vm.bytemark.co.uk/magit/magit.html">magit</a> the Emacs mode for git interaction which comes
 bundled in the starter kit.
 
-</li>
-</ol>
 
 
 <pre class="src src-sh">git clone http://github.com/eschulte/emacs-starter-kit.git
 </pre>
 
 
-<ol>
+</li>
 <li>
 Move the resulting directory to <code>~/.emacs.d</code> <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
 </li>
 <li>
 Install the Org-mode <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules">submodules</a> with the following
 
-</li>
-</ol>
 
 
 <pre class="src src-sh"><span class="org-builtin">cd</span> ~/.emacs.d/
@@ -207,12 +203,10 @@ git submodule update
 </pre>
 
 
-<ol>
+</li>
 <li>
 build Org-mode
 
-</li>
-</ol>
 
 
 <pre class="src src-sh"><span class="org-builtin">cd</span> src/org/
@@ -220,12 +214,10 @@ make
 </pre>
 
 
-<ol>
+</li>
 <li>
 build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for instilllation help see the <a href="http://www.gnu.org/software/auctex/manual/auctex/Installation.html#Installation">auctex instillation instructions</a>, auctex requires a working TeX installation
 
-</li>
-</ol>
 
 
 <pre class="src src-sh"><span class="org-builtin">cd</span> src/auctex
@@ -233,7 +225,7 @@ build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for insti
 </pre>
 
 
-<ol>
+</li>
 <li>
 Launch Emacs!
 
@@ -330,8 +322,6 @@ after your user with the extensions <code>.el</code> or <code>.org</code> <sup><
 you're unsure of your user name evaluate the following code block
 to find out.
 
-</dd>
-</dl>
 
 
 <pre class="src src-sh"><span class="org-builtin">echo</span> $<span class="org-variable-name">USER</span>
@@ -348,22 +338,31 @@ name.  If a such a directory exists, it will be added to the
 load-path, and any elisp or org-mode w/embedded elisp files in it
 will be loaded.
 </p>
-<dl>
+</dd>
 <dt>System specific config</dt><dd>
 Finally, you may want to configure
 different settings for different machines.  The Starter Kit will
 look for a file named after the current hostname ending in <code>.el</code>
-or <code>.org</code> which will allow host-specific configuration.
+or <code>.org</code> which will allow host-specific configuration.  If
+you're unsure of your hostname the following can be executed to
+find out.
+
+
+
+<pre class="src src-sh"><span class="org-builtin">echo</span> $<span class="org-variable-name">HOST</span>
+</pre>
+
+
 
 </dd>
 </dl>
 
-<p>Some miscellaneous configuration suggestions
+<p>Some additional miscellaneous configuration suggestions
 </p><ul>
 <li>
-<code>grep</code>'ing through these starter-kit-* files can provide useful
-examples for how to do things like install major modes, define
-keybindings, etc..
+<code>grep</code>'ing through the <code>starter-kit-*</code> files in this directory can
+provide useful examples for how to do things like install major
+modes, define keybindings, etc..
 </li>
 <li>
 read the following <a href="http://www.gnu.org/software/emacs/elisp/html_node/Key-Binding-Conventions.html">Key-Binding-Conventions</a> before defining too many
@@ -882,7 +881,7 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 <p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> If you already have a directory at ~/.emacs.d move it out of
 the way and put this there instead.
 </p>
-<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> The emacs starter kit uses <a href="http://github.com/eschulte/org-babel/tree/master">org-babel</a> to load embedded elisp code
+<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> The emacs starter kit uses <a href="http://orgmode.org/worg/org-contrib/babel/">org-babel</a> to load embedded elisp code
 directly from <a href="http://orgmode.org/">Org Mode</a> documents.
 </p>
 </div>
