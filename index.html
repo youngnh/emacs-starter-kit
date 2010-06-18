@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-18 10:09:08 PDT"/>
+<meta name="generated" content="2010-06-18 10:11:28 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -95,6 +95,7 @@ brighter; it simply makes everything else vanish.
 <li><a href="#learning">Learning </a></li>
 <li><a href="#installation">Installation </a></li>
 <li><a href="#structure">Structure </a></li>
+<li><a href="#customization">Customization </a></li>
 <li><a href="#elpa">Emacs Lisp Package Archive </a></li>
 <li><a href="#contributing">Contributing </a></li>
 </ul>
@@ -240,7 +241,7 @@ Launch Emacs!
 </ol>
 
 <p>After setup you may need to restart Emacs a couple of times while it
-downloads packages from <a href="#sec-1_4">ELPA</a> &ndash; errors parsing html from
+downloads packages from <a href="#sec-1_5">ELPA</a> &ndash; errors parsing html from
 <code>*tromey.com:80*</code> can generally be safely ignored.
 </p>
 <p>
@@ -280,7 +281,7 @@ what I consider to be better defaults, both for different programming
 languages and for built-in Emacs features like bindings or registers.
 </p>
 <p>
-Files that are pending submission to <a href="#sec-1_4">ELPA</a> are bundled with the starter
+Files that are pending submission to <a href="#sec-1_5">ELPA</a> are bundled with the starter
 kit under the directory <a href="elpa-to-submit/">elpa-to-submit/</a>. The understanding is that
 these are bundled just because nobody's gotten around to turning them
 into packages, and the bundling of them is temporary. For these
@@ -291,22 +292,94 @@ will be added to the load-path.
 </p>
 <p>
 There are also a few files that are meant for code that doesn't belong
-in the Starter Kit. First, the user-specific-config file is the file
-named after your user with the extensions <code>.el</code> or <code>.org</code> <sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>. In
-addition, if a directory named after your user exists, it will be
-added to the load-path, and any elisp or org-mode w/embedded elisp
-files in it will be loaded. Finally, the Starter Kit will look for a
-file named after the current hostname ending in <code>.el</code> or <code>.org</code> which
-will allow host-specific configuration. This is where you should put
-code that you don't think would be useful to everyone. That will allow
-you to merge with newer versions of the starter-kit without conflicts.
+in the Starter Kit, they are described below in <a href="#sec-1_4">Customization</a>.
 </p>
 </div>
 
 </div>
 
+<div id="outline-container-customization" class="outline-3">
+<h3 id="customization"><a name="sec-1_4" id="sec-1_4"></a>Customization </h3>
+<div class="outline-text-3" id="text-customization">
+
+
+<p>
+The many defaults built into the starter kit are only the beginning of
+most users customization of Emacs to suite their needs.  The starter
+kit provides a number of places for additional user and system
+specific customization.  These are designed in such a way that it will
+be easy for you to continue tracking your own personal customization
+inside the starter-kit while retaining your ability to pull down
+general starter-kit updates without conflict.
+</p>
+<dl>
+<dt><code>git branch</code></dt><dd>
+The first step to user-specific customization is (like
+in any git project) to MAKE A BRANCH FOR YOUR LOCAL CHANGES.
+Save the master branch for pulling down new versions of the
+starter kit, and save all of your personal information in a
+personal branch.  That way you never have to worry about
+accidentally <code>git push</code>'ing up a patch with all of your gnus
+email passwords.
+
+</dd>
+<dt>User specific config</dt><dd>
+Your personal configuration information can
+be stored in a user-specific-config file.  This is the file named
+after your user with the extensions <code>.el</code> or <code>.org</code> <sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>.  If
+you're unsure of your user name evaluate the following code block
+to find out.
+
+</dd>
+</dl>
+
+
+<pre class="src src-sh"><span class="org-builtin">echo</span> $<span class="org-variable-name">USER</span>
+</pre>
+
+
+
+<p>
+If your configuration starts to feel cramped in a single file
+(although with the nested headlines of an Org-mode file, that
+could take a while) and you want to stretch your config's legs,
+you can also create a directory named after your system user
+name.  If a such a directory exists, it will be added to the
+load-path, and any elisp or org-mode w/embedded elisp files in it
+will be loaded.
+</p>
+<dl>
+<dt>System specific config</dt><dd>
+Finally, you may want to configure
+different settings for different machines.  The Starter Kit will
+look for a file named after the current hostname ending in <code>.el</code>
+or <code>.org</code> which will allow host-specific configuration.
+
+</dd>
+</dl>
+
+<p>Some miscellaneous configuration suggestions
+</p><ul>
+<li>
+<code>grep</code>'ing through these starter-kit-* files can provide useful
+examples for how to do things like install major modes, define
+keybindings, etc..
+</li>
+<li>
+read the following <a href="http://www.gnu.org/software/emacs/elisp/html_node/Key-Binding-Conventions.html">Key-Binding-Conventions</a> before defining too many
+personal key bindings
+</li>
+<li>
+more suggestions?
+
+</li>
+</ul>
+</div>
+
+</div>
+
 <div id="outline-container-elpa" class="outline-3">
-<h3 id="elpa"><a name="sec-1_4" id="sec-1_4"></a>Emacs Lisp Package Archive </h3>
+<h3 id="elpa"><a name="sec-1_5" id="sec-1_5"></a>Emacs Lisp Package Archive </h3>
 <div class="outline-text-3" id="text-elpa">
 
 
@@ -339,7 +412,7 @@ starter-kit-elpa-install in a fresh instance.
 </div>
 
 <div id="outline-container-contributing" class="outline-3">
-<h3 id="contributing"><a name="sec-1_5" id="sec-1_5"></a>Contributing </h3>
+<h3 id="contributing"><a name="sec-1_6" id="sec-1_6"></a>Contributing </h3>
 <div class="outline-text-3" id="text-contributing">
 
 
