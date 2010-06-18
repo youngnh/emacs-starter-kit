@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-11 14:29:41 PDT"/>
+<meta name="generated" content="2010-06-18 10:09:08 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,6 +24,7 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -34,6 +35,7 @@ lang="en" xml:lang="en">
   dt { font-weight: bold; }
   div.figure { padding: 0.5em; }
   div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
   .linenr { font-size:smaller }
   .code-highlighted {background-color:#ffff00;}
   .org-info-js_info-navigation { border-style:none; }
@@ -187,7 +189,6 @@ bundled in the starter kit.
 </pre>
 
 
-
 <ol>
 <li>
 Move the resulting directory to <code>~/.emacs.d</code> <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
@@ -205,7 +206,6 @@ git submodule update
 </pre>
 
 
-
 <ol>
 <li>
 build Org-mode
@@ -219,7 +219,6 @@ make
 </pre>
 
 
-
 <ol>
 <li>
 build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for instilllation help see the <a href="http://www.gnu.org/software/auctex/manual/auctex/Installation.html#Installation">auctex instillation instructions</a>, auctex requires a working TeX installation
@@ -231,7 +230,6 @@ build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for insti
 <pre class="src src-sh"><span class="org-builtin">cd</span> src/auctex
 ./configure &amp;&amp; make
 </pre>
-
 
 
 <ol>
@@ -258,7 +256,6 @@ single instance using the starter kit, try the following invocation:
 
 <pre class="src src-sh">emacs -q -l ~/src/emacs-starter-kit/init.el
 </pre>
-
 
 
 
@@ -414,7 +411,6 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 
 
-
 </li>
 <li id="sec-2_1_2">Ubiquitous Packages <br/>
 
@@ -436,7 +432,6 @@ since they are likely to be used in every session
 
 
 
-
 </li>
 <li id="sec-2_1_3">Emacs 22 Backport <br/>
 
@@ -451,7 +446,6 @@ backport some functionality to Emacs 22 if needed
 
 
 
-
 </li>
 <li id="sec-2_1_4">Function for loading starter-kit-* <br/>
 
@@ -463,7 +457,6 @@ backport some functionality to Emacs 22 if needed
   <span class="org-esk-paren">(</span>org-babel-load-file <span class="org-esk-paren">(</span>expand-file-name file
                                          dotfiles-dir<span class="org-esk-paren">)))</span>
 </pre></div>
-
 
 
 
@@ -484,7 +477,6 @@ Load up <a href="http://tromey.com/elpa/">ELPA</a>, the Emacs Lisp package manag
 
 
 
-
 </li>
 <li id="sec-2_1_6">Starter Kit Customizations <br/>
 
@@ -500,7 +492,6 @@ Load up starter kit customizations
 
 
 
-
 </li>
 <li id="sec-2_1_7">Work around OS X bug <br/>
 
@@ -513,7 +504,6 @@ Work around a bug on OS X where system-name is FQDN
 <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>eq system-type 'darwin<span class="org-esk-paren">)</span>
     <span class="org-esk-paren">(</span>setq system-name <span class="org-esk-paren">(</span>car <span class="org-esk-paren">(</span>split-string system-name <span class="org-string">"\\."</span><span class="org-esk-paren">))))</span>
 </pre></div>
-
 
 
 
@@ -539,7 +529,6 @@ in this document).
 
 
 
-
 <p>
 You can keep elisp source in the <code>src</code> directory.  Packages loaded
 from here will override those installed by ELPA.  This is useful if
@@ -553,7 +542,6 @@ project is not in elpa.
 <span class="org-esk-paren">(</span>setq elisp-source-dir <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"src"</span><span class="org-esk-paren">))</span>
 <span class="org-esk-paren">(</span>add-to-list 'load-path elisp-source-dir<span class="org-esk-paren">)</span>
 </pre></div>
-
 
 
 
@@ -588,7 +576,6 @@ Starter kit function definitions in <a href="starter-kit-defuns.html">starter-ki
 
 
 
-
 </li>
 <li id="sec-2_2_2">Starter kit bindings <br/>
 Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
@@ -598,7 +585,6 @@ Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-bindings.org"</span><span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -614,7 +600,6 @@ Miscellaneous settings in <a href="starter-kit-misc.html">starter-kit-misc</a>
 
 
 
-
 </li>
 <li id="sec-2_2_4">Starter kit registers <br/>
 Registers for jumping to commonly used files in <a href="starter-kit-registers.html">starter-kit-registers</a>
@@ -624,7 +609,6 @@ Registers for jumping to commonly used files in <a href="starter-kit-registers.h
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-registers.org"</span><span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -670,7 +654,6 @@ see the <a href="http://yasnippet.googlecode.com/svn/trunk/doc/index.html">intro
 
 
 
-
 <p>
 load the snippets defined in the <code>./snippets/</code> directory
 </p>
@@ -678,7 +661,6 @@ load the snippets defined in the <code>./snippets/</code> directory
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>yas/load-directory <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"snippets"</span> dotfiles-dir<span class="org-esk-paren">))</span>
 </pre>
-
 
 
 
@@ -694,7 +676,6 @@ Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
 
 
-
 </li>
 <li id="sec-2_3_3">Starter kit eshell <br/>
 Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
@@ -704,7 +685,6 @@ Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-eshell.org"</span><span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -720,7 +700,6 @@ Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
 
 
-
 </li>
 <li id="sec-2_3_5">Starter kit Haskell <br/>
 Located in <a href="starter-kit-haskell.html">starter-kit-haskell</a>
@@ -730,7 +709,6 @@ Located in <a href="starter-kit-haskell.html">starter-kit-haskell</a>
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-haskell.org"</span><span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -746,7 +724,6 @@ Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
 
 
-
 </li>
 <li id="sec-2_3_7">Starter kit JS <br/>
 Located in <a href="starter-kit-js.html">starter-kit-js</a>
@@ -756,7 +733,6 @@ Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-js.org"</span><span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -772,7 +748,6 @@ Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
 
 
 
-
 </li>
 <li id="sec-2_3_9">Starter Kit Latex <br/>
 Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
@@ -782,7 +757,6 @@ Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
 
 <pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">(starter-kit-load "starter-kit-latex.org")
 </span></pre>
-
 
 
 
@@ -817,7 +791,6 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
     <span class="org-esk-paren">(</span>mapc #'load <span class="org-esk-paren">(</span>directory-files user-specific-dir nil <span class="org-string">".*el$"</span><span class="org-esk-paren">))</span>
     <span class="org-esk-paren">(</span>mapc #'org-babel-load-file <span class="org-esk-paren">(</span>directory-files user-specific-dir nil <span class="org-string">".*org$"</span><span class="org-esk-paren">))))</span>
 </pre></div>
-
 
 
 
