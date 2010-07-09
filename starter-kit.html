@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-18 10:39:31 PDT"/>
+<meta name="generated" content="2010-07-09 11:28:55 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,7 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -35,7 +34,6 @@ lang="en" xml:lang="en">
   dt { font-weight: bold; }
   div.figure { padding: 0.5em; }
   div.figure p { text-align: center; }
-  textarea { overflow-x: auto; }
   .linenr { font-size:smaller }
   .code-highlighted {background-color:#ffff00;}
   .org-info-js_info-navigation { border-style:none; }
@@ -108,6 +106,7 @@ brighter; it simply makes everything else vanish.
 <li><a href="#sec-2_4">Load User/System Specific Files </a></li>
 </ul>
 </li>
+<li><a href="#sec-3">FAQ </a></li>
 </ul>
 </div>
 </div>
@@ -349,7 +348,7 @@ find out.
 
 
 
-<pre class="src src-sh">hostname</span>
+<pre class="src src-sh">hostname
 </pre>
 
 
@@ -489,7 +488,7 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 <div class="org-src-container"><label class="org-src-name">starter-kit-load-paths()</label><pre class="src src-emacs-lisp">
 <span class="org-esk-paren">(</span>setq dotfiles-dir <span class="org-esk-paren">(</span>file-name-directory
-                    <span class="org-esk-paren">(</span>or <span class="org-esk-paren">(</span>buffer-file-name<span class="org-esk-paren">)</span> load-file-name<span class="org-esk-paren">)))</span>
+                    <span class="org-esk-paren">(</span>or load-file-name <span class="org-esk-paren">(</span>buffer-file-name<span class="org-esk-paren">))))</span>
 
 <span class="org-esk-paren">(</span>add-to-list 'load-path dotfiles-dir<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>add-to-list 'load-path <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"/elpa-to-submit"</span><span class="org-esk-paren">))</span>
@@ -886,12 +885,29 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 
 
 
-
-
-
-
+</div>
+</div>
 
 </div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">FAQ </h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Frequently asked questions.
+</p>
+<p>
+Please share anything that you have come across which you think could
+be helpful, either in the form of a pull request, a patch, or just an
+email to me <a href="http://github.com/eschulte">http://github.com/eschulte</a>.
+</p>
+
+
+
+
+
+
+
 </div>
 </div>
 <div id="footnotes">

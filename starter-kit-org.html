@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Org</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-15 11:34:13 PDT"/>
+<meta name="generated" content="2010-07-09 11:28:58 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -24,7 +24,6 @@ lang="en" xml:lang="en">
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
 	padding: 5pt;
 	font-family: courier, monospace;
         font-size: 90%;
@@ -35,7 +34,6 @@ lang="en" xml:lang="en">
   dt { font-weight: bold; }
   div.figure { padding: 0.5em; }
   div.figure p { text-align: center; }
-  textarea { overflow-x: auto; }
   .linenr { font-size:smaller }
   .code-highlighted {background-color:#ffff00;}
   .org-info-js_info-navigation { border-style:none; }
@@ -96,26 +94,8 @@ which is also <b>implemented using</b> Org-mode and <a href="http://git-scm.com/
 </div>
 
 <div id="outline-container-1_1" class="outline-3">
-<h3 id="sec-1_1">Helpful Packages </h3>
+<h3 id="sec-1_1">Org-Mode Hook </h3>
 <div class="outline-text-3" id="text-1_1">
-
-
-
-
-<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">org-install</span><span class="org-esk-paren">)</span>
-<span class="org-comment-delimiter">;; </span><span class="org-comment">(if window-system (require 'org-mouse))
-</span></pre>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1_2" class="outline-3">
-<h3 id="sec-1_2">Org-Mode Hook </h3>
-<div class="outline-text-3" id="text-1_2">
 
 <p>The latest version of yasnippets doesn't play well with Org-mode, the
 following function allows these two to play nicely together
@@ -125,7 +105,6 @@ following function allows these two to play nicely together
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">yas/org-very-safe-expand</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>yas/fallback-behavior 'return-nil<span class="org-esk-paren">))</span> <span class="org-esk-paren">(</span>yas/expand<span class="org-esk-paren">)))</span>
 </pre>
-
 
 
 
@@ -151,43 +130,42 @@ following function allows these two to play nicely together
 
 
 
+</div>
+
+</div>
+
+<div id="outline-container-1_2" class="outline-3">
+<h3 id="sec-1_2">Load up the Library of Babel </h3>
+<div class="outline-text-3" id="text-1_2">
+
+<p>The library of babel contains makes many useful functions available
+for use by code blocks in <b>any</b> emacs file.  See the actual
+<a href="src/org/contrib/babel/library-of-babel.html">library-of-babel.org</a> file for information on the functions, and see
+<a href="http://orgmode.org/worg/org-contrib/babel/intro.php#library-of-babel">worg:library-of-babel</a> for more usage information.
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>org-babel-lob-ingest
+ <span class="org-esk-paren">(</span>expand-file-name
+  <span class="org-string">"library-of-babel.org"</span>
+  <span class="org-esk-paren">(</span>expand-file-name
+   <span class="org-string">"babel"</span>
+   <span class="org-esk-paren">(</span>expand-file-name
+    <span class="org-string">"contrib"</span>
+    <span class="org-esk-paren">(</span>expand-file-name
+     <span class="org-string">"org"</span>
+     <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"src"</span> dotfiles-dir<span class="org-esk-paren">))))))</span>
+</pre>
+
+
 
 </div>
 
 </div>
 
 <div id="outline-container-1_3" class="outline-3">
-<h3 id="sec-1_3">Support for viewing images </h3>
+<h3 id="sec-1_3">Starter Kit Documentation </h3>
 <div class="outline-text-3" id="text-1_3">
-
-<p>This allows for the viewing of images in-line in Org-mode documents.
-</p>
-
-
-
-<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">iimage</span><span class="org-esk-paren">)</span>
-<span class="org-esk-paren">(</span>setq iimage-mode-image-search-path <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"~/"</span><span class="org-esk-paren">))</span>
-<span class="org-comment-delimiter">;; </span><span class="org-comment">Match org file: links
-</span><span class="org-esk-paren">(</span>add-to-list 'iimage-mode-image-regex-alist
-             <span class="org-esk-paren">(</span>cons <span class="org-esk-paren">(</span>concat <span class="org-string">"\\[\\[file:</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">~?"</span> iimage-mode-image-filename-regex
-                           <span class="org-string">"</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">\\]"</span><span class="org-esk-paren">)</span>  1<span class="org-esk-paren">))</span>
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-toggle-iimage-in-org</span> <span class="org-esk-paren">()</span>
-  <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
-  <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>turning-on <span class="org-esk-paren">(</span>not iimage-mode<span class="org-esk-paren">)))</span>
-    <span class="org-esk-paren">(</span>set-face-underline-p 'org-link <span class="org-esk-paren">(</span>not turning-on<span class="org-esk-paren">))</span>
-    <span class="org-esk-paren">(</span>iimage-mode <span class="org-esk-paren">(</span>or turning-on 0<span class="org-esk-paren">))))</span>
-</pre>
-
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1_4" class="outline-3">
-<h3 id="sec-1_4">Starter Kit Documentation </h3>
-<div class="outline-text-3" id="text-1_4">
 
 <p>This code defines the <code>starter-kit-project</code> which is used to publish
 the documentation for the Starter Kit to html.
@@ -207,7 +185,6 @@ the documentation for the Starter Kit to html.
                  <span class="org-builtin">:index-filename</span> <span class="org-string">"starter-kit.org"</span>
                  <span class="org-builtin">:auto-postamble</span> nil<span class="org-esk-paren">)))</span>
 </pre>
-
 
 
 

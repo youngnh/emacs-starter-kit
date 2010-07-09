@@ -255,7 +255,7 @@ This section contains all code implementing the Emacs Starter Kit.
 #+srcname: starter-kit-load-paths
 #+begin_src emacs-lisp 
   (setq dotfiles-dir (file-name-directory
-                      (or (buffer-file-name) load-file-name)))
+                      (or load-file-name (buffer-file-name))))
   
   (add-to-list 'load-path dotfiles-dir)
   (add-to-list 'load-path (concat dotfiles-dir "/elpa-to-submit"))
@@ -492,6 +492,18 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
       (mapc #'load (directory-files user-specific-dir nil ".*el$"))
       (mapc #'org-babel-load-file (directory-files user-specific-dir nil ".*org$"))))
 #+end_src
+
+
+* FAQ
+  :PROPERTIES:
+  :tangle:   no
+  :END:
+Frequently asked questions.
+
+Please share anything that you have come across which you think could
+be helpful, either in the form of a pull request, a patch, or just an
+email to me http://github.com/eschulte.
+
 
 
 * Footnotes
