@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Starter Kit Gnus POP</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2010-07-23 11:12:57 PDT"/>
+<meta name="author" content="Eric Schulte"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+ border: 1pt solid #AEBDCC;
+    padding: 5pt;
+ font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="emacs.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">Starter Kit Gnus POP</h1>
+
+<p>This file can be used to jump start a working Gnus instillation.  The
+following steps will result in a working vanilla Gnus POP
+instillation.
+</p><ol>
+<li>
+install the <a href="#sec-2">required-packages</a>
+</li>
+<li>
+follow the <a href="#sec-3">gmail</a> specific instructions
+</li>
+<li>
+tangle this file with `org-babel-tangle' (with C-c M-b t) creating
+the <code>starter-kit-gnus-pop.el</code> file which can be loaded by Emacs
+
+</li>
+</ol>
+
+<p>(if you run into any problems &ndash; the <a href="http://www.gnus.org/manual.html">gnus manual</a> is very thorough)
+</p>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Basic configuration </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>First off, load up <code>gnus</code>
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">gnus</span><span class="org-esk-paren">)</span>
+</pre>
+
+
+
+<p>
+Tell gnus that your mainly going to be using it for email not as a
+news reader &ndash; after all it's not longer the late 80s.
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq gnus-select-method '<span class="org-esk-paren">(</span>nnml <span class="org-string">""</span><span class="org-esk-paren">))</span>
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-required-packages" class="outline-2">
+<h2 id="required-packages"><a name="sec-2" id="sec-2"></a>Required packages </h2>
+<div class="outline-text-2" id="text-required-packages">
+
+<p>A <a href="http://en.wikipedia.org/wiki/STARTTLS">starttls</a> client allows encrypted communication with remote pop3 and
+IMAP email clients.
+</p>
+<p>
+<a href="http://www.openssl.org/">openssl</a> implements the Secure Socket Layer (SSL) secure communication
+protocol.
+</p>
+<p>
+On Debian systems (including Ubuntu) instillation of <code>starttls</code> and
+<code>openssl</code> client is as simple as
+</p><pre class="example">
+sudo apt-get install starttls openssl
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-gmail" class="outline-2">
+<h2 id="gmail"><a name="sec-3" id="sec-3"></a>Gmail Setup </h2>
+<div class="outline-text-2" id="text-gmail">
+
+<p>For more information on configuring Gnus with Gmail see <a href="http://www.emacswiki.org/emacs/GnusGmail">GnusGmail</a> on
+the Emacs Wiki.
+</p>
+<p>
+For a simple pop3 setup, simply replace <code>your-gmail-email-address</code> and
+<code>your-gmail-password</code> with your gmail account information in the
+following tables.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col align="left" /><col align="left" />
+</colgroup>
+<tbody>
+<tr><td>email</td><td>your-gmail-email-address</td></tr>
+<tr><td>password</td><td>your-gmail-password</td></tr>
+</tbody>
+</table>
+
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>email <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>first config<span class="org-esk-paren">)))</span>
+      <span class="org-esk-paren">(</span>passwd <span class="org-esk-paren">(</span>second <span class="org-esk-paren">(</span>second config<span class="org-esk-paren">))))</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">The following adds Gmail as a source of mail for Gnus
+</span>  <span class="org-esk-paren">(</span>add-to-list 'mail-sources
+               `<span class="org-esk-paren">(</span>pop <span class="org-builtin">:server</span> <span class="org-string">"pop.gmail.com"</span>
+                     <span class="org-builtin">:port</span> 995
+                     <span class="org-builtin">:user</span> ,email
+                     <span class="org-builtin">:password</span> ,passwd
+                     <span class="org-builtin">:stream</span> ssl<span class="org-esk-paren">))</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">The following is used for sending email through gmail using SMTP.
+</span>  <span class="org-esk-paren">(</span>setq message-send-mail-function 'smtpmail-send-it
+        smtpmail-starttls-credentials '<span class="org-esk-paren">((</span><span class="org-string">"smtp.gmail.com"</span> 25 nil nil<span class="org-esk-paren">))</span>
+        smtpmail-default-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-service 25
+        user-mail-address email
+        smtpmail-starttls-credentials '<span class="org-esk-paren">((</span><span class="org-string">"smtp.gmail.com"</span> 587 nil nil<span class="org-esk-paren">))</span>
+        smtpmail-auth-credentials `<span class="org-esk-paren">((</span><span class="org-string">"smtp.gmail.com"</span> 587 ,email ,passwd<span class="org-esk-paren">))</span>
+        smtpmail-default-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-server <span class="org-string">"smtp.gmail.com"</span>
+        smtpmail-smtp-service 587<span class="org-esk-paren">))</span>
+</pre>
+
+
+</div>
+</div>
+
+</div>
+</body>
+</html>
