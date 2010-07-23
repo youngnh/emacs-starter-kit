@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit JS</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-11 14:26:46 PDT"/>
+<meta name="generated" content="2010-07-23 11:12:56 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -23,9 +23,9 @@ lang="en" xml:lang="en">
   .timestamp-kwd { color: #5f9ea0; }
   p.verse { margin-left: 3% }
   pre {
-	border: 1pt solid #AEBDCC;
-	padding: 5pt;
-	font-family: courier, monospace;
+ border: 1pt solid #AEBDCC;
+    padding: 5pt;
+ font-family: courier, monospace;
         font-size: 90%;
         overflow:auto;
   }
@@ -93,12 +93,10 @@ lang="en" xml:lang="en">
 
 
 
-
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>font-lock-add-keywords 'espresso-mode
                         '<span class="org-esk-paren">((</span><span class="org-string">"\\&lt;</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">FIX</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">TODO</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">FIXME</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">HACK</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">REFACTOR</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">:"</span>
                            1 font-lock-warning-face t<span class="org-esk-paren">)))</span>
 </pre>
-
 
 
 
@@ -116,7 +114,6 @@ lang="en" xml:lang="en">
 
 
 
-
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">esk-pp-json</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Pretty-print the json object following point."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
@@ -127,7 +124,6 @@ lang="en" xml:lang="en">
     <span class="org-esk-paren">(</span>insert <span class="org-esk-paren">(</span>pp json-object<span class="org-esk-paren">))</span>
     <span class="org-esk-paren">(</span>goto-char <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">))))</span>
 </pre>
-
 
 
 </div>

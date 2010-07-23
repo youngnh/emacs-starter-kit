@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit ELPA</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-11 14:26:49 PDT"/>
+<meta name="generated" content="2010-07-23 11:13:00 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -23,9 +23,9 @@ lang="en" xml:lang="en">
   .timestamp-kwd { color: #5f9ea0; }
   p.verse { margin-left: 3% }
   pre {
-	border: 1pt solid #AEBDCC;
-	padding: 5pt;
-	font-family: courier, monospace;
+ border: 1pt solid #AEBDCC;
+    padding: 5pt;
+ font-family: courier, monospace;
         font-size: 90%;
         overflow:auto;
   }
@@ -100,7 +100,6 @@ The following packages should all ways be installed
 
 
 
-
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">starter-kit-elpa-install</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Install all starter-kit packages that aren't installed."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
@@ -110,7 +109,6 @@ The following packages should all ways be installed
       <span class="org-esk-paren">(</span>message <span class="org-string">"Installing %s"</span> <span class="org-esk-paren">(</span>symbol-name package<span class="org-esk-paren">))</span>
       <span class="org-esk-paren">(</span>package-install package<span class="org-esk-paren">))))</span>
 </pre>
-
 
 
 
@@ -132,7 +130,6 @@ just have to assume it's online."</span>
 
 
 
-
 <p>
 On your first run, this should pull in all the base packages.
 </p>
@@ -145,7 +142,6 @@ On your first run, this should pull in all the base packages.
 
 
 
-
 <p>
 Workaround for an ELPA bug that people are reporting but I've been
 unable to reproduce:
@@ -154,7 +150,6 @@ unable to reproduce:
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>autoload 'paredit-mode <span class="org-string">"paredit"</span><span class="org-esk-paren">)</span>
 </pre>
-
 
 
 </div>

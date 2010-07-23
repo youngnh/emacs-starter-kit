@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Bindings</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-06-11 14:26:52 PDT"/>
+<meta name="generated" content="2010-07-23 11:13:03 PDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -23,9 +23,9 @@ lang="en" xml:lang="en">
   .timestamp-kwd { color: #5f9ea0; }
   p.verse { margin-left: 3% }
   pre {
-	border: 1pt solid #AEBDCC;
-	padding: 5pt;
-	font-family: courier, monospace;
+ border: 1pt solid #AEBDCC;
+    padding: 5pt;
+ font-family: courier, monospace;
         font-size: 90%;
         overflow:auto;
   }
@@ -97,7 +97,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -111,7 +110,6 @@ Key Bindings.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x \\"</span><span class="org-esk-paren">)</span> 'align-regexp<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -131,7 +129,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -145,7 +142,6 @@ Key Bindings.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c n"</span><span class="org-esk-paren">)</span> 'cleanup-buffer<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -165,7 +161,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -180,7 +175,6 @@ Key Bindings.
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key global-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-+"</span><span class="org-esk-paren">)</span> 'text-scale-increase<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>define-key global-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C--"</span><span class="org-esk-paren">)</span> 'text-scale-decrease<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -203,7 +197,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -217,7 +210,6 @@ Key Bindings.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-i"</span><span class="org-esk-paren">)</span> 'ido-imenu<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -244,7 +236,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -260,7 +251,6 @@ Key Bindings.
 </span><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x O"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>other-window -1<span class="org-esk-paren">)))</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">back one
 </span><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x C-o"</span><span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">()</span> <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>other-window 2<span class="org-esk-paren">)))</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">forward two
 </span></pre>
-
 
 
 
@@ -280,7 +270,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -294,7 +283,6 @@ Key Bindings.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x m"</span><span class="org-esk-paren">)</span> 'eshell<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -314,7 +302,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -328,7 +315,6 @@ Key Bindings.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x M-m"</span><span class="org-esk-paren">)</span> 'shell<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -348,7 +334,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -362,7 +347,6 @@ Key Bindings.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-x h"</span><span class="org-esk-paren">)</span> 'view-url<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -382,7 +366,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -396,7 +379,6 @@ Key Bindings.
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>global-set-key <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c e"</span><span class="org-esk-paren">)</span> 'eval-and-replace<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 
@@ -423,7 +405,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -442,7 +423,6 @@ Key Bindings.
                                      <span class="org-esk-paren">(</span>shell-command <span class="org-esk-paren">(</span>format <span class="org-string">"git add %s"</span> buffer-file-name<span class="org-esk-paren">))</span>
                                      <span class="org-esk-paren">(</span>message <span class="org-string">"Staged changes."</span><span class="org-esk-paren">)))))</span>
 </pre>
-
 
 
 
@@ -465,7 +445,6 @@ Key Bindings.
 
 
 
-
 </div>
 
 </div>
@@ -480,7 +459,6 @@ Key Bindings.
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">provide</span> '<span class="org-constant">starter-kit-bindings</span><span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;;; </span><span class="org-comment">starter-kit-bindings.el ends here
 </span></pre>
-
 
 
 </div>
@@ -503,7 +481,6 @@ The <a href="http://orgmode.org/manual/Agenda-Views.html#Agenda-Views">Org-mode 
 
 
 
-
 <p>
 Org-mode supports <a href="http://orgmode.org/manual/Hyperlinks.html#Hyperlinks">links</a>, this command allows you to store links
 globally for later insertion into an Org-mode buffer.  See
@@ -513,7 +490,6 @@ globally for later insertion into an Org-mode buffer.  See
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-cl"</span> 'org-store-link<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 </div>
@@ -546,7 +522,6 @@ globally for later insertion into an Org-mode buffer.  See
 
 
 
-
 </div>
 
 </div>
@@ -565,7 +540,6 @@ globally for later insertion into an Org-mode buffer.  See
 
 <pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key global-map <span class="org-string">"\C-x\C-r"</span> 'rgrep<span class="org-esk-paren">)</span>
 </pre>
-
 
 
 </div>
