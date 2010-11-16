@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Gnus</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-07-23 11:32:57 PDT"/>
+<meta name="generated" content="2010-11-16 11:45:29 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -64,6 +64,7 @@ lang="en" xml:lang="en">
  }
 /*]]>*///-->
 </script>
+
 </head>
 <body>
 <div id="content">
@@ -164,6 +165,93 @@ use with gnus.
 </pre>
 
 
+
+</div>
+
+</div>
+
+<div id="outline-container-2_3" class="outline-3">
+<h3 id="sec-2_3">Org-mode code block fontification </h3>
+<div class="outline-text-3" id="text-2_3">
+
+<p>Correctly fontify Org-mode attachments
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-to-list 'mailcap-mime-extensions '<span class="org-esk-paren">(</span><span class="org-string">".org"</span> . <span class="org-string">"text/org"</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'mm-automatic-display <span class="org-string">"text/org"</span><span class="org-esk-paren">)</span>
+
+<span class="org-esk-paren">(</span>add-to-list 'mm-inline-media-tests
+             '<span class="org-esk-paren">(</span><span class="org-string">"text/org"</span> my-display-org-inline
+               <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>el<span class="org-esk-paren">)</span> t<span class="org-esk-paren">)))</span>
+
+<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">my-display-org-inline</span> <span class="org-esk-paren">(</span>handle<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">condition-case</span> nil
+      <span class="org-esk-paren">(</span>mm-display-inline-fontify handle 'org-mode<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span><span class="org-warning">error</span>
+     <span class="org-esk-paren">(</span>insert <span class="org-esk-paren">(</span><span class="org-keyword">with-temp-buffer</span> <span class="org-esk-paren">(</span>mm-insert-part handle<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>buffer-string<span class="org-esk-paren">))</span>
+             <span class="org-string">"\n"</span><span class="org-esk-paren">))))</span>
+</pre>
+
+
+
+<p>
+Update <code>org-src-lang-modes</code> to provide some leeway for posters
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-to-list 'org-src-lang-modes
+             '<span class="org-esk-paren">(</span><span class="org-string">"elisp"</span> . emacs-lisp<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'org-src-lang-modes
+             '<span class="org-esk-paren">(</span><span class="org-string">"emacs_lisp"</span> . emacs-lisp<span class="org-esk-paren">))</span>
+</pre>
+
+
+
+<p>
+Fontify code blocks in the text of messages
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">my-mm-org-babel-src-extract</span> <span class="org-esk-paren">()</span>
+  <span class="org-esk-paren">(</span>mm-make-handle <span class="org-esk-paren">(</span>mm-uu-copy-to-buffer start-point end-point<span class="org-esk-paren">)</span> '<span class="org-esk-paren">(</span><span class="org-string">"text/org"</span><span class="org-esk-paren">)))</span>
+
+<span class="org-esk-paren">(</span>add-to-list 'mm-uu-type-alist
+             '<span class="org-esk-paren">(</span>org-src-block
+               <span class="org-string">"^[ \t]*#\\+begin_"</span>
+               <span class="org-string">"^[ \t]*#\\+end_"</span>
+               my-mm-org-babel-src-extract
+               nil<span class="org-esk-paren">))</span>
+
+<span class="org-esk-paren">(</span>mm-uu-configure<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+</div>
+
+<div id="outline-container-2_3_1" class="outline-4">
+<h4 id="sec-2_3_1">for debugging </h4>
+<div class="outline-text-4" id="text-2_3_1">
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-to-list 'mm-uu-configure-list '<span class="org-esk-paren">(</span>org-src-block . disabled<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>mm-uu-configure<span class="org-esk-paren">)</span>
+</pre>
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq mm-uu-configure-list
+      <span class="org-esk-paren">(</span>remove '<span class="org-esk-paren">(</span>org-src-block . disabled<span class="org-esk-paren">)</span> mm-uu-configure-list<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>mm-uu-configure<span class="org-esk-paren">)</span>
+</pre>
+
+
+</div>
 </div>
 </div>
 </div>

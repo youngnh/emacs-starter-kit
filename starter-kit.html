@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-07-23 11:32:47 PDT"/>
+<meta name="generated" content="2010-11-16 11:45:22 MST"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -64,6 +64,7 @@ lang="en" xml:lang="en">
  }
 /*]]>*///-->
 </script>
+
 </head>
 <body>
 <div id="content">
@@ -282,7 +283,7 @@ will be added to the load-path.
 </p>
 <p>
 There are also a few files that are meant for code that doesn't belong
-in the Starter Kit, they are described below in <a href="#sec-1_4">Customization</a>.
+in the Starter Kit, they are described below in <a href="#*==customization">Customization</a>.
 </p>
 </div>
 
@@ -357,7 +358,7 @@ find out.
 While the starter kit include
 many useful Emacs lisp libraries, you are bound to find more that
 you will want to install.  The easiest way to install new
-libraries is through the Emacs Lisp Package Archive (see <a href="#sec-2_1_5">ELPA</a>).
+libraries is through the Emacs Lisp Package Archive (see <a href="#*==elpa">ELPA</a>).
 When a library is not available through ELPA you can grab it's
 source and place it directly in the <code>src</code> directory.  Any
 packages found there will automatically be added to your
@@ -387,9 +388,10 @@ personal key bindings
 The starter-kit comes pre-bundled with a variety of color themes.
 See <a href="starter-kit-misc.html">Color Themes</a> for instructions on how to change the colors used
 by Emacs.
-
 </li>
 </ul>
+
+
 </div>
 
 </div>
@@ -501,6 +503,8 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_1_2">Ubiquitous Packages <br/>
 
 <p>
@@ -522,6 +526,8 @@ since they are likely to be used in every session
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_1_3">Emacs 22 Backport <br/>
 
 <p>
@@ -536,6 +542,8 @@ backport some functionality to Emacs 22 if needed
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_1_4">Function for loading starter-kit-* <br/>
 
 
@@ -550,6 +558,8 @@ backport some functionality to Emacs 22 if needed
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_1_5">ELPA (Emacs Lisp Package Manager) <br/>
 
 <p>
@@ -567,22 +577,9 @@ Load up <a href="http://tromey.com/elpa/">ELPA</a>, the Emacs Lisp package manag
 
 
 </li>
-<li id="sec-2_1_6">Starter Kit Customizations <br/>
-
-<p>
-Load up starter kit customizations
-</p>
-
-
-
-<div class="org-src-container"><label class="org-src-name">starter-kit-customizations()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>load custom-file 'noerror<span class="org-esk-paren">)</span>
-</pre></div>
-
-
-
-</li>
-<li id="sec-2_1_7">Work around OS X bug <br/>
+</ul>
+<ul>
+<li id="sec-2_1_6">Work around OS X bug <br/>
 
 <p>
 Work around a bug on OS X where system-name is FQDN
@@ -597,7 +594,9 @@ Work around a bug on OS X where system-name is FQDN
 
 
 </li>
-<li id="sec-2_1_8">System/User specific customizations <br/>
+</ul>
+<ul>
+<li id="sec-2_1_7">System/User specific customizations <br/>
 
 <p>
 You can keep system- or user-specific customizations here in either
@@ -635,7 +634,9 @@ project is not in elpa.
 
 
 </li>
-<li id="sec-2_1_9">Starter kit and Gnus <br/>
+</ul>
+<ul>
+<li id="sec-2_1_8">Starter kit and Gnus <br/>
 If you would like help setting up the gnus email client, checkout
 <a href="starter-kit-gnus.html">Starter Kit Gnus</a>, a starter kit file that is not loaded by default.
 
@@ -666,6 +667,8 @@ Starter kit function definitions in <a href="starter-kit-defuns.html">starter-ki
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_2_2">Starter kit bindings <br/>
 Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
 
@@ -678,6 +681,8 @@ Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_2_3">Starter kit misc <br/>
 Miscellaneous settings in <a href="starter-kit-misc.html">starter-kit-misc</a>
 
@@ -690,6 +695,8 @@ Miscellaneous settings in <a href="starter-kit-misc.html">starter-kit-misc</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_2_4">Starter kit registers <br/>
 Registers for jumping to commonly used files in <a href="starter-kit-registers.html">starter-kit-registers</a>
 
@@ -754,6 +761,8 @@ load the snippets defined in the <code>./snippets/</code> directory
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_3_2">Starter kit Org-mode <br/>
 Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
@@ -766,6 +775,8 @@ Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_3_3">Starter kit eshell <br/>
 Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
@@ -778,6 +789,8 @@ Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_3_4">Starter kit lisp <br/>
 Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
@@ -790,6 +803,8 @@ Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_3_5">Starter kit Haskell <br/>
 Located in <a href="starter-kit-haskell.html">starter-kit-haskell</a>
 
@@ -802,6 +817,8 @@ Located in <a href="starter-kit-haskell.html">starter-kit-haskell</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_3_6">Starter kit ruby <br/>
 Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
@@ -814,6 +831,8 @@ Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_3_7">Starter kit JS <br/>
 Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
@@ -826,6 +845,8 @@ Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
 
 </li>
+</ul>
+<ul>
 <li id="sec-2_3_8">Starter Kit Perl <br/>
 Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
 
@@ -838,7 +859,23 @@ Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
 
 
 </li>
-<li id="sec-2_3_9">Starter Kit Latex <br/>
+</ul>
+<ul>
+<li id="sec-2_3_9">Starter Kit Python <br/>
+Located in <a href="starter-kit-python.html">starter-kit-python</a>
+
+
+
+
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-python.org"</span><span class="org-esk-paren">)</span>
+</pre>
+
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-2_3_10">Starter Kit Latex <br/>
 Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
 
 
@@ -859,10 +896,23 @@ Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
 <h3 id="sec-2_4">Load User/System Specific Files </h3>
 <div class="outline-text-3" id="text-2_4">
 
+<ul>
+<li id="sec-2_4_1">Settings from M-x customize <br/>
 
-<p>
+
+
+<div class="org-src-container"><label class="org-src-name">m-x-customize-customizations()</label><pre class="src src-emacs-lisp">
+<span class="org-esk-paren">(</span>load custom-file 'noerror<span class="org-esk-paren">)</span>
+</pre></div>
+
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-2_4_2">E-lisp customization <br/>
 After we've loaded all the Starter Kit defaults, lets load the User's stuff.
-</p>
+
 
 
 <div class="org-src-container"><label class="org-src-name">starter-kit-load-files()</label><pre class="src src-emacs-lisp">
@@ -884,6 +934,8 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 
 
 
+</li>
+</ul>
 </div>
 </div>
 
