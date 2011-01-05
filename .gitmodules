@@ -10,3 +10,6 @@
 [submodule "src/auctex"]
 	path = src/auctex
 	url = http://github.com/eschulte/auctex.git
+[submodule "src/zenburn-emacs"]
+	path = src/zenburn-emacs
+	url = http://github.com/bbatsov/zenburn-emacs.git
