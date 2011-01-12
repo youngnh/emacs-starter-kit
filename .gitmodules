@@ -1,6 +1,6 @@
 [submodule "src/org"]
 	path = src/org
-	url = http://repo.or.cz/r/org-mode.git
+	url = http://orgmode.org/org-mode.git
 [submodule "src/magit"]
 	path = src/magit
 	url = http://github.com/philjackson/magit.git
