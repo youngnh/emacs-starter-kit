@@ -624,6 +624,7 @@ uses), the problem most likely resides in your local setup.
    To check if this fixed the issue, first close any Info buffers in
    emacs and call the Info index with =C-h i= then choose org-mode.
 
+
 * Footnotes
 
 [1] If you already have a directory at ~/.emacs.d move it out of
