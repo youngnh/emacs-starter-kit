@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Registers</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-11-16 11:45:24 MST"/>
+<meta name="generated" content="2011-03-22 10:16:46 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -70,7 +70,6 @@ lang="en" xml:lang="en">
 <div id="content">
 
 <h1 class="title">Starter Kit Registers</h1>
-
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
 </p>
 
@@ -88,17 +87,15 @@ You should add registers here for the files you edit most often.
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-registers()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">dolist</span> <span class="org-esk-paren">(</span>r `<span class="org-esk-paren">((</span>?i <span class="org-esk-paren">(</span>file . ,<span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"init.el"</span><span class="org-esk-paren">)))</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">dolist</span> <span class="org-esk-paren">(</span>r `<span class="org-esk-paren">((</span>?i <span class="org-esk-paren">(</span>file . ,<span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"init.el"</span><span class="org-esk-paren">)))</span>
              <span class="org-esk-paren">(</span>?s <span class="org-esk-paren">(</span>file . ,<span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"starter-kit.org"</span><span class="org-esk-paren">)))</span>
              <span class="org-esk-paren">(</span>?r <span class="org-esk-paren">(</span>file . ,<span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"starter-kit-registers.org"</span><span class="org-esk-paren">)))))</span>
   <span class="org-esk-paren">(</span>set-register <span class="org-esk-paren">(</span>car r<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>cadr r<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 </div>
 </div>
-
 </div>
 </body>
 </html>

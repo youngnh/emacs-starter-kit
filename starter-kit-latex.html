@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit LaTeX</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-11-16 11:45:28 MST"/>
+<meta name="generated" content="2011-03-22 10:16:50 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -70,7 +70,6 @@ lang="en" xml:lang="en">
 <div id="content">
 
 <h1 class="title">Starter Kit LaTeX</h1>
-
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
 </p>
 
@@ -78,7 +77,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Starter Kit LaTeX </h2>
 <div class="outline-text-2" id="text-1">
 
-<p>Support for editing LaTeX.
+<p>  Support for editing LaTeX.
 </p>
 
 </div>
@@ -129,9 +128,8 @@ lang="en" xml:lang="en">
 
 
 
-<div class="org-src-container"><label class="org-src-name">reftex-support()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'LaTeX-mode-hook 'turn-on-reftex<span class="org-esk-paren">)</span>   <span class="org-comment-delimiter">; </span><span class="org-comment">with AUCTeX LaTeX mode
-</span></pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'LaTeX-mode-hook 'turn-on-reftex<span class="org-esk-paren">)</span>   <span class="org-comment-delimiter">; </span><span class="org-comment">with AUCTeX LaTeX mode
+</span></pre>
 
 
 
@@ -152,17 +150,15 @@ lang="en" xml:lang="en">
 <div class="outline-text-4" id="text-1_2_1">
 
 <ul>
-<li>
-Take this out to compile to DVI, instead.
+<li>Take this out to compile to DVI, instead.
 </li>
 </ul>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">pdf-mode()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'LaTeX-mode-hook 'TeX-PDF-mode<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'LaTeX-mode-hook 'TeX-PDF-mode<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -175,21 +171,19 @@ Take this out to compile to DVI, instead.
 <div class="outline-text-4" id="text-1_2_2">
 
 <ul>
-<li>
-The location of the LaTeX excecutables is system
-dependent. AUCTeX calls everything through a shell, so you may
-or may not need this.  This source-code block is turned off by
-default as it should be added to the user's personal
-configuration as needed.
+<li>The location of the LaTeX excecutables is system
+      dependent. AUCTeX calls everything through a shell, so you may
+      or may not need this.  This source-code block is turned off by
+      default as it should be added to the user's personal
+      configuration as needed.
 </li>
 </ul>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">set-exec-path()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>setenv <span class="org-string">"PATH"</span> <span class="org-esk-paren">(</span>concat <span class="org-string">"/usr/texbin:"</span> <span class="org-esk-paren">(</span>getenv <span class="org-string">"PATH"</span><span class="org-esk-paren">)))</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setenv <span class="org-string">"PATH"</span> <span class="org-esk-paren">(</span>concat <span class="org-string">"/usr/texbin:"</span> <span class="org-esk-paren">(</span>getenv <span class="org-string">"PATH"</span><span class="org-esk-paren">)))</span>
+</pre>
 
 
 
@@ -210,25 +204,23 @@ configuration as needed.
 <div class="outline-text-4" id="text-1_3_1">
 
 <ul>
-<li>
-This is important when editing source code in Org-babel, since
-the LaTeX source code block being edited probably doesn't
-include the \bibliography{} command that RefTeX uses to find
-bibliographic database(s).  Make certain also that RefTeX has a
-path to the bibliographic databases.  This source-code block is
-turned off be default as it should be configured by the user in
-a personal file/directory.
+<li>This is important when editing source code in Org-babel, since
+      the LaTeX source code block being edited probably doesn't
+      include the \bibliography{} command that RefTeX uses to find
+      bibliographic database(s).  Make certain also that RefTeX has a
+      path to the bibliographic databases.  This source-code block is
+      turned off be default as it should be configured by the user in
+      a personal file/directory.
 </li>
 </ul>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">default-bibliography()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>setq reftex-default-bibliography
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq reftex-default-bibliography
       <span class="org-esk-paren">(</span>quote
        <span class="org-esk-paren">(</span><span class="org-string">"user.bib"</span> <span class="org-string">"local.bib"</span><span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
@@ -242,40 +234,35 @@ a personal file/directory.
 <div class="outline-text-3" id="text-1_4">
 
 <ul>
-<li>
-Add LaTeX to the list of languages Org-babel will recognize.
+<li>Add LaTeX to the list of languages Org-babel will recognize.
 </li>
 </ul>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">add-latex()</label><pre class="src src-emacs-lisp">
-<span class="org-comment-delimiter">;; </span><span class="org-comment">(org-babel-add-interpreter "latex")
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">(org-babel-add-interpreter "latex")
 </span><span class="org-comment-delimiter">;; </span><span class="org-comment">(add-to-list 'org-babel-tangle-langs '("latex" "tex"))
 </span><span class="org-comment-delimiter">;; </span><span class="org-comment">; (require 'org-babel-latex)
-</span></pre></div>
+</span></pre>
 
 
 <ul>
-<li>
-Add LaTeX to a list of languages that raise noweb-type errors.
+<li>Add LaTeX to a list of languages that raise noweb-type errors.
 </li>
 </ul>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">noweb-error()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-to-list 'org-babel-noweb-error-langs <span class="org-string">"latex"</span><span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-to-list 'org-babel-noweb-error-langs <span class="org-string">"latex"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
 </div>
 </div>
 </div>
-
 </div>
 </body>
 </html>

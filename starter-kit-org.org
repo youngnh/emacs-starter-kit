@@ -143,6 +143,7 @@ the documentation for the Starter Kit to html.
                    :style "<link rel=\"stylesheet\" href=\"emacs.css\" type=\"text/css\"/>"
                    :publishing-directory ,this-dir
                    :index-filename "starter-kit.org"
-                   :auto-postamble nil)))
+                   :auto-postamble nil
+                   :postamble nil)))
 #+end_src
 

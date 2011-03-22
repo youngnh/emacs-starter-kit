@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Emacs Starter Kit</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-01-18 22:42:56 MST"/>
+<meta name="generated" content="2011-03-22 10:16:44 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -41,7 +41,7 @@ lang="en" xml:lang="en">
   .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
                                  font-weight:bold; }
   /*]]>*/-->
-</style>
+</style><link rel="stylesheet" href="emacs.css" type="text/css"/>
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
@@ -70,7 +70,6 @@ lang="en" xml:lang="en">
 <div id="content">
 
 <h1 class="title">Emacs Starter Kit</h1>
-
 <blockquote>
 
 <p>Emacs outshines all other editing software in approximately the same
@@ -131,20 +130,15 @@ initialization structure for all levels of users.
 <p>
 The main advantage of this Emacs Starter Kit are
 </p><ul>
-<li>
-better default settings
+<li>better default settings
 </li>
-<li>
-inclusion of many useful libraries
+<li>inclusion of many useful libraries
 </li>
-<li>
-"literate" customization embedded in Org-mode files
+<li>"literate" customization embedded in Org-mode files
 </li>
-<li>
-an organizational directory structure
+<li>an organizational directory structure
 </li>
-<li>
-git provides for version control, backup, and sharing
+<li>git provides for version control, backup, and sharing
 </li>
 </ul>
 
@@ -177,17 +171,15 @@ The <a href="http://emacswiki.org">Emacs Wiki</a> is also very handy.
 
 
 <ol>
-<li>
-Install Emacs (at least version 22) Use your package manager if you
-have one.  Otherwise, Mac users should get it <a href="http://www.apple.com/downloads/macosx/unix_open_source/carbonemacspackage.html">from Apple</a>, or
-install it directly from <a href="http://savannah.gnu.org/projects/emacs/">from source</a> following the instructions in
-<code>nextstep/INSTALL</code>.  Windows users can get it <a href="http://ftp.gnu.org/gnu/emacs/windows/emacs-22.3-bin-i386.zip">from GNU</a>.
+<li>Install Emacs (at least version 22) Use your package manager if you
+   have one.  Otherwise, Mac users should get it <a href="http://www.apple.com/downloads/macosx/unix_open_source/carbonemacspackage.html">from Apple</a>, or
+   install it directly from <a href="http://savannah.gnu.org/projects/emacs/">from source</a> following the instructions in
+   <code>nextstep/INSTALL</code>.  Windows users can get it <a href="http://ftp.gnu.org/gnu/emacs/windows/emacs-22.3-bin-i386.zip">from GNU</a>.
 </li>
-<li>
-Checkout a version of the starter kit using git &ndash; if you're new to
-git checkout this <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">git-tutorial</a>, also we'd highly recommend that you
-try out <a href="http://zagadka.vm.bytemark.co.uk/magit/magit.html">magit</a> the Emacs mode for git interaction which comes
-bundled in the starter kit.
+<li>Checkout a version of the starter kit using git &ndash; if you're new to
+   git checkout this <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">git-tutorial</a>, also we'd highly recommend that you
+   try out <a href="http://zagadka.vm.bytemark.co.uk/magit/magit.html">magit</a> the Emacs mode for git interaction which comes
+   bundled in the starter kit.
 
 
 
@@ -196,45 +188,40 @@ bundled in the starter kit.
 
 
 </li>
-<li>
-Move the resulting directory to <code>~/.emacs.d</code> <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
+<li>Move the resulting directory to <code>~/.emacs.d</code> <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
 </li>
-<li>
-Install the Org-mode <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules">submodules</a> with the following
+<li>Install the Org-mode <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules">submodules</a> with the following
 
 
 
-<pre class="src src-sh"><span style="color: #D0D0FF;">cd</span> ~/.emacs.d/
+<pre class="src src-sh"><span class="org-builtin">cd</span> ~/.emacs.d/
 git submodule init
 git submodule update
 </pre>
 
 
 </li>
-<li>
-build Org-mode
+<li>build Org-mode
 
 
 
-<pre class="src src-sh"><span style="color: #D0D0FF;">cd</span> src/org/
+<pre class="src src-sh"><span class="org-builtin">cd</span> src/org/
 make
 </pre>
 
 
 </li>
-<li>
-build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for instilllation help see the <a href="http://www.gnu.org/software/auctex/manual/auctex/Installation.html#Installation">auctex instillation instructions</a>, auctex requires a working TeX installation
+<li>build <a href="http://www.gnu.org/software/auctex/">auctex</a> &ndash; for instilllation help see the <a href="http://www.gnu.org/software/auctex/manual/auctex/Installation.html#Installation">auctex instillation instructions</a>, auctex requires a working TeX installation
 
 
 
-<pre class="src src-sh"><span style="color: #D0D0FF;">cd</span> src/auctex
+<pre class="src src-sh"><span class="org-builtin">cd</span> src/auctex
 ./configure &amp;&amp; make
 </pre>
 
 
 </li>
-<li>
-Launch Emacs!
+<li>Launch Emacs!
 </li>
 </ol>
 
@@ -292,7 +279,7 @@ will be added to the load-path.
 </p>
 <p>
 There are also a few files that are meant for code that doesn't belong
-in the Starter Kit, they are described below in <a href="#*==customization">Customization</a>.
+in the Starter Kit, they are described below in <a href="#sec-1_4">Customization</a>.
 </p>
 </div>
 
@@ -313,47 +300,44 @@ inside the starter-kit while retaining your ability to pull down
 general starter-kit updates without conflict.
 </p>
 <dl>
-<dt><code>git branch</code></dt><dd>
-The first step to user-specific customization is (like
-in any git project) to MAKE A BRANCH FOR YOUR LOCAL CHANGES.
-Save the master branch for pulling down new versions of the
-starter kit, and save all of your personal information in a
-personal branch.  That way you never have to worry about
-accidentally <code>git push</code>'ing up a patch with all of your gnus
-email passwords.
+<dt><code>git branch</code></dt><dd>The first step to user-specific customization is (like
+     in any git project) to MAKE A BRANCH FOR YOUR LOCAL CHANGES.
+     Save the master branch for pulling down new versions of the
+     starter kit, and save all of your personal information in a
+     personal branch.  That way you never have to worry about
+     accidentally <code>git push</code>'ing up a patch with all of your gnus
+     email passwords.
 
 </dd>
-<dt>User specific config</dt><dd>
-Your personal configuration information can
-be stored in a user-specific-config file.  This is the file named
-after your user with the extensions <code>.el</code> or <code>.org</code> <sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>.  If
-you're unsure of your user name evaluate the following code block
-to find out.
+<dt>User specific config</dt><dd>Your personal configuration information can
+     be stored in a user-specific-config file.  This is the file named
+     after your user with the extensions <code>.el</code> or <code>.org</code> <sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>.  If
+     you're unsure of your user name evaluate the following code block
+     to find out.
 
 
 
-<pre class="src src-sh"><span style="color: #D0D0FF;">echo</span> $<span style="color: #b0c4de;">USER</span>
+<pre class="src src-sh"><span class="org-builtin">echo</span> $<span class="org-variable-name">USER</span>
 </pre>
 
 
 
-<p>
-If your configuration starts to feel cramped in a single file
-(although with the nested headlines of an Org-mode file, that
-could take a while) and you want to stretch your config's legs,
-you can also create a directory named after your system user
-name.  If a such a directory exists, it will be added to the
-load-path, and any elisp or org-mode w/embedded elisp files in it
-will be loaded.
+<p>       
+     If your configuration starts to feel cramped in a single file
+     (although with the nested headlines of an Org-mode file, that
+     could take a while) and you want to stretch your config's legs,
+     you can also create a directory named after your system user
+     name.  If a such a directory exists, it will be added to the
+     load-path, and any elisp or org-mode w/embedded elisp files in it
+     will be loaded.
 </p>
 </dd>
-<dt>System specific config</dt><dd>
-Finally, you may want to configure
-different settings for different machines.  The Starter Kit will
-look for a file named after the current hostname ending in <code>.el</code>
-or <code>.org</code> which will allow host-specific configuration.  If
-you're unsure of your hostname the following can be executed to
-find out.
+<dt>System specific config</dt><dd>Finally, you may want to configure
+     different settings for different machines.  The Starter Kit will
+     look for a file named after the current hostname ending in <code>.el</code>
+     or <code>.org</code> which will allow host-specific configuration.  If
+     you're unsure of your hostname the following can be executed to
+     find out.
 
 
 
@@ -363,42 +347,36 @@ find out.
 
 
 </dd>
-<dt>Installing more elisp libraries</dt><dd>
-While the starter kit include
-many useful Emacs lisp libraries, you are bound to find more that
-you will want to install.  The easiest way to install new
-libraries is through the Emacs Lisp Package Archive (see <a href="#*==elpa">ELPA</a>).
-When a library is not available through ELPA you can grab it's
-source and place it directly in the <code>src</code> directory.  Any
-packages found there will automatically be added to your
-load-path when Emacs starts up, and are guaranteed not to
-conflict with future starter-kit updates.
+<dt>Installing more elisp libraries</dt><dd>While the starter kit include
+     many useful Emacs lisp libraries, you are bound to find more that
+     you will want to install.  The easiest way to install new
+     libraries is through the Emacs Lisp Package Archive (see <a href="#sec-1_5">ELPA</a>).
+     When a library is not available through ELPA you can grab it's
+     source and place it directly in the <code>src</code> directory.  Any
+     packages found there will automatically be added to your
+     load-path when Emacs starts up, and are guaranteed not to
+     conflict with future starter-kit updates.
 </dd>
 </dl>
 
 
-
-<p>
+<p>     
 Some additional miscellaneous configuration and getting started
 suggestions
 </p><ul>
-<li>
-First off see the <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Customization.html#Customization">Customization</a> node in the Emacs manual.  Available
-online or through the <code>info</code> command (run with <code>C-h i</code>).
+<li>First off see the <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Customization.html#Customization">Customization</a> node in the Emacs manual.  Available
+  online or through the <code>info</code> command (run with <code>C-h i</code>).
 </li>
-<li>
-<code>grep</code>'ing through the <code>starter-kit-*</code> files in this directory can
-provide useful examples for how to do things like install major
-modes, define keybindings, etc..
+<li><code>grep</code>'ing through the <code>starter-kit-*</code> files in this directory can
+  provide useful examples for how to do things like install major
+  modes, define keybindings, etc..
 </li>
-<li>
-read the following <a href="http://www.gnu.org/software/emacs/elisp/html_node/Key-Binding-Conventions.html">Key-Binding-Conventions</a> before defining too many
-personal key bindings
+<li>read the following <a href="http://www.gnu.org/software/emacs/elisp/html_node/Key-Binding-Conventions.html">Key-Binding-Conventions</a> before defining too many
+  personal key bindings
 </li>
-<li>
-The starter-kit comes pre-bundled with a variety of color themes.
-See <a href="starter-kit-misc.html">Color Themes</a> for instructions on how to change the colors used
-by Emacs.
+<li>The starter-kit comes pre-bundled with a variety of color themes.
+  See <a href="starter-kit-misc.html">Color Themes</a> for instructions on how to change the colors used
+  by Emacs.
 </li>
 </ul>
 
@@ -418,7 +396,7 @@ are handled automatically, and the burden to update them is removed
 from the user. In the long term, ideally everything would be installed
 via ELPA, and only <a href="package.el">package.el</a> would need to be distributed with the
 starter kit. (Or better yet, <a href="package.el">package.el</a> would come with Emacs&hellip;) See
-<a href="#*==Starter==Kit==ELPA">Starter Kit ELPA</a> for a list of libraries that are pending submission
+<a href="#Starter-Kit-ELPA">Starter Kit ELPA</a> for a list of libraries that are pending submission
 to ELPA. Packages get installed in the <a href="elpa/">elpa/</a> directory.
 </p>
 <p>
@@ -452,7 +430,7 @@ you just can't live without, add it or let me know so I can add
 it. Take a look at what happens in <a href="init.el">init.el</a> to get started.
 </p>
 <p>
-Also: see the <a href="#*==Tasks">Tasks section</a> in this document. Helping submit new
+Also: see the <a href="#Tasks">Tasks section</a> in this document. Helping submit new
 libraries to ELPA is the easiest way to help out. There are two ways
 you can do this: either take new libraries and make them ready for
 ELPA, dropping them in the elpa-to-submit directory or take files that
@@ -498,18 +476,17 @@ On Unix, <code>/home/$USER/.emacs.d</code>, on windows <code>Documents and Setti
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-load-paths()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span>setq dotfiles-dir <span style="color: #7f7f7f;">(</span>file-name-directory
-                    <span style="color: #7f7f7f;">(</span>or load-file-name <span style="color: #7f7f7f;">(</span>buffer-file-name<span style="color: #7f7f7f;">))))</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq dotfiles-dir <span class="org-esk-paren">(</span>file-name-directory
+                    <span class="org-esk-paren">(</span>or load-file-name <span class="org-esk-paren">(</span>buffer-file-name<span class="org-esk-paren">))))</span>
 
-<span style="color: #7f7f7f;">(</span>add-to-list 'load-path dotfiles-dir<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'load-path <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"/elpa-to-submit"</span><span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'load-path <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"/elpa-to-submit/jabber"</span><span style="color: #7f7f7f;">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'load-path dotfiles-dir<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>add-to-list 'load-path <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"/elpa-to-submit"</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'load-path <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"/elpa-to-submit/jabber"</span><span class="org-esk-paren">))</span>
 
-<span style="color: #7f7f7f;">(</span>setq autoload-file <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"loaddefs.el"</span><span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>setq package-user-dir <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"elpa"</span><span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>setq custom-file <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"custom.el"</span><span style="color: #7f7f7f;">))</span>
-</pre></div>
+<span class="org-esk-paren">(</span>setq autoload-file <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"loaddefs.el"</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>setq package-user-dir <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"elpa"</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>setq custom-file <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"custom.el"</span><span class="org-esk-paren">))</span>
+</pre>
 
 
 
@@ -525,14 +502,13 @@ since they are likely to be used in every session
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-load-on-startup()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">cl</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">saveplace</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">ffap</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">uniquify</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">ansi-color</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">recentf</span><span style="color: #7f7f7f;">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">cl</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">saveplace</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">ffap</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">uniquify</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">ansi-color</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">recentf</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -546,9 +522,8 @@ backport some functionality to Emacs 22 if needed
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-emacs-22-helper()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">dominating-file</span><span style="color: #7f7f7f;">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">dominating-file</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -559,41 +534,39 @@ backport some functionality to Emacs 22 if needed
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-load()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">starter-kit-load</span> <span style="color: #7f7f7f;">(</span>file<span style="color: #7f7f7f;">)</span>
-  <span style="color: #A5C261;">"This function is to be used to load starter-kit-*.org files."</span>
-  <span style="color: #7f7f7f;">(</span>org-babel-load-file <span style="color: #7f7f7f;">(</span>expand-file-name file
-                                         dotfiles-dir<span style="color: #7f7f7f;">)))</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">starter-kit-load</span> <span class="org-esk-paren">(</span>file<span class="org-esk-paren">)</span>
+  <span class="org-doc">"This function is to be used to load starter-kit-*.org files."</span>
+  <span class="org-esk-paren">(</span>org-babel-load-file <span class="org-esk-paren">(</span>expand-file-name file
+                                         dotfiles-dir<span class="org-esk-paren">)))</span>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-compile()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">defun</span> <span style="color: #FFC66D;">starter-kit-compile</span> <span style="color: #7f7f7f;">(</span><span style="color: #ffffff;">&amp;optional</span> arg<span style="color: #7f7f7f;">)</span>
-  <span style="color: #A5C261;">"Tangle and Byte compile all starter-kit files."</span>
-  <span style="color: #7f7f7f;">(</span>interactive <span style="color: #A5C261;">"P"</span><span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">flet</span> <span style="color: #7f7f7f;">((</span>age <span style="color: #7f7f7f;">(</span>file<span style="color: #7f7f7f;">)</span>
-              <span style="color: #7f7f7f;">(</span>float-time
-               <span style="color: #7f7f7f;">(</span>time-subtract <span style="color: #7f7f7f;">(</span>current-time<span style="color: #7f7f7f;">)</span>
-                              <span style="color: #7f7f7f;">(</span>nth 5 <span style="color: #7f7f7f;">(</span>or <span style="color: #7f7f7f;">(</span>file-attributes <span style="color: #7f7f7f;">(</span>file-truename file<span style="color: #7f7f7f;">))</span>
-                                         <span style="color: #7f7f7f;">(</span>file-attributes file<span style="color: #7f7f7f;">)))))))</span>
-    <span style="color: #7f7f7f;">(</span>mapc
-     <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>file<span style="color: #7f7f7f;">)</span>
-       <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>string= <span style="color: #A5C261;">"org"</span> <span style="color: #7f7f7f;">(</span>file-name-extension file<span style="color: #7f7f7f;">))</span>
-         <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>el-file <span style="color: #7f7f7f;">(</span>concat <span style="color: #7f7f7f;">(</span>file-name-sans-extension file<span style="color: #7f7f7f;">)</span> <span style="color: #A5C261;">".el"</span><span style="color: #7f7f7f;">)))</span>
-           <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>or arg
-                     <span style="color: #7f7f7f;">(</span>not <span style="color: #7f7f7f;">(</span>and <span style="color: #7f7f7f;">(</span>file-exists-p el-file<span style="color: #7f7f7f;">)</span>
-                               <span style="color: #7f7f7f;">(</span>&gt; <span style="color: #7f7f7f;">(</span>age file<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>age el-file<span style="color: #7f7f7f;">)))))</span>
-             <span style="color: #7f7f7f;">(</span>org-babel-tangle-file file el-file <span style="color: #A5C261;">"emacs-lisp"</span><span style="color: #7f7f7f;">)</span>
-             <span style="color: #7f7f7f;">(</span>byte-compile-file el-file<span style="color: #7f7f7f;">)))))</span>
-     <span style="color: #7f7f7f;">(</span>apply #'append
-            <span style="color: #7f7f7f;">(</span>mapcar
-             <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>d<span style="color: #7f7f7f;">)</span>
-               <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>and <span style="color: #7f7f7f;">(</span>file-exists-p d<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>file-directory-p d<span style="color: #7f7f7f;">))</span>
-                 <span style="color: #7f7f7f;">(</span>mapcar <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">lambda</span> <span style="color: #7f7f7f;">(</span>f<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>expand-file-name f d<span style="color: #7f7f7f;">))</span> <span style="color: #7f7f7f;">(</span>directory-files d<span style="color: #7f7f7f;">))))</span>
-             <span style="color: #7f7f7f;">(</span>list <span style="color: #7f7f7f;">(</span>concat dotfiles-dir user-login-name<span style="color: #7f7f7f;">)</span> dotfiles-dir<span style="color: #7f7f7f;">))))))</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">starter-kit-compile</span> <span class="org-esk-paren">(</span><span class="org-type">&amp;optional</span> arg<span class="org-esk-paren">)</span>
+  <span class="org-doc">"Tangle and Byte compile all starter-kit files."</span>
+  <span class="org-esk-paren">(</span>interactive <span class="org-string">"P"</span><span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">flet</span> <span class="org-esk-paren">((</span>age <span class="org-esk-paren">(</span>file<span class="org-esk-paren">)</span>
+              <span class="org-esk-paren">(</span>float-time
+               <span class="org-esk-paren">(</span>time-subtract <span class="org-esk-paren">(</span>current-time<span class="org-esk-paren">)</span>
+                              <span class="org-esk-paren">(</span>nth 5 <span class="org-esk-paren">(</span>or <span class="org-esk-paren">(</span>file-attributes <span class="org-esk-paren">(</span>file-truename file<span class="org-esk-paren">))</span>
+                                         <span class="org-esk-paren">(</span>file-attributes file<span class="org-esk-paren">)))))))</span>
+    <span class="org-esk-paren">(</span>mapc
+     <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>file<span class="org-esk-paren">)</span>
+       <span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>string= <span class="org-string">"org"</span> <span class="org-esk-paren">(</span>file-name-extension file<span class="org-esk-paren">))</span>
+         <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>el-file <span class="org-esk-paren">(</span>concat <span class="org-esk-paren">(</span>file-name-sans-extension file<span class="org-esk-paren">)</span> <span class="org-string">".el"</span><span class="org-esk-paren">)))</span>
+           <span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>or arg
+                     <span class="org-esk-paren">(</span>not <span class="org-esk-paren">(</span>and <span class="org-esk-paren">(</span>file-exists-p el-file<span class="org-esk-paren">)</span>
+                               <span class="org-esk-paren">(</span>&gt; <span class="org-esk-paren">(</span>age file<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>age el-file<span class="org-esk-paren">)))))</span>
+             <span class="org-esk-paren">(</span>org-babel-tangle-file file el-file <span class="org-string">"emacs-lisp"</span><span class="org-esk-paren">)</span>
+             <span class="org-esk-paren">(</span>byte-compile-file el-file<span class="org-esk-paren">)))))</span>
+     <span class="org-esk-paren">(</span>apply #'append
+            <span class="org-esk-paren">(</span>mapcar
+             <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>d<span class="org-esk-paren">)</span>
+               <span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>and <span class="org-esk-paren">(</span>file-exists-p d<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>file-directory-p d<span class="org-esk-paren">))</span>
+                 <span class="org-esk-paren">(</span>mapcar <span class="org-esk-paren">(</span><span class="org-keyword">lambda</span> <span class="org-esk-paren">(</span>f<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>expand-file-name f d<span class="org-esk-paren">))</span> <span class="org-esk-paren">(</span>directory-files d<span class="org-esk-paren">))))</span>
+             <span class="org-esk-paren">(</span>list <span class="org-esk-paren">(</span>concat dotfiles-dir user-login-name<span class="org-esk-paren">)</span> dotfiles-dir<span class="org-esk-paren">))))))</span>
+</pre>
 
 
 
@@ -608,17 +581,16 @@ Load up <a href="http://tromey.com/elpa/">ELPA</a>, the Emacs Lisp package manag
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-elpa()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">package</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'package-archives
-             '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"original"</span> . <span style="color: #A5C261;">"http://tromey.com/elpa/"</span><span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'package-archives
-             '<span style="color: #7f7f7f;">(</span><span style="color: #A5C261;">"technomancy"</span> . <span style="color: #A5C261;">"http://repo.technomancy.us/emacs/"</span><span style="color: #7f7f7f;">)</span> t<span style="color: #7f7f7f;">)</span>
-<span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(add-to-list 'package-archives
-</span><span style="color: #BC9458; font-style: italic;">;;              </span><span style="color: #BC9458; font-style: italic;">'("marmalade" . "http://marmalade-repo.org/packages/") t) 
-</span><span style="color: #7f7f7f;">(</span>package-initialize<span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-elpa.org"</span><span style="color: #7f7f7f;">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">package</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>add-to-list 'package-archives
+             '<span class="org-esk-paren">(</span><span class="org-string">"original"</span> . <span class="org-string">"http://tromey.com/elpa/"</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'package-archives
+             '<span class="org-esk-paren">(</span><span class="org-string">"technomancy"</span> . <span class="org-string">"http://repo.technomancy.us/emacs/"</span><span class="org-esk-paren">)</span> t<span class="org-esk-paren">)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(add-to-list 'package-archives
+</span><span class="org-comment-delimiter">;;              </span><span class="org-comment">'("marmalade" . "http://marmalade-repo.org/packages/") t) 
+</span><span class="org-esk-paren">(</span>package-initialize<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-elpa.org"</span><span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -632,10 +604,9 @@ Work around a bug on OS X where system-name is FQDN
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-osX-workaround()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>eq system-type 'darwin<span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span>setq system-name <span style="color: #7f7f7f;">(</span>car <span style="color: #7f7f7f;">(</span>split-string system-name <span style="color: #A5C261;">"\\."</span><span style="color: #7f7f7f;">))))</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>eq system-type 'darwin<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span>setq system-name <span class="org-esk-paren">(</span>car <span class="org-esk-paren">(</span>split-string system-name <span class="org-string">"\\."</span><span class="org-esk-paren">))))</span>
+</pre>
 
 
 
@@ -652,14 +623,13 @@ in this document).
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-user/system-setup()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span>setq system-specific-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir system-name <span style="color: #A5C261;">".el"</span><span style="color: #7f7f7f;">)</span>
-      system-specific-literate-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir system-name <span style="color: #A5C261;">".org"</span><span style="color: #7f7f7f;">)</span>
-      user-specific-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir user-login-name <span style="color: #A5C261;">".el"</span><span style="color: #7f7f7f;">)</span>
-      user-specific-literate-config <span style="color: #7f7f7f;">(</span>concat dotfiles-dir user-login-name <span style="color: #A5C261;">".org"</span><span style="color: #7f7f7f;">)</span>
-      user-specific-dir <span style="color: #7f7f7f;">(</span>concat dotfiles-dir user-login-name<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'load-path user-specific-dir<span style="color: #7f7f7f;">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq system-specific-config <span class="org-esk-paren">(</span>concat dotfiles-dir system-name <span class="org-string">".el"</span><span class="org-esk-paren">)</span>
+      system-specific-literate-config <span class="org-esk-paren">(</span>concat dotfiles-dir system-name <span class="org-string">".org"</span><span class="org-esk-paren">)</span>
+      user-specific-config <span class="org-esk-paren">(</span>concat dotfiles-dir user-login-name <span class="org-string">".el"</span><span class="org-esk-paren">)</span>
+      user-specific-literate-config <span class="org-esk-paren">(</span>concat dotfiles-dir user-login-name <span class="org-string">".org"</span><span class="org-esk-paren">)</span>
+      user-specific-dir <span class="org-esk-paren">(</span>concat dotfiles-dir user-login-name<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'load-path user-specific-dir<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -672,10 +642,9 @@ project is not in elpa.
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-load-elisp-dir()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span>setq elisp-source-dir <span style="color: #7f7f7f;">(</span>concat dotfiles-dir <span style="color: #A5C261;">"src"</span><span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span>add-to-list 'load-path elisp-source-dir<span style="color: #7f7f7f;">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq elisp-source-dir <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"src"</span><span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span>add-to-list 'load-path elisp-source-dir<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -707,7 +676,7 @@ Starter kit function definitions in <a href="starter-kit-defuns.html">starter-ki
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-defuns.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-defuns.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -721,7 +690,7 @@ Key Bindings in <a href="starter-kit-bindings.html">starter-kit-bindings</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-bindings.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-bindings.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -735,7 +704,7 @@ Miscellaneous settings in <a href="starter-kit-misc.html">starter-kit-misc</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-misc.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-misc.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -749,7 +718,7 @@ Registers for jumping to commonly used files in <a href="starter-kit-registers.h
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-registers.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-registers.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -773,11 +742,9 @@ language.
 <a href="http://code.google.com/p/yasnippet/">yasnippet</a> is yet another snippet expansion system for Emacs.  It is
 inspired by TextMate's templating syntax.
 <ul>
-<li>
-watch the <a href="http://www.youtube.com/watch?v=vOj7btx3ATg">video on YouTube</a>
+<li>watch the <a href="http://www.youtube.com/watch?v=vOj7btx3ATg">video on YouTube</a>
 </li>
-<li>
-see the <a href="http://yasnippet.googlecode.com/svn/trunk/doc/index.html">intro and tutorial</a>
+<li>see the <a href="http://yasnippet.googlecode.com/svn/trunk/doc/index.html">intro and tutorial</a>
 </li>
 </ul>
 
@@ -787,12 +754,12 @@ load the yasnippet bundle
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>add-to-list 'load-path
-             <span style="color: #7f7f7f;">(</span>expand-file-name  <span style="color: #A5C261;">"yasnippet"</span>
-                                <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"src"</span>
-                                                  dotfiles-dir<span style="color: #7f7f7f;">)))</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">require</span> '<span style="color: #6D9CBE;">yasnippet</span><span style="color: #7f7f7f;">)</span>
-<span style="color: #7f7f7f;">(</span>yas/initialize<span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-to-list 'load-path
+             <span class="org-esk-paren">(</span>expand-file-name  <span class="org-string">"yasnippet"</span>
+                                <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"src"</span>
+                                                  dotfiles-dir<span class="org-esk-paren">)))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">require</span> '<span class="org-constant">yasnippet</span><span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span>yas/initialize<span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -802,7 +769,7 @@ load the snippets defined in the <code>./snippets/</code> directory
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>yas/load-directory <span style="color: #7f7f7f;">(</span>expand-file-name <span style="color: #A5C261;">"snippets"</span> dotfiles-dir<span style="color: #7f7f7f;">))</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>yas/load-directory <span class="org-esk-paren">(</span>expand-file-name <span class="org-string">"snippets"</span> dotfiles-dir<span class="org-esk-paren">))</span>
 </pre>
 
 
@@ -816,7 +783,7 @@ Located in <a href="starter-kit-org.html">starter-kit-org</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-org.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-org.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -830,7 +797,7 @@ Located in <a href="starter-kit-eshell.html">starter-kit-eshell</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-eshell.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-eshell.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -844,7 +811,7 @@ Located in <a href="starter-kit-lisp.html">starter-kit-lisp</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-lisp.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-lisp.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -858,7 +825,7 @@ Located in <a href="starter-kit-haskell.html">starter-kit-haskell</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-haskell.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-haskell.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -872,7 +839,7 @@ Located in <a href="starter-kit-ruby.html">starter-kit-ruby</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-ruby.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-ruby.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -886,7 +853,7 @@ Located in <a href="starter-kit-js.html">starter-kit-js</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-js.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-js.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -900,7 +867,7 @@ Located in <a href="starter-kit-perl.html">starter-kit-perl</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-perl.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-perl.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -914,7 +881,7 @@ Located in <a href="starter-kit-python.html">starter-kit-python</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #7f7f7f;">(</span>starter-kit-load <span style="color: #A5C261;">"starter-kit-python.org"</span><span style="color: #7f7f7f;">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>starter-kit-load <span class="org-string">"starter-kit-python.org"</span><span class="org-esk-paren">)</span>
 </pre>
 
 
@@ -928,7 +895,7 @@ Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
 
 
 
-<pre class="src src-emacs-lisp"><span style="color: #BC9458; font-style: italic;">;; </span><span style="color: #BC9458; font-style: italic;">(starter-kit-load "starter-kit-latex.org")
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">(starter-kit-load "starter-kit-latex.org")
 </span></pre>
 
 
@@ -948,9 +915,8 @@ Located in <a href="starter-kit-latex.html">starter-kit-latex</a>
 
 
 
-<div class="org-src-container"><label class="org-src-name">m-x-customize-customizations()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span>load custom-file 'noerror<span style="color: #7f7f7f;">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>load custom-file 'noerror<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -962,21 +928,20 @@ After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-load-files()</label><pre class="src src-emacs-lisp">
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p elisp-source-dir<span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>default-directory elisp-source-dir<span style="color: #7f7f7f;">))</span>
-      <span style="color: #7f7f7f;">(</span>normal-top-level-add-subdirs-to-load-path<span style="color: #7f7f7f;">)))</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p system-specific-config<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>load system-specific-config<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p system-specific-literate-config<span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span>org-babel-load-file system-specific-literate-config<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p user-specific-config<span style="color: #7f7f7f;">)</span> <span style="color: #7f7f7f;">(</span>load user-specific-config<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">if</span> <span style="color: #7f7f7f;">(</span>file-exists-p user-specific-literate-config<span style="color: #7f7f7f;">)</span>
-    <span style="color: #7f7f7f;">(</span>org-babel-load-file user-specific-literate-config<span style="color: #7f7f7f;">))</span>
-<span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">when</span> <span style="color: #7f7f7f;">(</span>file-exists-p user-specific-dir<span style="color: #7f7f7f;">)</span>
-  <span style="color: #7f7f7f;">(</span><span style="color: #CC7833;">let</span> <span style="color: #7f7f7f;">((</span>default-directory user-specific-dir<span style="color: #7f7f7f;">))</span>
-    <span style="color: #7f7f7f;">(</span>mapc #'load <span style="color: #7f7f7f;">(</span>directory-files user-specific-dir nil <span style="color: #A5C261;">".*el$"</span><span style="color: #7f7f7f;">))</span>
-    <span style="color: #7f7f7f;">(</span>mapc #'org-babel-load-file <span style="color: #7f7f7f;">(</span>directory-files user-specific-dir nil <span style="color: #A5C261;">".*org$"</span><span style="color: #7f7f7f;">))))</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>file-exists-p elisp-source-dir<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>default-directory elisp-source-dir<span class="org-esk-paren">))</span>
+      <span class="org-esk-paren">(</span>normal-top-level-add-subdirs-to-load-path<span class="org-esk-paren">)))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>file-exists-p system-specific-config<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>load system-specific-config<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>file-exists-p system-specific-literate-config<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span>org-babel-load-file system-specific-literate-config<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>file-exists-p user-specific-config<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>load user-specific-config<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>file-exists-p user-specific-literate-config<span class="org-esk-paren">)</span>
+    <span class="org-esk-paren">(</span>org-babel-load-file user-specific-literate-config<span class="org-esk-paren">))</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>file-exists-p user-specific-dir<span class="org-esk-paren">)</span>
+  <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>default-directory user-specific-dir<span class="org-esk-paren">))</span>
+    <span class="org-esk-paren">(</span>mapc #'load <span class="org-esk-paren">(</span>directory-files user-specific-dir nil <span class="org-string">".*el$"</span><span class="org-esk-paren">))</span>
+    <span class="org-esk-paren">(</span>mapc #'org-babel-load-file <span class="org-esk-paren">(</span>directory-files user-specific-dir nil <span class="org-string">".*org$"</span><span class="org-esk-paren">))))</span>
+</pre>
 
 
 
@@ -1015,15 +980,13 @@ Skip the <code>make</code> step in the <a href="#installation">Installation</a> 
 these instructions.
 </p>
 <ol>
-<li>
-<code>org-install.el</code> is required by the starter kit. To make it,
-navigate to the <code>src/org</code> directory and enter <code>make    lisp/org-install.el</code> at the command prompt.
+<li><code>org-install.el</code> is required by the starter kit. To make it,
+   navigate to the <code>src/org</code> directory and enter <code>make    lisp/org-install.el</code> at the command prompt.
 </li>
-<li>
-Updating the documentation is probably a good idea. Enter <code>make    info</code>. Optionally, you can update the system-wide org documentation
-by entering <code>make install-info</code>. If you want a PDF version of the
-manual, you can enter <code>make doc/org.pdf</code> and find the resulting
-file in the doc directory.
+<li>Updating the documentation is probably a good idea. Enter <code>make    info</code>. Optionally, you can update the system-wide org documentation
+   by entering <code>make install-info</code>. If you want a PDF version of the
+   manual, you can enter <code>make doc/org.pdf</code> and find the resulting
+   file in the doc directory.
 </li>
 </ol>
 
@@ -1086,34 +1049,31 @@ ships with an older version of org-mode than the one the starter kit
 uses), the problem most likely resides in your local setup.
 </p>
 <ol>
-<li>
-The shell's $INFOPATH variable
-Have you set the shell's INFOPATH variable? The starter kit should
-not be ignoring this variable. This variable is copied into the
-elisp variable <code>Info-default-directory-list</code> when emacs starts
-up. The starter kit then copies <code>Info-default-directory-list</code> to
-<code>Info-directory-list</code> without losing any changes you may have made
-to this variable. This is the next place to look.
+<li>The shell's $INFOPATH variable
+   Have you set the shell's INFOPATH variable? The starter kit should
+   not be ignoring this variable. This variable is copied into the
+   elisp variable <code>Info-default-directory-list</code> when emacs starts
+   up. The starter kit then copies <code>Info-default-directory-list</code> to
+   <code>Info-directory-list</code> without losing any changes you may have made
+   to this variable. This is the next place to look.
 </li>
-<li>
-<code>Info-directory-list</code>
-Is the doc directory for the starter kit version of org-mode at the
-top of this list? If not, open a ticket and describe what the
-variable looks like.
+<li><code>Info-directory-list</code>
+   Is the doc directory for the starter kit version of org-mode at the
+   top of this list? If not, open a ticket and describe what the
+   variable looks like.
 
 <p>
-If you installed the starter kit to <code>~/.emacs.d/</code> then the
-directory <code>~/.emacs.d/src/org/doc</code> should be at the top of
-<code>Info-directory-list</code>. 
+   If you installed the starter kit to <code>~/.emacs.d/</code> then the
+   directory <code>~/.emacs.d/src/org/doc</code> should be at the top of
+   <code>Info-directory-list</code>. 
 </p></li>
-<li>
-Did you <code>make</code> the manual?  Especially if you choose <a href="#no-compile">not to compile org-mode</a>, you may need to compile the documentation. Regardless of
-whether or not you compiled org, it may be helpful to try this
-solution out before opening a ticket.
+<li>Did you <code>make</code> the manual?  Especially if you choose <a href="#no-compile">not to compile org-mode</a>, you may need to compile the documentation. Regardless of
+   whether or not you compiled org, it may be helpful to try this
+   solution out before opening a ticket.
 
 <p>
-Navigate to the <code>src/org</code> directory of the starter kit. At the
-command prompt, type
+   Navigate to the <code>src/org</code> directory of the starter kit. At the
+   command prompt, type
 </p>
 
 
@@ -1123,16 +1083,14 @@ make install-info
 
 
 <p>
-where the last step is optional, and only required if you want to
-update the site-wide documentation of org-mode.
+   where the last step is optional, and only required if you want to
+   update the site-wide documentation of org-mode.
 </p>
 <p>
-To check if this fixed the issue, first close any Info buffers in
-emacs and call the Info index with <code>C-h i</code> then choose org-mode.
-</p>
-</li>
+   To check if this fixed the issue, first close any Info buffers in
+   emacs and call the Info index with <code>C-h i</code> then choose org-mode.
+</p></li>
 </ol>
-
 
 
 
@@ -1152,12 +1110,6 @@ the way and put this there instead.
 directly from <a href="http://orgmode.org/">Org Mode</a> documents.
 </p>
 </div>
-</div>
-<div id="postamble">
-<p class="author"> Author: Eric Schulte
-</p>
-<p class="date"> Date: 2011-01-18 22:42:56 MST</p>
-<p class="creator">HTML generated by org-mode 7.4 in emacs 24</p>
 </div>
 </div>
 </body>

@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Misc</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-11-16 11:45:26 MST"/>
+<meta name="generated" content="2011-03-22 10:16:48 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -70,7 +70,6 @@ lang="en" xml:lang="en">
 <div id="content">
 
 <h1 class="title">Starter Kit Misc</h1>
-
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
 </p>
 
@@ -92,16 +91,15 @@ sharing Emacs color themes.  To view and apply color themes available
 on your system run <code>M-x color-theme-select</code>.  See the color theme
 website and EmacsWiki pages for more information.
 </p><ul>
-<li>
-<a href="http://www.nongnu.org/color-theme/">http://www.nongnu.org/color-theme/</a>
+<li><a href="http://www.nongnu.org/color-theme/">http://www.nongnu.org/color-theme/</a>
 </li>
-<li>
-<a href="http://www.emacswiki.org/emacs/ColorTheme">http://www.emacswiki.org/emacs/ColorTheme</a>
-
+<li><a href="http://www.emacswiki.org/emacs/ColorTheme">http://www.emacswiki.org/emacs/ColorTheme</a>
 </li>
 </ul>
 
-<p>This following loads color-theme so that it is available by default.
+
+<p>
+This following loads color-theme so that it is available by default.
 </p>
 
 
@@ -141,8 +139,7 @@ will load the <code>railscasts</code> color theme when Emacs starts.
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-window-view-stuff()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">when</span> window-system
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">when</span> window-system
   <span class="org-esk-paren">(</span>setq frame-title-format '<span class="org-esk-paren">(</span>buffer-file-name <span class="org-string">"%f"</span> <span class="org-esk-paren">(</span><span class="org-string">"%b"</span><span class="org-esk-paren">)))</span>
   <span class="org-esk-paren">(</span>tooltip-mode -1<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>tool-bar-mode -1<span class="org-esk-paren">)</span>
@@ -170,7 +167,7 @@ will load the <code>railscasts</code> color theme when Emacs starts.
       oddmuse-directory <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"oddmuse"</span><span class="org-esk-paren">)</span>
       xterm-mouse-mode t
       save-place-file <span class="org-esk-paren">(</span>concat dotfiles-dir <span class="org-string">"places"</span><span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
@@ -254,9 +251,8 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-no-menu()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>menu-bar-mode -1<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>menu-bar-mode -1<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -281,9 +277,8 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-match-parens()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>show-paren-mode 1<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>show-paren-mode 1<span class="org-esk-paren">)</span>
+</pre>
 
 
 
@@ -299,15 +294,14 @@ for information on installing nxhtml see <a href="http://www.emacswiki.org/emacs
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-loves-ido-mode()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>&gt; emacs-major-version 21<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">when</span> <span class="org-esk-paren">(</span>&gt; emacs-major-version 21<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>ido-mode t<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>setq ido-enable-prefix nil
         ido-enable-flex-matching t
         ido-create-new-buffer 'always
         ido-use-filename-at-point t
         ido-max-prospects 10<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
@@ -364,12 +358,8 @@ it's possible aspell isn't in your path
 <ul>
 <li id="sec-1_11_1_2">Emacs specify spelling program <br/>
 <ul>
-<li>
-This didn't work at first, possibly because cocoAspell was
-building its dictionary.  Now it seems to work fine.
-</li>
-</ul>
-
+<li>This didn't work at first, possibly because cocoAspell was
+  building its dictionary.  Now it seems to work fine.
 
 
 
@@ -384,6 +374,9 @@ building its dictionary.  Now it seems to work fine.
           <span class="org-esk-paren">(</span><span class="org-string">"english"</span> ,@default<span class="org-esk-paren">))))</span>
 </pre>
 
+
+</li>
+</ul>
 
 
 </li>
@@ -489,7 +482,6 @@ building its dictionary.  Now it seems to work fine.
 </div>
 </div>
 </div>
-
 </div>
 </body>
 </html>

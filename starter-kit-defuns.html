@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Defuns</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-11-16 11:45:33 MST"/>
+<meta name="generated" content="2011-03-22 10:16:55 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -70,7 +70,6 @@ lang="en" xml:lang="en">
 <div id="content">
 
 <h1 class="title">Starter Kit Defuns</h1>
-
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
 </p>
 
@@ -100,8 +99,7 @@ lang="en" xml:lang="en">
 
 
 
-<div class="org-src-container"><label class="org-src-name">start-kit-view-url()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">view-url</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">view-url</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Open a new buffer containing the contents of URL."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">let*</span> <span class="org-esk-paren">((</span>default <span class="org-esk-paren">(</span>thing-at-point-url-at-point<span class="org-esk-paren">))</span>
@@ -110,7 +108,7 @@ lang="en" xml:lang="en">
     <span class="org-esk-paren">(</span>rename-buffer url t<span class="org-esk-paren">)</span>
     <span class="org-esk-paren">(</span><span class="org-keyword">cond</span> <span class="org-esk-paren">((</span>search-forward <span class="org-string">"&lt;?xml"</span> nil t<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>xml-mode<span class="org-esk-paren">))</span>
           <span class="org-esk-paren">((</span>search-forward <span class="org-string">"&lt;html"</span> nil t<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>html-mode<span class="org-esk-paren">)))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -126,8 +124,7 @@ lang="en" xml:lang="en">
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-ido-imenu()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">ido-imenu</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">ido-imenu</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Update the imenu index and then use ido to select a symbol to navigate to.
 Symbols matching the text at point are put first in the completion list."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
@@ -141,15 +138,15 @@ Symbols matching the text at point are put first in the completion list."</span>
                              <span class="org-esk-paren">(</span><span class="org-keyword">cond</span>
                               <span class="org-esk-paren">((</span>and <span class="org-esk-paren">(</span>listp symbol<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>imenu--subalist-p symbol<span class="org-esk-paren">))</span>
                                <span class="org-esk-paren">(</span>addsymbols symbol<span class="org-esk-paren">))</span>
-
+                              
                               <span class="org-esk-paren">((</span>listp symbol<span class="org-esk-paren">)</span>
                                <span class="org-esk-paren">(</span>setq name <span class="org-esk-paren">(</span>car symbol<span class="org-esk-paren">))</span>
                                <span class="org-esk-paren">(</span>setq position <span class="org-esk-paren">(</span>cdr symbol<span class="org-esk-paren">)))</span>
-
+                              
                               <span class="org-esk-paren">((</span>stringp symbol<span class="org-esk-paren">)</span>
                                <span class="org-esk-paren">(</span>setq name symbol<span class="org-esk-paren">)</span>
                                <span class="org-esk-paren">(</span>setq position <span class="org-esk-paren">(</span>get-text-property 1 'org-imenu-marker symbol<span class="org-esk-paren">))))</span>
-
+                             
                              <span class="org-esk-paren">(</span><span class="org-keyword">unless</span> <span class="org-esk-paren">(</span>or <span class="org-esk-paren">(</span>null position<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>null name<span class="org-esk-paren">))</span>
                                <span class="org-esk-paren">(</span>add-to-list 'symbol-names name<span class="org-esk-paren">)</span>
                                <span class="org-esk-paren">(</span>add-to-list 'name-and-pos <span class="org-esk-paren">(</span>cons name position<span class="org-esk-paren">))))))))</span>
@@ -168,7 +165,7 @@ Symbols matching the text at point are put first in the completion list."</span>
     <span class="org-esk-paren">(</span><span class="org-keyword">let*</span> <span class="org-esk-paren">((</span>selected-symbol <span class="org-esk-paren">(</span>ido-completing-read <span class="org-string">"Symbol? "</span> symbol-names<span class="org-esk-paren">))</span>
            <span class="org-esk-paren">(</span>position <span class="org-esk-paren">(</span>cdr <span class="org-esk-paren">(</span>assoc selected-symbol name-and-pos<span class="org-esk-paren">))))</span>
       <span class="org-esk-paren">(</span>goto-char position<span class="org-esk-paren">))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -190,8 +187,7 @@ a lambda doesn't already exist in the list.
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-hook-functions()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">local-column-number-mode</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">local-column-number-mode</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span>make-local-variable 'column-number-mode<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>column-number-mode t<span class="org-esk-paren">))</span>
 
@@ -207,88 +203,79 @@ a lambda doesn't already exist in the list.
 
 <span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">turn-on-whitespace</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span>whitespace-mode t<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-add-local-column-number-mode()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'coding-hook 'local-column-number-mode<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'coding-hook 'local-column-number-mode<span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">start-kit-add-local-comment-auto-fill()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'coding-hook 'local-comment-auto-fill<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'coding-hook 'local-comment-auto-fill<span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-add-hl-line-mode()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'coding-hook 'turn-on-hl-line-mode<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'coding-hook 'turn-on-hl-line-mode<span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-add-pretty-lambdas()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>add-hook 'coding-hook 'pretty-lambdas<span class="org-esk-paren">)</span>
-</pre></div>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>add-hook 'coding-hook 'pretty-lambdas<span class="org-esk-paren">)</span>
+</pre>
 
 
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-run-coding-hook()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">run-coding-hook</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">run-coding-hook</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Enable things that are convenient across all coding buffers."</span>
   <span class="org-esk-paren">(</span>run-hooks 'coding-hook<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-untabify-buffer()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">untabify-buffer</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">untabify-buffer</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>untabify <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>point-max<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-indent-buffer()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">indent-buffer</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">indent-buffer</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>indent-region <span class="org-esk-paren">(</span>point-min<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>point-max<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-cleanup-buffer()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">cleanup-buffer</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">cleanup-buffer</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Perform a bunch of operations on the whitespace content of a buffer."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>indent-buffer<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>untabify-buffer<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>delete-trailing-whitespace<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-recentf-ido-find-file()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">recentf-ido-find-file</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">recentf-ido-find-file</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Find a recent file using ido."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>file <span class="org-esk-paren">(</span>ido-completing-read <span class="org-string">"Choose recent file: "</span> recentf-list nil t<span class="org-esk-paren">)))</span>
     <span class="org-esk-paren">(</span><span class="org-keyword">when</span> file
       <span class="org-esk-paren">(</span>find-file file<span class="org-esk-paren">))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -304,14 +291,13 @@ a lambda doesn't already exist in the list.
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-pretty-lambdas()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pretty-lambdas</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pretty-lambdas</span> <span class="org-esk-paren">()</span>
   <span class="org-esk-paren">(</span>font-lock-add-keywords
    nil `<span class="org-esk-paren">((</span><span class="org-string">"(?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">lambda\\&gt;</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">"</span>
           <span class="org-esk-paren">(</span>0 <span class="org-esk-paren">(</span><span class="org-keyword">progn</span> <span class="org-esk-paren">(</span>compose-region <span class="org-esk-paren">(</span>match-beginning 1<span class="org-esk-paren">)</span> <span class="org-esk-paren">(</span>match-end 1<span class="org-esk-paren">)</span>
                                     ,<span class="org-esk-paren">(</span>make-char 'greek-iso8859-7 107<span class="org-esk-paren">))</span>
                     nil<span class="org-esk-paren">))))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -327,8 +313,7 @@ a lambda doesn't already exist in the list.
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-other-functions()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">eval-and-replace</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">eval-and-replace</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Replace the preceding sexp with its value."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>backward-kill-sexp<span class="org-esk-paren">)</span>
@@ -358,7 +343,7 @@ a lambda doesn't already exist in the list.
       <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">(</span>emacs-lisp-mode-hook<span class="org-esk-paren">)</span>
         <span class="org-esk-paren">(</span>update-directory-autoloads autoload-dir<span class="org-esk-paren">))))</span>
   <span class="org-esk-paren">(</span>load autoload-file<span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
@@ -367,13 +352,12 @@ TODO: fix this
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-sudo-edit()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">sudo-edit</span> <span class="org-esk-paren">(</span><span class="org-type">&amp;optional</span> arg<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">sudo-edit</span> <span class="org-esk-paren">(</span><span class="org-type">&amp;optional</span> arg<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>interactive <span class="org-string">"p"</span><span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">if</span> arg
       <span class="org-esk-paren">(</span>find-file <span class="org-esk-paren">(</span>concat <span class="org-string">"/sudo:root@localhost:"</span> <span class="org-esk-paren">(</span>ido-read-file-name <span class="org-string">"File: "</span><span class="org-esk-paren">)))</span>
     <span class="org-esk-paren">(</span>find-alternate-file <span class="org-esk-paren">(</span>concat <span class="org-string">"/sudo:root@localhost:"</span> buffer-file-name<span class="org-esk-paren">))))</span>
-</pre></div>
+</pre>
 
 
 
@@ -382,8 +366,7 @@ Useful when a large block of text is required (e.g. for testing)
 </p>
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-lorem()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">lorem</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">lorem</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Insert a lorem ipsum."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>insert <span class="org-string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "</span>
@@ -393,40 +376,37 @@ Useful when a large block of text is required (e.g. for testing)
           <span class="org-string">"reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "</span>
           <span class="org-string">"pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "</span>
           <span class="org-string">"culpa qui officia deserunt mollit anim id est laborum."</span><span class="org-esk-paren">))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-switch-or-start()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">switch-or-start</span> <span class="org-esk-paren">(</span>function buffer<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">switch-or-start</span> <span class="org-esk-paren">(</span>function buffer<span class="org-esk-paren">)</span>
   <span class="org-doc">"If the buffer is current, bury it, otherwise invoke the function."</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>equal <span class="org-esk-paren">(</span>buffer-name <span class="org-esk-paren">(</span>current-buffer<span class="org-esk-paren">))</span> buffer<span class="org-esk-paren">)</span>
       <span class="org-esk-paren">(</span>bury-buffer<span class="org-esk-paren">)</span>
     <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>get-buffer buffer<span class="org-esk-paren">)</span>
         <span class="org-esk-paren">(</span>switch-to-buffer buffer<span class="org-esk-paren">)</span>
       <span class="org-esk-paren">(</span>funcall function<span class="org-esk-paren">))))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-insert-date()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">insert-date</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">insert-date</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"Insert a time-stamp according to locale's date and time format."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>insert <span class="org-esk-paren">(</span>format-time-string <span class="org-string">"%c"</span> <span class="org-esk-paren">(</span>current-time<span class="org-esk-paren">))))</span>
-</pre></div>
+</pre>
 
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-pairing-bot()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pairing-bot</span> <span class="org-esk-paren">()</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">pairing-bot</span> <span class="org-esk-paren">()</span>
   <span class="org-doc">"If you can't pair program with a human, use this instead."</span>
   <span class="org-esk-paren">(</span>interactive<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>message <span class="org-esk-paren">(</span><span class="org-keyword">if</span> <span class="org-esk-paren">(</span>y-or-n-p <span class="org-string">"Do you have a test for that? "</span><span class="org-esk-paren">)</span> <span class="org-string">"Good."</span> <span class="org-string">"Bad!"</span><span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 
@@ -436,17 +416,15 @@ A monkeypatch to cause annotate to ignore whitespace
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-vc-git-annotate-command()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">vc-git-annotate-command</span> <span class="org-esk-paren">(</span>file buf <span class="org-type">&amp;optional</span> rev<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">defun</span> <span class="org-function-name">vc-git-annotate-command</span> <span class="org-esk-paren">(</span>file buf <span class="org-type">&amp;optional</span> rev<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>name <span class="org-esk-paren">(</span>file-relative-name file<span class="org-esk-paren">)))</span>
     <span class="org-esk-paren">(</span>vc-git-command buf 0 name <span class="org-string">"blame"</span> <span class="org-string">"-w"</span> rev<span class="org-esk-paren">)))</span>
-</pre></div>
+</pre>
 
 
 </div>
 </div>
 </div>
-
 </div>
 </body>
 </html>

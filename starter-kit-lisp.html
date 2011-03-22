@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Lisp</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-11-16 11:45:27 MST"/>
+<meta name="generated" content="2011-03-22 10:16:50 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -70,7 +70,6 @@ lang="en" xml:lang="en">
 <div id="content">
 
 <h1 class="title">Starter Kit Lisp</h1>
-
 <p>This is part of the <a href="starter-kit.html">Emacs Starter Kit</a>.
 </p>
 
@@ -91,13 +90,12 @@ lang="en" xml:lang="en">
 
 
 
-<div class="org-src-container"><label class="org-src-name">starter-kit-define-lisp-keys()</label><pre class="src src-emacs-lisp">
-<span class="org-esk-paren">(</span>define-key read-expression-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"TAB"</span><span class="org-esk-paren">)</span> 'lisp-complete-symbol<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>define-key read-expression-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"TAB"</span><span class="org-esk-paren">)</span> 'lisp-complete-symbol<span class="org-esk-paren">)</span>
 <span class="org-comment-delimiter">;; </span><span class="org-comment">(define-key lisp-mode-shared-map (kbd "C-c l") "lambda")
 </span><span class="org-esk-paren">(</span>define-key lisp-mode-shared-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"RET"</span><span class="org-esk-paren">)</span> 'reindent-then-newline-and-indent<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>define-key lisp-mode-shared-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-\\"</span><span class="org-esk-paren">)</span> 'lisp-complete-symbol<span class="org-esk-paren">)</span>
 <span class="org-esk-paren">(</span>define-key lisp-mode-shared-map <span class="org-esk-paren">(</span>kbd <span class="org-string">"C-c v"</span><span class="org-esk-paren">)</span> 'eval-buffer<span class="org-esk-paren">)</span>
-</pre></div>
+</pre>
 
 
 
@@ -109,10 +107,10 @@ lang="en" xml:lang="en">
 <h3 id="sec-1_2">Paredit </h3>
 <div class="outline-text-3" id="text-1_2">
 
-<p><a href="http://www.emacswiki.org/emacs/ParEdit">Paredit</a> might seem weird at first, but it really makes writing lisp a
-much more comfortable experience.  This is especially useful in
-combination with the sexp movement functions (<code>C-M-f</code> forward, <code>C-M-b</code>
-back, <code>C-M-u</code> up, <code>C-M-d</code> down)
+<p>   <a href="http://www.emacswiki.org/emacs/ParEdit">Paredit</a> might seem weird at first, but it really makes writing lisp a
+   much more comfortable experience.  This is especially useful in
+   combination with the sexp movement functions (<code>C-M-f</code> forward, <code>C-M-b</code>
+   back, <code>C-M-u</code> up, <code>C-M-d</code> down)
 </p>
 
 
@@ -352,7 +350,6 @@ idea to extend this feature beyond simply the <code>fn</code> function.
 </div>
 </div>
 </div>
-
 </div>
 </body>
 </html>
