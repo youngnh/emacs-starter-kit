@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Starter Kit Org</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-03-22 10:16:47 MDT"/>
+<meta name="generated" content="2011-03-23 11:51:27 MDT"/>
 <meta name="author" content="Eric Schulte"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -284,7 +284,8 @@ the documentation for the Starter Kit to html.
 
 
 
-<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span><span class="org-keyword">unless</span> <span class="org-esk-paren">(</span>boundp 'org-publish-project-alist<span class="org-esk-paren">)</span>
+<pre class="src src-emacs-lisp"><span class="org-esk-paren">(</span>setq org-export-htmlize-output-type 'css<span class="org-esk-paren">)</span>
+<span class="org-esk-paren">(</span><span class="org-keyword">unless</span> <span class="org-esk-paren">(</span>boundp 'org-publish-project-alist<span class="org-esk-paren">)</span>
   <span class="org-esk-paren">(</span>setq org-publish-project-alist nil<span class="org-esk-paren">))</span>
 <span class="org-esk-paren">(</span><span class="org-keyword">let</span> <span class="org-esk-paren">((</span>this-dir <span class="org-esk-paren">(</span>file-name-directory <span class="org-esk-paren">(</span>or load-file-name buffer-file-name<span class="org-esk-paren">))))</span>
   <span class="org-esk-paren">(</span>add-to-list 'org-publish-project-alist
@@ -298,7 +299,7 @@ the documentation for the Starter Kit to html.
 </div>
 </div>
 <div id="postamble">
-<p class="date">Date: 2011-03-22 10:16:47 MDT</p>
+<p class="date">Date: 2011-03-23 11:51:27 MDT</p>
 <p class="author">Author: Eric Schulte</p>
 <p class="creator">Org version 7.5 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
