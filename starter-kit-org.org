@@ -120,7 +120,7 @@ Org-mode manual is available to the =info= command (bound to =C-h i=).
   (if (boundp 'Info-directory-list)
       (setq Info-directory-list (append Info-directory-list
                                         Info-default-directory-list))
-      (setq Info-directory-list Info-default-directory-list))
+    (setq Info-directory-list Info-default-directory-list))
   (setq Info-directory-list
         (cons (expand-file-name
                "doc"
