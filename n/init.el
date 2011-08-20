@@ -19,3 +19,6 @@
 
 ;; ClojureScript files trigger clojure-mode
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
+
+;; haskell-indent-mode when we're in haskell-mode
+(add-hook 'haskell-mode-hook 'haskell-indent-mode)
