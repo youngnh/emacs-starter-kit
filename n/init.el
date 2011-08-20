@@ -16,3 +16,6 @@
 
 ;; when marking TODOs done, also note the time
 (setq org-log-done 'time)
+
+;; ClojureScript files trigger clojure-mode
+(add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
