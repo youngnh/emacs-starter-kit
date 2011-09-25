@@ -25,3 +25,6 @@
 
 ;; indent let->> like let
 (add-hook 'clojure-mode-hook '(lambda () (define-clojure-indent (let->> 1))))
+
+;; bind the incredibly satisfying to use `align-regexp` command
+(global-set-key (kbd "C-x a r") 'align-regexp)
