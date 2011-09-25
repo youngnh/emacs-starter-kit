@@ -22,3 +22,6 @@
 
 ;; haskell-indent-mode when we're in haskell-mode
 (add-hook 'haskell-mode-hook 'haskell-indent-mode)
+
+;; indent let->> like let
+(add-hook 'clojure-mode-hook '(lambda () (define-clojure-indent (let->> 1))))
