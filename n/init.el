@@ -1,6 +1,5 @@
-(add-to-list 'load-path (concat user-specific-dir "/solarized"))
-
 ;; light color theme good for presentations
+(add-to-list 'load-path (concat user-specific-dir "/solarized"))
 (require 'color-theme-solarized)
 (color-theme-solarized-light)
 
@@ -31,3 +30,12 @@
 
 ;; when marking TODOs done, also note the time
 (setq org-log-done 'time)
+
+;; alter what is displayed in a dired buffer
+(setq dired-listing-switches "-alh --ignore=.hg --ignore=.git")
+
+;; make default font size larger
+(set-face-attribute 'default nil :height 120)
+
+;; the Haskell program (GHC 7)
+(setq haskell-program-name "/home/n/.opt/bin/ghci")
